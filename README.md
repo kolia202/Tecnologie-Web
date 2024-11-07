@@ -45,7 +45,7 @@ La fase di pagamento può essere simulata senza integrare un vero sistema di pag
 # Tecnologie
 - Lato server: solo PHP (no Javascript, .NET, Java o altro).
 - Lato client: Javascript senza framework come Vue, Angular o React. Per CSS, potete usare Bootstrap o simili.
-- 
+  
 # Consegna del progetto
 La consegna avviene contestualmente alla discussione del progetto, condividendo un repository o cartella condivisa prima della discussione.
 Non inviare il progetto per email; il server mail elimina i file con estensione .js.
