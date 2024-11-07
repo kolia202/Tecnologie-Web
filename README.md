@@ -1,5 +1,3 @@
-# Tecnologie-Web
-
 # Specifiche Progetto - Tecnologie Web AA 2024/25 
 
 # Obiettivo dell’elaborato
