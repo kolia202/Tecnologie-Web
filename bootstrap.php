@@ -1,5 +1,6 @@
 <?php
-//Includere db
+
 require_once("db/database.php");
-$dbhost = new Database("localhost", "root", "", "morbidoso", "3306");     
+$dbhost = new DatabaseHelper("localhost", "root", "", "morbidoso", "3306");     
+
 ?>

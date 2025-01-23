@@ -1,0 +1,13 @@
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: magenta;
+    border-radius: 50%;
+}
+.carousel-inner {
+    text-align: center;
+    background-color: #f5f5f5;
+}
