@@ -16,7 +16,9 @@
         <i class="bi bi-bag pe-3" style="color: brown; font-size: 40px;"></i>
     </header>
     <footer>
-        <p>Informazioni su Mondo Morbidoso</p>
+        <p>Informazioni su Mondo Morbidoso<br></p>
+        <p>Assistenza Clienti.<br></p>
+        <p>Informativa Privacy.<br></p>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
