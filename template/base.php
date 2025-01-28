@@ -11,9 +11,9 @@
 </head>
 <body>
     <header>
-        <i class="bi bi-list ps-3" style="color: brown; font-size: 50px;"></i>
+        <i class="bi bi-list ps-3" style="color: rgb(137, 85, 32); font-size: 50px;"></i>
         <img src="img/img.png"/>
-        <i class="bi bi-bag pe-3" style="color: brown; font-size: 40px;"></i>
+        <i class="bi bi-bag pe-3" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
     </header>
     <footer>
         <p>Informazioni su Mondo Morbidoso<br></p>

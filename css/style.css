@@ -25,12 +25,14 @@ footer {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: auto;
-    background-color: rgb(175, 103, 26);
+    background-color: rgb(137, 85, 32);
     text-align: center;;
 }
 
 footer > p {
     color: white;
     margin: 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
+    font-size: small;
 }
