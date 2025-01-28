@@ -1,6 +1,7 @@
 <?php
 
-require_once("db/database.php");
-$dbhost = new DatabaseHelper("localhost", "root", "", "morbidoso", "3306");     
+require_once("db/database.php");    
+session_start();
+$dbhost = new DatabaseHelper("localhost", "root", "", "morbidoso", "3306");   
 
 ?>
