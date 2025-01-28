@@ -6,7 +6,8 @@ html,body {
 }
 
 body {
-    background-color: rgba(255, 182, 193, 0.25);
+    background-color: rgb(245, 222, 179, 0.4);
+    /*background-color: rgba(255, 182, 193, 0.25);*/
 }
 
 header {
@@ -15,18 +16,29 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 2px solid rgb(137, 85, 32);
 }
 
 header > img {
     height: 100%;
 }
 
+header p {
+    font-size: 40px;
+    
+}
+
+/*header form input {
+    height: 10px;
+}*/
+
 footer {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: auto;
+    /*background-color: rgb(54, 54, 54);*/
     background-color: rgb(137, 85, 32);
-    text-align: center;;
+    text-align: center;
 }
 
 footer > p {
@@ -35,4 +47,14 @@ footer > p {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
     font-size: small;
+}
+
+div.offcanvas.offcanvas-start.offcanvas-custom {
+    width: 75%;
+}
+
+@media (min-width: 768px) {
+    div.offcanvas.offcanvas-start.offcanvas-custom {
+        width: 30%;
+    }
 }

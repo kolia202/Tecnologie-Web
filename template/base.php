@@ -11,7 +11,31 @@
 </head>
 <body>
     <header>
-        <i class="bi bi-list ps-3" style="color: rgb(137, 85, 32); font-size: 50px;"></i>
+        <button class="btn p-0" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+            <i class="bi bi-list ps-3" style="color: rgb(137, 85, 32); font-size: 50px;"></i>
+        </button>
+        <div class="offcanvas offcanvas-start offcanvas-custom" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+                <p>Menù</p>
+                <button type="button" style="background-color: white;" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="bi bi-x-lg" style="color:rgb(137, 85, 32); font-size: 35px"></i>
+                </button>
+            </div>
+                <div class="offcanvas-body">
+                    <div>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button class="btn" style="color: rgb(137, 85, 32);" type="button">
+                                <i class="bi bi-search-heart" style="font-size: 30px;"></i>
+                            </button>
+                        </form>
+                        <a href="#">Account<br></a>
+                        <a href="#">Tutti i nostri peluche<br></a>
+                        <a href="#">Animali<br></a>
+                        <a href="#">Cibo<br></a>
+                    </div>
+                </div>
+        </div>
         <img src="img/img.png"/>
         <i class="bi bi-bag pe-3" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
     </header>
