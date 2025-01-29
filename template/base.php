@@ -27,12 +27,13 @@
                             <i class="bi bi-search-heart" style="font-size: 30px;"></i>
                         </button>
                     </form>
-                    <a href="#">Account<br></a>
+                    <a href="../php/account.php">Account<br></a>
                     <a href="#">Lista Desideri<br></a>
-                    <a href="#">Tutti i nostri peluche<br></a>
+                    <a href="#">Tutti i nostria peluche<br></a>
                     <a href="#">Animali<br></a>
                     <a href="#">Fantasy<br></a>
-                    <a href="#">Piante<br></a>    
+                    <a href="#">Piante<br></a>
+                    <a href="../php/index.php">Home<br></a>      
                 </div>
             </div>
         </div>
