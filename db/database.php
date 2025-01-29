@@ -1,4 +1,5 @@
 <?php
+
 class DatabaseHelper {
     private $db;
 
@@ -9,3 +10,5 @@ class DatabaseHelper {
         }
     }
 }
+
+?>
