@@ -1,71 +1,76 @@
--- Inserimento dati nella tabella UTENTE
-INSERT INTO UTENTE (E_mail, Nome, Cognome, Nome_utente, Numero_telefono, Data_di_nascita, Password, Punti) VALUES
-('mario.rossi@example.com', 'Mario', 'Rossi', 'marior', '1234567890', '1985-03-22', 'password123', 150),
-('anna.verdi@example.com', 'Anna', 'Verdi', 'annav', '0987654321', '1990-07-15', 'securepass', 200),
-('lucia.bianchi@example.com', 'Lucia', 'Bianchi', 'lucyb', '3456789012', '1995-01-10', 'mypassword', 300);
+-- Popolamento della tabella UTENTE
+INSERT INTO UTENTE (E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Password, Punti, Admin) VALUES
+('alice@example.com', 'Alice', 'Rossi', '1234567890', '1995-06-15', 'password123', 100, false),
+('bob@example.com', 'Bob', 'Bianchi', '0987654321', '1992-04-20', 'securepass', 200, true),
+('charlie@example.com', 'Charlie', 'Verdi', '1122334455', '1998-09-10', 'charliepass', 150, false),
+('diana@example.com', 'Diana', 'Neri', '5566778899', '2000-12-05', 'dianapass', 80, false);
 
--- Inserimento dati nella tabella METODO_DI_PAGAMENTO
+-- Popolamento della tabella NOTIFICA
+INSERT INTO NOTIFICA (Id_notifica, Tipo_notifica, Testo, Stato, Giorno, E_mail) VALUES
+(1, 'Ordine', 'Il tuo ordine #1 è stato spedito.', 'Non letta', '2025-01-28', 'alice@example.com'),
+(2, 'Promozione', '20% di sconto sul tuo prossimo acquisto!', 'Letta', '2025-01-27', 'bob@example.com'),
+(3, 'Messaggio', 'Nuovo messaggio dal supporto clienti.', 'Non letta', '2025-01-26', 'charlie@example.com'),
+(4, 'Offerta', 'Acquista 2 peluche e ricevi il 3° in omaggio!', 'Non letta', '2025-01-25', 'diana@example.com');
+
+-- Popolamento della tabella CATEGORIA
+INSERT INTO CATEGORIA (Nome_categoria) VALUES
+('Orsetti'),
+('Unicorni'),
+('Gatti'),
+('Cani'),
+('Panda');
+
+-- Popolamento della tabella METODO_DI_PAGAMENTO
 INSERT INTO METODO_DI_PAGAMENTO (Id_pagamento, Descrizione) VALUES
-('PAY01', 'Carta di Credito'),
-('PAY02', 'PayPal'),
-('PAY03', 'Bonifico Bancario');
+(1, 'Carta di credito'),
+(2, 'PayPal'),
+(3, 'Bonifico bancario'),
+(4, 'Contrassegno');
 
--- Inserimento dati nella tabella METODO_DI_SPEDIZIONE
+-- Popolamento della tabella METODO_DI_SPEDIZIONE
 INSERT INTO METODO_DI_SPEDIZIONE (Id_spedizione, Nome, Descrizione, Costo) VALUES
-('SHIP01', 'Spedizione Standard', 'Consegna in 3-5 giorni lavorativi', 5.99),
-('SHIP02', 'Spedizione Espressa', 'Consegna in 1-2 giorni lavorativi', 9.99),
-('SHIP03', 'Ritiro in negozio', 'Ritiro gratuito presso il nostro store', 0.00);
+(1, 'Standard', 'Spedizione entro 5-7 giorni', 5.99),
+(2, 'Express', 'Spedizione entro 2-3 giorni', 9.99),
+(3, 'Premium', 'Spedizione il giorno successivo', 14.99);
 
--- Inserimento dati nella tabella INDIRIZZO_DI_FATTURAZIONE
-INSERT INTO INDIRIZZO_DI_FATTURAZIONE (Id_fattura, Data_emissione, Importo_totale, Via, Civico, Cap, Citta) VALUES
-('FAT01', '2025-01-20', 49.98, 'Via Roma', '10', '00100', 'Roma'),
-('FAT02', '2025-01-21', 25.99, 'Via Milano', '20', '20100', 'Milano'),
-('FAT03', '2025-01-21', 15.99, 'Via Napoli', '15', '80100', 'Napoli');
+-- Popolamento della tabella PRODOTTO
+INSERT INTO PRODOTTO (Id_prodotto, Nome, Nome_peluche, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES
+(1, 'Orsetto Teddy', 'Teddy', 'Un orsetto morbido e coccoloso', 'teddy.jpg', 'Medio', 50, 19.99, 500, 'Orsetti'),
+(2, 'Unicorno Magico', 'Uny', 'Unicorno soffice e colorato', 'unicorn.jpg', 'Grande', 30, 25.99, 700, 'Unicorni'),
+(3, 'Gatto Fluffy', 'Fluffy', 'Gatto soffice e adorabile', 'fluffy.jpg', 'Piccolo', 40, 15.99, 400, 'Gatti'),
+(4, 'Cagnolino Soft', 'Bobby', 'Cane di peluche super soffice', 'bobby.jpg', 'Medio', 35, 22.99, 600, 'Cani');
 
--- Inserimento dati nella tabella PRODOTTO
-INSERT INTO PRODOTTO (Id_prodotto, Nome, Immagine, Grandezza, Scorta, Prezzo, Categoria) VALUES
-('PEL01', 'Orso Bruno', 'orso_b.jpg', 'Grande', 50, 24.99, 'Animali della Foresta'),
-('PEL02', 'Coniglio Bianco', 'coniglio_b.jpg', 'Medio', 30, 15.99, 'Animali della Fattoria'),
-('PEL03', 'Elefante Grigio', 'elefante_g.jpg', 'Grande', 20, 29.99, 'Animali della Savana');
+-- Popolamento della tabella carrello
+INSERT INTO carrello (Id_prodotto, E_mail, Quantita) VALUES
+(1, 'alice@example.com', 2),
+(2, 'bob@example.com', 1),
+(3, 'charlie@example.com', 3),
+(4, 'diana@example.com', 1);
 
--- Inserimento dati nella tabella ORDINE
-INSERT INTO ORDINE (Id_ordine, Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_pagamento, Id_fattura, E_mail) VALUES
-('ORD01', '2025-01-20', 49.98, 'Spedito', 'SHIP01', 'PAY01', 'FAT01', 'mario.rossi@example.com'),
-('ORD02', '2025-01-21', 25.99, 'In elaborazione', 'SHIP02', 'PAY02', 'FAT02', 'anna.verdi@example.com'),
-('ORD03', '2025-01-21', 15.99, 'Spedito', 'SHIP03', 'PAY03', 'FAT03', 'lucia.bianchi@example.com');
+-- Popolamento della tabella preferito
+INSERT INTO preferito (Id_prodotto, E_mail) VALUES
+(1, 'alice@example.com'),
+(2, 'bob@example.com'),
+(3, 'charlie@example.com'),
+(4, 'diana@example.com');
 
--- Inserimento dati nella tabella PRODOTTO_ORDINATO
-INSERT INTO PRODOTTO_ORDINATO (Id_prodotto_ordinato, Id_prodotto) VALUES
-('PO01', 'PEL01'),
-('PO02', 'PEL02'),
-('PO03', 'PEL03');
+-- Popolamento della tabella ORDINE
+INSERT INTO ORDINE (Id_ordine, Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_pagamento, E_mail) VALUES
+(1, '2025-01-25', 45.98, 'Spedito', 1, 1, 'alice@example.com'),
+(2, '2025-01-26', 25.99, 'In lavorazione', 2, 2, 'bob@example.com'),
+(3, '2025-01-27', 37.99, 'Consegnato', 3, 3, 'charlie@example.com'),
+(4, '2025-01-28', 22.99, 'Spedito', 1, 4, 'diana@example.com');
 
--- Inserimento dati nella tabella DETTAGLIO_ACQUISTO
-INSERT INTO DETTAGLIO_ACQUISTO (Id_ordine, Id_prodotto_ordinato, Quantita, Prezzo_unitario, Prezzo_totale) VALUES
-('ORD01', 'PO01', 2, 24.99, 49.98),
-('ORD02', 'PO02', 1, 15.99, 25.99),
-('ORD03', 'PO03', 1, 15.99, 15.99);
+-- Popolamento della tabella prodotto_ordinato
+INSERT INTO prodotto_ordinato (Id_ordine, Id_prodotto, Quantita) VALUES
+(1, 1, 2),
+(2, 2, 1),
+(3, 3, 2),
+(4, 4, 1);
 
--- Inserimento dati nella tabella AGGIORNAMENTO
-INSERT INTO AGGIORNAMENTO (Id_stato, Tipo_aggiornamento, Testo, Giorno, Ora, Id_ordine) VALUES
-('UPD01', 'Spedizione', 'Ordine consegnato', '2025-01-22', '14:30:00', 'ORD01'),
-('UPD02', 'Pagamento', 'Pagamento completato', '2025-01-21', '10:15:00', 'ORD02'),
-('UPD03', 'Ritiro', 'Ordine pronto per il ritiro', '2025-01-21', '09:00:00', 'ORD03');
-
--- Inserimento dati nella tabella RECENSIONE
-INSERT INTO RECENSIONE (Id_recensione, Data, Voto, Commento) VALUES
-('REC01', '2025-01-22', 5, 'Peluches fantastici!'),
-('REC02', '2025-01-21', 4, 'Ottima qualità, ma spedizione lenta.'),
-('REC03', '2025-01-21', 5, 'Morbidoso e adorabile!');
-
--- Inserimento dati nella tabella REALIZZAZIONE
-INSERT INTO REALIZZAZIONE (Id_recensione, E_mail) VALUES
-('REC01', 'mario.rossi@example.com'),
-('REC02', 'anna.verdi@example.com'),
-('REC03', 'lucia.bianchi@example.com');
-
--- Inserimento dati nella tabella INTERAGISCE
-INSERT INTO INTERAGISCE (Id_prodotto, E_mail, Tipo_interazione) VALUES
-('PEL01', 'mario.rossi@example.com', 'Visualizzato'),
-('PEL02', 'anna.verdi@example.com', 'Aggiunto al carrello'),
-('PEL03', 'lucia.bianchi@example.com', 'Acquistato');
+-- Popolamento della tabella RECENSIONE
+INSERT INTO RECENSIONE (Id_recensione, Data, Voto, Commento, E_mail) VALUES
+(1, '2025-01-27', 5, 'Ottimo peluche, molto morbido!', 'alice@example.com'),
+(2, '2025-01-28', 4, 'Unicorno bellissimo, ma un po caro', 'bob@example.com'),
+(3, '2025-01-29', 5, 'Adoro il mio nuovo gatto di peluche!', 'charlie@example.com'),
+(4, '2025-01-30', 3, 'Molto carino, ma pensavo fosse più grande.', 'diana@example.com');

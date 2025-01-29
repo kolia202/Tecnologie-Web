@@ -23,97 +23,99 @@ use Morbidoso;
 -- _____________ 
 
 create table UTENTE (
-     E_mail char(1) not null,
-     Nome char(1) not null,
-     Cognome char(1) not null,
-     Numero_telefono char(1) not null,
-     Data_di_nascita char(1),
-     Password char(1) not null,
-     Punti char(1) not null,
-     Admin char not null,
+     E_mail VARCHAR(100) not null,
+     Nome VARCHAR(50) not null,
+     Cognome VARCHAR(50) not null,
+     Numero_telefono VARCHAR(15) not null,
+     Data_di_nascita DATE,
+     Password VARCHAR(255) not null,
+     Punti INT not null default 0,
+     Admin BOOLEAN not null default false,
      primary key (E_mail));
      
 create table NOTIFICA (
-     Id_notifica char(1) not null,
-     Tipo_notifica char(1) not null,
-     Testo char(1) not null,
-     stato char(1) not null,
-     Giorno char(1) not null,
-     E_mail char(1) not null,
+     Id_notifica INT not null auto_increment,
+     Tipo_notifica VARCHAR(50) not null,
+     Testo TEXT not null,
+     Stato ENUM('Letta', 'Non letta') not null,
+     Giorno DATE not null,
+     E_mail VARCHAR(100) not null,
      primary key (Id_notifica),
      foreign key (E_mail) references UTENTE(E_mail));
 
 create table CATEGORIA (
-     Nome_categoria char(1) not null,
+     Nome_categoria VARCHAR(50) not null,
      primary key (Nome_categoria));
 
 create table METODO_DI_PAGAMENTO (
-     Id_pagamento char(1) not null,
-     Descrizione char(1) not null,
+     Id_pagamento INT not null auto_increment,
+     Descrizione VARCHAR(255) not null,
      primary key (Id_pagamento));
 
 create table METODO_DI_SPEDIZIONE (
-     Id_spedizione char(1) not null,
-     Nome char(1) not null,
-     Descrizione char(1) not null,
-     Costo char(1),
+     Id_spedizione INT not null auto_increment,
+     Nome VARCHAR(50) not null,
+     Descrizione VARCHAR(255) not null,
+     Costo DECIMAL(10,2),
      primary key (Id_spedizione));
 
 create table ORDINE (
-     Id_ordine char(1) not null,
-     Data_effettuazione char(1) not null,
-     Prezzo_finale char(1) not null,
-     Stato char(1) not null,
-     Id_spedizione char(1) not null,
-     Id_pagamento char(1) not null,
-     E_mail char(1) not null,
+     Id_ordine INT not null auto_increment,
+     Data_effettuazione DATE not null,
+     Prezzo_finale DECIMAL(10,2) not null,
+     Stato ENUM('In lavorazione', 'Spedito', 'Consegnato') not null,
+     Id_spedizione INT not null,
+     Id_pagamento INT not null,
+     E_mail VARCHAR(100) not null,
      primary key (Id_ordine),
      foreign key (Id_spedizione) references METODO_DI_SPEDIZIONE (Id_spedizione),
      foreign key (E_mail) references UTENTE (E_mail),
      foreign key (Id_pagamento) references METODO_DI_PAGAMENTO (Id_pagamento));
     
 create table PRODOTTO (
-     Id_prodotto char(1) not null,
-     Nome char(1) not null,
-     Immagine char(1) not null,
-     Grandezza char(1) not null,
-     Scorta char(1) not null,
-     Prezzo char(1) not null,
-     Prezzo_punti char(1) not null,
-     Nome_categoria char(1) not null,
+     Id_prodotto INT not null auto_increment,
+     Nome VARCHAR(100) not null,
+     Nome_peluche VARCHAR(100) not null,
+     Descrizione TEXT not null,
+     Immagine VARCHAR(255) not null,
+     Grandezza VARCHAR(50) not null,
+     Scorta INT not null,
+     Prezzo DECIMAL(10,2) not null,
+     Prezzo_punti INT not null,
+     Nome_categoria VARCHAR(50) not null,
      primary key (Id_prodotto),
      foreign key (Nome_categoria) references CATEGORIA (Nome_categoria));
 
 create table carrello (
-     Id_prodotto char(1) not null,
-     E_mail char(1) not null,
-     Quantita char(1) not null,
+     Id_prodotto INT not null,
+     E_mail VARCHAR(100) not null,
+     Quantita INT not null,
      primary key (E_mail, Id_prodotto),
      foreign key (E_mail) references UTENTE (E_mail),
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto));
 
 create table preferito (
-     Id_prodotto char(1) not null,
-     E_mail char(1) not null,
+     Id_prodotto INT not null,
+     E_mail VARCHAR(100) not null,
      primary key (Id_prodotto, E_mail),
      foreign key (E_mail) references UTENTE (E_mail),
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto));
 
 create table prodotto_ordinato (
-     Id_ordine char(1) not null,
-     Id_prodotto char(1) not null,
-     Quantita char(1) not null,
+     Id_ordine INT not null,
+     Id_prodotto INT not null,
+     Quantita INT not null,
      primary key (Id_ordine, Id_prodotto),
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto),
      foreign key (Id_ordine) references ORDINE (Id_ordine));
      
 create table RECENSIONE (
-     Id__recensione char(1) not null,
-     data char(1) not null,
-     Voto char(1) not null,
-     Commento char(1) not null,
-     E_mail char(1) not null,
-     primary key (Id__recensione),
+     Id_recensione INT not null auto_increment,
+     Data DATE not null,
+     Voto INT not null check (Voto between 1 and 5),
+     Commento TEXT not null,
+     E_mail VARCHAR(100) not null,
+     primary key (Id_recensione),
      foreign key (E_mail) references UTENTE (E_mail));
 
 -- Constraints Section
@@ -178,7 +180,7 @@ create index FKpro_PRO_IND
      on prodotto_ordinato (Id_prodotto);
 
 create unique index ID_RECENSIONE_IND
-     on RECENSIONE (Id__recensione);
+     on RECENSIONE (Id_recensione);
 
 create index FKrealizzazione_IND
      on RECENSIONE (E_mail);
