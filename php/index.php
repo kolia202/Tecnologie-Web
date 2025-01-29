@@ -1,7 +1,6 @@
 <?php
-
 require_once("bootstrap.php");
 $templateParams["titolo"] = "Mondo Morbidoso - Home";
-require_once("template/base.php");
-
+$templateParams["nome"] = "indexC.php";
+require("../template/base.php");
 ?>
