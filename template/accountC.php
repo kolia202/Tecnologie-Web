@@ -17,5 +17,6 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <button type="submit" class="btn btn-primary" name="accedi">Accedi</button>
+        <a href="registrati.php" class="btn btn-secondary">Registrati</a>
     </form>
 <?php endif; ?>

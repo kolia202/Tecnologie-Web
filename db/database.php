@@ -61,5 +61,20 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function registrazione($nome, $cognome, $email, $password, $dataDiNascita, $numeroTelefono) {
+        $stmt = $this->db->prepare("INSERT INTO UTENTE (Nome, Cognome, E_mail, Password, Data_di_nascita, Numero_telefono)
+                                    VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $nome, $cognome, $email, $password, $dataDiNascita, $numeroTelefono);
+        return $stmt->execute();
+    }
+
+    public function checkEmail($email) {
+        $stmt = $this->db->prepare("SELECT * FROM UTENTE WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->num_rows > 0;
+    }
 }    
 ?>
