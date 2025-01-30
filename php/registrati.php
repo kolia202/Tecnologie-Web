@@ -10,11 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $password_confirm = $_POST["password_confirm"];
     if ($password !== $password_confirm) {
-        die("Errore: Le password non corrispondono!");
+        $_SESSION["error"] = "Le password non corrispondono!";
+        header("Location: registrati.php");
+        exit;
     }
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     if ($dbhost->checkEmail($email)) {
-        die("Errore: L'email è già registrata!");
+        $_SESSION["error"] = "L'email è già registrata!";
+        header("Location: registrati.php");
+        exit;
     }
     if ($dbhost->registrazione($nome, $cognome, $email, $password_hash, $dataDiNascita, $telefono)) {
         echo "Registrazione completata con successo!";

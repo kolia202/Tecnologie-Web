@@ -1,5 +1,11 @@
 <h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
 <h2 style="text-align: left; margin-left: 2%;">Registrati</h2>
+<?php
+if (isset($_SESSION["error"])) {
+    echo "<div style='color: red;'>" . $_SESSION["error"] . "</div>";
+    unset($_SESSION["error"]);
+}
+?>
 <form id="registerForm" action="registrati.php" method="POST">
     <div class="row">
         <div class="col">
@@ -13,7 +19,7 @@
     </div>
     <div class="row mt-3">
         <div class="col">
-            <label for="telefono">Telefono</label>
+            <label for="telefono">Telefono<span style="color: red;">*</span></label>
             <input type="text" class="form-control" id="telefono" name="telefono">
         </div>
         <div class="col">
@@ -21,7 +27,6 @@
             <input type="date" class="form-control" id="data_nascita" name="data_nascita">
         </div>
     </div>
-
     <div class="row mt-3">
         <div class="col">
             <label for="email">Indirizzo email<span style="color: red;">*</span></label>
