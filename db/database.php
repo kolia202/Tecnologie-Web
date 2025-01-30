@@ -76,5 +76,14 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->num_rows > 0;
     }
+
+    public function getProducts() {
+        $query = "SELECT Nome, Immagine, Prezzo, Nome_categoria FROM prodotto";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }    
 ?>

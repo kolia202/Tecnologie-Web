@@ -6,7 +6,7 @@
     Trova il peluche ideale per te e portalo a casa con un click!
 </p>
 <div class="text-center">
-    <a href="#">
+    <a href="../php/prodotti.php">
         <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Scopri tutti i nostri peluche</button>
     </a>
 </div>

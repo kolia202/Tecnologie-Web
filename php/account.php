@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-session_start();
 if (isset($_POST["accedi"])) {
     $email = $_POST["email"];  
     $password = $_POST["password"];
