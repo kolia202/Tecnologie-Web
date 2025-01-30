@@ -15,25 +15,25 @@
         </button>
         <div class="offcanvas offcanvas-start offcanvas-custom" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header pb-0">
-                <button type="button" style="background-color: white;" class="btn ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <i class="bi bi-x-lg ps-2" style="color:rgb(137, 85, 32); font-size: 35px"></i>
+                <button type="button" style="background-color: white;" class="btn ms-auto p-0 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="bi bi-x-lg" style="color:rgb(137, 85, 32); font-size: 35px"></i>
                 </button>
             </div>
             <div class="offcanvas-body">
                 <div>
-                    <form class="d-flex">
-                        <input class="form-control shadow-brown" type="text" placeholder="Search">
-                        <button class="btn" style="color: rgb(137, 85, 32);" type="button">
-                            <i class="bi bi-search-heart" style="font-size: 30px;"></i>
+                    <form class="d-flex mb-4">
+                        <input class="form-control shadow-brown" style="background-color:  rgb(245, 222, 179, 0.2); height: 40px;" type="text" placeholder="Search">
+                        <button class="btn pt-0 pb-0 ms-2" style="color: rgb(137, 85, 32);" type="button">
+                            <i class="bi bi-search-heart" style="font-size: 25px;"></i>
                         </button>
                     </form>
+                    <a href="../php/index.php">Home<br></a>  
                     <a href="../php/account.php">Account<br></a>
-                    <a href="#">Lista Desideri<br></a>
-                    <a href="#">Tutti i nostria peluche<br></a>
+                    <a href="#">Tutti i nostri peluche<br></a>
                     <a href="#">Animali<br></a>
-                    <a href="#">Fantasy<br></a>
+                    <a href="#">Cartoni<br></a>
                     <a href="#">Piante<br></a>
-                    <a href="../php/index.php">Home<br></a>      
+                    <a href="#">Cibo<br></a>    
                 </div>
             </div>
         </div>
@@ -55,9 +55,9 @@
     </main>
     <footer>
         <p> 
-            |Informazioni su Mondo Morbidoso|<br>
-            |Assistenza Clienti|<br>
-            |Informativa Privacy|<br>
+            | Informazioni su Mondo Morbidoso |<br>
+            | Assistenza Clienti |<br>
+            | Informativa Privacy |<br>
     </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
