@@ -15,25 +15,38 @@
         </button>
         <div class="offcanvas offcanvas-start offcanvas-custom" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
             <div class="offcanvas-header pb-0">
-                <button type="button" style="background-color: white;" class="btn ms-auto p-0 me-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" style="background-color: white;" class="btn ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg" style="color:rgb(137, 85, 32); font-size: 35px"></i>
                 </button>
             </div>
             <div class="offcanvas-body">
                 <div>
                     <form class="d-flex mb-4">
-                        <input class="form-control shadow-brown" style="background-color:  rgb(245, 222, 179, 0.2); height: 40px;" type="text" placeholder="Search">
-                        <button class="btn pt-0 pb-0 ms-2" style="color: rgb(137, 85, 32);" type="button">
+                        <input class="form-control shadow-brown ms-1" style="background-color:  rgb(245, 222, 179, 0.2); height: 40px;" type="text" placeholder="Search">
+                        <button class="btn pt-0 pb-0 ps-2 pe-2 ms-2" style="color: rgb(137, 85, 32);" type="button">
                             <i class="bi bi-search-heart" style="font-size: 25px;"></i>
                         </button>
                     </form>
-                    <a href="../php/index.php">Home<br></a>  
-                    <a href="../php/account.php">Account<br></a>
-                    <a href="#">Tutti i nostri peluche<br></a>
-                    <a href="#">Animali<br></a>
-                    <a href="#">Cartoni<br></a>
-                    <a href="#">Piante<br></a>
-                    <a href="#">Cibo<br></a>    
+                    <ul class="list-unstyled">
+                        <li><a href="../php/index.php">Home<br></a></li>
+                        <li><a href="../php/account.php">Account<br></a></li>
+                        <li><a href="#">I tuoi preferiti<br></a></li>
+                        <li><a href="#">Tutti i nostri peluche<br></a></li>
+                        <li class="d-flex flex-column justify-content-center">
+                            <button class="btn" type="button" style="background-color: white; color: rgb(137, 85, 32); font-size: 18px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Categorie
+                            </button>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body border-0 pt-0 pb-0" style="background-color: rgb(211, 211, 211, 0.2)">
+                                    <ul class="list-unstyled">
+                                        <?php foreach($templateParams["categorie"] as $categoria): ?>
+                                            <li><a href="#"><?php echo $categoria["Nome_categoria"]; ?></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> 
                 </div>
             </div>
         </div>

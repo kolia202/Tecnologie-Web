@@ -1,4 +1,4 @@
-<img src="../utilities/img/peluches-home.png" alt="vetrina"/>
+<img src="../utilities/img/Peluches-Home.png" alt="vetrina"/>
 <h1>Il tuo negozio di Peluche<br>preferito!</h1>
 <p>
     Benvenuto nel mondo dei peluches!<br>
