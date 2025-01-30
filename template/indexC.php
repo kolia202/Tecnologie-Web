@@ -31,33 +31,38 @@
 <p> Paypal / Mastercard / Visa</p>
 <div class="container my-5">
     <div class="box p-4 rounded shadow bg-white">
-    <div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../utilities/img/peluches-home.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../utilities/img/peluches-home.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../utilities/img/peluches-home.png" class="d-block w-100" alt="">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<p class="text-center mt-3">QUA CI VA IL NOME DEL PELUCHE</p>
-<p class="text-center mt-3">QUA CI VA IL PREZZO</p>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" 
+                            data-bs-slide-to="<?php echo $index; ?>" 
+                            class="<?php echo $index === 0 ? 'active' : ''; ?>"
+                            aria-label="Slide <?php echo $index + 1; ?>">
+                    </button>
+                <?php endforeach; ?>
+            </div>
+            <div class="carousel-inner">
+                <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
+                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <img src="<?php echo htmlspecialchars($prodotto['Immagine']); ?>" 
+                             class="d-block w-100 rounded" 
+                             alt="<?php echo htmlspecialchars($prodotto['Nome']); ?>">
+                        <p class="text-center mt-3 fw-bold"><?php echo htmlspecialchars($prodotto['Nome']); ?></p>
+                        <p class="text-center mt-1 text-danger fw-bold">
+                            <?php echo number_format($prodotto['Prezzo'], 2); ?> €
+                        </p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
     </div>
 </div>

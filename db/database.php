@@ -28,6 +28,13 @@ class DatabaseHelper {
         return $row["numero_recensioni"];
     }
 
-    
+    public function getProdotto() {
+        $stmt = $this->db->prepare("
+            SELECT Nome, Prezzo, Immagine FROM prodotto
+        ");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
 }    
 ?>
