@@ -17,6 +17,7 @@ if (isset($_POST["accedi"])) {
 }
 $templateParams["titolo"] = "Mondo Morbidoso - Account";
 $templateParams["nome"] = "accountC.php";
+$templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["error"] = isset($error) ? $error : null;
 require("../template/base.php");
 ?>

@@ -46,7 +46,7 @@
                         <li class="d-flex flex-column justify-content-center">
                             <button class="btn" type="button" style="background-color: white; color: rgb(137, 85, 32); font-size: 18px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Categorie</button>
                             <div class="collapse" id="collapseExample">
-                                <div class="card card-body border-0 pt-0 pb-0" style="background-color: rgb(211, 211, 211, 0.2)">
+                                <div class="card card-body border-0 pt-0 pb-0" style="background-color: rgb(245, 222, 179, 0.2);">
                                     <!-- ELENCO CATEGORIE -->
                                     <ul class="list-unstyled">
                                         <?php foreach($templateParams["categorie"] as $categoria): ?>
@@ -62,7 +62,9 @@
         </div>
 
         <!-- LOGO -->
-        <img src="../utilities/logo/logopeluche.png" alt="Logo"/>
+        <a href="../php/index.php">
+            <img src="../utilities/logo/logopeluche.png" alt="Logo"/>
+        </a>
 
         <!--<button class="btn d-none d-md-block ms-30%" type="button">
             <i class="bi bi-heart" style="color: rgb(137, 85, 32); font-size: 40px"></i>
