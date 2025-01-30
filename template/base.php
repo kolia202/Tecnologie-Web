@@ -41,7 +41,7 @@
                         <li><a href="../php/index.php">Home<br></a></li>
                         <li><a href="../php/account.php">Account<br></a></li>
                         <li><a href="#">I tuoi preferiti<br></a></li>
-                        <li><a href="#">Tutti i nostri peluche<br></a></li>
+                        <li><a href="../php/prodotti.php">Tutti i nostri peluche<br></a></li>
                         <!-- MENU A SCOMPARSA -->
                         <li class="d-flex flex-column justify-content-center">
                             <button class="btn" type="button" style="background-color: white; color: rgb(137, 85, 32); font-size: 18px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Categorie</button>
