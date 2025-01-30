@@ -44,13 +44,14 @@
             <div class="carousel-inner">
                 <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <img src="<?php echo htmlspecialchars($prodotto['Immagine']); ?>" 
-                             class="d-block w-100 rounded" 
+                        <img src="<?php echo htmlspecialchars('../utilities/img/' . $prodotto['Immagine']); ?>" 
+                        class="d-block w-100 rounded"
                              alt="<?php echo htmlspecialchars($prodotto['Nome']); ?>">
                         <p class="text-center mt-3 fw-bold"><?php echo htmlspecialchars($prodotto['Nome']); ?></p>
                         <p class="text-center mt-1 text-danger fw-bold">
                             <?php echo number_format($prodotto['Prezzo'], 2); ?> €
                         </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     </div>
                 <?php endforeach; ?>
             </div>
