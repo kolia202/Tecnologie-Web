@@ -17,5 +17,17 @@ class DatabaseHelper {
         $row = $result->fetch_assoc();
         return $row["media_voti"] ? number_format($row["media_voti"], 1) : "0.0";
     }
+
+    public function getNumeroRecensioni() {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) AS numero_recensioni FROM recensione
+        ");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["numero_recensioni"];
+    }
+
+    
 }    
 ?>
