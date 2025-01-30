@@ -70,6 +70,19 @@ main {
     margin-bottom: 5%;
 }
 
+.carousel-item img {
+    width: 250px;  
+    height: 200px; 
+    object-fit: cover;
+    margin: 0 auto; 
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgb(245, 222, 179);
+    border-radius: 50%; 
+    padding: 10px; 
+}
+
 main > img {
     width: 85%; 
     height: auto; 

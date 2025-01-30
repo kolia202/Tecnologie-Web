@@ -30,7 +30,8 @@
 <h1>Pagamento 100% sicuro</h1>
 <p> Paypal / Mastercard / Visa</p>
 <div class="container my-5">
-    <div class="box p-4 rounded shadow bg-white">
+<div class="box p-4 rounded shadow bg-white" 
+style="border: 4px solid rgb(245, 222, 179);">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
@@ -45,7 +46,7 @@
                 <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                         <img src="<?php echo htmlspecialchars('../utilities/img/' . $prodotto['Immagine']); ?>" 
-                        class="d-block w-100 rounded"
+                        class="d-block w-100 rounded" 
                              alt="<?php echo htmlspecialchars($prodotto['Nome']); ?>">
                         <p class="text-center mt-3 fw-bold"><?php echo htmlspecialchars($prodotto['Nome']); ?></p>
                         <p class="text-center mt-1 text-danger fw-bold">
@@ -63,7 +64,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-
         </div>
     </div>
 </div>
