@@ -28,13 +28,23 @@ class DatabaseHelper {
         return $row["numero_recensioni"];
     }
 
-    public function getProdotto() {
-        $stmt = $this->db->prepare("
-            SELECT Nome, Prezzo, Immagine FROM prodotto
-        ");
+    public function getNomiFotoPrezziProdottiCasuali() {
+        $n = 3;
+        $stmt = $this->db->prepare("SELECT Nome, Prezzo, Immagine FROM prodotto ORDER BY RAND() LIMIT ?");
+        $stmt->bind_param("i", $n);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC); 
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getTestoRecensioniCasuali() {
+        $s=3;
+        $stmt = $this->db->prepare("SELECT Commento FROM recensione ORDER BY RAND() LIMIT ?");
+        $stmt->bind_param("i", $s);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }    
 ?>

@@ -66,3 +66,57 @@
         </div>
     </div>
 </div>
+<div class="text-center">
+    <a href="#">
+        <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Vedi tutti i prodotti</button>
+    </a>
+</div>
+<h1>Le nostre collezioni</h1>
+<p>Il negozio Mondo Morbido, specializzato nella<br>
+vedita di peluche, offre una vasta<br>
+selezione di prodotti per tutta la famiglia.<br>
+Grazie all'enorme varietà di articoli<br>
+per bambini e adulti, è diventato un vero e<br>
+prorpio punto di riferimento per gli<br>
+appassionati del genere.</p>
+<img src="../utilities/img/peluches-home.png" alt="vetrina"  style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+<h1>Perchè acquistare peluche<br>
+da Mondo Morbidoso?</h1>
+<p>Il negozio online Mondo Morbidoso rappresenta<br>
+una solzuzione conveniente per i genitori in<br>
+cerca di peluche per i loro bambini.</p>
+<div class="container my-5">
+    <div class="box p-4 rounded shadow bg-white">
+        <h1>Recensione dei clienti</h1>
+        <p>Le testimonianze di chi ha scelto di<br>
+        affidarsi a noi per l'acquisto dei peluche!</p>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <?php if (!empty($templateParams["recensioni"])): ?>
+                    <?php foreach ($templateParams["recensioni"] as $index => $recensione): ?>
+                        <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                            <div class="d-flex justify-content-center align-items-center" style="height: 300px; background-color: rgba(245, 222, 179, 0.3);">
+                                <p><?php echo htmlspecialchars($recensione['Commento']); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 300px; background-color: rgba(245, 222, 179, 0.3);">
+                            <h2>Nessuna recensione disponibile</h2>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> 
+    </div>
+</div>
