@@ -75,7 +75,6 @@ create table ORDINE (
 create table PRODOTTO (
      Id_prodotto INT not null auto_increment,
      Nome VARCHAR(100) not null,
-     Nome_peluche VARCHAR(100) not null,
      Descrizione TEXT not null,
      Immagine VARCHAR(255) not null,
      Grandezza VARCHAR(50) not null,
@@ -87,8 +86,8 @@ create table PRODOTTO (
      foreign key (Nome_categoria) references CATEGORIA (Nome_categoria));
 
 create table carrello (
-     Id_prodotto INT not null,
      E_mail VARCHAR(100) not null,
+     Id_prodotto INT not null,
      Quantita INT not null,
      primary key (E_mail, Id_prodotto),
      foreign key (E_mail) references UTENTE (E_mail),
