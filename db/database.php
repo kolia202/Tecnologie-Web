@@ -99,5 +99,17 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    
+    public function getUserDetails($email) {
+        $stmt = $this->db->prepare("
+            SELECT E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Punti 
+            FROM UTENTE 
+            WHERE E_mail = ?
+        ");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 }    
 ?>
