@@ -14,3 +14,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Resettare la password</button>
 </form>
+<p><a href="../php/account.php">Inietro</a></p>

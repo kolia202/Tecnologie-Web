@@ -17,3 +17,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Resetta la password</button>
 </form>
+<p><a href="../php/controlloEmail.php">Inietro</a></p>
