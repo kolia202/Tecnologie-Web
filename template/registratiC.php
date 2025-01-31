@@ -43,5 +43,6 @@ if (isset($_SESSION["error"])) {
             <input type="password" class="form-control" id="password_confirm" name="password_confirm" required>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Registrati</button>
+    <button type="submit" class="btn btn-primary mt-3">Conferma</button>
 </form>
+<p><a href="../php/account.php">Inietro</a></p>

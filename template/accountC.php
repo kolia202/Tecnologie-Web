@@ -30,6 +30,7 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <button type="submit" name="accedi">Accedi</button>
+        <a href="registrati.php" class="btn btn-secondary">Registrati</a>
     </form>
     <p><a href="../php/controlloEmail.php">Password dimenticata?</a></p>
     <p><a href="../php/index.php">Indietro</a></p>
