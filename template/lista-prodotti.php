@@ -6,4 +6,9 @@
     </a>
     <p><?php echo $prodotto["Nome_categoria"]; ?></p>
     <p><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
+    <div class="text-center">
+        <a href="../php/aggiungi-carrello.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+            <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Aggiungi al carrello</button>
+        </a>
+    </div>
 <?php endforeach; ?>

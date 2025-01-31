@@ -132,7 +132,7 @@ class DatabaseHelper {
         return $row["totale"];
     }
 
-    public function addProductToCart($email, $idprodotto, $quantita) {
+    public function addProductToCart($email, $idprodotto) {
         $query = "SELECT Quantita FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $email, $idprodotto);
@@ -141,13 +141,14 @@ class DatabaseHelper {
         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $newQuantity = $row['Quantita'] + $quantita;
+            $newQuantity = $row['Quantita'] + 1;
     
             $query = "UPDATE carrello SET Quantita = ? WHERE E_mail = ? AND Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('isi', $newQuantity, $email, $idprodotto);
             return $stmt->execute();
         } else {
+            $quantita = 1;
             $query = "INSERT INTO carrello (E_mail, Id_prodotto, Quantita) VALUES (?, ?, ?)";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('sii', $email, $idprodotto, $quantita);
