@@ -82,8 +82,13 @@ class DatabaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
-        
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function updatePassword($email, $newPassword) {
+        $stmt = $this->db->prepare("UPDATE UTENTE SET Password = ? WHERE E_mail = ?");
+        $stmt->bind_param("ss", $newPassword, $email);
+        return $stmt->execute();
     }
 }    
 ?>
