@@ -1,5 +1,6 @@
 <?php 
 require_once("bootstrap.php");
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST["nome"]);
     $cognome = trim($_POST["cognome"]);
@@ -8,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = $_POST["password"];
     $password_confirm = $_POST["password_confirm"];
-    
     if ($password !== $password_confirm) {
         $_SESSION["error"] = "Le password non corrispondono!";
         header("Location: registrati.php");

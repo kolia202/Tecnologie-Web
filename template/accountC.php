@@ -3,9 +3,9 @@
 <?php if (isset($_SESSION["utente"])): ?>
     <h2 style="text-align: left; margin-left: 2%;">Benvenuto, <?php echo $_SESSION["utente"]; ?>!</h2>
     <p>Sei attualmente connesso.</p>
-    <form action="logout.php" method="POST">
-        <button type="submit" class="btn btn-danger">Logout</button>
-    </form>
+    <form method="POST" action="account.php">
+    <button type="submit" name="logout">Logout</button>
+</form>
 <?php else: ?>
     <h2 style="text-align: left; margin-left: 2%;">Accedi</h2>
     <form action="account.php" method="POST">
@@ -20,4 +20,5 @@
         <button type="submit" class="btn btn-primary" name="accedi">Accedi</button>
         <a href="registrati.php" class="btn btn-secondary">Registrati</a>
     </form>
+    <a href="../php/controlloEmail.php">Password dimenticata?</a>
 <?php endif; ?>
