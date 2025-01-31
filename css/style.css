@@ -83,7 +83,7 @@ main {
     padding: 10px; 
 }
 
-main > img {
+main img {
     width: 85%; 
     height: auto; 
     display:block; 

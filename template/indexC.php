@@ -35,26 +35,14 @@
 <div class="box p-4 rounded shadow bg-white" 
 style="border: 4px solid rgb(245, 222, 179);">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" 
-                            data-bs-slide-to="<?php echo $index; ?>" 
-                            class="<?php echo $index === 0 ? 'active' : ''; ?>"
-                            aria-label="Slide <?php echo $index + 1; ?>">
-                    </button>
-                <?php endforeach; ?>
-            </div>
             <div class="carousel-inner">
                 <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <img src="<?php echo htmlspecialchars('../utilities/img/' . $prodotto['Immagine']); ?>" 
-                        class="d-block w-100 rounded" 
-                             alt="<?php echo htmlspecialchars($prodotto['Nome']); ?>">
-                        <p class="text-center mt-3 fw-bold"><?php echo htmlspecialchars($prodotto['Nome']); ?></p>
-                        <p class="text-center mt-1 text-danger fw-bold">
-                            <?php echo number_format($prodotto['Prezzo'], 2); ?> €
-                        </p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                            <img src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" class="d-block w-100 rounded" alt="<?php echo $prodotto['Nome']; ?>">
+                            <p class="text-center mt-3 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
+                        </a>
+                        <p class="text-center mt-1 text-danger fw-bold"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
                     </div>
                 <?php endforeach; ?>
             </div>

@@ -30,7 +30,7 @@ class DatabaseHelper {
 
     public function getNomiFotoPrezziProdottiCasuali() {
         $n = 3;
-        $stmt = $this->db->prepare("SELECT Nome, Prezzo, Immagine FROM prodotto ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT Id_prodotto, Nome, Prezzo, Immagine FROM prodotto ORDER BY RAND() LIMIT ?");
         $stmt->bind_param("i", $n);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -78,7 +78,7 @@ class DatabaseHelper {
     }
 
     public function getProducts() {
-        $query = "SELECT Nome, Immagine, Prezzo, Nome_categoria FROM prodotto";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -89,6 +89,15 @@ class DatabaseHelper {
         $stmt = $this->db->prepare("UPDATE UTENTE SET Password = ? WHERE E_mail = ?");
         $stmt->bind_param("ss", $newPassword, $email);
         return $stmt->execute();
+    }
+
+    public function getProductById($id) {
+        $query = "SELECT Id_prodotto, Nome, Descrizione, Immagine, Grandezza, Prezzo, Prezzo_punti, Nome_categoria FROM prodotto WHERE Id_prodotto=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }    
 ?>
