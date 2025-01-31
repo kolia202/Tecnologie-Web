@@ -1,4 +1,5 @@
 <h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
+
 <?php if (isset($_SESSION["utente"])): ?>
     <h2 style="text-align: left; margin-left: 2%;">Benvenuto, <?php echo $_SESSION["utente"]; ?>!</h2>
     <p>Sei attualmente connesso.</p>
