@@ -21,12 +21,12 @@ header {
     padding-bottom: 2px;
 }
 
-header > a {
+header > a > img {
     height: 100%;
     width: auto;
 }
 
-header > a > img {
+header > a {
     height: 100%;
 }
 
@@ -139,7 +139,7 @@ footer > p {
         margin-left: 2.5%;
     }
 
-    header button:last-child {
+    header a:last-child {
         margin-right: 2.5%;
     }
 }

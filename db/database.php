@@ -1,6 +1,7 @@
 <?php
 class DatabaseHelper {
     private $db;
+
     public function __construct($servername, $username, $password, $dbname, $port) {
         $this->db = new mysqli($servername, $username, $password, $dbname, $port);
         if ($this->db->connect_error) {
@@ -111,5 +112,48 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
+    public function getCartProducts($email) {
+        $query = "SELECT c.E_mail, c.Id_prodotto, c.Quantita, p.Nome, p.Immagine, p.Prezzo, p.Prezzo_punti FROM carrello c, prodotto p WHERE c.E_mail=? AND c.Id_prodotto = p.Id_prodotto";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getTotalCartPrice($email) {
+        $query = "SELECT SUM(Prezzo * Quantita) AS totale FROM carrello c JOIN prodotto p ON c.Id_prodotto = p.Id_prodotto WHERE c.E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["totale"];
+    }
+
+    public function addProductToCart($email, $idprodotto, $quantita) {
+        $query = "SELECT Quantita FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $idprodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $newQuantity = $row['Quantita'] + $quantita;
+    
+            $query = "UPDATE carrello SET Quantita = ? WHERE E_mail = ? AND Id_prodotto = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('isi', $newQuantity, $email, $idprodotto);
+            return $stmt->execute();
+        } else {
+            $query = "INSERT INTO carrello (E_mail, Id_prodotto, Quantita) VALUES (?, ?, ?)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('sii', $email, $idprodotto, $quantita);
+            return $stmt->execute();
+        }
+    }
+    
 }    
 ?>

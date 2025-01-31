@@ -32,5 +32,5 @@
         <button type="submit" name="accedi">Accedi</button>
     </form>
     <p><a href="../php/controlloEmail.php">Password dimenticata?</a></p>
-    <p><a href="../php/index.php">Inietro</a></p>
+    <p><a href="../php/index.php">Indietro</a></p>
 <?php endif; ?>

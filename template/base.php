@@ -74,9 +74,9 @@
         </button>-->
 
         <!-- BOTTONE CARRELLO -->
-        <button class="btn" type="button">
-            <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>            
-        </button>
+        <a href="../php/carrello.php" class="btn" style="height: 70%;">
+            <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>  
+        </a>
     </header>
 
     <!-- MAIN -->
