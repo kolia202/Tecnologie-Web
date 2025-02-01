@@ -34,6 +34,10 @@ div.offcanvas.offcanvas-start.offcanvas-custom {
     width: 75%;
 }
 
+div.offcanvas.offcanvas-end.offcanvas-custom {
+    width: 75%;
+}
+
 .form-control {
     border-color: rgb(245, 222, 179, 0.5);
 }
@@ -131,7 +135,12 @@ footer > p {
 }
 
 @media screen and (min-width: 768px) {
+    
     div.offcanvas.offcanvas-start.offcanvas-custom {
+        width: 30%;
+    }
+
+    div.offcanvas.offcanvas-end.offcanvas-custom {
         width: 30%;
     }
 
