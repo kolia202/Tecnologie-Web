@@ -1,4 +1,8 @@
-<h1>Tutti i peluches</h1>
+<?php if ($category): ?>
+    <h1><?php echo $category; ?></h1>
+<?php else: ?>
+    <h1>Tutti i peluches</h1>
+<?php endif; ?>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
     <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
         <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt=""/>

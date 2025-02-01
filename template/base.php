@@ -50,7 +50,7 @@
                                     <!-- ELENCO CATEGORIE -->
                                     <ul class="list-unstyled">
                                         <?php foreach($templateParams["categorie"] as $categoria): ?>
-                                            <li><a href="../php/prodotti.php?categoria=<?php echo urlencode($categoria["Nome_categoria"]); ?>"><?php echo $categoria["Nome_categoria"]; ?></a></li>
+                                            <li><a href="../php/prodotti.php?categoria=<?php echo $categoria["Nome_categoria"]; ?>"><?php echo $categoria["Nome_categoria"]; ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
