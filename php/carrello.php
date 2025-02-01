@@ -6,7 +6,7 @@ if(!isUserLoggedIn()) {
     header("Location: account.php");
     exit;
 }
-
+$templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Carrello";
 $templateParams["nome"] = "prodotti-carrello.php";
 $templateParams["prodotti"] = $dbhost->getCartProducts($_SESSION["utente"]);

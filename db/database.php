@@ -169,7 +169,13 @@ class DatabaseHelper {
         $stmt->bind_param('si',$email, $idprodotto);
         return $stmt->execute();
     }
-    
-    
+    public function getProductsByCategory($categoryName) {
+        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $categoryName);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }    
 ?>
