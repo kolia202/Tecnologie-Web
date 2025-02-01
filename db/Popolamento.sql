@@ -92,14 +92,14 @@ INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Pr
 
 -- Popolamento della tabella carrello
 INSERT INTO carrello (E_mail, Id_prodotto, Quantita) VALUES
-('giuseppe.rossi@peluche.com', 1, 2),
+('giuseppe.rossi@peluche.com', 1, 1),
 ('giuseppe.rossi@peluche.com', 6, 1),
-('federico.ricci@peluche.com', 3, 2),
+('federico.ricci@peluche.com', 3, 1),
 ('federico.ricci@peluche.com', 8, 1),
 ('elena.ferrari@peluche.com', 5, 1),
 ('laura.verdi@peluche.com', 4, 1),
-('laura.verdi@peluche.com', 13, 3),
-('laura.verdi@peluche.com', 17, 2);
+('laura.verdi@peluche.com', 13, 1),
+('laura.verdi@peluche.com', 17, 1);
 
 -- Popolamento della tabella preferito
 INSERT INTO preferito (Id_prodotto, E_mail) VALUES

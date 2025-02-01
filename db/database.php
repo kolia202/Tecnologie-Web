@@ -155,6 +155,14 @@ class DatabaseHelper {
             return $stmt->execute();
         }
     }
+
+    public function updateCart($email, $idprodotto, $quantita) {
+        $query = "UPDATE carrello SET Quantita = ? WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isi', $quantita, $email, $idprodotto);
+        $stmt->execute();
+    }
+    
     
 }    
 ?>
