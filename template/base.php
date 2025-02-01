@@ -74,9 +74,22 @@
         </button>-->
 
         <!-- BOTTONE CARRELLO -->
-        <a href="../php/carrello.php" class="btn" style="height: 70%;">
-            <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>  
-        </a>
+         <!-- Pulsante con icona e badge -->
+          <button class="btn position-relative" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+            <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">
+                0
+            </span>
+        </button>
+        <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carello</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <h1>Carrello</h1>
+            </div>
+        </div>
     </header>
 
     <!-- MAIN -->
