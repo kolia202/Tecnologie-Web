@@ -7,10 +7,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 if (isset($data["id"]) && isset($data["quantity"])) {
     $idprodotto = $data["id"];
     $quantita = $data["quantity"];
-
     $dbhost->updateCart($_SESSION["utente"], $idprodotto, $quantita);
+    $cart = $dbhost->getCartProducts($_SESSION["utente"]);
 }
 
-echo json_encode(["status" => "success", "message" => "Carrello aggiornato"]);
+echo json_encode(["status" => "success", "message" => "Carrello aggiornato", "cart" => $cart]);
 
 ?>

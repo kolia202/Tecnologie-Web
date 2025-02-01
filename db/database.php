@@ -79,7 +79,7 @@ class DatabaseHelper {
     }
 
     public function getProducts() {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto ORDER BY RAND()";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -132,7 +132,7 @@ class DatabaseHelper {
         return $row["totale"];
     }
 
-    public function addProductToCart($email, $idprodotto) {
+    public function updateCart($email, $idprodotto, $quantita) {
         $query = "SELECT Quantita FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $email, $idprodotto);
@@ -141,7 +141,7 @@ class DatabaseHelper {
         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $newQuantity = $row['Quantita'] + 1;
+            $newQuantity = $row['Quantita'] + $quantita;
     
             $query = "UPDATE carrello SET Quantita = ? WHERE E_mail = ? AND Id_prodotto = ?";
             $stmt = $this->db->prepare($query);
@@ -156,14 +156,7 @@ class DatabaseHelper {
         }
     }
 
-    public function updateCart($email, $idprodotto, $quantita) {
-        $query = "UPDATE carrello SET Quantita = ? WHERE E_mail = ? AND Id_prodotto = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('isi', $quantita, $email, $idprodotto);
-        $stmt->execute();
-    }
-
-    public function deleteProductFromCart($email, $idprodotto) {
+    public function removeProductFromCart($email, $idprodotto) {
         $query = "DELETE FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si',$email, $idprodotto);

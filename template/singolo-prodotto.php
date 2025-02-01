@@ -18,9 +18,7 @@
             <p>Prezzo: <?php echo $prodotto["Prezzo"]; ?></p>
             <p>Taglia: <?php echo $prodotto["Grandezza"]; ?></p>
             <div class="text-center">
-                <a href="../php/gestisci-carrello.php?action=1&id=<?php echo $prodotto["Id_prodotto"]; ?>">
-                    <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Aggiungi al carrello</button>
-                </a>
+                <button type="button" class="btn btn-sm fw-bold add-to-cart" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al carrello</button>
             </div>
             <a href="#">Aggiungi ai Preferiti</a>
             <h2>Descrizione</h2>

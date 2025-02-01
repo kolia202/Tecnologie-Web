@@ -12,5 +12,10 @@
     }
     $templateParams["prodotto"] = $dbhost->getProductById($idprodotto);
 
+    if(isUserLoggedIn()) {
+        $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
+        $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+    }
+
     require '../template/base.php';
 ?>

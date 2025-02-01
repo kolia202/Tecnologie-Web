@@ -12,12 +12,12 @@
     <!-- HEADER -->
     <header>
         <!-- BOTTONE MENU -->
-        <button class="btn" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <button class="btn" style="background-color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
             <i class="bi bi-list" style="color: rgb(137, 85, 32); font-size: 50px;"></i>
         </button>
 
         <!-- MENU LATERALE -->
-        <div class="offcanvas offcanvas-start offcanvas-custom" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0">
                 <!-- BOTTONE X -->
@@ -74,20 +74,32 @@
         </button>-->
 
         <!-- BOTTONE CARRELLO -->
-         <!-- Pulsante con icona e badge -->
-          <button class="btn position-relative" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
-            <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">
-                0
-            </span>
-        </button>
+         <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+         <?php if($currentPage === "carrello.php"): ?>
+            <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1" style="height: 70%;">
+                <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">0</span>
+            </a>
+        <?php else: ?>
+            <button class="btn position-relative cart pe-3 ps-1" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">0</span>
+            </button>
+        <?php endif; ?>
+
+        <!-- MENU LATERALE -->
         <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carello</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <!-- HEADER MENU -->
+            <div class="offcanvas-header pb-0">
+                <!-- BOTTONE X -->
+                <button type="button" style="background-color: white;" class="btn p-0" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="bi bi-x-lg" style="color:rgb(137, 85, 32); font-size: 35px"></i>
+                </button>
+                <h5 class="text-center w-100">Carrello</h5>
             </div>
-            <div class="offcanvas-body">
-            <h1>Carrello</h1>
+            <!-- BODY MENU -->
+            <div class="offcanvas-body" id="cart-menu">
+                <?php include 'menu-carrello.php'; ?>
             </div>
         </div>
     </header>

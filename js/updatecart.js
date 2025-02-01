@@ -1,67 +1,143 @@
-document.addEventListener("DOMContentLoaded", updateCart);
+const IMG_DIR = "../utilities/img/";
 
-function updateCart() {
-    const increaseButtons = document.querySelectorAll(".increase");
-    const decreaseButtons = document.querySelectorAll(".decrease");
+document.addEventListener("DOMContentLoaded", handleCart);
 
-    increaseButtons.forEach(b => {
+function handleCart() {
+    
+    document.querySelectorAll(".increase").forEach(b => {
         b.addEventListener("click", function() {
-            updateQuantity(this, 1);
+            updateCart(b, 1, true);
         });
     });
 
-    decreaseButtons.forEach(b => {
+    document.querySelectorAll(".decrease").forEach(b => {
         b.addEventListener("click", function() {
-            updateQuantity(this, -1);
+            updateCart(b, -1, true);
         });
     });
 
-    function updateQuantity(button, update) {
-        let currentQuantity = button.parentElement.querySelector(".quantity");
-        let productPrice = button.closest('section').querySelector(".product-price");
-        let productPoints = button.closest('section').querySelector(".product-points");
+    document.querySelectorAll(".add-to-cart").forEach(b => {
+        b.addEventListener("click", function() {
+            updateCart(b, 1, false);
+        });
+    });
 
-        let quantity = parseInt(currentQuantity.innerText);
-        let newQuantity = quantity + update;
-        if (newQuantity < 1) {
-            newQuantity = 1;
-            update = 0;
-        }
-        currentQuantity.innerText = newQuantity;
+}
 
-        let price = parseFloat(productPrice.innerText.replace("Prezzo:", "").replace(",", ".").replace("€", "").trim());
-        let newProductPrice = price / quantity * newQuantity;
-        productPrice.innerText = "Prezzo: " + newProductPrice.toFixed(2).replace(".", ",") + "€";
+function updateCart(button, update, isCart) {
+    
+    const idprodotto = button.getAttribute("id");
 
-        let points = parseInt(productPoints.innerText.replace("Punti:", "").trim());
-        let newProductPoints = points / quantity * newQuantity;
-        productPoints.innerText = "Punti: " + newProductPoints;
-
-        if (update != 0) {
-            updateTotal(price / quantity * update);
-        }
-
-        const idprodotto = button.getAttribute("id");
-
-        fetch("../php/aggiorna-carrello.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id: idprodotto,
-                quantity: newQuantity
-            })
+    fetch("../php/aggiorna-carrello.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            id: idprodotto,
+            quantity: update,
         })
-
-        function updateTotal(newPrice) {
-            const totalPrice = document.querySelector(".total-price");
-            let total = parseFloat(totalPrice.innerText.replace("Totale Carrello:", "").replace(",", ".").replace("€", "").trim());
-            let newTotal = total + newPrice;
-            if (newTotal < 0) {
-                newTotal = total;
+    })
+    .then(response => response.json())  // Una volta ricevuta la risposta
+    .then(data => {
+        if(data.status == "success") {
+            if (isCart) {
+                updateQuantity(button, update);
             }
-            totalPrice.innerText = "Totale Carrello: " + newTotal.toFixed(2).replace(".", ",") + "€";
+            if (!isCart) {
+                const cartOffcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasRight"));
+                cartOffcanvas.show();
+                updateMenu(data.cart);
+            }
         }
+    })
+    .catch(error => {
+        console.error("Errore nell'aggiornamento del carrello:", error);
+    });
+    
+}
+
+
+function updateQuantity(button, update) {
+    let currentQuantity = button.parentElement.querySelector(".quantity");
+    let productPrice = button.closest('section').querySelector(".product-price");
+    let productPoints = button.closest('section').querySelector(".product-points");
+
+    let quantity = parseInt(currentQuantity.innerText);
+    let newQuantity = quantity + update;
+    if (newQuantity < 1) {
+        newQuantity = 1;
+        update = 0;
     }
+    currentQuantity.innerText = newQuantity;
+
+    let price = parseFloat(productPrice.innerText.replace("Prezzo:", "").replace(",", ".").replace("€", "").trim());
+    let newProductPrice = price / quantity * newQuantity;
+    productPrice.innerText = "Prezzo: " + newProductPrice.toFixed(2).replace(".", ",") + "€";
+
+    let points = parseInt(productPoints.innerText.replace("Punti:", "").trim());
+    let newProductPoints = points / quantity * newQuantity;
+    productPoints.innerText = "Punti: " + newProductPoints;
+
+    if (update != 0) {
+        updateTotal(price / quantity * update);
+    }
+}
+
+function updateTotal(newPrice) {
+    const totalPrice = document.querySelector(".total-price");
+    let total = parseFloat(totalPrice.innerText.replace("Totale Carrello:", "").replace(",", ".").replace("€", "").trim());
+    let newTotal = total + newPrice;
+    if (newTotal < 0) {
+        newTotal = total;
+    }
+    totalPrice.innerText = "Totale Carrello: " + newTotal.toFixed(2).replace(".", ",") + "€";
+}
+
+function updateMenu(cart) {
+    const cartMenu = document.querySelector("#cart-menu");
+    let total = 0;
+
+    cartMenu.innerHTML = "";
+
+    if(cart.length == 0) {
+        const emptyCart = document.createElement('article');
+        emptyCart.innerHTML = `
+            <p>Il tuo carrello è vuoto</p>
+            <div class="text-center">
+            <a href="../php/prodotti.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Torna al negozio</a>
+            </div>
+        `;
+        cartMenu.appendChild(emptyCart);
+    } else {
+        cart.forEach(i => {
+            total = total + (i.Prezzo * i.Quantita);
+            const productSection = document.createElement("section");
+            productSection.classList.add("d-flex", "align-items-center", "border-bottom");
+            productSection.innerHTML = `
+                <a href="../php/dettaglioProdotto.php?id=${i.Id_prodotto}" style="width: 50%;">
+                    <img src="${IMG_DIR + i.Immagine}" class="img-fluid" alt=""/>
+                </a>
+                <div class="d-flex flex-column">
+                   <a href="../php/dettaglioProdotto.php?id=${i.Id_prodotto}">
+                        <p>${i.Nome}</p>
+                    </a>
+                    <p class="text-muted">${i.Quantita + 'x' + parseFloat(i.Prezzo).toFixed(2).replace(".", ",")}€</p>
+                </div>     
+            `; 
+            cartMenu.appendChild(productSection);
+        });
+
+        const totalPrice = document.createElement("h2");
+        totalPrice.classList.add("total-price");
+        totalPrice.innerHTML = `Totale Carrello: ${parseFloat(total).toFixed(2).replace(".", ",")}€`;
+        cartMenu.appendChild(totalPrice);
+
+        const button = document.createElement('div');
+        button.classList.add("text-center");
+        button.innerHTML = `
+            <a href="../php/carrello.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Visualizza carrello</a>
+        `;
+        cartMenu.appendChild(button);
+
+    }
+
 }

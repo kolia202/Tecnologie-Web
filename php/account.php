@@ -25,7 +25,7 @@ if (isset($_POST["accedi"])) {
             echo "Errore: Nessun dato trovato per l'utente.";
             exit;
         }
-        header("location: account.php");
+        header("location: index.php");
         exit;
     }
 }
@@ -33,5 +33,11 @@ $templateParams["titolo"] = "Mondo Morbidoso - Account";
 $templateParams["nome"] = "accountC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["error"] = isset($error) ? $error : null;
+
+if(isUserLoggedIn()) {
+    $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
+    $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+}
+
 require("../template/base.php");
 ?>

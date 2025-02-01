@@ -9,7 +9,7 @@ if(!isUserLoggedIn()) {
 
 $templateParams["titolo"] = "Mondo Morbidoso - Carrello";
 $templateParams["nome"] = "prodotti-carrello.php";
-$templateParams["prodotti"] = $dbhost->getCartProducts($_SESSION["utente"]);
+$templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
 $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
 
 require_once '../template/base.php';
