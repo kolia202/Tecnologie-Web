@@ -162,6 +162,13 @@ class DatabaseHelper {
         $stmt->bind_param('isi', $quantita, $email, $idprodotto);
         $stmt->execute();
     }
+
+    public function deleteProductFromCart($email, $idprodotto) {
+        $query = "DELETE FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si',$email, $idprodotto);
+        return $stmt->execute();
+    }
     
     
 }    

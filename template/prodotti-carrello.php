@@ -17,6 +17,11 @@
                     <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt=""/>
                     <h2>Prodotto: <?php echo $prodotto["Nome"]; ?></h2>
                 </a>
+                <a href="../php/gestisci-carrello.php?action=2&id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                    <button type="button" class="btn">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
+                </a>
                 <div class="d-flex">
                     <p>Quantità : </p>
                     <button type="button" class="btn decrease" id="<?php echo $prodotto["Id_prodotto"]; ?>">
