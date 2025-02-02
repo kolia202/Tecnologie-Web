@@ -161,7 +161,7 @@ class DatabaseHelper {
     }
 
     public function getProductsByCategory($categoryName) {
-        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ?";
+        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? ORDER BY RAND()";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param("s", $categoryName);
         $stmt->execute();
@@ -218,7 +218,6 @@ class DatabaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
-    
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
@@ -227,7 +226,6 @@ class DatabaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
-    
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
@@ -278,6 +276,16 @@ class DatabaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('isi', $punti, $email, $punti);
         return $stmt->execute();
+    }
+
+    public function getSearchedProducts($search) {
+        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto WHERE Nome LIKE ?";
+        $stmt = $this->db->prepare($query);
+        $search = "%" . $search . "%";
+        $stmt->bind_param('s', $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 }

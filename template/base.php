@@ -29,12 +29,12 @@
             <div class="offcanvas-body">
                 <div>
                     <!-- BARRA DI RICERCA -->
-                    <form class="d-flex mb-4">
-                        <input class="form-control shadow-brown ms-1" style="background-color:  rgb(245, 222, 179, 0.2); height: 40px;" type="text" placeholder="Search">
+                    <form class="d-flex mb-4" method="GET" action="prodotti.php">
+                        <input id="search" name="search" class="form-control shadow-brown ms-1" style="background-color:  rgb(245, 222, 179, 0.2); height: 40px;" type="text" placeholder="Cerca">
                         <!-- BOTTONE CERCA -->
-                        <button class="btn pt-0 pb-0 ps-2 pe-2 ms-2" style="color: rgb(137, 85, 32);" type="button">
+                        <label for="search" class="btn pt-0 pb-0 ps-2 pe-2 ms-2" style="color: rgb(137, 85, 32);" type="button">
                             <i class="bi bi-search-heart" style="font-size: 25px;"></i>
-                        </button>
+                        </label>
                     </form>
                     <!-- LINK NEL MENU -->
                     <ul class="list-unstyled">

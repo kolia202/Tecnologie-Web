@@ -9,6 +9,8 @@ $numeroprodotti = 0;
 $category = isset($_GET["categoria"]) ? $_GET["categoria"] : null;
 if ($category) {
     $templateParams["prodotti"] = $dbhost->getProductsByCategory($category);
+} else if(isset($_GET["search"])) {
+    $templateParams["prodotti"] = $dbhost->getSearchedProducts(trim($_GET["search"]));
 } else {
     $templateParams["prodotti"] = $dbhost->getProducts();
 }

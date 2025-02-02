@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 session_start();
 if (!isUserLoggedIn()) {
-    header("Location: login.php?error=non_loggato");
+    header("Location: account.php");
     exit();
 }
 $templateParams["titolo"] = "Mondo Morbidoso - Preferiti";

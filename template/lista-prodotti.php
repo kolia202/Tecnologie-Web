@@ -1,5 +1,7 @@
 <?php if ($category): ?>
     <h1><?php echo $category; ?></h1>
+<?php elseif(isset($_GET["search"])): ?>
+    <h1>Risultati per '<?php echo $_GET["search"] ?>'</h1>
 <?php else: ?>
     <h1>Tutti i peluches</h1>
 <?php endif; ?>
