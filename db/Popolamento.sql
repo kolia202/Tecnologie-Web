@@ -29,17 +29,17 @@ INSERT INTO CATEGORIA (Nome_categoria) VALUES
 ('Piante');
 
 -- Popolamento della tabella METODO_DI_PAGAMENTO
-INSERT INTO METODO_DI_PAGAMENTO (Descrizione) VALUES
-('Carta di credito'),
-('PayPal'),
-('Bonifico bancario');
+INSERT INTO METODO_DI_PAGAMENTO (Descrizione, visibile) VALUES
+('Carta di credito', 1),
+('PayPal', 1),
+('Bonifico bancario', 1),
+('Gratis', 0);
 
 -- Popolamento della tabella METODO_DI_SPEDIZIONE
 INSERT INTO METODO_DI_SPEDIZIONE (Nome, Descrizione, Costo) VALUES
 ('Standard', 'Spedizione standard con consegna entro 5-7 giorni lavorativi.', 5.99),
 ('Espresso', 'Spedizione veloce con consegna entro 2-3 giorni lavorativi.', 9.99),
-('Premium', 'Spedizione premium con consegna entro 1 giorno lavorativo.', 14.99),
-('Spedizione gratuita', 'Offerta speciale di spedizione gratuita per ordini superiori a 50€.', 0.00);
+('Premium', 'Spedizione premium con consegna entro 1 giorno lavorativo.', 14.99);
 
 -- Popolamento della tabella PRODOTTO
 INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES

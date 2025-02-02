@@ -4,10 +4,15 @@
     <?php if (isset($_SESSION["shippingerror"])): ?>
         <p style="color: red;"><?php echo $_SESSION["shippingerror"]; ?></p>
     <?php endif; ?>
+    <?php if($spedizioneGratuita): ?>
+        <p style="color: green; font-weight: bold;">
+            Congratulazioni! Hai diritto alla spedizione Premium gratuita!
+        </p>
+    <?php endif; ?>
     <?php foreach($templateParams["spedizioni"] as $spedizione): ?>
         <section class="border-bottom">
             <div class="form-check ms-4">
-                <input class="form-check-input shipping-radio" type="radio" name="shipping" id="<?php echo $spedizione["Id_spedizione"] ?>" value="<?php echo $spedizione["Id_spedizione"] ?>">
+                <input class="form-check-input shipping-radio" type="radio" name="shipping" id="<?php echo $spedizione["Id_spedizione"] ?>" value="<?php echo $spedizioneGratuita ? 3 : $spedizione["Id_spedizione"] ?>" <?php echo $spedizioneGratuita ? 'disabled' : ''; ?>/>
                 <label class="form-check-label" for="<?php echo $spedizione["Id_spedizione"] ?>">
                     <?php echo $spedizione["Nome"]; ?>
                 </label>
@@ -17,8 +22,10 @@
         </section>   
     <?php endforeach; ?>
     <section>
-        <h3 class="subtotale">Subtotale: <?php echo getFormattedPrice($totale); ?></h3>
-        <h3 class="shipping-cost">Spedizione: 0,00€</h3>
+        <h4 class="subtotale">Subtotale: <?php echo getFormattedPrice($totale); ?></h4>
+        <h4 class="shipping-cost">Spedizione:
+            <?php echo $spedizioneGratuita ? 'Gratuita' : '' ?>
+        </h4>
         <h2 class="totale">Totale <?php echo getFormattedPrice($totale); ?></h2>
     </section>
     <div class="text-center">

@@ -7,9 +7,10 @@ $templateParams["nome"] = "dettaglio-ordine.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
-$costospedizione = $dbhost->getShippingPrice($_SESSION["spedizione"]);
 $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
-$_SESSION["totaleordine"] = $totale + $costospedizione;
+$costospedizione = $totale > 50 ? 0.00 : $dbhost->getShippingPrice($_SESSION["spedizione"]);
+
+$_SESSION["totaleordine"] = $_SESSION["totalecarrello"] + $costospedizione;
 
 require '../template/base.php';
 ?>

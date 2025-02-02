@@ -102,11 +102,8 @@ class DatabaseHelper {
     }
     
     public function getUserDetails($email) {
-        $stmt = $this->db->prepare("
-            SELECT E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Punti 
-            FROM UTENTE 
-            WHERE E_mail = ?
-        ");
+        $query = "SELECT E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Punti FROM UTENTE WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -226,7 +223,7 @@ class DatabaseHelper {
     }
     
     public function getPaymentTypes() {
-        $query = "SELECT * FROM metodo_di_pagamento";
+        $query = "SELECT * FROM metodo_di_pagamento WHERE visibile = 1";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -259,5 +256,30 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
-}    
+    public function updateStock($idprodotto, $quantita) {
+        $query = "UPDATE prodotto SET Scorta = Scorta - ? WHERE Id_prodotto = ? AND Scorta >= ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii', $quantita, $idprodotto, $quantita);
+        return $stmt->execute();         
+    }
+
+    public function getTotalCartPoints($email) {
+        $query = "SELECT SUM(Prezzo_punti * Quantita) AS totalepunti FROM carrello c JOIN prodotto p ON c.Id_prodotto = p.Id_prodotto WHERE c.E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["totalepunti"];
+    }
+
+    public function updateUserPoints($email, $punti) {
+        $query = "UPDATE utente SET Punti = Punti + ? WHERE E_mail = ? AND Punti >= ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isi', $punti, $email, $punti);
+        return $stmt->execute();
+    }
+
+}
+
 ?>

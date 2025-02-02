@@ -50,6 +50,7 @@ create table CATEGORIA (
 create table METODO_DI_PAGAMENTO (
      Id_pagamento INT not null auto_increment,
      Descrizione VARCHAR(255) not null,
+     visibile BOOLEAN not null,
      primary key (Id_pagamento));
 
 create table METODO_DI_SPEDIZIONE (
@@ -126,6 +127,13 @@ create table RECENSIONE (
 
 alter table CARRELLO add constraint CHECK_QUANTITA 
      check(Quantita >= 1);
+
+alter table PRODOTTO add constraint CHECK_SCORTA 
+     check (Scorta >= 0);
+
+alter table UTENTE add constraint CHECK_PUNTI
+     check(Punti >= 0);
+
                   
 -- Index Section
 -- _____________ 

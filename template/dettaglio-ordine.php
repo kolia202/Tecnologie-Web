@@ -14,7 +14,7 @@
     </section>
 <?php endforeach; ?>
 <h4>Spedizione: <?php echo getFormattedPrice($costospedizione) ?></h4>
-<h2>Totale: <?php echo getFormattedPrice($totale + $costospedizione); ?></h2>        
+<h2>Totale: <?php echo getFormattedPrice($_SESSION["totalecarrello"] + $costospedizione); ?></h2>        
 <form method="POST" action="aggiungi-ordine.php">
     <div class="text-center">
         <button type="submit" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Conferma Ordine</button>
