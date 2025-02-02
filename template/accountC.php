@@ -1,14 +1,15 @@
 <h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
 
 <?php if (isset($_SESSION["utente"])): ?>
-    <h2 style="text-align: left; margin-left: 2%;">Benvenut*, 
-        <?php echo isset($_SESSION["nome"]) ? $_SESSION["nome"] : "Nome non disponibile"; ?> 
-        <?php echo isset($_SESSION["cognome"]) ? $_SESSION["cognome"] : "Cognome non disponibile"; ?>!
+    <h2 style="text-align: left; margin-left: 2%;">Ciao 
+        <?php echo $_SESSION["nome"] ?>!
     </h2>
+    <p>Nome: <?php echo $_SESSION["nome"]; ?></p>
+    <p>Cognome: <?php echo $_SESSION["cognome"]; ?></p>
     <p>Email: <?php echo $_SESSION["utente"]; ?></p>
-    <p>Telefono: <?php echo isset($_SESSION["telefono"]) ? $_SESSION["telefono"] : "Non disponibile"; ?></p>
-    <p>Data di nascita: <?php echo isset($_SESSION["data_nascita"]) ? $_SESSION["data_nascita"] : "Non disponibile"; ?></p>
-    <p>Punti: <?php echo isset($_SESSION["punti"]) ? $_SESSION["punti"] : "0"; ?></p>
+    <p>Telefono: <?php echo $_SESSION["telefono"]; ?></p>
+    <p>Data di nascita: <?php echo getFormattedDate($_SESSION["data_nascita"]); ?></p>
+    <p>Punti: <?php echo $_SESSION["punti"]; ?></p>
     <form method="POST" action="account.php">
         <button type="submit" name="logout">Logout</button>
     </form>
@@ -22,7 +23,7 @@
     <?php endif; ?>
     <form action="account.php" method="POST">
         <div class="mb-3">
-            <label for="email" class="form-label">Indirizzo email<span style="color: red;">*</span></label>
+            <label for="email" class="form-label">Email<span style="color: red;">*</span></label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
@@ -30,8 +31,9 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <button type="submit" name="accedi">Accedi</button>
-        <a href="registrati.php" class="btn btn-secondary">Registrati</a>
     </form>
     <p><a href="../php/controlloEmail.php">Password dimenticata?</a></p>
+    <p>Non sei ancora registrato?</p>
+    <a href="registrati.php" class="btn btn-secondary">Registrati</a>
     <p><a href="../php/index.php">Indietro</a></p>
 <?php endif; ?>

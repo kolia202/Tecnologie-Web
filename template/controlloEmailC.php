@@ -9,9 +9,9 @@
     }
     ?>
     <div class="mb-3">
-        <label for="email" class="form-label">Indirizzo email<span style="color: red;">*</span></label>
+        <label for="email" class="form-label">Email<span style="color: red;">*</span></label>
         <input type="email" class="form-control" id="email" name="email" required>
     </div>
-    <button type="submit" class="btn btn-primary">Resettare la password</button>
+    <button type="submit" class="btn btn-primary">Avanti</button>
 </form>
-<p><a href="../php/account.php">Inietro</a></p>
+<p><a href="../php/account.php">Indietro</a></p>
