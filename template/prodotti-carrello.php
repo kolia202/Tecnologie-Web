@@ -36,6 +36,6 @@
         <?php endforeach; ?>
         <h2 class="total-price">Totale Carrello: <?php echo getFormattedPrice($totale); ?></h2>  
         <div class="text-center">
-            <a href="#" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Procedi con l'ordine</a>
+            <a href="../php/spedizione.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Procedi con l'ordine</a>
         </div>
 <?php endif; ?>

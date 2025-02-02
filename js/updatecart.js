@@ -38,7 +38,14 @@ function updateCart(button, update, isCart) {
     })
     .then(response => response.json())
     .then(data => {
-        if(data.status == "success") {
+        if(data.status === "not_logged_in") {
+            const cartOffcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasRight"));
+            cartOffcanvas.show();
+            document.querySelector("#cart-menu").innerHTML = `
+                <p>Per visualizzare il carrello, accedi al tuo account</p>
+                <a href="../php/account.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Accedi</a>
+            `;
+        } else if(data.status == "success") {
             if (isCart) {
                 updateQuantity(button, update);
             }

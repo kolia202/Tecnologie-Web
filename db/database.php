@@ -215,5 +215,49 @@ class DatabaseHelper {
         $stmt->bind_param("si", $email, $idprodotto);
         return $stmt->execute();
     }
+
+    public function getShippingTypes() {
+        $query = "SELECT * FROM metodo_di_spedizione";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function getPaymentTypes() {
+        $query = "SELECT * FROM metodo_di_pagamento";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function getShippingPrice($id) {
+        $query = "SELECT Costo FROM metodo_di_spedizione WHERE Id_spedizione = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["Costo"];
+    }
+    
+    public function addNewOrder($email, $totale, $idspedizione, $idpagamento) {
+        $query = "INSERT INTO ordine (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_pagamento, E_mail) VALUES (CURDATE(), ?, 'In lavorazione', ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('diis', $totale, $idspedizione, $idpagamento, $email);
+        $stmt->execute();
+        return $this->db->insert_id;
+    }
+    
+    public function addOrderedProduct($idordine, $idprodotto, $quantita) {
+        $query = "INSERT INTO prodotto_ordinato (Id_ordine, Id_prodotto, Quantita) VALUES (?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii', $idordine, $idprodotto, $quantita);
+        return $stmt->execute();
+    }
+
 }    
 ?>

@@ -1,11 +1,13 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require_once 'bootstrap.php';
 session_start();
 
 $data = json_decode(file_get_contents("php://input"), true);
+
+if (!isUserLoggedIn()) {
+    echo json_encode(["status" => "not_logged_in", "message" => "Accesso non eseguito"]);
+    exit;
+}
 
 try {
     if (isset($data["id"]) && isset($data["quantity"])) {

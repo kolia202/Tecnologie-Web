@@ -6,6 +6,11 @@ if(!isUserLoggedIn()) {
     header("Location: account.php");
     exit;
 }
+
+if(isset($_SESSION["shippingerror"])) {
+    unset($_SESSION["shippingerror"]);
+}
+
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Carrello";
 $templateParams["nome"] = "prodotti-carrello.php";
