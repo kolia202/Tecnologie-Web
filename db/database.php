@@ -162,6 +162,7 @@ class DatabaseHelper {
         $stmt->bind_param('si',$email, $idprodotto);
         return $stmt->execute();
     }
+
     public function getProductsByCategory($categoryName) {
         $query = "SELECT * FROM prodotto WHERE Nome_categoria = ?";
         $stmt = $this->db->prepare($query);
@@ -170,5 +171,16 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getNumberCartProducts($email) {
+        $query = "SELECT SUM(Quantita) AS numeroprodotti FROM carrello WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["numeroprodotti"] !== NULL ? $row["numeroprodotti"] : 0;
+    }
+
 }    
 ?>

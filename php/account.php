@@ -33,10 +33,12 @@ $templateParams["titolo"] = "Mondo Morbidoso - Account";
 $templateParams["nome"] = "accountC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["error"] = isset($error) ? $error : null;
+$numeroprodotti = 0;
 
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+    $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
 
 require("../template/base.php");

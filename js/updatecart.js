@@ -36,7 +36,7 @@ function updateCart(button, update, isCart) {
             quantity: update,
         })
     })
-    .then(response => response.json())  // Una volta ricevuta la risposta
+    .then(response => response.json())
     .then(data => {
         if(data.status == "success") {
             if (isCart) {
@@ -47,6 +47,8 @@ function updateCart(button, update, isCart) {
                 cartOffcanvas.show();
                 updateMenu(data.cart);
             }
+
+            updateCartBadge(data.cart);
         }
     })
     .catch(error => {
@@ -63,10 +65,6 @@ function updateQuantity(button, update) {
 
     let quantity = parseInt(currentQuantity.innerText);
     let newQuantity = quantity + update;
-    if (newQuantity < 1) {
-        newQuantity = 1;
-        update = 0;
-    }
     currentQuantity.innerText = newQuantity;
 
     let price = parseFloat(productPrice.innerText.replace("Prezzo:", "").replace(",", ".").replace("€", "").trim());
@@ -86,9 +84,6 @@ function updateTotal(newPrice) {
     const totalPrice = document.querySelector(".total-price");
     let total = parseFloat(totalPrice.innerText.replace("Totale Carrello:", "").replace(",", ".").replace("€", "").trim());
     let newTotal = total + newPrice;
-    if (newTotal < 0) {
-        newTotal = total;
-    }
     totalPrice.innerText = "Totale Carrello: " + newTotal.toFixed(2).replace(".", ",") + "€";
 }
 
@@ -140,4 +135,16 @@ function updateMenu(cart) {
 
     }
 
+}
+
+
+function updateCartBadge(cart) {
+    const badges = document.querySelectorAll(".cart-badge");
+    let totalProducts = 0;
+    cart.forEach(p => {
+        totalProducts += p.Quantita;
+    })
+    badges.forEach(b => {
+        b.innerHTML = totalProducts;
+    })
 }

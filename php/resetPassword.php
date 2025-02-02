@@ -18,5 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $templateParams["titolo"] = "Mondo Morbidoso - Account";
 $templateParams["nome"] = "resetPasswordC.php";
+$numeroprodotti = 0;
+
 require("../template/base.php");
 ?>

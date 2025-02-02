@@ -78,12 +78,16 @@
          <?php if($currentPage === "carrello.php"): ?>
             <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1" style="height: 70%;">
                 <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
-                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">0</span>
+                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
+                    <?php echo $numeroprodotti ?>
+                </span>
             </a>
         <?php else: ?>
             <button class="btn position-relative cart pe-3 ps-1" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
-                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger" style="font-size: 10px; padding: 6px 6px;">0</span>
+                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
+                    <?php echo $numeroprodotti ?>
+                </span>
             </button>
         <?php endif; ?>
 

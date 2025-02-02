@@ -11,6 +11,7 @@ $templateParams["titolo"] = "Mondo Morbidoso - Carrello";
 $templateParams["nome"] = "prodotti-carrello.php";
 $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
 $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+$numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 
 require_once '../template/base.php';
 ?>

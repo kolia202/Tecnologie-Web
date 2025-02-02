@@ -8,10 +8,12 @@ $templateParams["numeroRecensioni"] = $dbhost->getNumeroRecensioni();
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["prodotti"] = $dbhost->getNomiFotoPrezziProdottiCasuali();
 $templateParams["recensioni"] = $dbhost->getTestoRecensioniCasuali();
+$numeroprodotti = 0;
 
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+    $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
 
 require("../template/base.php");

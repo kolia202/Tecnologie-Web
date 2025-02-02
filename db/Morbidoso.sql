@@ -123,6 +123,9 @@ create table RECENSIONE (
 /*alter table ORDINE add constraint ID_ORDINE_CHK
      check(exists(select * from prodotto_ordinato
                   where prodotto_ordinato.Id_ordine = Id_ordine));*/
+
+alter table CARRELLO add constraint CHECK_QUANTITA 
+     check(Quantita >= 1);
                   
 -- Index Section
 -- _____________ 

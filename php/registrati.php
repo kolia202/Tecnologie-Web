@@ -30,5 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $templateParams["titolo"] = "Mondo Morbidoso - Registrati";
 $templateParams["nome"] = "registratiC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
+$numeroprodotti = 0;
+
 require("../template/base.php");
 ?>

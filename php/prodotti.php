@@ -4,6 +4,7 @@ session_start();
 $templateParams["titolo"] = "Mondo Morbidoso - Peluches";
 $templateParams["nome"] = "lista-prodotti.php";
 $templateParams["categorie"] = $dbhost->getCategories();
+$numeroprodotti = 0;
 
 $category = isset($_GET["categoria"]) ? $_GET["categoria"] : null;
 if ($category) {
@@ -15,6 +16,7 @@ if ($category) {
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+    $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
 
 require '../template/base.php';
