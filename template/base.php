@@ -40,7 +40,7 @@
                     <ul class="list-unstyled">
                         <li><a href="../php/index.php">Home<br></a></li>
                         <li><a href="../php/account.php">Account<br></a></li>
-                        <li><a href="#">I tuoi preferiti<br></a></li>
+                        <li><a href="<?php echo isUserLoggedIn() ? '../php/preferiti.php' : 'account.php?error=devi_accedere'; ?>">I tuoi preferiti</a></li>
                         <li><a href="../php/prodotti.php">Tutti i nostri peluches<br></a></li>
                         <!-- MENU A SCOMPARSA -->
                         <li class="d-flex flex-column justify-content-center">

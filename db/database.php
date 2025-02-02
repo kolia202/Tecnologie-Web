@@ -182,5 +182,38 @@ class DatabaseHelper {
         return $row["numeroprodotti"] !== NULL ? $row["numeroprodotti"] : 0;
     }
 
+    public function getPreferiti($email) {
+        $query = "SELECT p.Id_prodotto, p.Nome, p.Immagine, p.Prezzo, p.Prezzo_punti 
+                  FROM preferito pr 
+                  JOIN prodotto p ON pr.Id_prodotto = p.Id_prodotto 
+                  WHERE pr.E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function addPreferito($email, $idprodotto) {
+        $query = "SELECT * FROM preferito WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $email, $idprodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            return false;
+        }
+        $query = "INSERT INTO preferito (E_mail, Id_prodotto) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $email, $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function removePreferito($email, $idprodotto) {
+        $query = "DELETE FROM preferito WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $email, $idprodotto);
+        return $stmt->execute();
+    }
 }    
 ?>
