@@ -10,7 +10,9 @@
                     <h2><?php echo $prodotto["Nome"]; ?></h2>
                     <p>Prezzo: €<?php echo number_format($prodotto["Prezzo"], 2); ?></p>
                     <a href="dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">Vedi Dettagli</a>
-                    <a href="preferitiC.php?azione=rimuovi&id_prodotto=<?php echo $prodotto["Id_prodotto"]; ?>">Rimuovi dai Preferiti</a>
+                    <a href="preferiti.php?azione=rimuovi&id_prodotto=<?php echo $prodotto["Id_prodotto"]; ?>">
+                        Rimuovi dai Preferiti
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
