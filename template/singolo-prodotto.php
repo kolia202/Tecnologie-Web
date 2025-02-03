@@ -18,7 +18,7 @@
             <?php endif; ?>
         </section>
         <section>
-            <p>Prezzo: <?php echo $prodotto["Prezzo"]; ?></p>
+            <p>Prezzo: <?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
             <p>Taglia: <?php echo $prodotto["Grandezza"]; ?></p>
             <?php if ($prodotto["Scorta"] > 0): ?>
                 <div class="text-center">
