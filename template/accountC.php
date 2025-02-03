@@ -41,7 +41,47 @@
                 <a href="../php/preferiti.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">I tuoi Preferiti</a>
             </div>
             <div class="col-6 mb-2">
-                <a href="#" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Impostazioni</a>
+                <!-- Pulsante per aprire il Modale -->
+<a href="#" type="button" class="btn fw-bold w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="background-color: rgb(204, 153, 102); color: white;">
+    Impostazioni
+</a>
+
+<!-- Modale per la modifica del profilo -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProfileModalLabel">Modifica Profilo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="account.php">
+          <div class="mb-3">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="<?php echo htmlspecialchars($userDetails['Nome']); ?>" required>
+          </div>
+          <div class="mb-3">
+            <label for="cognome" class="col-form-label">Cognome:</label>
+            <input type="text" class="form-control" id="cognome" name="cognome" value="<?php echo htmlspecialchars($userDetails['Cognome']); ?>" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="col-form-label">Telefono:</label>
+            <input type="text" class="form-control" id="telefono" name="numero_telefono" value="<?php echo htmlspecialchars($userDetails['Numero_telefono']); ?>" required>
+          </div>
+          <div class="mb-3">
+            <label for="data_nascita" class="col-form-label">Data di Nascita:</label>
+            <input type="date" class="form-control" id="data_nascita" name="data_nascita" value="<?php echo htmlspecialchars($userDetails['Data_di_nascita']); ?>" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+            <button type="submit" name="update_profile" class="btn btn-primary">Salva Modifiche</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
         </div>
     </section>

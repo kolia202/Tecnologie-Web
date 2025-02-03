@@ -384,5 +384,12 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function modificaProfilo($email, $nome, $cognome, $datadinascita, $numerotelefono) {
+        $query = "UPDATE utente SET Nome = ?, Cognome = ?, Data_di_nascita = ?, Numero_telefono = ? WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssss', $nome, $cognome, $datadinascita, $numerotelefono, $email);
+        return $stmt->execute();
+    }
+    
 }
 ?>
