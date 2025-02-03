@@ -6,6 +6,7 @@ if (isset($_POST["logout"])) {
     header("Location: index.php"); 
     exit;
 }
+
 if (isset($_POST["accedi"])) {
     $email = $_POST["email"];  
     $password = $_POST["password"];
@@ -14,17 +15,6 @@ if (isset($_POST["accedi"])) {
         $templateParams["errorelogin"] = "Riprova! Email o Password errati";
     } else {
         $_SESSION["utente"] = $login_result[0]["E_mail"];
-        $userDetails = $dbhost->getUserDetails($_SESSION["utente"]);
-        if ($userDetails) {
-            $_SESSION["nome"] = isset($userDetails["Nome"]) ? $userDetails["Nome"] : "";
-            $_SESSION["cognome"] = isset($userDetails["Cognome"]) ? $userDetails["Cognome"] : "";
-            $_SESSION["telefono"] = isset($userDetails["Numero_telefono"]) ? $userDetails["Numero_telefono"] : "";
-            $_SESSION["data_nascita"] = isset($userDetails["Data_di_nascita"]) ? $userDetails["Data_di_nascita"] : "";
-            $_SESSION["punti"] = isset($userDetails["Punti"]) ? $userDetails["Punti"] : 0;
-        } else {
-            echo "Errore: Nessun dato trovato per l'utente.";
-            exit;
-        }
         header("location: index.php");
         exit;
     }
@@ -36,6 +26,7 @@ $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = 0;
 
 if(isUserLoggedIn()) {
+    $userDetails = $dbhost->getUserDetails($_SESSION["utente"]);
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
     $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
