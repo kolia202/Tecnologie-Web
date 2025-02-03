@@ -118,9 +118,9 @@
     <!-- FOOTER (CHE FOOTA!!!) -->
     <footer>
         <p> 
-            | Informazioni su Mondo Morbidoso |<br>
-            | Assistenza Clienti |<br>
-            | Informativa Privacy |<br>
+            <a href="../php/informazioni.php">| Informazioni su Mondo Morbidoso |</a><br>
+            <a href="../php/assistenza.php">| Assistenza Clienti |</a><br>
+            <a href="../php/privacy.php">| Informativa Privacy |</a><br>
     </p>
     </footer>
 
