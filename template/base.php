@@ -120,7 +120,7 @@
         <p> 
             <a href="../php/informazioni.php">| Informazioni su Mondo Morbidoso |</a><br>
             <a href="../php/assistenza.php">| Assistenza Clienti |</a><br>
-            | Informativa Privacy |<br>
+            <a href="../php/privacy.php">| Informativa Privacy |</a><br>
     </p>
     </footer>
 
