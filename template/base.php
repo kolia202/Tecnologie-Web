@@ -118,7 +118,7 @@
     <!-- FOOTER (CHE FOOTA!!!) -->
     <footer>
         <p> 
-            | Informazioni su Mondo Morbidoso |<br>
+            <a href="../php/informazioni.php">| Informazioni su Mondo Morbidoso |</a><br>
             | Assistenza Clienti |<br>
             | Informativa Privacy |<br>
     </p>
