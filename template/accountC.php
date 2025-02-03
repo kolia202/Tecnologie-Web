@@ -2,8 +2,9 @@
 
 <?php if (isUserLoggedIn()): ?>
     <section class="border-bottom text-center">
-        <h2 style="text-align: left; margin-left: 2%;">Ciao,
-            <?php echo $userDetails["Nome"] ?>!
+        <h2 style="text-align: left; margin-left: 2%;">Ciao, 
+            <?php echo $userDetails["Nome"] ?>! 
+            <i class="bi bi-person-circle"></i>
         </h2>
         <p class="mb-1"><strong>Nome: </strong><?php echo $userDetails["Nome"] . " " . $userDetails["Cognome"]; ?></p>
         <p class="mb-2"><strong>Email: </strong><?php echo $userDetails["E_mail"] ?></p>
@@ -17,7 +18,6 @@
                 <p>Con il nostro sistema di punti fedeltà, ogni acquisto ti avvicina a un peluche gratuito!<br>Ogni 10€ di spesa, guadagni 1 punto.<br>Quando accumuli abbastanza punti, puoi usarli per ottenere un peluche a tua scelta dalla nostra collezione!</p>
             </div>
         </div>
-
         <form method="POST" action="account.php">
             <button type="submit" name="logout" class="btn" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Logout</button>
         </form>
@@ -41,12 +41,9 @@
                 <a href="../php/preferiti.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">I tuoi Preferiti</a>
             </div>
             <div class="col-6 mb-2">
-                <!-- Pulsante per aprire il Modale -->
 <a href="#" type="button" class="btn fw-bold w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="background-color: rgb(204, 153, 102); color: white;">
     Impostazioni
 </a>
-
-<!-- Modale per la modifica del profilo -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -81,7 +78,6 @@
     </div>
   </div>
 </div>
-
             </div>
         </div>
     </section>
