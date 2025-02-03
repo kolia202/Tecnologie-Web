@@ -41,7 +41,7 @@ create table NOTIFICA (
      Giorno DATE not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_notifica),
-     foreign key (E_mail) references UTENTE(E_mail));
+     foreign key (E_mail) references UTENTE(E_mail) ON DELETE CASCADE);
 
 create table CATEGORIA (
      Nome_categoria VARCHAR(50) not null,
@@ -84,22 +84,22 @@ create table PRODOTTO (
      Prezzo_punti INT not null,
      Nome_categoria VARCHAR(50) not null,
      primary key (Id_prodotto),
-     foreign key (Nome_categoria) references CATEGORIA (Nome_categoria));
+     foreign key (Nome_categoria) references CATEGORIA (Nome_categoria) ON DELETE CASCADE);
 
 create table carrello (
      E_mail VARCHAR(100) not null,
      Id_prodotto INT not null,
      Quantita INT not null,
      primary key (E_mail, Id_prodotto),
-     foreign key (E_mail) references UTENTE (E_mail),
-     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto));
+     foreign key (E_mail) references UTENTE (E_mail) ON DELETE CASCADE,
+     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto) ON DELETE CASCADE);
 
 create table preferito (
      Id_prodotto INT not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_prodotto, E_mail),
-     foreign key (E_mail) references UTENTE (E_mail),
-     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto));
+     foreign key (E_mail) references UTENTE (E_mail) ON DELETE CASCADE,
+     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto) ON DELETE CASCADE);
 
 create table prodotto_ordinato (
      Id_ordine INT not null,
@@ -107,7 +107,7 @@ create table prodotto_ordinato (
      Quantita INT not null,
      primary key (Id_ordine, Id_prodotto),
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto),
-     foreign key (Id_ordine) references ORDINE (Id_ordine));
+     foreign key (Id_ordine) references ORDINE (Id_ordine) ON DELETE CASCADE);
      
 create table RECENSIONE (
      Id_recensione INT not null auto_increment,
@@ -118,12 +118,17 @@ create table RECENSIONE (
      primary key (Id_recensione),
      foreign key (E_mail) references UTENTE (E_mail));
 
+create table avvisi_disponibilita (
+    id_avviso INT not null AUTO_INCREMENT,
+    E_mail VARCHAR(100) not null,
+    Id_prodotto INT not null,
+    primary key (id_avviso),
+    foreign key (E_mail) references UTENTE(E_mail) ON DELETE CASCADE,
+    foreign key (Id_prodotto) references PRODOTTO(Id_prodotto) ON DELETE CASCADE);
+
+
 -- Constraints Section
 -- ___________________ 
-
-/*alter table ORDINE add constraint ID_ORDINE_CHK
-     check(exists(select * from prodotto_ordinato
-                  where prodotto_ordinato.Id_ordine = Id_ordine));*/
 
 alter table CARRELLO add constraint CHECK_QUANTITA 
      check(Quantita >= 1);

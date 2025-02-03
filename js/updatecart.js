@@ -47,6 +47,7 @@ function updateCart(button, update, isCart) {
             `;
         } else if(data.status == "success") {
             if (isCart) {
+                document.querySelector(".stock-warning").style.display = "none";
                 updateQuantity(button, update);
             }
             if (!isCart) {
@@ -56,6 +57,8 @@ function updateCart(button, update, isCart) {
             }
 
             updateCartBadge(data.cart);
+        } else if(data.status === "not_available") {
+            document.querySelector(".stock-warning").style.display = "block";
         }
     })
     .catch(error => {

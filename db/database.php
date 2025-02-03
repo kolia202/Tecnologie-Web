@@ -93,7 +93,7 @@ class DatabaseHelper {
     }
 
     public function getProductById($id) {
-        $query = "SELECT Id_prodotto, Nome, Descrizione, Immagine, Grandezza, Prezzo, Prezzo_punti, Nome_categoria FROM prodotto WHERE Id_prodotto=?";
+        $query = "SELECT Id_prodotto, Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria FROM prodotto WHERE Id_prodotto=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $id);
         $stmt->execute();
@@ -111,7 +111,7 @@ class DatabaseHelper {
     }
 
     public function getCartProducts($email) {
-        $query = "SELECT c.E_mail, c.Id_prodotto, c.Quantita, p.Nome, p.Immagine, p.Prezzo, p.Prezzo_punti FROM carrello c, prodotto p WHERE c.E_mail=? AND c.Id_prodotto = p.Id_prodotto";
+        $query = "SELECT c.E_mail, c.Id_prodotto, c.Quantita, p.Nome, p.Immagine, p.Scorta, p.Prezzo, p.Prezzo_punti FROM carrello c, prodotto p WHERE c.E_mail=? AND c.Id_prodotto = p.Id_prodotto";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -286,6 +286,22 @@ class DatabaseHelper {
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function addAvailabilityNotice($email, $idprodotto) {
+        $query = "INSERT INTO avvisi_disponibilita (E_mail, Id_prodotto) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function getCartProductById($email, $idprodotto) {
+        $query = "SELECT * FROM carrello WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $idprodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 
 }
