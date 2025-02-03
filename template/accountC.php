@@ -33,7 +33,7 @@
                 <a href="../php/recensioniMie.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Recensioni</a>
             </div>
             <div class="col-4 mb-2">
-                <a href="#" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Ordini</a>
+                <a href="../php/ordini.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Ordini</a>
             </div>
         </div>
         <div class="row mx-2">

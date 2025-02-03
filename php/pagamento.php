@@ -25,10 +25,10 @@ if(isset($_POST["usapunti"]) && $_POST["usapunti"] == "1") {
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($costospedizione == 0.00 && $_SESSION["totalecarrello"] == 0.00) {
         $_SESSION["pagamento"] = 4;
-        header("Location: ordine.php");
+        header("Location: riepilogo-ordine.php");
     } else if (isset($_POST["payment"])) {
         $_SESSION["pagamento"] = $_POST["payment"];
-        header("Location: ordine.php");
+        header("Location: riepilogo-ordine.php");
     } else {
         $_SESSION["paymenterror"] = "Per favore, seleziona un metodo di pagamento per proseguire";
         header("Location: pagamento.php");
