@@ -110,3 +110,7 @@ cerca di peluche per i loro bambini.</p>
         </div> 
     </div>
 </div>
+<div class="text-center">
+    <a href="../php/recensioni.php">
+        <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Leggi tutte le recensioni</button>
+    </a>

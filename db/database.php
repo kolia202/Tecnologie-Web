@@ -288,6 +288,47 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-}
+    public function getAllRecensioni() {
+        $query = "SELECT u.Nome, u.Cognome, r.Voto, r.Commento, r.Data
+                  FROM RECENSIONE r
+                  JOIN UTENTE u ON r.E_mail = u.E_mail";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
+    public function addRecensione($email, $voto, $commento) {
+        $data = date("Y-m-d"); 
+        $query = "INSERT INTO recensione (E_mail, Voto, Commento, Data) VALUES (?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('siss', $email, $voto, $commento, $data);
+        return $stmt->execute();
+    }
+    
+    
+    public function getRecensioniByEmail($email) {
+        $query = "SELECT * FROM recensione WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function removeRecensione($email, $idrecensione) {
+        $query = "DELETE FROM recensione WHERE E_mail = ? AND Id_recensione = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $idrecensione);
+        return $stmt->execute();
+    }
+
+    public function getAllVotiRecensioni() {
+        $query = "SELECT Voto FROM recensione";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+}
 ?>
