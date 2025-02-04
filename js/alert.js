@@ -22,13 +22,15 @@ function appendAlert(message, type) {
     }, 3000);
 }
 
-subscribeBtn.addEventListener('click', () => {
-    const email = emailInput.value.trim();
-
-    if (isValidEmail(email)) {
-        appendAlert(`${email} - A breve riceverai nostre notizie!`, 'success');
-        emailInput.value = ''; 
-    } else {
-        appendAlert('Inserisci un indirizzo email valido!', 'danger');
-    }
-});
+if(subscribeBtn) {
+    subscribeBtn.addEventListener('click', () => {
+        const email = emailInput.value.trim();
+    
+        if (isValidEmail(email)) {
+            appendAlert(`${email} - A breve riceverai nostre notizie!`, 'success');
+            emailInput.value = ''; 
+        } else {
+            appendAlert('Inserisci un indirizzo email valido!', 'danger');
+        }
+    });    
+}

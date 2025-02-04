@@ -22,6 +22,7 @@ if (isUserLoggedIn()) {
         $commento = trim($_POST["commento"]);
         if ($voto >= 1 && $voto <= 5 && !empty($commento)) {
             if ($dbhost->addRecensione($email, $voto, $commento)) {
+                $dbhost->addNewMessage('Nuova Recensione', 'Grazie per aver lasciato una recensione! La tua opinione è importante per noi e ci aiuta a migliorare. Siamo felici che tu faccia parte della nostra famiglia morbidosa!', $email);
                 header("Location: recensioni.php");
                 exit();
             } else {
