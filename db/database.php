@@ -410,5 +410,15 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
+    public function emailExists($email) {
+        $query = "SELECT EXISTS(SELECT 1 FROM UTENTE WHERE E_mail = ?) AS esiste";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return (bool) $row['esiste'];
+    }
+    
 }
 ?>

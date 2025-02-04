@@ -25,10 +25,24 @@ function appendAlert(message, type) {
 subscribeBtn.addEventListener('click', () => {
     const email = emailInput.value.trim();
 
-    if (isValidEmail(email)) {
-        appendAlert(`${email} - A breve riceverai nostre notizie!`, 'success');
-        emailInput.value = ''; 
-    } else {
+    if (!isValidEmail(email)) {
         appendAlert('Inserisci un indirizzo email valido!', 'danger');
+        return;
     }
+
+    fetch('../php/index.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'email=' + encodeURIComponent(email)
+    })
+    .then(response => response.json())
+    .then(data => {
+        appendAlert(data.message, data.status);
+        if (data.status === 'success') {
+            emailInput.value = ''; 
+        }
+    })
+    .catch(error => console.error('Errore:', error));
 });
