@@ -13,11 +13,11 @@ INSERT INTO UTENTE (E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Pas
 
 -- Popolamento della tabella NOTIFICA
 INSERT INTO NOTIFICA (Tipo_notifica, Testo, Stato, Giorno, E_mail) VALUES
-("Ordine Spedito", "Il tuo ordine è stato spedito.", 'Non letta', '2025-01-30', 'giuseppe.rossi@peluche.com'),
-('Nuovo Prodotto', 'Abbiamo aggiunto un nuovo peluche alla nostra collezione! Scoprilo ora.', 'Letta', '2025-01-29', 'laura.verdi@peluche.com'),
-('Ordine Consegnato', 'Il tuo ordine è stato consegnato. Grazie per aver scelto il nostro negozio!', 'Non letta', '2025-01-25', 'carlo.bianchi@peluche.com'),
-('Nuova Recensione', 'La tua recensione è stata pubblicata!', 'Letta', '2025-01-24', 'elena.ferrari@peluche.com'),
-('Aggiornamento Account', "La tua password è stata cambiata con successo. Se non sei stato tu, contatta l'assistenza clienti.", 'Non letta', '2025-01-23', 'paolo.martini@peluche.com');
+("Ordine Spedito", "Il tuo ordine è stato spedito.", 0, '2025-01-30', 'giuseppe.rossi@peluche.com'),
+('Nuovo Prodotto', 'Abbiamo aggiunto un nuovo peluche alla nostra collezione! Scoprilo ora.', 1, '2025-01-29', 'laura.verdi@peluche.com'),
+('Ordine Consegnato', 'Il tuo ordine è stato consegnato. Grazie per aver scelto il nostro negozio!', 0, '2025-01-25', 'carlo.bianchi@peluche.com'),
+('Nuova Recensione', 'La tua recensione è stata pubblicata!', 1, '2025-01-24', 'elena.ferrari@peluche.com'),
+('Aggiornamento Account', "La tua password è stata cambiata con successo. Se non sei stato tu, contatta l'assistenza clienti.", 0, '2025-01-23', 'paolo.martini@peluche.com');
 
 -- Popolamento della tabella CATEGORIA
 INSERT INTO CATEGORIA (Nome_categoria) VALUES
@@ -171,7 +171,7 @@ INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_
 ('2025-01-25', 54.98, 'Spedito', 1, 2, 'martina.lombardi@peluche.com'),
 ('2025-01-26', 32.98, 'In lavorazione', 2, 1, 'luigi.santoro@peluche.com'),
 ('2025-01-24', 51.98, 'Consegnato', 1, 3, 'carlo.bianchi@peluche.com'),
-('2024-10-27', 48.98, 'Consegnato', 3, 2, 'carlo.bianchi@peluche.com'),
+('2024-10-27', 48.98, 'In consegna', 3, 2, 'carlo.bianchi@peluche.com'),
 ('2025-01-25', 51.98, 'Spedito', 2, 1, 'federico.ricci@peluche.com');
 
 

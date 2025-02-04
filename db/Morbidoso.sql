@@ -37,11 +37,11 @@ create table NOTIFICA (
      Id_notifica INT not null auto_increment,
      Tipo_notifica VARCHAR(50) not null,
      Testo TEXT not null,
-     Stato ENUM('Letta', 'Non letta') not null,
+     Stato BOOLEAN not null default 0,
      Giorno DATE not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_notifica),
-     foreign key (E_mail) references UTENTE(E_mail) ON DELETE CASCADE);
+     foreign key (E_mail) references UTENTE(E_mail) ON UPDATE CASCADE ON DELETE CASCADE);
 
 create table CATEGORIA (
      Nome_categoria VARCHAR(50) not null,
@@ -70,7 +70,7 @@ create table ORDINE (
      E_mail VARCHAR(100) not null,
      primary key (Id_ordine),
      foreign key (Id_spedizione) references METODO_DI_SPEDIZIONE (Id_spedizione),
-     foreign key (E_mail) references UTENTE (E_mail),
+     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE,
      foreign key (Id_pagamento) references METODO_DI_PAGAMENTO (Id_pagamento));
     
 create table PRODOTTO (
@@ -91,14 +91,14 @@ create table carrello (
      Id_prodotto INT not null,
      Quantita INT not null,
      primary key (E_mail, Id_prodotto),
-     foreign key (E_mail) references UTENTE (E_mail) ON DELETE CASCADE,
+     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE ON DELETE CASCADE,
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto) ON DELETE CASCADE);
 
 create table preferito (
      Id_prodotto INT not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_prodotto, E_mail),
-     foreign key (E_mail) references UTENTE (E_mail) ON DELETE CASCADE,
+     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE ON DELETE CASCADE,
      foreign key (Id_prodotto) references PRODOTTO (Id_prodotto) ON DELETE CASCADE);
 
 create table prodotto_ordinato (
@@ -116,14 +116,14 @@ create table RECENSIONE (
      Commento TEXT not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_recensione),
-     foreign key (E_mail) references UTENTE (E_mail));
+     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE);
 
 create table avvisi_disponibilita (
     id_avviso INT not null AUTO_INCREMENT,
     E_mail VARCHAR(100) not null,
     Id_prodotto INT not null,
     primary key (id_avviso),
-    foreign key (E_mail) references UTENTE(E_mail) ON DELETE CASCADE,
+    foreign key (E_mail) references UTENTE(E_mail) ON UPDATE CASCADE ON DELETE CASCADE,
     foreign key (Id_prodotto) references PRODOTTO(Id_prodotto) ON DELETE CASCADE);
 
 

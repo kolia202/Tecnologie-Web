@@ -33,6 +33,13 @@
                 </div>
             </div>
         </div>
+        <?php if (isUserLoggedIn()): ?>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Scrivi una recensione
+            </button>
+        <?php else: ?>
+            <a href="../php/account.php" type="button" class="btn btn-primary">Scrivi una recensione</a>
+        <?php endif; ?>
         <div class="row mt-4">
             <div class="col-md-8">
                 <div class="card p-3">
@@ -52,15 +59,6 @@
         </div>
     </div>
 </div>
-<?php if (isUserLoggedIn()): ?>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Scrivi una recensione
-    </button>
-<?php else: ?>
-    <button type="button" class="btn btn-primary" onclick="window.location.href='account.php'">
-        Scrivi una recensione
-    </button>
-<?php endif; ?>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

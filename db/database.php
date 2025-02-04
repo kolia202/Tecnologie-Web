@@ -79,7 +79,7 @@ class DatabaseHelper {
     }
 
     public function getProducts() {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto ORDER BY RAND()";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto ORDER BY RAND()";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -279,7 +279,7 @@ class DatabaseHelper {
     }
 
     public function getSearchedProducts($search) {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Prezzo, Nome_categoria FROM prodotto WHERE Nome LIKE ?";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta Prezzo, Nome_categoria FROM prodotto WHERE Nome LIKE ?";
         $stmt = $this->db->prepare($query);
         $search = "%" . $search . "%";
         $stmt->bind_param('s', $search);
@@ -322,7 +322,6 @@ class DatabaseHelper {
         return $stmt->execute();
     }
     
-    
     public function getRecensioniByEmail($email) {
         $query = "SELECT * FROM recensione WHERE E_mail = ?";
         $stmt = $this->db->prepare($query);
@@ -346,16 +345,6 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-
-    /*public function updateOrdersStatus() {
-        $query = "UPDATE ordine SET Stato = CASE
-            WHEN Stato = 'in lavorazione' AND DATEDIFF(CURDATE(), Data_effettuazione) >= 1 THEN 'spedito'
-            WHEN Stato = 'spedito' AND DATEDIFF(CURDATE(), Data_effettuazione) >= 2 THEN 'in consegna'
-            WHEN Stato = 'in consegna' AND DATEDIFF(CURDATE(), Data_effettuazione) >= 3 THEN 'consegnato'
-            ELSE Stato
-        END 
-        WHERE Stato IN ('in lavorazione', 'spedito', 'in consegna') AND E_mail = ?";
-    }*/
 
     public function getAllUserOrders($email) {
         $query = "SELECT Id_ordine, Data_effettuazione, Prezzo_finale, Stato, Id_spedizione FROM ordine WHERE E_mail = ?";

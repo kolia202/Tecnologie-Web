@@ -12,9 +12,13 @@
     </a>
     <p><?php echo $prodotto["Nome_categoria"]; ?></p>
     <p><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
-    <div class="text-center">        
-        <button type="button" class="btn btn-sm fw-bold add-to-cart" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;" id="<?php echo $prodotto["Id_prodotto"]; ?>">
-            Aggiungi al carrello
-        </button>
-    </div>
+    <?php if($prodotto["Scorta"] <= 0): ?>
+        <span type="button" class="btn btn-sm fw-bold" style="background-color: black; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px;">Non disponibile</span>
+    <?php else: ?>
+        <div class="text-center">        
+            <button type="button" class="btn btn-sm fw-bold add-to-cart" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;" id="<?php echo $prodotto["Id_prodotto"]; ?>">
+                Aggiungi al carrello
+            </button>
+        </div>
+    <?php endif; ?>
 <?php endforeach; ?>
