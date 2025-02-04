@@ -41,7 +41,7 @@
                 <a href="../php/preferiti.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">I tuoi Preferiti</a>
             </div>
             <div class="col-6 mb-2">
-<a href="#" type="button" class="btn fw-bold w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="background-color: rgb(204, 153, 102); color: white;">
+<a href="../php/account.php" type="button" class="btn fw-bold w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="background-color: rgb(204, 153, 102); color: white;">
     Impostazioni
 </a>
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
@@ -60,6 +60,10 @@
           <div class="mb-3">
             <label for="cognome" class="col-form-label">Cognome:</label>
             <input type="text" class="form-control" id="cognome" name="cognome" value="<?php echo htmlspecialchars($userDetails['Cognome']); ?>" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">E_mail:</label>
+            <input type="text" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($userDetails['E_mail']); ?>" required>
           </div>
           <div class="mb-3">
             <label for="telefono" class="col-form-label">Telefono:</label>
