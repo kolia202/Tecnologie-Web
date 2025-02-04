@@ -31,6 +31,7 @@ if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
     $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
+    $numeronotifiche = $dbhost->getUserNewMessages($_SESSION["utente"]);
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update_profile"])) {

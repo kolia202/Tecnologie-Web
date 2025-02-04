@@ -20,8 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     if ($dbhost->registrazione($nome, $cognome, $email, $password, $dataDiNascita, $telefono)) {
+        $dbhost->addNewMessage('Conferma Iscrizione', 'Benvenuto nella nostra famiglia di peluche! Siamo felici di averti con noi. Scopri la nostra collezione e trova i peluche perfetti per te!', $email);
         echo "Registrazione completata con successo!";
-        header("Location: account.php");
+        header("Location: index.php");
         exit;
     } else {
         echo "Errore durante la registrazione.";
