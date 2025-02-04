@@ -10,6 +10,10 @@ $templateParams["prodotti"] = $dbhost->getNomiFotoPrezziProdottiCasuali();
 $templateParams["recensioni"] = $dbhost->getTestoRecensioniCasuali();
 $numeroprodotti = 0;
 
+
+
+
+
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
