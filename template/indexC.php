@@ -115,16 +115,11 @@ cerca di peluche per i loro bambini.</p>
         <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Leggi tutte le recensioni</button>
     </a>
 </div>
-<div id="cookie-banner" class="position-fixed bottom-0 w-100 bg-light p-3 border-top" style="display: none;">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div>
-                <h5>Rispettiamo la tua privacy!</h5>
-                <p class="mb-0">Utilizziamo i cookie per migliorare l'esperienza utente. Puoi accettarli, rifiutarli o configurare le tue preferenze.</p>
-            </div>
-            <div>
-                <button id="configureCookies" class="btn btn-secondary me-2">Per maggiori informazioni</button>
-                <button id="rejectCookies" class="btn btn-warning me-2">Rifiuta e chiudi</button>
-                <button id="acceptCookies" class="btn btn-success">Accetta e chiudi</button>
-            </div>
-        </div>
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: #fff; color: #333; padding: 20px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); border-radius: 10px; border: 2px solid #FFD700; text-align: center; z-index: 1000;">
+    <h5 style="font-weight: bold;">Rispettiamo la tua privacy!</h5>
+    <p style="margin-bottom: 10px;">Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi accettare o rifiutare l'uso dei cookie.</p>
+    <div style="display: flex; justify-content: space-evenly; margin-top: 15px;">
+        <button id="rejectCookies" class="btn btn-danger">Rifiuta</button>
+        <button id="acceptCookies" class="btn btn-success">Accetta</button>
     </div>
+</div>
