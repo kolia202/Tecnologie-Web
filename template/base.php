@@ -128,5 +128,6 @@
     <script src="../js/updatecart.js"></script>
     <script src="../js/handleorder.js"></script>
     <script src="../js/handleavailability.js"></script>
+    <script src="../js/cookie.js"></script>
 </body>
 </html>

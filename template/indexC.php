@@ -115,3 +115,16 @@ cerca di peluche per i loro bambini.</p>
         <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Leggi tutte le recensioni</button>
     </a>
 </div>
+<div id="cookie-banner" class="position-fixed bottom-0 w-100 bg-light p-3 border-top" style="display: none;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <h5>Rispettiamo la tua privacy!</h5>
+                <p class="mb-0">Utilizziamo i cookie per migliorare l'esperienza utente. Puoi accettarli, rifiutarli o configurare le tue preferenze.</p>
+            </div>
+            <div>
+                <button id="configureCookies" class="btn btn-secondary me-2">Per maggiori informazioni</button>
+                <button id="rejectCookies" class="btn btn-warning me-2">Rifiuta e chiudi</button>
+                <button id="acceptCookies" class="btn btn-success">Accetta e chiudi</button>
+            </div>
+        </div>
+    </div>
