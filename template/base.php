@@ -129,5 +129,7 @@
     <script src="../js/handleorder.js"></script>
     <script src="../js/handleavailability.js"></script>
     <script src="../js/cookie.js"></script>
+    <script src="../js/alert.js"></script>
+    <script src="../js/handlemessages.js"></script>  
 </body>
 </html>

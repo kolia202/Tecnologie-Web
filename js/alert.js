@@ -8,7 +8,6 @@ function isValidEmail(email) {
 }
 
 function appendAlert(message, type) {
-    // Rimuove eventuali alert esistenti prima di crearne uno nuovo
     alertPlaceholder.innerHTML = '';
 
     const wrapper = document.createElement('div');
@@ -17,10 +16,7 @@ function appendAlert(message, type) {
             <div>${message}</div>
         </div>
     `;
-
     alertPlaceholder.append(wrapper);
-
-    // Rimuove l'alert automaticamente dopo 3 secondi
     setTimeout(() => {
         wrapper.remove();
     }, 3000);
@@ -31,7 +27,7 @@ subscribeBtn.addEventListener('click', () => {
 
     if (isValidEmail(email)) {
         appendAlert(`${email} - A breve riceverai nostre notizie!`, 'success');
-        emailInput.value = ''; // Pulisce il campo email dopo l'invio
+        emailInput.value = ''; 
     } else {
         appendAlert('Inserisci un indirizzo email valido!', 'danger');
     }
