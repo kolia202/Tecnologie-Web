@@ -373,10 +373,10 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function modificaProfilo($email, $nome, $cognome, $datadinascita, $numerotelefono) {
-        $query = "UPDATE utente SET Nome = ?, Cognome = ?, Data_di_nascita = ?, Numero_telefono = ? WHERE E_mail = ?";
+    public function modificaProfilo($email, $nome, $cognome, $newemail, $datadinascita, $numerotelefono) {
+        $query = "UPDATE utente SET Nome = ?, Cognome = ?, E_mail = ?, Data_di_nascita = ?, Numero_telefono = ? WHERE E_mail = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssss', $nome, $cognome, $datadinascita, $numerotelefono, $email);
+        $stmt->bind_param('ssssss', $nome, $cognome, $newemail, $datadinascita, $numerotelefono, $email);
         return $stmt->execute();
     }
     
