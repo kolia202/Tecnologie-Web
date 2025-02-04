@@ -410,5 +410,15 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
+    public function getUserNewMessages($email) {
+        $query = "SELECT COUNT(*) AS nuovenotifiche FROM notifica WHERE E_mail = ? AND Stato = 0";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["nuovenotifiche"];
+    }
+
 }
 ?>

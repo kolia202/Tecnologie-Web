@@ -27,7 +27,14 @@
         <h3>Attività</h3>
         <div class="row mb-3 mx-2 mt-2">
             <div class="col-4 mb-2">
-                <a href="../php/notifiche.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Notifiche</a>
+                <a href="../php/notifiche.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">
+                  Notifiche
+                  <?php if($notifica["Stato"] == 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle nuova-notifica">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                  <?php endif; ?>
+                </a>
             </div>
             <div class="col-4 mb-2">
                 <a href="../php/recensioniMie.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Recensioni</a>
