@@ -24,7 +24,7 @@ function handleOrder() {
             let totalePunti = document.querySelector(".totale-punti").innerText.replace("Per questo ordine sono necessari", "").replace("punti", "").trim();
             let errorePunti = document.querySelector(".errore-punti");
     
-            if(puntiUtente >= totalePunti) {
+            if(parseInt(puntiUtente) >= parseInt(totalePunti)) {
                 document.querySelector(".totale-carrello").innerText = "Carrello: 0,00€";
                 document.querySelector(".totale-finale").innerText = "Totale: " + costoSpedizione;
                 document.querySelector(".usa-punti").value = 1;

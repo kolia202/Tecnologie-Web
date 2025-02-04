@@ -380,5 +380,35 @@ class DatabaseHelper {
         return $stmt->execute();
     }
     
+    public function addNewMessage($tiponotifica, $testo, $email) {
+        $query = "INSERT INTO notifica (Tipo_notifica, Testo, Giorno, E_mail) VALUES (?, ?, CURDATE(), ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss', $tiponotifica, $testo, $email);
+        return $stmt->execute();
+    }
+
+    public function getUserMessages($email) {
+        $query = "SELECT * FROM notifica WHERE E_mail = ? ORDER BY Giorno DESC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function deleteMessage($idnotifica) {
+        $query = "DELETE FROM notifica WHERE Id_notifica = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idnotifica);
+        return $stmt->execute();
+    }
+
+    public function changeMessageStatus($idnotifica) {
+        $query = "UPDATE notifica SET Stato = 1 WHERE Id_notifica = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idnotifica);
+        return $stmt->execute();
+    }
+
 }
 ?>

@@ -27,7 +27,7 @@
         <h3>Attività</h3>
         <div class="row mb-3 mx-2 mt-2">
             <div class="col-4 mb-2">
-                <a href="#" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Notifiche</a>
+                <a href="../php/notifiche.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Notifiche</a>
             </div>
             <div class="col-4 mb-2">
                 <a href="../php/recensioniMie.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Recensioni</a>

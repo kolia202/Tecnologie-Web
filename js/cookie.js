@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const cookieBanner = document.getElementById("cookie-banner");
 
     if (!cookieBanner) {
-        console.error("Elemento #cookie-banner non trovato nel DOM.");
         return;
     }
 

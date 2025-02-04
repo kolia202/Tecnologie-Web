@@ -15,6 +15,7 @@ foreach($dbhost->getCartProducts($utente) as $prodotto) {
 }
 
 $dbhost->updateUserPoints($utente, $punti);
+$dbhost->addNewMessage('Nuovo Ordine', 'Il tuo ordine è stato confermato e i tuoi peluche stanno per mettersi in viaggio! Puoi seguire il loro percorso dal tuo profilo. Grazie per averci scelto!', $utente);
 
 unset($_SESSION["totalecarrello"]);
 unset($_SESSION["totaleordine"]);
