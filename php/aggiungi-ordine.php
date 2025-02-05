@@ -10,7 +10,7 @@ $punti = (floor($_SESSION["totaleordine"] / 10)) - $_SESSION["puntiusati"];
 
 foreach($dbhost->getCartProducts($utente) as $prodotto) {
     $dbhost->addOrderedProduct($idordine, $prodotto["Id_prodotto"], $prodotto["Quantita"]);
-    $dbhost->updateStock($prodotto["Id_prodotto"], $prodotto["Quantita"]);
+    $dbhost->updateStock($prodotto["Id_prodotto"], -($prodotto["Quantita"]));
     $dbhost->removeProductFromCart($utente ,$prodotto["Id_prodotto"]);
 }
 
@@ -21,6 +21,7 @@ unset($_SESSION["totalecarrello"]);
 unset($_SESSION["totaleordine"]);
 unset($_SESSION["spedizione"]);
 unset($_SESSION["pagamento"]);
+unset($_SESSION['puntiusati']);
 
 header("Location: conferma.php");
 exit;

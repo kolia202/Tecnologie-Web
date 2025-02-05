@@ -31,7 +31,7 @@ class DatabaseHelper {
 
     public function getNomiFotoPrezziProdottiCasuali() {
         $n = 3;
-        $stmt = $this->db->prepare("SELECT Id_prodotto, Nome, Prezzo, Immagine FROM prodotto ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT Id_prodotto, Nome, Prezzo, Immagine FROM prodotto WHERE attivo = 1 ORDER BY RAND() LIMIT ?");
         $stmt->bind_param("i", $n);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -79,7 +79,15 @@ class DatabaseHelper {
     }
 
     public function getProducts() {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto ORDER BY RAND()";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto WHERE attivo = 1 ORDER BY RAND()";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAdminProducts() {
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria, attivo FROM prodotto ORDER BY RAND()";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -93,7 +101,7 @@ class DatabaseHelper {
     }
 
     public function getProductById($id) {
-        $query = "SELECT Id_prodotto, Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria FROM prodotto WHERE Id_prodotto=?";
+        $query = "SELECT Id_prodotto, Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria, attivo FROM prodotto WHERE Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $id);
         $stmt->execute();
@@ -161,6 +169,15 @@ class DatabaseHelper {
     }
 
     public function getProductsByCategory($categoryName) {
+        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? AND attivo = 1 ORDER BY RAND()";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $categoryName);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAdminProductsByCategory($categoryName) {
         $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? ORDER BY RAND()";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param("s", $categoryName);
@@ -168,6 +185,7 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
 
     public function getNumberCartProducts($email) {
         $query = "SELECT SUM(Quantita) AS numeroprodotti FROM carrello WHERE E_mail = ?";
@@ -255,7 +273,7 @@ class DatabaseHelper {
     }
 
     public function updateStock($idprodotto, $quantita) {
-        $query = "UPDATE prodotto SET Scorta = Scorta - ? WHERE Id_prodotto = ? AND Scorta >= ?";
+        $query = "UPDATE prodotto SET Scorta = Scorta + ? WHERE Id_prodotto = ? AND Scorta >= ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('iii', $quantita, $idprodotto, $quantita);
         return $stmt->execute();         
@@ -279,7 +297,17 @@ class DatabaseHelper {
     }
 
     public function getSearchedProducts($search) {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta Prezzo, Nome_categoria FROM prodotto WHERE Nome LIKE ?";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto WHERE attivo = 1 AND Nome LIKE ?";
+        $stmt = $this->db->prepare($query);
+        $search = "%" . $search . "%";
+        $stmt->bind_param('s', $search);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAdminSearchedProducts($search) {
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria, attivo FROM prodotto WHERE Nome LIKE ?";
         $stmt = $this->db->prepare($query);
         $search = "%" . $search . "%";
         $stmt->bind_param('s', $search);
@@ -419,6 +447,42 @@ class DatabaseHelper {
         $row = $result->fetch_assoc();
         return $row["nuovenotifiche"];
     }
+
+    public function modifyProduct($idprodotto, $nome, $descrizione, $immagine, $taglia, $prezzo, $punti, $categoria) {
+        $query = "UPDATE prodotto SET Nome = ?, Descrizione = ?, Immagine = ?, Grandezza = ?, Prezzo = ?, Prezzo_punti = ?, Nome_categoria = ? WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssdisi', $nome, $descrizione, $immagine, $taglia, $prezzo, $punti, $categoria, $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function changeProductVisibility($attivo, $idprodotto) {
+        $query = "UPDATE prodotto SET attivo = ? WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii', $attivo, $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function removeProductFromCarts($idprodotto) {
+        $query = "DELETE FROM carrello WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function removeFromFavourites($idprodotto) {
+        $query = "DELETE FROM preferito WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idprodotto);
+        return $stmt->execute();
+    }
+
+    public function deleteProduct($idprodotto) {
+        $query = "DELETE FROM prodotto WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idprodotto);
+        return $stmt->execute();        
+    }
+
 
 }
 ?>

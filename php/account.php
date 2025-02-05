@@ -4,6 +4,7 @@ session_start();
 
 if (isset($_POST["logout"])) {
     unset($_SESSION["utente"]); 
+    unset($_SESSION['admin']);
     header("Location: index.php"); 
     exit;
 }
@@ -16,6 +17,7 @@ if (isset($_POST["accedi"])) {
         $templateParams["errorelogin"] = "Riprova! Email o Password errati";
     } else {
         $_SESSION["utente"] = $login_result[0]["E_mail"];
+        $_SESSION["admin"] = intval($login_result[0]["Admin"]);
         header("location: index.php");
         exit;
     }

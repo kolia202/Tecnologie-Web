@@ -83,6 +83,7 @@ create table PRODOTTO (
      Prezzo DECIMAL(10,2) not null,
      Prezzo_punti INT not null,
      Nome_categoria VARCHAR(50) not null,
+     attivo BOOLEAN not null default 1,
      primary key (Id_prodotto),
      foreign key (Nome_categoria) references CATEGORIA (Nome_categoria) ON DELETE CASCADE);
 
@@ -106,7 +107,7 @@ create table prodotto_ordinato (
      Id_prodotto INT not null,
      Quantita INT not null,
      primary key (Id_ordine, Id_prodotto),
-     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto),
+     foreign key (Id_prodotto) references PRODOTTO (Id_prodotto) ON DELETE CASCADE,
      foreign key (Id_ordine) references ORDINE (Id_ordine) ON DELETE CASCADE);
      
 create table RECENSIONE (

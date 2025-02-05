@@ -8,11 +8,11 @@ $numeroprodotti = 0;
 
 $category = isset($_GET["categoria"]) ? $_GET["categoria"] : null;
 if ($category) {
-    $templateParams["prodotti"] = $dbhost->getProductsByCategory($category);
+    $templateParams["prodotti"] = isAdminLoggedIn() ? $dbhost->getAdminProductsByCategory($category) : $dbhost->getProductsByCategory($category);
 } else if(isset($_GET["search"])) {
-    $templateParams["prodotti"] = $dbhost->getSearchedProducts(trim($_GET["search"]));
+    $templateParams["prodotti"] = isAdminLoggedIn() ? $dbhost->getAdminSearchedProducts(trim($_GET["search"])) : $dbhost->getSearchedProducts(trim($_GET["search"]));
 } else {
-    $templateParams["prodotti"] = $dbhost->getProducts();
+    $templateParams["prodotti"] = isAdminLoggedIn() ? $dbhost->getAdminProducts() : $dbhost->getProducts();
 }
 
 if(isUserLoggedIn()) {

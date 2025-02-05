@@ -49,4 +49,10 @@ function getRecensioniDistribuzione($voti) {
         "total"    => $totalRecensioni
     ];
 }
+
+function isAdminLoggedIn() {
+    return isset($_SESSION['utente']) && isset($_SESSION['admin']) && $_SESSION['admin'];
+}
+
+
 ?>

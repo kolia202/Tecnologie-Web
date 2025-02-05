@@ -26,7 +26,7 @@
 
     $idprodotto = -1;
     if (isset($_GET["id"])) {
-    $idprodotto = $_GET["id"];
+        $idprodotto = $_GET["id"];
     }
     $templateParams["prodotto"] = $dbhost->getProductById($idprodotto);
     $numeroprodotti = 0;
@@ -36,5 +36,6 @@
         $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
         $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
     }
+
     require '../template/base.php';
 ?>
