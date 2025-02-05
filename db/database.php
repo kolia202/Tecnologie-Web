@@ -429,6 +429,16 @@ class DatabaseHelper {
         $row = $result->fetch_assoc();
         return $row["nuovenotifiche"];
     }
+    
+    public function notificationExists($email, $tiponotifica, $testo) {
+        $query = "SELECT EXISTS(SELECT 1 FROM notifica WHERE E_mail = ? AND Tipo_notifica = ? AND Testo = ?) AS esiste";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sss", $email, $tiponotifica, $testo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return (bool) $row['esiste'];
+    }
 
 }
 ?>
