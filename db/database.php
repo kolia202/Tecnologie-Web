@@ -562,5 +562,29 @@ class DatabaseHelper {
         return $result->fetch_assoc();
     }
 
+    public function getAllOrders() {
+        $query = "SELECT * FROM ordine";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updateOrderStatus($orderId, $status) {
+        $query = "UPDATE ORDINE SET Stato = ? WHERE Id_ordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $status, $orderId);
+        return $stmt->execute();
+    }
+
+    public function getEmail($nome, $cognome) {
+        $query = "SELECT E_mail FROM utente WHERE Nome = ? AND Cognome = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $nome, $cognome);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row ? $row['E_mail'] : null;
+    }
 }
 ?>
