@@ -140,6 +140,7 @@
     <script src="../js/handleavailability.js"></script>
     <script src="../js/cookie.js"></script>
     <script src="../js/alert.js"></script>
-    <script src="../js/handlemessages.js"></script>  
+    <script src="../js/handlemessages.js"></script>
+    <script src="../js/tracking.js"></script>
 </body>
 </html>
