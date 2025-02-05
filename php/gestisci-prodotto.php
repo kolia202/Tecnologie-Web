@@ -5,31 +5,41 @@ session_start();
 if(isset($_POST["nuove-scorte"]) && isset($_POST['idprodotto'])) {
     $id = $_POST['idprodotto'];
     $dbhost->updateStock($id, $_POST['nuove-scorte']);
+    $templateParams["avvisi"] = $dbhost->getProductAvailabilityNotice($id);
+    $nome = $dbhost->getProductById($id)[0]["Nome"];
+    foreach($templateParams['avvisi'] as $avviso) {
+        $dbhost->addNewMessage('Peluche Disponibile', "Buone notizie! Il peluche $nome che stavi aspettando è finalmente tornato disponibile! Corri a prenderlo prima che finisca di nuovo!", $avviso['E_mail']);
+        $dbhost->deleteAvailabilityNotice($avviso['id_avviso']);
+    }
     header("Location: dettaglioProdotto.php?id=$id");
+    exit;
 }
 
-if(isset($_POST["attivaprodotto"]) && isset($_POST['idprodotto'])) {
-    $id = $_POST['idprodotto'];
+if(isset($_POST["attivaprodotto"])) {
+    $id = $_POST['attivaprodotto'];
     $dbhost->changeProductVisibility(1, $id);
     header("Location: dettaglioProdotto.php?id=$id");
+    exit;
 }
 
-if(isset($_POST["disattivaprodotto"]) && isset($_POST['idprodotto'])) {
-    $id = $_POST['idprodotto'];
+if(isset($_POST["disattivaprodotto"])) {
+    $id = $_POST['disattivaprodotto'];
     $dbhost->changeProductVisibility(0, $id);
     $dbhost->removeProductFromCarts($id);
     $dbhost->removeFromFavourites($id);
     header("Location: dettaglioProdotto.php?id=$id");
+    exit;
 }
 
-if(isset($_POST["eliminaprodotto"]) && isset($_POST['idprodotto'])) {
-    $id = $_POST['idprodotto'];
+if(isset($_POST["eliminaprodotto"])) {
+    $id = $_POST['eliminaprodotto'];
     $dbhost->deleteProduct($id);
-    header("Location: prodotti.php");
+    $redirect = isset($_POST['previous']) ? $_POST['previous'] : 'prodotti.php';
+    header("Location: $redirect");
+    exit;
 }
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
-    $id = $_POST['idprodotto'];
     $nome = $_POST['nomeprodotto'];
     $categoria = $_POST['categoriaprodotto'];
     $taglia = $_POST['tagliaprodotto'];
@@ -51,9 +61,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $immagine = $_POST['immagineattuale'];
     }
 
-    $dbhost->modifyProduct($id, $nome, $descrizione, $immagine, $taglia, $prezzo, $punti, $categoria);
-    header("Location: dettaglioProdotto.php?id=$id");
-
+    if(isset($_POST['aggiungiprodotto'])) {
+        $scorte = $_POST['scorteprodotto'];
+        $id = $dbhost->addNewProduct($nome, $descrizione, $immagine, $taglia, $scorte, $prezzo, $punti, $categoria);
+        header("Location: dettaglioProdotto.php?id=$id");
+        exit;
+    } else if(isset($_POST['modificaprodotto'])) {
+        $id = $_POST['idprodotto'];
+        $dbhost->modifyProduct($id, $nome, $descrizione, $immagine, $taglia, $prezzo, $punti, $categoria);
+        header("Location: dettaglioProdotto.php?id=$id");
+        exit;
+    }
 }
 
 ?>
