@@ -70,16 +70,29 @@ Grazie all'enorme varietà di articoli<br>
 per bambini e adulti, è diventato un vero e<br>
 prorpio punto di riferimento per gli<br>
 appassionati del genere.</p>
-            <div class="text-center" style="background-color: rgb(180, 152, 26); border-radius: 15px; padding: 20px; max-width: 400px; margin: auto;">
-                <h3 class="fw-bold"><i class="bi bi-envelope-heart"></i> Newsletter</h3>
-                <p>Iscriviti alla nostra newsletter per ricevere i nostri consigli e suggerimenti per la scelta del peluche</p>
-                
-                <div class="mb-3">
-                    <input type="email" class="form-control text-center" id="emailInput" placeholder="vostro@email.com">
-                </div>
-                <div id="liveAlertPlaceholder"></div>
-                <button type="button" class="btn btn-primary" id="subscribeBtn">Iscriviti</button>
+<div class="container my-5" id="newsletter">
+    <div class="box p-4 rounded shadow bg-white">
+        <div class="text-center" style="background-color: rgb(180, 152, 26); border-radius: 15px; padding: 20px; max-width: 400px; margin: auto;">
+            <h3 class="fw-bold"><i class="bi bi-envelope-heart"></i> Newsletter</h3>
+            <p>Iscriviti alla nostra newsletter per ricevere i nostri consigli e suggerimenti per la scelta del peluche</p>
+            <div id="liveAlertPlaceholder">
+                <?php if (!empty($message)): ?>
+                    <div class="alert <?php echo isset($success) && $success ? 'alert-success' : 'alert-danger'; ?>" role="alert">
+                        <?php echo $message; ?>
+                    </div>
+                <?php endif; ?>
             </div>
+            <form method="POST" action="#newsletter">
+                <div class="mb-3">
+                    <input type="email" class="form-control text-center" name="email" placeholder="vostro@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iscriviti</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
 <img src="../utilities/img/peluches-home.png" alt="vetrina"  style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
 <h1>Perchè acquistare peluche<br>
 da Mondo Morbidoso?</h1>
@@ -133,28 +146,3 @@ cerca di peluche per i loro bambini.</p>
         <button id="acceptCookies" class="btn btn-success">Accetta</button>
     </div>
 </div>
-
-
-
-
-
-
-
-
-    <div class="container my-5">
-        <div class="box p-4 rounded shadow bg-white">
-            <div class="text-center" style="background-color: rgb(180, 152, 26); border-radius: 15px; padding: 20px; max-width: 400px; margin: auto;">
-                <h3 class="fw-bold"><i class="bi bi-envelope-heart"></i> Newsletter</h3>
-                <p>Iscriviti alla nostra newsletter per ricevere i nostri consigli e suggerimenti per la scelta del peluche</p>
-                
-                <div class="mb-3">
-                    <input type="email" class="form-control text-center" id="emailInput" placeholder="vostro@email.com">
-                </div>
-
-                <!-- Placeholder per l'alert con altezza fissa e inizialmente nascosto -->
-                <div id="liveAlertPlaceholder" style="min-height: 50px; display: flex; justify-content: center; align-items: center; visibility: hidden;"></div>
-
-                <button type="button" class="btn btn-primary" id="subscribeBtn">Iscriviti</button>
-            </div>
-        </div>
-    </div>
