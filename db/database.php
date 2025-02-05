@@ -535,5 +535,23 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);      
     }
 
+    public function deleteRecensione($idrecensione) {
+            $query = "DELETE FROM RECENSIONE WHERE Id_recensione = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param("i", $idrecensione);
+            return $stmt->execute();
+        } 
+
+    public function getIdRecensioneByNomeCognome($nome, $cognome) {
+        $query = "SELECT r.Id_recensione 
+                  FROM recensione r
+                  JOIN utente u ON r.E_mail = u.E_mail
+                  WHERE u.Nome = ? AND u.Cognome = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $nome, $cognome);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>
