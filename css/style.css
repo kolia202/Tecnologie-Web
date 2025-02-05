@@ -10,6 +10,8 @@ body {
     /*background-color: white;*/
 }
 
+/* HEADER */
+
 header {
     padding-top: 3px;
     background-color: white;
@@ -21,13 +23,71 @@ header {
     padding-bottom: 2px;
 }
 
-header > a > img {
-    height: 100%;
+.bi-list {
+    color: rgb(137, 85, 32); 
+    font-size: 50px;
+}
+
+.iconaorsetto {
+    height: 55%;
     width: auto;
+    margin-left: 6%;
+   
+}
+
+header h2 { 
+    color: rgb(137, 85, 32); 
+    margin-top: 3%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 35px;
+}
+
+.bi-x-lg {
+    color: rgb(137, 85, 32); 
+    font-size: 30px;
+}
+
+.search {
+    background-color: rgb(245, 222, 179, 0.4);
+    border-color: rgb(245, 222, 179);
+    height: 40px;
+    margin-top: 2%;
+}
+
+.search::placeholder {
+    color: rgb(137, 85, 32);
+    opacity: 0.8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.search:focus {
+    background-color: rgb(245, 222, 179, 0.3);
+    border-color: rgb(137, 85, 32);
+    box-shadow: 0 0 5px rgb(245, 222, 179);
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.btn-search {
+    color: rgb(137, 85, 32);
+    font-size: 25px;
+}
+
+.btn-search:hover {
+    color: rgb(137, 85, 32);
 }
 
 header > a {
     height: 100%;
+}
+
+header > a > img {
+    height: 100%;
+    width: auto;
 }
 
 div.offcanvas.offcanvas-start.offcanvas-custom {
@@ -38,37 +98,148 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     width: 75%;
 }
 
-.form-control {
-    border-color: rgb(245, 222, 179, 0.5);
-}
-
-.form-control::placeholder {
-    color: rgb(137, 85, 32);
-    opacity: 0.7;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-}
-
-.form-control:focus {
-    border-color: rgb(137, 85, 32);
-    box-shadow: 0 0 5px rgb(245, 222, 179);
-    color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-}
-
 .offcanvas-body ul li a {
     display: inline-block;
     width:100%;
     height: 100%;
-    padding: 10px 4%;
+    padding: 4%;
     color: rgb(137, 85, 32);
     text-decoration: none;
     text-align: center;
     font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.offcanvas-body ul li a:hover {
+    text-decoration: underline;
+}
+
+.offcanvas-body ul li button {
+    display: inline-block;
+    height: 100%;
+    padding: 4%;
+    color: rgb(137, 85, 32);
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.offcanvas-body ul li button:focus {
+    color: rgb(137, 85, 32);
+}
+
+.offcanvas-body ul li button:hover {
+    color: rgb(137, 85, 32);
+    border-color: rgb(137, 85, 32);
+}
+
+.offcanvas-body ul li button.logout {
+    background-color: rgb(137, 85, 32);
+    color: white;
+    width: 60%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 5%;
+}
+
+.categoriesmenu {
+    background-color: rgb(245, 222, 179, 0.2);
+}
+
+.bi-person {
+    color: rgb(137, 85, 32); 
+    font-size: 40px;
+}
+
+.user {
+    height: 70%;
+}
+
+.user-badge {
+    font-size: 12px;
+    padding: 4px 6px;
+    background-color: rgb(204, 153, 102);
+}
+
+.bi-bag {
+    color: rgb(137, 85, 32); 
+    font-size: 40px;
+}
+
+.cart {
+    height: 70%;
+}
+
+.cart-badge {
+    font-size: 12px; 
+    padding: 4px 6px;
+    background-color: rgb(204, 153, 102);
+}
+
+.offcanvas-body p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.offcanvas-body .accesso {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-style: italic;
+    text-align: center;
+}
+
+.offcanvas-body .vuoto {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-style: italic;
+    text-align: center;
+}
+
+.offcanvas-body .cartmenu-item {
+    width: 40%;
+}
+
+.offcanvas-body .cartmenu-info {
+    width: 60%;
+}
+
+.offcanvas-body .cartmenu-info a {
+    text-decoration: none;
+}
+
+.offcanvas-body .cartmenu-info a p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    color: rgb(204, 153, 102);
+}
+
+.offcanvas-body section {
+    border-bottom: 1px solid rgb(137, 85, 32);
+}
+
+.offcanvas-body h3 {
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.offcanvas-body .vaicarrello {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-style: italic;
+    text-align: center;
+}
+
+/* MAIN */
 
 main {
     margin-bottom: 5%;
@@ -117,25 +288,29 @@ main > p {
     margin-bottom: 8px;
 }
 
+/* FOOTER */
+
 footer {
-    padding-top: 5px;
-    padding-bottom: 5px;
     margin-top: auto;
-    /*background-color: rgb(54, 54, 54);*/
     background-color: rgb(137, 85, 32);
     text-align: center;
+    padding-top: 1%;
+    padding-bottom: 2%;
 }
 
-footer > p {
+footer a {
     color: white;
-    margin: 1px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
-    font-size: small;
+    font-size: 14px;
 }
+
+
 
 @media screen and (min-width: 768px) {
     
+    /* HEADER */
+
     div.offcanvas.offcanvas-start.offcanvas-custom {
         width: 30%;
     }
@@ -145,10 +320,112 @@ footer > p {
     }
 
     header button:first-child {
-        margin-left: 2.5%;
+        margin-left: 2%;
     }
 
-    header button.cart {
-        margin-right: 2.5%;
+    .bi-list {
+        font-size: 60px;
     }
+
+    header .user {
+        margin-right: 2%;
+        margin-bottom: 1%;
+    }
+
+    .bi-person {
+        font-size: 50px;
+    }
+
+    .user-badge {
+        font-size: 15px;
+        padding: 4px 7px;
+    }
+
+    header .cart {
+        margin-right: 2%;
+        margin-bottom: 1%;
+    }
+
+    .bi-bag {
+        font-size: 50px;
+    }
+
+    .cart-badge {
+        font-size: 15px;
+        padding: 4px 7px;
+    }
+
+    .iconaorsetto {
+        height: 80%;
+        width: auto;
+        margin-left: 10%;
+    }
+
+    header h2 { 
+        font-size: 40px;
+        margin-left: 3%;
+    }
+
+    .bi-x-lg {
+        font-size: 40px;
+    }
+
+    .search {
+        height: 50px;
+        margin-right: 1%;
+    }
+    
+    .search:focus {
+        font-size: 18px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-left: 3%;
+    }
+    
+    .btn-search {
+        font-size: 35px;
+    }
+
+    .offcanvas-body ul li button {
+        width: 80%;
+    }
+
+    .offcanvas-body p {
+        font-size: 16px;
+    }
+    
+    .offcanvas-body .accesso {
+        font-size: 18px;
+        margin-top: 5%;
+    }
+    
+    .offcanvas-body .vuoto {
+        font-size: 18px; 
+        margin-top: 5%;
+    }
+    
+    .offcanvas-body .cartmenu-info a p {
+        font-size: 20px;
+    }
+    
+    .offcanvas-body h3 {
+        font-size: 24px;
+    }
+    
+    .offcanvas-body .vaicarrello {
+        font-size: 18px;
+    }
+
+    /* MAIN */
+
+
+
+    /* FOOTER */
+    
+    footer a {
+        font-size: 15px;
+    }
+    
 }
