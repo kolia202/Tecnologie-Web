@@ -19,32 +19,27 @@
             <div class="card-body">
                 <h2 class="mb-0" style="font-size: 20px;">Ordine #<?php echo $ordine["Id_ordine"] ?>  -  <?php echo $ordine["Stato"] ?></h2>
                 <p style="font-size:15px;"><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
-                <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
-                <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Dettagli Ordine</a>
-                <p style="font-size:15px;">Data: <?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
-                
                 <?php if (isAdminLoggedIn()): ?>
                     <p><strong>Utente:</strong> <?php echo $ordine["E_mail"] ?></p>
                     <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Vedi Ordine</a>
                     <div class="container mt-5">
-        <h1>Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
-        <p>Stato attuale: <strong><?php echo $ordine["Stato"]; ?></strong></p>
-        <form method="POST">
-    <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
-    <div class="mb-3">
-        <label for="stato" class="form-label">Cambia Stato</label>
-        <select class="form-select" name="stato" id="stato">
-            <option value="In lavorazione">In lavorazione</option>
-            <option value="Spedito">Spedito</option>
-            <option value="Consegnato">Consegnato</option>
-        </select>
-    </div>
-    </div>
-    <button type="submit" name="cambiaStato" class="btn btn-primary">Aggiorna Stato</button>
-</form>
-
+                        <h1>Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
+                        <p>Stato attuale: <strong><?php echo $ordine["Stato"]; ?></strong></p>
+                        <form method="POST">
+                            <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
+                            <div class="mb-3">
+                                <label for="stato" class="form-label">Cambia Stato</label>
+                                <select class="form-select" name="stato" id="stato">
+                                    <option value="In lavorazione">In lavorazione</option>
+                                    <option value="Spedito">Spedito</option>
+                                    <option value="Consegnato">Consegnato</option>
+                                </select>
+                            </div>
+                            <button type="submit" name="cambiaStato" class="btn btn-primary">Aggiorna Stato</button>
+                        </form>
+                    </div>
                 <?php else: ?>
-                    <a href="#" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
+                    <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
                     <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Dettagli Ordine</a>
                 <?php endif; ?>
             </div>

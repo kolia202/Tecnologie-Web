@@ -6,7 +6,7 @@
         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar progress-bar-striped progress-bar-animated"></div>
         </div>
-        <p><?php echo $ordine['Stato'] ?></p>
+        <p><strong>Stato: </strong><?php echo $ordine['Stato'] ?></p>
         <input type="hidden" class="order-status" value="<?php echo $ordine['Stato'] ?>">
     </div>
 </div>
