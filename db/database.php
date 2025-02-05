@@ -545,5 +545,20 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getAllOrders() {
+        $query = "SELECT * FROM ordine";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updateOrderStatus($orderId, $status) {
+        $query = "UPDATE ORDINE SET Stato = ? WHERE Id_ordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $status, $orderId);
+        return $stmt->execute();
+    }
 }
 ?>
