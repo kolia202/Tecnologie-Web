@@ -36,6 +36,10 @@ if(isUserLoggedIn()) {
     $numeronotifiche = $dbhost->getUserNewMessages($_SESSION["utente"]);
 }
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update_profile"])) {
     $email = $_SESSION["utente"];
     $nome = $_POST["nome"];

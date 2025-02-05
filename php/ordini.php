@@ -10,5 +10,9 @@ $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
 $templateParams["ordini"] = $dbhost->getAllUserOrders($_SESSION["utente"]);
 $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 require '../template/base.php';
 ?>

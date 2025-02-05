@@ -6,6 +6,10 @@ if(isset($_POST["eliminanotifica"])) {
     $dbhost->deleteMessage($_POST["eliminanotifica"]);
 }
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Notifiche";
 $templateParams["nome"] = "lista-notifiche.php";
