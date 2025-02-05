@@ -186,7 +186,6 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-
     public function getNumberCartProducts($email) {
         $query = "SELECT SUM(Quantita) AS numeroprodotti FROM carrello WHERE E_mail = ?";
         $stmt = $this->db->prepare($query);
@@ -553,5 +552,15 @@ class DatabaseHelper {
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getShippingById($idspedizione) {
+        $query = "SELECT * FROM metodo_di_spedizione WHERE Id_spedizione = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idspedizione);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
 }
 ?>

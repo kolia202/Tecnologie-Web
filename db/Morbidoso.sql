@@ -58,6 +58,7 @@ create table METODO_DI_SPEDIZIONE (
      Nome VARCHAR(50) not null,
      Descrizione VARCHAR(255) not null,
      Costo DECIMAL(10,2),
+     Giorni INT not null,
      primary key (Id_spedizione));
 
 create table ORDINE (

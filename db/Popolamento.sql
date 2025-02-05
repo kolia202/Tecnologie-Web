@@ -36,10 +36,10 @@ INSERT INTO METODO_DI_PAGAMENTO (Descrizione, visibile) VALUES
 ('Gratis', 0);
 
 -- Popolamento della tabella METODO_DI_SPEDIZIONE
-INSERT INTO METODO_DI_SPEDIZIONE (Nome, Descrizione, Costo) VALUES
-('Standard', 'Spedizione standard con consegna entro 5-7 giorni lavorativi.', 5.99),
-('Espresso', 'Spedizione veloce con consegna entro 2-3 giorni lavorativi.', 9.99),
-('Premium', 'Spedizione premium con consegna entro 1 giorno lavorativo.', 14.99);
+INSERT INTO METODO_DI_SPEDIZIONE (Nome, Descrizione, Costo, Giorni) VALUES
+('Standard', 'Spedizione standard con consegna entro 5-7 giorni lavorativi.', 5.99, 6),
+('Espresso', 'Spedizione veloce con consegna entro 2-3 giorni lavorativi.', 9.99, 3),
+('Premium', 'Spedizione premium con consegna entro 1 giorno lavorativo.', 14.99, 1);
 
 -- Popolamento della tabella PRODOTTO
 INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES
@@ -171,7 +171,7 @@ INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_
 ('2025-01-25', 54.98, 'Spedito', 1, 2, 'martina.lombardi@peluche.com'),
 ('2025-01-26', 32.98, 'In lavorazione', 2, 1, 'luigi.santoro@peluche.com'),
 ('2025-01-24', 51.98, 'Consegnato', 1, 3, 'carlo.bianchi@peluche.com'),
-('2024-10-27', 48.98, 'In consegna', 3, 2, 'carlo.bianchi@peluche.com'),
+('2024-10-27', 48.98, 'Consegnato', 3, 2, 'carlo.bianchi@peluche.com'),
 ('2025-01-25', 51.98, 'Spedito', 2, 1, 'federico.ricci@peluche.com');
 
 

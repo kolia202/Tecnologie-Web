@@ -13,7 +13,7 @@
             <div class="card-body">
                 <h2 class="mb-0" style="font-size: 20px;">Ordine #<?php echo $ordine["Id_ordine"] ?>  -  <?php echo $ordine["Stato"] ?></h2>
                 <p style="font-size:15px;"><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
-                <a href="#" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
+                <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
                 <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Dettagli Ordine</a>
             </div>
         </div>        
