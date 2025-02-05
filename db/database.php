@@ -586,5 +586,62 @@ class DatabaseHelper {
         $row = $result->fetch_assoc();
         return $row ? $row['E_mail'] : null;
     }
+
+    public function getAllUtentiNonAdmin() {
+        $query = "SELECT * FROM utente WHERE Admin = 0";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function deleteUtente($email) {
+        $query = "DELETE FROM utente WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deleteOrdersByEmail($email) {
+        $query = "DELETE FROM ordine WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deleteNotificaByEmail($email) {
+        $query = "DELETE FROM notifica WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deleteCarrelloByEmail($email) {
+        $query = "DELETE FROM carrello WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deletePreferitoByEmail($email) {
+        $query = "DELETE FROM preferito WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deleteRecensioneByEmail($email) {
+        $query = "DELETE FROM recensione WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
+    public function deleteAvvisoDisponibilitaByEmail($email) {
+        $query = "DELETE FROM avvisi_disponibilita WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
 }
 ?>
