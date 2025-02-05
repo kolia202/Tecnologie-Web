@@ -10,6 +10,9 @@ $templateParams["prodotti"] = $dbhost->getNomiFotoPrezziProdottiCasuali();
 $templateParams["recensioni"] = $dbhost->getTestoRecensioniCasuali();
 $numeroprodotti = 0;
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+} 
 
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);

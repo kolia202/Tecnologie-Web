@@ -10,5 +10,9 @@ if(isUserLoggedIn()) {
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
     $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 require("../template/base.php");
 ?>

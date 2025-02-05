@@ -527,6 +527,14 @@ class DatabaseHelper {
         return $stmt->execute();        
     }
 
+    public function getAdmins() {
+        $query = "SELECT E_mail FROM utente WHERE Admin = 1";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);      
+    }
+
     public function deleteRecensione($idrecensione) {
             $query = "DELETE FROM RECENSIONE WHERE Id_recensione = ?";
             $stmt = $this->db->prepare($query);

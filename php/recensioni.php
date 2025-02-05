@@ -56,5 +56,9 @@ if (isUserLoggedIn()) {
     }
 }
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 require("../template/base.php");
 ?>

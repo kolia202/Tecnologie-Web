@@ -8,6 +8,10 @@ $templateParams["nome"] = "assistenzaC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = 0;
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 if(isUserLoggedIn()) {
     $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
     $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);

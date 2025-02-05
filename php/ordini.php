@@ -27,5 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isAdminLoggedIn()) {
 }
 
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 require '../template/base.php';
 ?>

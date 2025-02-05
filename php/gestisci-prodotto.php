@@ -8,7 +8,7 @@ if(isset($_POST["nuove-scorte"]) && isset($_POST['idprodotto'])) {
     $templateParams["avvisi"] = $dbhost->getProductAvailabilityNotice($id);
     $nome = $dbhost->getProductById($id)[0]["Nome"];
     foreach($templateParams['avvisi'] as $avviso) {
-        $dbhost->addNewMessage('Peluche Disponibile', "Buone notizie! Il peluche $nome che stavi aspettando è finalmente tornato disponibile! Corri a prenderlo prima che finisca di nuovo!", $avviso['E_mail']);
+        $dbhost->addNewMessage('Peluche Disponibile', "Buone notizie! Il peluche " . $nome . " che stavi aspettando è finalmente tornato disponibile! Corri a prenderlo prima che finisca di nuovo!", $avviso['E_mail']);
         $dbhost->deleteAvailabilityNotice($avviso['id_avviso']);
     }
     header("Location: dettaglioProdotto.php?id=$id");

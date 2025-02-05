@@ -40,8 +40,10 @@
                     <ul class="list-unstyled">
                         <li><a href="../php/index.php">Home<br></a></li>
                         <li><a href="../php/account.php">Account<br></a></li>
-                        <li><a href="<?php echo isUserLoggedIn() ? '../php/preferiti.php' : 'account.php?error=devi_accedere'; ?>">I tuoi preferiti</a></li>
-                        <li><a href="../php/prodotti.php">Tutti i nostri peluches<br></a></li>
+                        <?php if(!isAdminLoggedIn()): ?>
+                            <li><a href="<?php echo isUserLoggedIn() ? '../php/preferiti.php' : 'account.php?error=devi_accedere'; ?>">I tuoi Preferiti</a></li>
+                        <?php endif; ?>
+                        <li><a href="../php/prodotti.php">Tutti i nostri Peluches<br></a></li>
                         <!-- MENU A SCOMPARSA -->
                         <li class="d-flex flex-column justify-content-center">
                             <button class="btn" type="button" style="background-color: white; color: rgb(137, 85, 32); font-size: 18px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Categorie</button>
@@ -56,6 +58,11 @@
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <form method="POST" action="account.php">
+                                <button type="submit" name="logout" class="btn" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Logout</button>
+                            </form>
+                        </li>
                     </ul> 
                 </div>
             </div>
@@ -66,29 +73,32 @@
             <img src="../utilities/logo/logopeluche.png" alt="Logo"/>
         </a>
 
-        <!--<button class="btn d-none d-md-block ms-30%" type="button">
-            <i class="bi bi-heart" style="color: rgb(137, 85, 32); font-size: 40px"></i>
-        </button>
-        <button class="btn d-none d-md-block ms-auto" type="button">
-            <i class="bi bi-person" style="color: rgb(137, 85, 32); font-size: 45px"></i>        
-        </button>-->
-
-        <!-- BOTTONE CARRELLO -->
-         <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
-         <?php if($currentPage === "carrello.php"): ?>
-            <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1" style="height: 70%;">
-                <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
-                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
-                    <?php echo $numeroprodotti ?>
+        <?php if(isAdminLoggedIn()): ?>
+            <!-- BOTTONE UTENTE -->
+            <a href="../php/account.php" class="btn position-relative cart pe-3 ps-1" style="height: 70%;">
+                <i class="bi bi-person" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+                <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
+                    <?php echo $nuovenotificheadmin ?>
                 </span>
             </a>
         <?php else: ?>
-            <button class="btn position-relative cart pe-3 ps-1" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
-                <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
-                    <?php echo $numeroprodotti ?>
-                </span>
-            </button>
+            <!-- BOTTONE CARRELLO -->
+            <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+            <?php if($currentPage === "carrello.php"): ?>
+                <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1" style="height: 70%;">
+                    <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+                    <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
+                        <?php echo $numeroprodotti ?>
+                    </span>
+                </a>
+            <?php else: ?>
+                <button class="btn position-relative cart pe-3 ps-1" style="height: 70%;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="bi bi-bag" style="color: rgb(137, 85, 32); font-size: 40px;"></i>
+                    <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill bg-danger cart-badge" style="font-size: 10px; padding: 6px 6px;">
+                        <?php echo $numeroprodotti ?>
+                    </span>
+                </button>
+            <?php endif; ?>
         <?php endif; ?>
 
         <!-- MENU LATERALE -->

@@ -14,5 +14,9 @@ if(isset($_GET["id"])) {
 $ordine = $dbhost->getOrderById($idordine);
 $templateParams["prodottiordinati"] = $dbhost->getOrderedProducts($idordine);
 
+if(isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
+}
+
 require '../template/base.php';
 ?>

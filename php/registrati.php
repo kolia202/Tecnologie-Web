@@ -21,7 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if ($dbhost->registrazione($nome, $cognome, $email, $password, $dataDiNascita, $telefono)) {
         $dbhost->addNewMessage('Conferma Iscrizione', 'Benvenuto nella nostra famiglia di peluche! Siamo felici di averti con noi. Scopri la nostra collezione e trova i peluche perfetti per te!', $email);
-        echo "Registrazione completata con successo!";
+        $templateParams['admins'] = $dbhost->getAdmins();
+        foreach($templateParams['admins'] as $admin) {
+            $dbhost->addNewMessage('Nuova Iscrizione', 'Benvenuto a un nuovo membro nella nostra famiglia morbidosa! Un utente si è appena registrato e si prepara a scoprire la nostra collezione di peluches.', $admin['E_mail']);
+        }
+        $_SESSION["utente"] = $email;
         header("Location: index.php");
         exit;
     } else {
