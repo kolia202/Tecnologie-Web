@@ -39,19 +39,20 @@ if (isUserLoggedIn()) {
         $nome = trim($_POST["nome"]);
         $cognome = trim($_POST["cognome"]);
         $recensioni = $dbhost->getIdRecensioneByNomeCognome($nome, $cognome);
-        
+        $userEmail = $dbhost->getEmail($nome, $cognome);
         if (!empty($recensioni)) {
             foreach ($recensioni as $recensione) {
                 $idRecensione = intval($recensione["Id_recensione"]);
                 if ($dbhost->deleteRecensione($idRecensione)) {
+                     $tiponotifica = "Eliminazione Recensione";
+                $testo = "La tua recensione è stata rimossa dall'amministrazione. Se hai domande, contattaci.";
+                $dbhost->addNewMessage($tiponotifica, $testo, $userEmail);
                     header("Location: recensioni.php");
                     exit();
                 } else {
                     echo "Errore nell'eliminazione della recensione.";
                 }
             }
-        } else {
-            echo "Nessuna recensione trovata per questo utente.";
         }
     }
 }
