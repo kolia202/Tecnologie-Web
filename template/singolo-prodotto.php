@@ -1,8 +1,6 @@
 <?php if(count($templateParams["prodotto"]) == 0): ?>
     <article>
         <p>Prodotto non presente</p>
-        <?php var_dump($templateParams['prodotto']);
-        var_dump($idprodotto) ?>
     </article>
 <?php
     else:
@@ -18,7 +16,11 @@
             <?php if(isAdminLoggedIn()): ?>
                 <div class="d-flex justify-content-center align-items-center">
                     <h1><?php echo $prodotto["Nome"]; ?></h1>
-                    <i class="bi bi-trash3-fill ms-5"></i>                    
+                    <form action="gestisci-prodotto.php" method="POST">
+                        <button type='submit' class='btn' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">
+                            <i class="bi bi-trash3-fill ms-5"></i>
+                        </button>
+                    </form>
                 </div>
             <?php else: ?>
                 <h1><?php echo $prodotto["Nome"]; ?></h1>
@@ -76,8 +78,7 @@
             <!-- gestione prodotto -->
             <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
                 <form action="gestisci-prodotto.php" method="POST">
-                    <input type="hidden" name="idprodotto" value="<?php echo $prodotto['Id_prodotto']; ?>"/>
-                    <button type='submit' class='btn btn-primary' name='attivaprodotto'>Attiva Prodotto</button>
+                    <button type='submit' class='btn btn-primary' name='attivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Attiva Prodotto</button>
                 </form>
             <?php elseif(isAdminLoggedIn()): ?>
                 <div class="d-flex align-items-center mt-2">
@@ -86,8 +87,7 @@
                         Modifica Prodotto
                     </button>
                     <form action="gestisci-prodotto.php" method="POST">
-                        <input type="hidden" name="idprodotto" value="<?php echo $prodotto['Id_prodotto']; ?>"/>
-                        <button type='submit' class='btn btn-primary' name='disattivaprodotto'>Disattiva Prodotto</button>
+                        <button type='submit' class='btn btn-primary' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Disattiva Prodotto</button>
                     </form>
                 </div>
             <?php endif; ?>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn btn-primary">Salva</button>
+                    <button type="submit" class="btn btn-primary" name="modificaprodotto">Salva</button>
                 </div>
             </form>
         </div>

@@ -273,10 +273,10 @@ class DatabaseHelper {
     }
 
     public function updateStock($idprodotto, $quantita) {
-        $query = "UPDATE prodotto SET Scorta = Scorta + ? WHERE Id_prodotto = ? AND Scorta >= ?";
+        $query = "UPDATE prodotto SET Scorta = Scorta + ? WHERE Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('iii', $quantita, $idprodotto, $quantita);
-        return $stmt->execute();         
+        $stmt->bind_param('ii', $quantita, $idprodotto);
+        return $stmt->execute();
     }
 
     public function getTotalCartPoints($email) {
@@ -503,6 +503,29 @@ class DatabaseHelper {
         return $stmt->execute();        
     }
 
+    public function addNewProduct($nome, $descrizione, $immagine, $taglia, $scorta, $prezzo, $punti, $categoria) {
+        $query = "INSERT INTO prodotto (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssidis', $nome, $descrizione, $immagine, $taglia, $scorta, $prezzo, $punti, $categoria);
+        $stmt->execute();
+        return $this->db->insert_id;
+    }
+
+    public function getProductAvailabilityNotice($idprodotto) {
+        $query = "SELECT * FROM avvisi_disponibilita WHERE Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idprodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);        
+    }
+
+    public function deleteAvailabilityNotice($idavviso) {
+        $query = "DELETE FROM avvisi_disponibilita WHERE id_avviso = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idavviso);
+        return $stmt->execute();        
+    }
 
 }
 ?>
