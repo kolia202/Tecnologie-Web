@@ -1,5 +1,5 @@
-<h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
 <?php if (isAdminLoggedIn()): ?>
+  <h1>Il mio Account</h1>
   <section class="border-bottom text-center">
     <h2 style="text-align: left; margin-left: 2%;">Ciao, 
         <?php echo $userDetails["Nome"] ?>! 
@@ -37,6 +37,7 @@
         </div>
     </div>
 <?php elseif (isUserLoggedIn()): ?>
+  <h1>Il mio Account</h1>
   <section class="border-bottom text-center">
     <h2 style="text-align: left; margin-left: 2%;">Ciao, 
         <?php echo $userDetails["Nome"] ?>! 
@@ -45,7 +46,7 @@
     <p class="mb-1"><strong>Nome: </strong><?php echo $userDetails["Nome"] . " " . $userDetails["Cognome"]; ?></p>
     <p class="mb-2"><strong>Email: </strong><?php echo $userDetails["E_mail"] ?></p>
     <p class="mb-2"><strong>Telefono: </strong><?php echo $userDetails["Numero_telefono"] ?></p>
-    <p class="mb-2"><strong>Data di Nascita: </strong><?php echo getFormattedDate($userDetails["Data_di_nascita"]) ?></p>
+    <p class="mb-2"><strong>Data di Nascita: </strong><?php echo $userDetails['Data_di_nascita'] != '0000-00-00' ? getFormattedDate($userDetails["Data_di_nascita"]) : '' ?></p>
     <button type="button" class="btn btn-outline mb-2" data-bs-toggle="collapse" data-bs-target="#collapsePoints" aria-expanded="false" aria-controls="collapsePoints" style="border-color: rgb(137, 85, 32); background-color: rgb(255, 255, 153); color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 15px; font-style: italic;"><i class="bi bi-star-fill" style="color: rgb(255, 165, 0)"></i> <?php echo $userDetails["Punti"]; ?> Punti Fedeltà</button>
 
     <div class="collapse" id="collapsePoints" style="border: none; ">
@@ -129,23 +130,54 @@
     </div>
   </section>
 <?php else: ?>
-  <h2 style="text-align: left; margin-left: 2%;">Accedi</h2>
-  <?php if (isset($templateParams["errorelogin"])): ?>
-      <p style="color: red; font-weight: bold;"><?php echo $templateParams["errorelogin"]; ?></p>
-  <?php endif; ?>
-  <form action="account.php" method="POST">
-      <div class="mb-3">
-          <label for="email" class="form-label">Email<span style="color: red;">*</span></label>
-          <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="mb-3">
-          <label for="password" class="form-label">Password<span style="color: red;">*</span></label>
-          <input type="password" class="form-control" id="password" name="password" required>
-      </div>
-      <button type="submit" name="accedi">Accedi</button>
-  </form>
-  <p><a href="../php/controlloEmail.php">Password dimenticata?</a></p>
-  <p>Non sei ancora registrato?</p>
-  <a href="registrati.php" class="btn btn-secondary">Registrati</a>
-  <p><a href="../php/index.php">Indietro</a></p>
+    <div class="container mt-4 ps-4 pe-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center account">Account</h1>
+                <?php if (isset($_SESSION["errorelogin"])): ?>
+                    <div class="alert alert-danger text-center mt-3 alerts" role="alert">
+                        <i class="bi bi-exclamation-triangle align-center"></i>
+                        <?php echo $_SESSION["errorelogin"];
+                        unset($_SESSION['errorelogin']); ?>
+                    </div>
+                <?php elseif(isset($_SESSION['success'])): ?>
+                    <div class="alert alert-success text-center mt-3 alerts" role="alert">
+                        <i class="bi bi-check-circle align-center"></i>
+                        <?php echo $_SESSION["success"];
+                        unset($_SESSION['success']); ?>
+                    </div>                  
+                <?php endif; ?>
+                <form action="account.php" method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label ps-1 infologin">
+                            <i class="bi bi-envelope align-middle"></i>
+                            E-mail
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" class="form-control inputlogin" id="email" name="email" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label ps-1 infologin">
+                            <i class="bi bi-key align-middle"></i>
+                            Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="input-group">
+                            <input type="password" class="form-control inputlogin" id="password" name="password" required>
+                            <button class="btn show-password" type="button">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" name="accedi" class="btn btn-primary w-100 fw-bold btn-accedi">Accedi</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="../php/controlloEmail.php" class="d-block">Password dimenticata?</a>
+                    <p class="mt-3 newsignin">Non sei ancora registrato?</p>
+                    <a href="registrati.php" class="btn btn-outline-secondary ps-5 pe-5 registrati">Registrati</a>
+                    <p class="mt-4"><a href="../php/index.php">Annulla</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>

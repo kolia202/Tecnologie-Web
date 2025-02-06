@@ -1,17 +1,29 @@
-<form method="POST" action="controlloEmail.php">
-    <h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
-    <p>Hai perso la password? Inserisci il tuo indirizzo email.<br>
-        Verrai reindirizzato alla pagina di reset della password.</p>
-    <?php
-    if (isset($_SESSION["error"])) {
-        echo "<div style='color: red;'>" . $_SESSION["error"] . "</div>";
-        unset($_SESSION["error"]); 
-    }
-    ?>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email<span style="color: red;">*</span></label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Avanti</button>
-</form>
-<p><a href="../php/account.php">Indietro</a></p>
+<div class="container mt-4 ps-4 pe-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center account">Recupero Password</h1>
+            <p class="text-center pt-2 howto">Hai dimenticato la tua password? Nessun problema!<br>Inserisci il tuo indirizzo E-mail qui sotto e verrai subito reindirizzato alla pagina di Reset.</p>
+            <?php if (isset($_SESSION["error"])): ?>
+                <div class="alert alert-danger text-center mt-3 alerts" role="alert">
+                    <i class="bi bi-exclamation-triangle align-center"></i>
+                    <?php echo $_SESSION["error"];
+                    unset($_SESSION["error"]); ?>
+                </div>
+            <?php endif; ?>
+            <form method="POST" action="controlloEmail.php">
+                <div class="mb-3">
+                    <label for="email" class="form-label ps-1 infologin">
+                        <i class="bi bi-envelope align-middle"></i>
+                        E-mail
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" class="form-control inputlogin" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-accedi fw-bold">Avanti</button>
+            </form>
+            <div class="text-center mt-4">
+                <a href="../php/account.php">Annulla</a>
+            </div>
+        </div>
+    </div>    
+</div>
