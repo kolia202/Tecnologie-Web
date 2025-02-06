@@ -19,7 +19,7 @@
             </a>
             <?php if($prodotto["Scorta"] <= 0):
                 $prodottiesauriti = true; ?>
-                <span type="button" class="btn btn-sm fw-bold" style="background-color: black; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px;">Esaurito</span>
+                <span type="button" class="btn btn-sm fw-bold custom-spedizioneButton">Esaurito</span>
             <?php endif; ?>
             <a href="../php/elimina-carrello.php?&id=<?php echo $prodotto["Id_prodotto"]; ?>">
                 <button type="button" class="btn">
