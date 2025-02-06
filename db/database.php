@@ -208,6 +208,16 @@ class DatabaseHelper {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function isPreferito($email, $idprodotto) {
+        $query = "SELECT COUNT(*) AS ispreferito FROM preferito WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $idprodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row["ispreferito"];
+    }
+
     public function addPreferito($email, $idprodotto) {
         $query = "SELECT * FROM preferito WHERE E_mail = ? AND Id_prodotto = ?";
         $stmt = $this->db->prepare($query);

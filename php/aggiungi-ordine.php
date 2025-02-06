@@ -7,20 +7,23 @@ $utente = $_SESSION["utente"];
 
 $idordine = $dbhost->addNewOrder($utente, $_SESSION["totaleordine"], $_SESSION["spedizione"], $_SESSION["pagamento"]);
 $punti = (floor($_SESSION["totaleordine"] / 10)) - $_SESSION["puntiusati"];
+$templateParams['admins'] = $dbhost->getAdmins();
 
 foreach($dbhost->getCartProducts($utente) as $prodotto) {
     $dbhost->addOrderedProduct($idordine, $prodotto["Id_prodotto"], $prodotto["Quantita"]);
     $dbhost->updateStock($prodotto["Id_prodotto"], -($prodotto["Quantita"]));
     $p = $dbhost->getProductById($prodotto['Id_prodotto'])[0];
-    $templateParams['admins'] = $dbhost->getAdmins();
     foreach($templateParams['admins'] as $admin) {
         if(intval($p['Scorta']) <= 0) {
             $nome = $p["Nome"];
             $dbhost->addNewMessage('Scorte Esaurite', "Attenzione! Il prodotto " . $nome . " è esaurito. È tempo di aggiornare le scorte per non lasciare i nostri clienti a mani vuote!", $admin['E_mail']);
         }
-        $dbhost->addNewMessage('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", $admin['E_mail']);
     }
     $dbhost->removeProductFromCart($utente ,$prodotto["Id_prodotto"]);
+}
+
+foreach($templateParams['admins'] as $admin) {
+    $dbhost->addNewMessage('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", $admin['E_mail']);    
 }
 
 $dbhost->updateUserPoints($utente, $punti);

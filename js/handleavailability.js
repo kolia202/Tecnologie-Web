@@ -22,8 +22,9 @@ function handleAvailability() {
             .then(data => {
                 if(data.status == "success") {
                     const button = document.querySelector(".btn-avviso");
+                    button.classList.add('btn-avviso', 'fw-bold');
                     button.innerText = 'Richiesta inviata';
-                    button.disabled = true;              
+                    button.disabled = true;
                 }
             })
             .catch(error => {

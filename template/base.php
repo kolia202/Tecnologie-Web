@@ -6,7 +6,7 @@
     <title><?php echo $templateParams["titolo"]; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style.css?v=141" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css?v=114" />
 </head>
 <body>
     <!-- HEADER -->
@@ -64,13 +64,15 @@
                             </div>
                         </li>
                         <li><a href="../php/informazioni.php">Chi siamo<br></a></li>
-                        <li>
-                            <form method="POST" action="account.php">
-                                <div class="d-flex justify-content-center">
-                                    <button type="submit" name="logout" class="btn rounded-pill fw-bold logout">Logout</button>
-                                </div>
-                            </form>
-                        </li>
+                        <?php if(isUserLoggedIn()): ?>
+                            <li>
+                                <form method="POST" action="account.php">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" name="logout" class="btn rounded-pill fw-bold logout">Logout</button>
+                                    </div>
+                                </form>
+                            </li>
+                        <?php endif; ?>
                     </ul> 
                 </div>
             </div>
@@ -83,7 +85,7 @@
             <!-- BOTTONE UTENTE -->
             <a href="../php/account.php" class="btn position-relative user pe-3 ps-1">
                 <i class="bi bi-person"></i>
-                <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill user-badge">
+                <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill user-badge" value="<?php echo $nuovenotificheadmin ?>">
                     <?php echo $nuovenotificheadmin ?>
                 </span>
             </a>

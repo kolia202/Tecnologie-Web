@@ -13,7 +13,7 @@ function handleMessages() {
             let statonotifica = cardbody.querySelector(".stato-notifica").value;
             if (statonotifica == 0) {
                 let idnotifica = cardbody.querySelector(".elimina-notifica").value;
-                cardbody.querySelector(".nuova-notifica").style.setProperty("background-color", "green", "important");
+                cardbody.querySelector(".nuova-notifica").style.backgroundColor = "green";
                 fetch('../php/stato-notifica.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

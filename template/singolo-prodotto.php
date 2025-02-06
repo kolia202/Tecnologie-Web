@@ -1,99 +1,106 @@
-<?php if(count($templateParams["prodotto"]) == 0): ?>
-    <article>
-        <p>Prodotto non presente</p>
-    </article>
-<?php
-    else:
-        $prodotto = $templateParams["prodotto"][0];
-?>
-    <article>
-        <section>
-            <!-- immagine -->
-            <div>
-                <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt=""/>
+<div class="container mt-4 ps-4 pe-4">
+    <?php if(count($templateParams["prodotto"]) == 0): ?>
+        <article class="p-4">
+            <p>Prodotto non presente</p>
+        </article>
+    <?php
+        else:
+            $prodotto = $templateParams["prodotto"][0];
+    ?>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 text-center">
+                <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid rounded"/>
             </div>
-            <!-- Intestazione prodotto -->
-            <?php if(isAdminLoggedIn()): ?>
-                <div class="d-flex justify-content-center align-items-center">
-                    <h1><?php echo $prodotto["Nome"]; ?></h1>
-                    <form action="gestisci-prodotto.php" method="POST">
-                        <button type='submit' class='btn' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">
-                            <i class="bi bi-trash3-fill ms-5"></i>
-                        </button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <h1><?php echo $prodotto["Nome"]; ?></h1>
-            <?php endif; ?>
-            <p><?php echo $prodotto["Nome_categoria"]; ?></p>
-            <?php if($prodotto["Scorta"] <= 0): ?>
-                <span type="button" class="btn btn-sm fw-bold" style="background-color: black; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px;">Esaurito</span>
-            <?php elseif(isAdminLoggedIn() && !$prodotto['attivo']): ?>
-                <span type="button" class="btn btn-sm fw-bold" style="background-color: black; color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px;">Prodotto Disattivato</span>
-            <?php endif; ?>
-        </section>
-        <section>
-            <!-- dettagli prodotto -->
-            <p>Prezzo: <?php echo getFormattedPrice($prodotto["Prezzo"]); ?> (o <?php echo $prodotto["Prezzo_punti"]; ?> punti)</p>
-            <p>Taglia: <?php echo $prodotto["Grandezza"]; ?></p>
-            <!-- gestione scorte -->
-            <?php if(isAdminLoggedIn()): ?>
-                <div class="d-flex align-items-center">
-                    <p>Scorte disponibili: <?php echo $prodotto["Scorta"]; ?></p>
-                    <button type="button" class="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#stock" <?php echo $prodotto['attivo'] ? '' : 'disabled' ?>>Aumenta</button>
-                </div>
-            <?php endif; ?>
-            <!-- carrello e preferiti -->
-            <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
-                <div class="text-center">
-                    <button type="button" class="btn btn-sm fw-bold add-to-cart" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al carrello</button>
-                    <a href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">Aggiungi ai Preferiti</a>
-                </div>
-            <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
-                <p>Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
-                <form class="avviso-disponibilita" method="POST">
-                    <input type="hidden" class="id-utente" value="<?php echo $_SESSION["utente"]; ?>">
-                    <input type="hidden" class="id-prodotto" value="<?php echo $prodotto["Id_prodotto"]; ?>">
-                    <button type="submit" class="btn btn-sm fw-bold btn-avviso" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Avviso Disponibilità</button>
-                </form>
-                <a href="dettaglioProdotto.php?azione=aggiungi&id_prodotto=$prodotto['Id_prodotto']">Aggiungi ai Preferiti</a>
-            <?php elseif (!isAdminLoggedIn()): ?>
-                <p>Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?<br>Prima esegui l'accesso al tuo account.</p>
-                <button type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;" disabled>Avviso Disponibilità</button>
-                <a href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">Aggiungi ai Preferiti</a>
-            <?php endif; ?>
-            <!-- descrizione -->
-            <div class="accordion mt-2" id="descrizione">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Descrizione</button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#descrizione">
-                        <div class="accordion-body">
-                            <?php echo $prodotto['Descrizione']; ?>
+            <div class="col-12 col-md-6 text-center">
+                <!-- Intestazione prodotto -->
+                <h1 class="text-center mt-2 sp-titolo"><?php echo $prodotto["Nome"]; ?></h1>
+                <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
+                    <span class="btn btn-sm fw-bold blackb">Prodotto Disattivato</span> 
+                <?php elseif($prodotto["Scorta"] <= 0): ?>
+                    <span class="btn btn-sm fw-bold blackb">Esaurito</span>
+                <?php endif; ?>             
+                <section class="mt-3">
+                    <!-- dettagli prodotto -->
+                    <p class="sp-details"><strong>Categoria : </strong><?php echo $prodotto["Nome_categoria"]; ?></p> 
+                    <p class="sp-details"><strong>Taglia: </strong><?php echo $prodotto["Grandezza"]; ?></p>
+                    <?php if(isAdminLoggedIn()): ?>
+                        <p class="sp-details mb-1"><strong>Scorte disponibili: </strong><?php echo $prodotto["Scorta"]; ?></p>
+                        <button type="button" class="btn btn-outline mb-3 aumentab" data-bs-toggle="modal" data-bs-target="#stock" <?php echo $prodotto['attivo'] ? '' : 'disabled' ?>>Aumenta</button>
+                    <?php endif; ?>
+                    <p class="sp-details"><strong>Prezzo: </strong><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
+                    <p class="sp-details"><strong>Punti: </strong><?php echo $prodotto["Prezzo_punti"]; ?></p>
+                    <!-- carrello e preferiti -->
+                    <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
+                        <button type="button" class="btn btn-lg text-center fw-bold add-to-cart sp-aggiungi pe-4 ps-4 mt-2" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
+                        <div class="mt-4">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
+                                Aggiungi ai Preferiti
+                            </a>
                         </div>
+                    <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
+                        <p class="avvisop">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
+                        <form class="avviso-disponibilita" method="POST">
+                            <input type="hidden" class="id-utente" value="<?php echo $_SESSION["utente"]; ?>">
+                            <input type="hidden" class="id-prodotto" value="<?php echo $prodotto["Id_prodotto"]; ?>">
+                            <button type="submit" class="btn fw-bold btn-avviso">Avviso Disponibilità</button>
+                        </form>
+                        <div class="mt-4">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
+                                Aggiungi ai Preferiti
+                            </a>
+                        </div>
+                    <?php elseif (!isAdminLoggedIn()): ?>
+                        <p class="avvisop">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?<br>Prima esegui l'accesso al tuo account.</p>
+                        <button type="button" class="btn fw-bold avvisob" disabled>Avviso Disponibilità</button>
+                        <div class="mt-4">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                                <i class="bi bi-heart me-2"></i>
+                                Aggiungi ai Preferiti
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                    <!-- gestione prodotto -->
+                    <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
+                        <form action="gestisci-prodotto.php" method="POST">
+                            <button type='submit' class='btn btn-primary gestiscib' name='attivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Attiva Prodotto</button>
+                        </form>
+                    <?php elseif(isAdminLoggedIn()): ?>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <button type="button" class="btn btn-primary me-3 gestiscib" data-bs-toggle="modal" data-bs-target="#modificaprodotto">
+                                <i class="bi bi-pencil-square"></i>    
+                                Modifica Prodotto
+                            </button>
+                            <form action="gestisci-prodotto.php" method="POST">
+                                <button type='submit' class='btn btn-primary ms-3 gestiscib' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Disattiva Prodotto</button>
+                            </form>
+                        </div>
+                        <form action="gestisci-prodotto.php" method="POST">
+                            <button type='submit' class='btn btn-danger mt-3 ps-4 pe-4 eliminab' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">
+                            <i class="bi bi-trash3-fill"></i>
+                            Elimina Prodotto    
+                            </button>
+                        </form>
+                    <?php endif; ?>
+                </section>
+            </div>
+        </div>
+        <!-- descrizione -->
+        <div class="accordion mb-3 mt-3" id="descrizione">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Descrizione</button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#descrizione">
+                    <div class="accordion-body">
+                        <?php echo $prodotto['Descrizione']; ?>
                     </div>
                 </div>
             </div>
-            <!-- gestione prodotto -->
-            <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
-                <form action="gestisci-prodotto.php" method="POST">
-                    <button type='submit' class='btn btn-primary' name='attivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Attiva Prodotto</button>
-                </form>
-            <?php elseif(isAdminLoggedIn()): ?>
-                <div class="d-flex align-items-center mt-2">
-                    <button type="button" class="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#modificaprodotto" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">
-                        <i class="bi bi-pencil-square"></i>    
-                        Modifica Prodotto
-                    </button>
-                    <form action="gestisci-prodotto.php" method="POST">
-                        <button type='submit' class='btn btn-primary' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Disattiva Prodotto</button>
-                    </form>
-                </div>
-            <?php endif; ?>
-        </section>
-    </article>
-<?php endif; ?>
+        </div>
+    <?php endif; ?>    
+</div>
 
 <!-- modal aggiornamento scorte -->
 <div class="modal fade" id="stock" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

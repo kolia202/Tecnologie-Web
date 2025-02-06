@@ -1,6 +1,6 @@
-<img class="img-vetrina" src="../utilities/img/Peluches-Home.png" alt="vetrina" />
+<img class="img-vetrina mt-4" src="../utilities/img/Peluches-Home.png" alt="vetrina" />
 
-<h1 class="favorite-store-title">Il tuo negozio di peluche preferito!</h1>
+<h1 class="favorite-store-title mt-4">Il tuo negozio di peluche preferito!</h1>
 
 <p class="welcome-message">
     Benvenuto nel mondo dei peluches! Scopri la nostra collezione di amici morbidosi, 
@@ -29,7 +29,7 @@
 
 <h1 class="Consegna">Consegna gratuita</h1>
 
-<p class="ordinip">per ordini superiori a 40€</p>
+<p class="ordinip">per ordini superiori a 50€</p>
     
 <i class="bi bi-lock-fill custom-biBB"></i>
 
@@ -110,11 +110,11 @@ appassionati del genere.
     cerca di peluche per i loro bambini.
 </p>
 
-    <div class="box p-4 rounded shadow bg-whiteee">
-        <h1>Cosa dicono di noi?</h1>
-        <p>Le testimonianze di chi ha scelto di
+    <div class="box rounded shadow bg-whiteee">
+        <h1 class="mt-2">Cosa dicono di noi?</h1>
+        <p class="recensionihome">Le testimonianze di chi ha scelto di
         affidarsi a noi per l'acquisto dei peluche!</p>
-        <div id="carouselExample" class="carousel slidee">
+        <div id="carouselExample" class="carousel slidee mt-5">
             <div class="carousel-inner custom-inner">
                 <?php if (!empty($templateParams["recensioni"])): ?>
                     <?php foreach ($templateParams["recensioni"] as $index => $recensione): ?>
@@ -145,7 +145,7 @@ appassionati del genere.
 
 <div class="text-centerA">
     <a href="../php/recensioni.php">
-        <button type="button" class="btn btn-sm fw-bold custom-buttonA">Recensioni</button>
+        <button type="button" class="btn btn-sm fw-bold custom-buttonA mb-5">Recensioni</button>
     </a>
 </div>
 
