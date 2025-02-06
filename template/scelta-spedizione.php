@@ -9,7 +9,7 @@
         </p>
     <?php endif; ?>
     <?php foreach($templateParams["spedizioni"] as $spedizione): ?>
-        <section class="border-bottom">
+        <section class="border-bottom ps-3">
             <div class="form-check ms-4">
                 <input class="form-check-input shipping-radio" type="radio" name="shipping" id="<?php echo $spedizione["Id_spedizione"] ?>" value="<?php echo $spedizioneGratuita ? 3 : $spedizione["Id_spedizione"] ?>" <?php echo $spedizioneGratuita ? 'disabled' : ''; ?>/>
                 <label class="form-check-label" for="<?php echo $spedizione["Id_spedizione"] ?>">

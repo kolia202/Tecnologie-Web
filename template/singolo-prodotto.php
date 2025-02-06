@@ -130,7 +130,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modifica Prodotto</h1>
+                <h1 class="modal-titlep fs-5" id="staticBackdropLabel">Modifica Prodotto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="gestisci-prodotto.php" method="POST" enctype="multipart/form-data">
@@ -139,31 +139,31 @@
                     <label for="immagineprodotto"></label>
                     <input type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*"/>
                     <input type="hidden" name="immagineattuale" value="<?php echo $prodotto['Immagine']; ?>"/>
-                    <br><label for="nomeprodotto">Nome:</label>
+                    <br><label class="mt-3 modal-text" for="nomeprodotto">Nome:</label>
                     <input type="text" id="nomeprodotto" name="nomeprodotto" value="<?php echo $prodotto["Nome"]; ?>" required/>
-                    <br><label for="categoriaprodotto">Categoria:</label>
+                    <br><label class="mt-3 modal-text" for="categoriaprodotto">Categoria:</label>
                     <select id="categoriaprodotto" name="categoriaprodotto" required>
                         <?php foreach($templateParams["categorie"] as $categoria): ?>
                             <option value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>><?php echo $categoria["Nome_categoria"] ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <br><label for="tagliaprodotto">Taglia:</label>
+                    <br><label class="mt-3 modal-text" for="tagliaprodotto">Taglia:</label>
                     <select id="tagliaprodotto" name="tagliaprodotto" required>
                         <option value="S" <?php echo 'S' == $prodotto["Grandezza"] ? 'selected' : '' ?>>S - Small</option>
                         <option value="M" <?php echo 'M' == $prodotto["Grandezza"] ? 'selected' : '' ?>>M - Medium</option>
                         <option value="L" <?php echo 'L' == $prodotto["Grandezza"] ? 'selected' : '' ?>>L - Large</option>
                     </select>
-                    <br><label for="prezzoprodotto">Prezzo:</label>
+                    <br><label class="mt-3 modal-text" for="prezzoprodotto">Prezzo:</label>
                     <input type="number" step="0.01" min="0" id="prezzoprodotto" name="prezzoprodotto" value="<?php echo $prodotto["Prezzo"]; ?>" required/>
-                    <br><label for="puntiprodotto">Punti:</label>
+                    <br><label class="mt-3 modal-text" for="puntiprodotto">Punti:</label>
                     <input type="number" id="puntiprodotto" name="puntiprodotto" min="0" value="<?php echo $prodotto["Prezzo_punti"]; ?>" required/>
-                    <br><label for="descrizioneprodotto">Descrizione:</label>
+                    <br><label class="mt-3 modal-text" for="descrizioneprodotto">Descrizione:</label>
                     <textarea rows="10" style="width: 100%" id="descrizioneprodotto" name="descrizioneprodotto" required/><?php echo $prodotto["Descrizione"]; ?></textarea>
                     <input type="hidden" name="idprodotto" value="<?php echo $prodotto["Id_prodotto"]; ?>">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn btn-primary" name="modificaprodotto">Salva</button>
+                    <button type="button" class="btn modallink" data-bs-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-primary modalbutton ps-4 pe-4" name="modificaprodotto">Salva</button>
                 </div>
             </form>
         </div>

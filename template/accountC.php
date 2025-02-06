@@ -1,47 +1,73 @@
 <?php if (isAdminLoggedIn()): ?>
-  <h1>Il mio Account</h1>
-  <section class="border-bottom text-center">
-    <h2 style="text-align: left; margin-left: 2%;">Ciao, 
-        <?php echo $userDetails["Nome"] ?>! 
-        <i class="bi bi-person-circle"></i>
-    </h2>
-    <form method="POST" action="account.php">
-        <button type="submit" name="logout" class="btn" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Logout</button>
-    </form>
-    <a href="../php/index.php" type="button" class="btn mt-2 mb-2" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Torna alla Home</a>
-  </section>
-  <section>
-    <h3>Attività admin</h3>
-    <div class="row mb-3 mx-2 mt-2">
-        <div class="col-4 mb-2">
-            <a href="../php/notifiche.php" type="button" class="btn fw-bold w-100 position-relative" style="background-color: rgb(204, 153, 102); color: white;">
-              Notifiche admin
-              <?php if($numeronotifiche != 0): ?>
-                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle nuova-notifica">
-                    <span class="visually-hidden">New alerts</span>
-                </span>
-              <?php endif; ?>
+<div class="container mt-4 ps-4 pe-4 cont-account">
+    <h1 class="text-center account">Account Admin</h1>
+    <section class="card p-4 mb-4 mt-4 cardaccount">
+      <div class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-person-circle me-2"></i>
+          <h2 class="fw-bold mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
+      </div>
+      <div class="d-flex flex-column align-items-center mt-2">
+        <p class="details"><strong>Nome: </strong><?php echo $userDetails["Nome"] . " " . $userDetails["Cognome"]; ?></p>
+        <p class="details"><strong>Email: </strong><?php echo $userDetails["E_mail"] ?></p>
+        <p class="details"><strong>Telefono: </strong><?php echo $userDetails["Numero_telefono"]  != null ? $userDetails['Numero_telefono'] : 'Non Disponibile' ?></p>
+        <p class="details"><strong>Data di Nascita: </strong><?php echo $userDetails['Data_di_nascita'] != '0000-00-00' ? getFormattedDate($userDetails["Data_di_nascita"]) : 'Non Disponibile' ?></p>
+        <div class="d-flex align-items-center mt-4 mb-2">
+          <form method="POST" action="account.php">
+            <button type="submit" name="logout" class="btn me-2 bmenu ps-4 pe-4 fw-bold">Logout</button>
+          </form>
+          <a href="../php/index.php" class="btn ms-2 bmenu ps-4 pe-4 fw-bold">Torna alla Home</a>       
+        </div>
+      </div>
+    </section>
+    <section class="card p-4 mb-4 cardaccount">
+      <h3 class="text-center fw-bold mb-4">Attività Admin</h3>
+      <div class="row mb-3">
+        <div class="col-6">
+            <a href="../php/notifiche.php" type="button" class="btn w-100 fw-bold position-relative userbutton">
+                <i class="bi bi-bell"></i>
+                Gestione Notifiche
+                <?php if($numeronotifiche != 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle nuova-notifica">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                <?php endif; ?>
             </a>
         </div>
-        <div class="col-4 mb-2">
-            <a href="../php/recensioni.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Gestione recensioni</a>
+        <div class="col-6">
+            <a href="../php/ordini.php" type="button" class="btn fw-bold w-100 userbutton">
+                <i class="bi bi-box-seam"></i>
+                Gestione Ordini
+            </a>
         </div>
-        <div class="col-4 mb-2">
-            <a href="../php/ordini.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Gestione ordini</a>
+      </div>
+      <div class="text-center mb-3">
+          <a href="../php/recensioni.php" type="button" class="btn fw-bold w-100 userbutton">
+            <i class="bi bi-pen"></i>
+            Gestione Recensioni
+          </a>                   
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <a href="../php/prodotti.php" type="button" class="btn fw-bold w-100 userbutton">
+            <i class="bi bi-boxes"></i>
+            Gestione Prodotti
+          </a>
         </div>
-        <div class="col-4 mb-2">
-            <a href="../php/prodotti.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Gestione prodotti</a>
+        <div class="col-6">
+          <a href="../php/gestisciAccount.php" type="button" class="btn fw-bold w-100 userbutton">
+            <i class="bi bi-people"></i>
+            Gestione Utenti
+          </a>
         </div>
-        <div class="col-4 mb-2">
-            <a href="../php/gestisciAccount.php" type="button" class="btn fw-bold w-100" style="background-color: rgb(204, 153, 102); color: white;">Gestione utenti</a>
-        </div>
-    </div>
+      </div>
+    </section>
+</div>
 <?php elseif (isUserLoggedIn()): ?>
-  <div class="container mt-4 ps-4 pe-4">
+  <div class="container mt-4 ps-4 pe-4 cont-account">
     <h1 class="text-center account">Il mio Account</h1>
     <section class="card p-4 mb-4 mt-4 cardaccount">
       <div class="d-flex align-items-center justify-content-center">
-        <i class="bi bi-person-circle me-3"></i>
+        <i class="bi bi-person-circle me-2"></i>
         <h2 class="fw-bold mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
       </div>
       <div class="d-flex flex-column align-items-center mt-2">
@@ -88,7 +114,7 @@
         </div>
     </div>
     <div class='text-center mb-3'>
-        <a href="../php/preferiti.php" type="button" class="btn pe-5 ps-5 userbutton">
+        <a href="../php/preferiti.php" type="button" class="btn w-100 userbutton">
             <i class="bi bi-bookmark-heart"></i>
             I tuoi Preferiti
         </a>

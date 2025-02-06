@@ -511,6 +511,14 @@ main .userbutton:hover {
     font-size: 18px;
 }
 
+.bi-boxes {
+    font-size: 18px;
+}
+
+.bi-people {
+    font-size: 18px;
+}
+
 /* FOOTER */
 
 footer {
@@ -1448,6 +1456,29 @@ main .eliminab {
     font-style: italic;
 }
 
+/* ASSISTENZA */
+
+main .asstitle {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main .ordineconferma {
+    color: black;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main .confermab {
+    background-color: rgb(137, 85, 32);
+    color: white;
+}
+
+main .confermab:hover {
+    background-color: rgb(137, 85, 32);
+    color: white;
+    transform: scale(0.95);
+}
+
 /*pagina pagamento*/
 
 .border-bottom {
@@ -1568,6 +1599,10 @@ main .eliminab {
 }
 
 @media screen and (min-width: 768px) {
+
+    main .cont-account {
+        width: 70%;
+    }
     
     /* HEADER */
 

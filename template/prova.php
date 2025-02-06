@@ -1,30 +1,26 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dettaglio Peluche</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-<div class="container mt-5">
-    <div class="row align-items-center">
-        <!-- Immagine del prodotto -->
-        <div class="col-12 col-md-6 text-center">
-            <img src="product.jpg" class="img-fluid rounded" alt="Peluche">
-        </div>
-        <!-- Informazioni del prodotto -->
-        <div class="col-12 col-md-6">
-            <h2>Nome Peluche</h2>
-            <p><strong>Taglia:</strong> Media</p>
-            <p><strong>Prezzo:</strong> €29.99</p>
-            <p><strong>Disponibilità:</strong> In Stock</p>
-            <button class="btn btn-primary">Aggiungi al Carrello</button>
+<div class="container my-5">
+        <div class="box p-4 rounded shadow mx-auto">
+            <h2 class="text-center text-primary">Hai bisogno di aiuto?</h2>
+            <h4 class="fw-bold">Contattaci</h4>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nome <span class="text-danger">*</span></label>
+                    <div class="d-flex gap-2">
+                        <input type="text" class="form-control" placeholder="Nome" required>
+                        <input type="text" class="form-control" placeholder="Cognome" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" placeholder="Inserisci la tua email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Il tuo messaggio <span class="text-danger">*</span></label>
+                    <textarea class="form-control" rows="4" placeholder="Scrivi il tuo messaggio..." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-custom">Invia</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

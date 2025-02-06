@@ -18,5 +18,11 @@ if(isUserLoggedIn()) {
     $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $_SESSION['successo'] = 'Messaggio inviato con successo!';
+    header("Location: assistenza.php");
+    exit;
+}
+
 require("../template/base.php");
 ?>
