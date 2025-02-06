@@ -35,6 +35,7 @@
         $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
         $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
         $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
+        $prodottopreferito = $dbhost->isPreferito($_SESSION['utente'], $idprodotto) == 0 ? false : true;
     }
 
     if(isAdminLoggedIn()) {
