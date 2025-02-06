@@ -91,7 +91,7 @@
                     <br><label for="scorteprodotto"></label>
                     <input class="mt-3 modal-text" type="number" id="scorteprodotto" name="scorteprodotto" min="1" placeholder="Scorte" required/>
                     <br><label class="mt-3 modal-text" for="descrizioneprodotto">Descrizione:</label>
-                    <textarea class="modal-text" rows="10" style="width: 100%" id="descrizioneprodotto" name="descrizioneprodotto" placeholder="Scrivi qui..." required/></textarea>
+                    <textarea class="modal-text" rows="10" style="width: 100%" id="descrizioneprodotto" name="descrizioneprodotto" placeholder="Scrivi qui..." requiredS></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modallink" data-bs-dismiss="modal">Annulla</button>
