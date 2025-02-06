@@ -1639,7 +1639,6 @@ main .eliminab {
         font-size: 15px;
     }
 
-<<<<<<< HEAD
     /* SINGOLO PRODOTTO */
 
     .accordion {
@@ -1648,7 +1647,6 @@ main .eliminab {
         text-align: center; /* Centra il contenuto */
     }
 
-=======
     /*prodotti-carrello*/
 
     .custom-spedizioneButton {
@@ -1666,6 +1664,5 @@ main .eliminab {
         margin-left: 175px;
     }
     
->>>>>>> 11254ebc996dd2f0ff2c23351492979dba963ec5
     
 }
