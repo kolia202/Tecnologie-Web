@@ -1,4 +1,4 @@
-<h1 class="total-price">Carrello <i class="bi bi-cart-check"></i></h1>
+<h1>Carrello <i class="bi bi-cart-check"></i></h1>
 <?php 
     if(count($templateParams["carrello"]) == 0): ?>
     <article>
