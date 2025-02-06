@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach($templateParams['admins'] as $admin) {
             $dbhost->addNewMessage('Nuova Iscrizione', 'Dai il benvenuto a un nuovo membro nella nostra famiglia morbidosa! Un utente si è appena registrato e si prepara a scoprire la nostra collezione di peluches.', $admin['E_mail']);
         }
-        $_SESSION["utente"] = $email;
-        header("Location: index.php");
+        $_SESSION["success"] = "La tua iscrizione è avvenuta con successo! Accedi subito per iniziare a scoprire tutti i nostri Peluches!";
+        header("Location: account.php");
         exit;
     } else {
         echo "Errore durante la registrazione.";

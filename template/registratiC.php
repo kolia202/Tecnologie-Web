@@ -1,7 +1,7 @@
 <div class="container mt-4 ps-4 pe-4">
     <h1 class="text-center account">Iscrizione</h1>
     <?php if (isset($_SESSION["error"])): ?>
-            <div class="alert alert-danger text-center mt-3 loginerror" role="alert">
+            <div class="alert alert-danger text-center mt-3 alerts" role="alert">
                 <i class="bi bi-exclamation-triangle align-center"></i>
                 <?php echo $_SESSION['error'];
                 unset($_SESSION["error"]); ?>
@@ -54,14 +54,24 @@
                     Password
                     <span class="text-danger">*</span>
                 </label>
-                <input type="password" class="form-control inputlogin" id="password" name="password" required>
+                <div class="input-group">
+                    <input type="password" class="form-control inputlogin" id="password" name="password" required>
+                    <button class="btn show-password" type="button">
+                        <i class="bi bi-eye-slash"></i>
+                    </button>
+                </div>
             </div>
             <div class="col-md-6 mt-1">
                 <label for="password_confirm" class="ps-1 infologin">
                     Conferma Password
                     <span class="text-danger">*</span>
                 </label>
-                <input type="password" class="form-control inputlogin" id="password_confirm" name="password_confirm" required>
+                <div class="input-group">
+                    <input type="password" class="form-control inputlogin" id="password_confirm" name="password_confirm" required>
+                    <button class="btn show-password" type="button">
+                        <i class="bi bi-eye-slash"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="text-center mt-4">

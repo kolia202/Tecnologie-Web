@@ -146,5 +146,6 @@
     <script src="../js/alert.js"></script>
     <script src="../js/handlemessages.js"></script>
     <script src="../js/tracking.js"></script>
+    <script src="../js/password.js"></script>
 </body>
 </html>

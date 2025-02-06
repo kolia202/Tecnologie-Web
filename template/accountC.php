@@ -46,7 +46,7 @@
     <p class="mb-1"><strong>Nome: </strong><?php echo $userDetails["Nome"] . " " . $userDetails["Cognome"]; ?></p>
     <p class="mb-2"><strong>Email: </strong><?php echo $userDetails["E_mail"] ?></p>
     <p class="mb-2"><strong>Telefono: </strong><?php echo $userDetails["Numero_telefono"] ?></p>
-    <p class="mb-2"><strong>Data di Nascita: </strong><?php echo getFormattedDate($userDetails["Data_di_nascita"]) ?></p>
+    <p class="mb-2"><strong>Data di Nascita: </strong><?php echo $userDetails['Data_di_nascita'] != '0000-00-00' ? getFormattedDate($userDetails["Data_di_nascita"]) : '' ?></p>
     <button type="button" class="btn btn-outline mb-2" data-bs-toggle="collapse" data-bs-target="#collapsePoints" aria-expanded="false" aria-controls="collapsePoints" style="border-color: rgb(137, 85, 32); background-color: rgb(255, 255, 153); color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 15px; font-style: italic;"><i class="bi bi-star-fill" style="color: rgb(255, 165, 0)"></i> <?php echo $userDetails["Punti"]; ?> Punti Fedeltà</button>
 
     <div class="collapse" id="collapsePoints" style="border: none; ">
@@ -134,11 +134,18 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h1 class="text-center account">Account</h1>
-                <?php if (isset($templateParams["errorelogin"])): ?>
-                    <div class="alert alert-danger text-center mt-3 loginerror" role="alert">
+                <?php if (isset($_SESSION["errorelogin"])): ?>
+                    <div class="alert alert-danger text-center mt-3 alerts" role="alert">
                         <i class="bi bi-exclamation-triangle align-center"></i>
-                        <?php echo $templateParams["errorelogin"]; ?>
+                        <?php echo $_SESSION["errorelogin"];
+                        unset($_SESSION['errorelogin']); ?>
                     </div>
+                <?php elseif(isset($_SESSION['success'])): ?>
+                    <div class="alert alert-success text-center mt-3 alerts" role="alert">
+                        <i class="bi bi-check-circle align-center"></i>
+                        <?php echo $_SESSION["success"];
+                        unset($_SESSION['success']); ?>
+                    </div>                  
                 <?php endif; ?>
                 <form action="account.php" method="POST">
                     <div class="mb-3">
@@ -155,7 +162,12 @@
                             Password
                             <span class="text-danger">*</span>
                         </label>
-                        <input type="password" class="form-control inputlogin" id="password" name="password" required/>
+                        <div class="input-group">
+                            <input type="password" class="form-control inputlogin" id="password" name="password" required>
+                            <button class="btn show-password" type="button">
+                                <i class="bi bi-eye-slash"></i>
+                            </button>
+                        </div>
                     </div>
                     <button type="submit" name="accedi" class="btn btn-primary w-100 fw-bold btn-accedi">Accedi</button>
                 </form>
