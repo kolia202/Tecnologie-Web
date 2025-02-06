@@ -44,7 +44,7 @@
           <div class="container mt-4">
     <div class="row"> 
         <?php foreach ($templateParams["recensioni"] as $recensione): ?>
-            <div class="col-md-12 col-lg-4 mb-4"> 
+            <div class="col-md-12 col-lg-6 mb-4"> 
                 <div class="card p-3 border custom-border">
                     <h6 class="fw-bold"> 
                         <?php echo htmlspecialchars($recensione["Nome"] . " " . $recensione["Cognome"]); ?> 
