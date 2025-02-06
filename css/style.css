@@ -1479,6 +1479,12 @@ main .confermab:hover {
     transform: scale(0.95);
 }
 
+main .totalee {
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
 @media screen and (min-width: 768px) {
 
     main .cont-account {
