@@ -290,7 +290,7 @@ main > p {
     margin-bottom: 8px;
 }
 
-/* LOGIN E REGISTRAZIONE */
+/* LOGIN & CO */
 
 main h1.account {
     color: rgb(137, 85, 32);
@@ -407,6 +407,107 @@ main .show-password:hover {
 }
 
 .bi-check-circle {
+    font-size: 18px;
+}
+
+/* ACCOUNT */
+
+main .cardaccount {
+    border: 1px solid rgb(137, 85, 32);
+}
+
+.bi-person-circle {
+    font-size: 40px;
+    color: rgb(204, 153, 102);
+}
+
+main .details {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+main .btn-points {
+    border-color: rgb(137, 85, 32); 
+    background-color: rgb(255, 255, 153); 
+    color: rgb(137, 85, 32); 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-style: italic;
+}
+
+main .btn-points:focus {
+    border-color: rgb(137, 85, 32); 
+    background-color: rgb(255, 255, 153); 
+}
+
+main .btn-points:hover {
+    border-color: rgb(137, 85, 32); 
+    background-color: rgb(255, 255, 153); 
+}
+
+.bi-star-fill {
+    color: rgb(255, 165, 0);
+    font-size: 20px;
+}
+
+main .collapse-points {
+    background-color: rgb(245, 222, 179, 0.3);
+}
+
+main .pointstitle {
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main .pointsdetails {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+main .bmenu {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 15px; 
+    font-style: italic;
+}
+
+main .bmenu:hover {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    transform: scale(0.95);
+}
+
+main .userbutton {
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(204, 153, 102); 
+    color: white;
+}
+
+main .userbutton:hover {
+    background-color: rgb(204, 153, 102);
+    color: white;
+    transform: scale(0.95);
+}
+
+.bi-gear {
+    font-size: 18px;
+}
+
+.bi-box-seam {
+    font-size: 18px;
+}
+
+.bi-bell {
+    font-size: 18px;
+}
+
+.bi-pen {
+    font-size: 18px;
+}
+
+.bi-bookmark-heart {
     font-size: 18px;
 }
 
