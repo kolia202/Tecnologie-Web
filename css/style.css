@@ -530,6 +530,325 @@ footer a {
 
 
 
+/*index.php*/
+
+.img-vetrina {
+    background-size: cover; 
+    background-position: center;
+    width: 300px;
+    height: 200px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 4px solid rgb(245, 222, 179);
+}
+
+.favorite-store-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.welcome-message {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.text-centerA {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.custom-buttonA {
+    background-color: rgb(137, 85, 32);
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    color: white;
+    width: 250px;
+    height: 40px;
+}
+
+.rating {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.rating-star {
+    color: rgb(240, 191, 16);
+    font-size: 25px; 
+}
+
+.rating-score {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: rgb(137, 85, 32);
+    font-size: 20px; 
+}
+
+.rating-reviews {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: rgb(137, 85, 32);
+    font-size: 15px
+}
+
+.custom-biB {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; 
+    color: rgb(137, 85, 32);
+}
+
+.Consegna {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center; 
+}
+
+.ordinip {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center
+}
+
+.custom-biBB {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; 
+    color: rgb(137, 85, 32);
+}
+
+.pagamentoS {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center; 
+}
+
+.tipoCarte {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center
+}
+
+.custom-box {
+    width: 85%;
+    margin: 20px auto;
+    border: 4px solid rgb(245, 222, 179);
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 285px;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+   
+}
+
+.immCours {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 0px solid rgb(254, 254, 254);
+}
+
+.dettaglio {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(137, 85, 32);
+}
+
+.fw-bold {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.collezioni {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.bg-whitee {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #fff;
+    border: 4px solid rgb(245, 222, 179);
+    border-radius: 10px; 
+    text-align: center;
+    padding: 10px;
+}
+
+.fw-boldSS {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-centerP h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 18px; 
+    font-weight: bold;
+    color: rgb(137, 85, 32);
+    margin-bottom: 8px;
+}
+
+.text-centerP h3 i {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 18px; 
+    margin-right: 3px;
+    color: rgb(137, 85, 32);
+}
+
+.text-centerP p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 14px; 
+    color: rgb(137, 85, 32);
+    margin-bottom: 12px;
+}
+
+.text-centerP .form-control {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    width: 100%;
+    padding: 8px; 
+    font-size: 14px;
+    text-align: center;
+    border: 1.5px solid rgb(137, 85, 32);
+    border-radius: 4px;
+    outline: none;
+}
+
+.text-centerP .btn-primary {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(137, 85, 32);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.fotoTonda {
+    margin-top: 30px;
+    width: 200px; 
+    height: 175px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.bg-whiteee {
+    margin: 20px auto;
+    width: 85%;
+    height: 275px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 4px solid rgb(245, 222, 179);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.bg-whiteee h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(137, 85, 32);
+    margin-bottom: 10px;
+}
+
+.bg-whiteee p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(137, 85, 32);
+    margin-bottom: 10px;
+}
+
+.align-items-center {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(245, 222, 179);
+}
+
+.cookie {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: 500px; 
+    background: #fff; 
+    color: #333; 
+    padding: 20px; 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    border: 2px solid #FFD700; 
+    text-align: center; z-index: 1000
+}
+
+.cookie h5 {
+    font-weight: bold;
+}
+
+.cookie p {
+    margin-bottom: 10px;
+}
+
+.divCookie {
+    display: flex; 
+    justify-content: space-evenly; 
+    margin-top: 15px
+}
+
+
+
+
 @media screen and (min-width: 768px) {
     
     /* HEADER */
@@ -653,5 +972,115 @@ footer a {
         padding-bottom: 1%;
     }
 
+    /*index.php*/
+
+    .img-vetrina {
+        width: 800px;
+        height: 500px; 
+    }
+
+    .favorite-store-title {
+        font-size: 45px;
+        margin-top: 10px;
+    }
+
+    .welcome-message {
+        font-size: 30px;
+    }
+    
+    .custom-buttonA {
+        margin-top: 15px;
+        font-size: 20px;
+        width: 400px;
+        height: 70px;
+    }
+
+    .rating-star {
+        font-size: 40px; 
+    }
+    
+    .rating-score {
+        font-size: 30px; 
+    }
+    
+    .rating-reviews {
+        font-size: 20px
+    }
+
+    .custom-biB {
+        font-size: 50px; 
+    }
+    
+    .Consegna {
+        font-size: 40px;
+    }
+    
+    .ordinip {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .custom-biBB {
+        margin-top: 30px;
+        font-size: 50px; 
+    }
+    
+    .pagamentoS {
+        font-size: 40px;
+    }
+    
+    .tipoCarte {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    .custom-box {
+        width: 60%;
+        margin: 20px auto;
+    }
+    
+    .carousel-inner {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slide {
+        width: 100%;
+        height: 100%
+    }
+    
+    .immCours {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .dettaglio {
+        font-size: 20px;
+    }
+    
+    .fw-bold {
+        font-size: 20px;
+    }
+
+    .collezioni {
+        font-size: 40px;
+    }
+
+    .fotoTonda {
+        width: 500px; 
+        height: 475px;
+    }
+
+    .bg-whiteee h1{
+        font-size: 40px;
+    }
     
 }
+    
+
+
+
+
+
+
+
