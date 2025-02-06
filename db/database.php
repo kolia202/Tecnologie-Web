@@ -573,7 +573,7 @@ class DatabaseHelper {
     }
 
     public function getAllOrders() {
-        $query = "SELECT * FROM ordine";
+        $query = "SELECT * FROM ordine ORDER BY Data_effettuazione DESC";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
