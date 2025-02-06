@@ -511,6 +511,14 @@ main .userbutton:hover {
     font-size: 18px;
 }
 
+.bi-boxes {
+    font-size: 18px;
+}
+
+.bi-people {
+    font-size: 18px;
+}
+
 /* FOOTER */
 
 footer {
@@ -1373,6 +1381,10 @@ main .eliminab {
 }
 
 @media screen and (min-width: 768px) {
+
+    main .cont-account {
+        width: 70%;
+    }
     
     /* HEADER */
 
