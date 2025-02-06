@@ -975,7 +975,6 @@ main .eliminap {
     font-style: italic;
 }
 
-<<<<<<< HEAD
 .add-to-cart:hover {
     background-color: rgb(137, 85, 32); 
     color: white;
@@ -1024,7 +1023,8 @@ main .eliminap {
 
 .modallink:hover {
     color: rgb(190, 140, 90);
-=======
+}
+
 /*recensioniC*/
 
 .custom-boldd {
@@ -1089,7 +1089,6 @@ main .eliminap {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     margin-bottom: 20px;
->>>>>>> b81fb364f050deb5b364c33d26cd83eb100029c5
 }
 
 @media screen and (min-width: 768px) {
@@ -1349,11 +1348,3 @@ main .eliminap {
 
     
 }
-    
-
-
-
-
-
-
-
