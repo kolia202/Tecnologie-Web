@@ -809,12 +809,6 @@ footer a {
     margin-bottom: 10px;
 }
 
-.align-items-center {
-    text-align: center;
-    padding: 20px;
-    background-color: rgb(245, 222, 179);
-}
-
 .cookie {
     display: none; 
     position: fixed; 

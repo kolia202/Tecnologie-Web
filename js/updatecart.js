@@ -41,10 +41,20 @@ function updateCart(button, update, isCart) {
         if(data.status === "not_logged_in") {
             const cartOffcanvas = new bootstrap.Offcanvas(document.getElementById("offcanvasRight"));
             cartOffcanvas.show();
-            document.querySelector("#cart-menu").innerHTML = `
-                <p>Per visualizzare il carrello, accedi al tuo account</p>
-                <a href="../php/account.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Accedi</a>
-            `;
+            if (!document.querySelector('#cart-menu p.mt-2')) {
+                const newp = document.createElement('p');
+                newp.classList.add('mt-2', 'ps-3', 'pe-3');
+                newp.innerText = 'Per visualizzare il carrello, accedi al tuo account.';
+                document.querySelector("#cart-menu").appendChild(newp);
+                const newd = document.createElement('div');
+                newd.classList.add('text-center', 'mt-4');
+                const newa = document.createElement('a');
+                newa.classList.add("btn", 'fw-bold', 'ps-4', 'pe-4', 'accesso');
+                newa.href = "../php/account.php";
+                newa.innerText = 'Accedi';
+                newd.appendChild(newa);
+                document.querySelector("#cart-menu").appendChild(newd);
+            }
         } else if(data.status == "success") {
             if (isCart) {
                 document.querySelector(".stock-warning").style.display = "none";
@@ -108,7 +118,7 @@ function updateMenu(cart) {
         emptyCart.innerHTML = `
             <p>Il tuo carrello è vuoto</p>
             <div class="text-center">
-            <a href="../php/prodotti.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Torna al negozio</a>
+            <a href="../php/prodotti.php" class="btn btn-sm fw-bold">Torna al negozio</a>
             </div>
         `;
         cartMenu.appendChild(emptyCart);
@@ -116,33 +126,47 @@ function updateMenu(cart) {
         cart.forEach(i => {
             total = total + (i.Prezzo * i.Quantita);
             const productSection = document.createElement("section");
-            productSection.classList.add("d-flex", "align-items-center", "border-bottom");
-            productSection.innerHTML = `
-                <a href="../php/dettaglioProdotto.php?id=${i.Id_prodotto}" style="width: 50%;">
-                    <img src="${IMG_DIR + i.Immagine}" class="img-fluid" alt=""/>
-                </a>
-                <div class="d-flex flex-column">
-                   <a href="../php/dettaglioProdotto.php?id=${i.Id_prodotto}">
-                        <p>${i.Nome}</p>
-                    </a>
-                    <p class="text-muted">${i.Quantita + 'x' + parseFloat(i.Prezzo).toFixed(2).replace(".", ",")}€</p>
-                </div>     
-            `; 
+            productSection.classList.add("d-flex", "align-items-center", 'mt-1', 'mb-1');
+            const cartmenuItem = document.createElement('a');
+            cartmenuItem.classList.add('cartmenu-item');
+            cartmenuItem.href = `../php/dettaglioProdotto.php?id=${i.Id_prodotto}`;
+            const img = document.createElement('img');
+            img.src = IMG_DIR + i.Immagine;
+            img.classList.add('img-fluid');
+            img.alt = '';
+            cartmenuItem.appendChild(img);
+            const div = document.createElement('div');
+            div.classList.add('d-flex', 'flex-column', 'pt-3', 'pe-3', 'cartmenu-info');
+            const link = document.createElement('a');
+            link.href = `../php/dettaglioProdotto.php?id=${i.Id_prodotto}`;
+            const par = document.createElement('p');
+            par.classList.add('mb-1', 'fw-bold');
+            par.innerText = i.Nome;
+            link.appendChild(par);
+            div.appendChild(link);
+            const p = document.createElement('p');
+            p.classList.add('text-muted');
+            p.innerText = i.Quantita + ' x ' + parseFloat(i.Prezzo).toFixed(2).replace(".", ",") + '€';
+            div.appendChild(p);
+            productSection.appendChild(cartmenuItem);
+            productSection.appendChild(div);
             cartMenu.appendChild(productSection);
         });
 
-        const totalPrice = document.createElement("h2");
-        totalPrice.classList.add("total-price");
+        const totalPrice = document.createElement("h3");
         totalPrice.innerHTML = `Totale Carrello: ${parseFloat(total).toFixed(2).replace(".", ",")}€`;
-        cartMenu.appendChild(totalPrice);
 
         const button = document.createElement('div');
-        button.classList.add("text-center");
-        button.innerHTML = `
-            <a href="../php/carrello.php" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Visualizza carrello</a>
-        `;
-        cartMenu.appendChild(button);
+        button.classList.add("text-center", 'mt-4');
 
+        const a = document.createElement('a');
+        a.classList.add('btn', 'fw-bold', 'ps-3', 'pe-3', 'mt-5', 'vaicarrello');
+        a.href = "../php/carrello.php";
+        a.innerText = 'Visualizza Carrello';
+        
+        button.appendChild(totalPrice);
+        button.appendChild(a);
+        cartMenu.appendChild(button);
     }
 
 }
