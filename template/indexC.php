@@ -112,15 +112,15 @@ appassionati del genere.
 
     <div class="box p-4 rounded shadow bg-whiteee">
         <h1>Cosa dicono di noi?</h1>
-        <p>Le testimonianze di chi ha scelto di<br>
+        <p>Le testimonianze di chi ha scelto di
         affidarsi a noi per l'acquisto dei peluche!</p>
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
+        <div id="carouselExample" class="carousel slidee">
+            <div class="carousel-inner custom-inner">
                 <?php if (!empty($templateParams["recensioni"])): ?>
                     <?php foreach ($templateParams["recensioni"] as $index => $recensione): ?>
                         <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <p><?php echo htmlspecialchars($recensione['Commento']); ?></p>
+                            <div class="d-flex justify-content-center align-items-centerr">
+                                <p class="commentoo"><?php echo htmlspecialchars($recensione['Commento']); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
