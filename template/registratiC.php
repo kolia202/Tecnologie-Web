@@ -41,7 +41,7 @@
             <div class="col">
                 <label for="email" class="ps-1 infologin">
                     <i class="bi bi-envelope align-middle"></i>    
-                    Email
+                    E-mail
                     <span class="text-danger">*</span>
                 </label>
                 <input type="email" class="form-control inputlogin" id="email" name="email" required>

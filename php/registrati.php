@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     if ($dbhost->checkEmail($email)) {
-        $_SESSION["error"] = "L'email inserita è già associata ad un altro account!";
+        $_SESSION["error"] = "L'E-mail inserita è già associata ad un altro account!";
         header("Location: registrati.php");
         exit;
     }
