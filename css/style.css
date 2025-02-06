@@ -577,6 +577,13 @@ footer a {
     height: 40px;
 }
 
+.custom-buttonA:hover,
+.custom-buttonA:active {
+    background-color: rgb(137, 85, 32);
+    color: white;
+    transform: none;
+}
+
 .rating {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -1091,6 +1098,7 @@ main .eliminap {
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* SINGOLO PRODOTTO */
 
 main .sp-titolo {
@@ -1233,6 +1241,136 @@ main .gestiscib:hover {
 main .eliminab {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 15px;
+=======
+/*recensioniMieC*/
+
+.custom-row {
+    color: rgb(137, 85, 32);
+    border: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.custon-sm {
+    background-color: rgb(137, 85, 32);
+    border-color: white;
+}
+
+.custon-sm:hover,
+.custon-sm:active {
+    background-color: rgb(137, 85, 32);
+}
+
+.cusotm-mt4 {
+    margin-bottom: 20px;
+}
+
+/*prodotti-carrello*/
+
+.imgCar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+    height: auto;   
+}
+
+.prodotto-carrello-a {
+    text-decoration: none;
+}
+
+.nomeProdottoC {
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.custom-col {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 16px;
+}
+
+.quanità-prodotti {
+    margin-left: 125px;
+    color: black;
+}
+
+.custom-iProdotti {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 15px;
+}
+
+.product-price {
+    color: black;
+}
+
+.product-points {
+    color: black;
+}
+
+
+.stock-warning {
+    display: none; 
+    color: red; 
+    font-size: 14px;
+}
+
+.total-price {
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 25px;
+}
+
+.p-avviso {
+    color: red;
+}
+
+.custom-spedizioneButton {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 12px; 
+    font-style: italic;
+    width: 50%;
+    text-align: center;
+}
+
+.custom-spedizioneButton2 {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    font-size: 12px; 
+    font-style: italic;
+    width: 50%;
+    text-align: center;
+}
+
+.custom-spedizioneButton2:hover,
+.custom-spedizioneButton2:active {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+}
+
+.custom-spedizioneButton:hover,
+.custom-spedizioneButton:active {
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+>>>>>>> 11254ebc996dd2f0ff2c23351492979dba963ec5
 }
 
 @media screen and (min-width: 768px) {
@@ -1502,6 +1640,7 @@ main .eliminab {
         font-size: 15px;
     }
 
+<<<<<<< HEAD
     /* SINGOLO PRODOTTO */
 
     .accordion {
@@ -1510,5 +1649,24 @@ main .eliminab {
         text-align: center; /* Centra il contenuto */
     }
 
+=======
+    /*prodotti-carrello*/
+
+    .custom-spedizioneButton {
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+
+    .custom-spedizioneButton2 {
+        margin-bottom: 30px;
+        margin-top: 15px;
+        width: 200px;
+    }
+    
+    .quanità-prodotti {
+        margin-left: 175px;
+    }
+    
+>>>>>>> 11254ebc996dd2f0ff2c23351492979dba963ec5
     
 }
