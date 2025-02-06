@@ -1,5 +1,5 @@
-<h1 style="text-align: left; margin-left: 2%;">Il mio account</h1>
 <?php if (isAdminLoggedIn()): ?>
+  <h1>Il mio Account</h1>
   <section class="border-bottom text-center">
     <h2 style="text-align: left; margin-left: 2%;">Ciao, 
         <?php echo $userDetails["Nome"] ?>! 
@@ -37,6 +37,7 @@
         </div>
     </div>
 <?php elseif (isUserLoggedIn()): ?>
+  <h1>Il mio Account</h1>
   <section class="border-bottom text-center">
     <h2 style="text-align: left; margin-left: 2%;">Ciao, 
         <?php echo $userDetails["Nome"] ?>! 
@@ -129,23 +130,42 @@
     </div>
   </section>
 <?php else: ?>
-  <h2 style="text-align: left; margin-left: 2%;">Accedi</h2>
-  <?php if (isset($templateParams["errorelogin"])): ?>
-      <p style="color: red; font-weight: bold;"><?php echo $templateParams["errorelogin"]; ?></p>
-  <?php endif; ?>
-  <form action="account.php" method="POST">
-      <div class="mb-3">
-          <label for="email" class="form-label">Email<span style="color: red;">*</span></label>
-          <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="mb-3">
-          <label for="password" class="form-label">Password<span style="color: red;">*</span></label>
-          <input type="password" class="form-control" id="password" name="password" required>
-      </div>
-      <button type="submit" name="accedi">Accedi</button>
-  </form>
-  <p><a href="../php/controlloEmail.php">Password dimenticata?</a></p>
-  <p>Non sei ancora registrato?</p>
-  <a href="registrati.php" class="btn btn-secondary">Registrati</a>
-  <p><a href="../php/index.php">Indietro</a></p>
+    <div class="container mt-4 ps-4 pe-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center account">Account</h1>
+                <?php if (isset($templateParams["errorelogin"])): ?>
+                    <div class="alert alert-danger text-center mt-3 loginerror" role="alert">
+                        <i class="bi bi-exclamation-triangle align-center"></i>
+                        <?php echo $templateParams["errorelogin"]; ?>
+                    </div>
+                <?php endif; ?>
+                <form action="account.php" method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label ps-1 infologin">
+                            <i class="bi bi-envelope align-middle"></i>
+                            Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" class="form-control inputlogin" id="email" name="email" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label ps-1 infologin">
+                            <i class="bi bi-key align-middle"></i>
+                            Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="password" class="form-control inputlogin" id="password" name="password" required/>
+                    </div>
+                    <button type="submit" name="accedi" class="btn btn-primary w-100 fw-bold btn-accedi">Accedi</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="../php/controlloEmail.php" class="d-block">Password dimenticata?</a>
+                    <p class="mt-3 newsignin">Non sei ancora registrato?</p>
+                    <a href="registrati.php" class="btn btn-outline-secondary ps-5 pe-5 registrati">Registrati</a>
+                    <p class="mt-4"><a href="../php/index.php">Annulla</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
