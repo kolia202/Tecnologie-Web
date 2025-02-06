@@ -1604,6 +1604,25 @@ main .totalee {
     color: white; 
 }
 
+.card-ordini {
+    border-color: rgb(245, 222, 179);
+}
+
+.ordineid {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ordinib {
+    background-color: rgb(204, 153, 102); 
+    color: white;
+}
+
+.ordinib:hover {
+    background-color: rgb(204, 153, 102); 
+    color: white;
+}
+
 @media screen and (min-width: 768px) {
 
     main .ordercont {
