@@ -577,6 +577,13 @@ footer a {
     height: 40px;
 }
 
+.custom-buttonA:hover,
+.custom-buttonA:active {
+    background-color: rgb(137, 85, 32);
+    color: white;
+    transform: none;
+}
+
 .rating {
     margin-top: 15px;
     margin-bottom: 15px;
