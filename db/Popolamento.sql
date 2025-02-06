@@ -117,11 +117,11 @@ INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Pr
 ('Marmotta Caramel', "Caramel è una marmotta dal carattere dolce e affettuoso. Curiosa e vivace, è sempre pronta a nuove esperienze. Nonostante la sua energia, Caramel è anche molto dolce e un po' timida e ciò rende impossibile per chiunque non amarla.", 'MarmottaCaramel.png', 'S', 4, 17.99, 180, 'Animali');
 
 INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES
-('Topolino', 'Peluche del famoso Topolino Disney', '', 'S', 40, 19.99, 200, 'Disney'),
-('Stitch', 'Il peluche perfetto per ogni fan di Lilo&Stitch', '', 'S', 35, 18.99, 190, 'Disney'),
-('Olaf', 'Peluche di Olaf morbido e coccoloso', '', 'M', 50, 22.99, 220, 'Disney'),
-('Dumbo', 'Peluche del tenero elefantino Dumbo', '', 'M', 30, 24.99, 250, 'Disney'),
-('Simba', 'Peluche del Re della savana Simba', '', 'M', 45, 25.99, 270, 'Disney');
+('Gallina', 'Peluche del famoso Topolino Disney', '', 'S', 40, 19.99, 200, 'Fattoria'),
+('Trudino Alpaca', 'Il peluche perfetto per ogni fan di Lilo&Stitch', '', 'S', 35, 18.99, 190, 'Fattoria'),
+('Gallo', 'Peluche di Olaf morbido e coccoloso', '', 'M', 50, 22.99, 220, 'Fattoria'),
+('Topo', 'Peluche del tenero elefantino Dumbo', '', 'M', 30, 24.99, 250, 'Fattoria'),
+('Maiale', 'Peluche del Re della savana Simba', '', 'M', 45, 25.99, 270, 'Fattoria');
 
 INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Prezzo_punti, Nome_categoria) VALUES
 ('SpongeBob', 'Peluche di SpongeBob SquarePants', '', 'M', 40, 17.99, 180, 'Cartoni animati'),
