@@ -975,6 +975,7 @@ main .eliminap {
     font-style: italic;
 }
 
+<<<<<<< HEAD
 .add-to-cart:hover {
     background-color: rgb(137, 85, 32); 
     color: white;
@@ -1023,6 +1024,72 @@ main .eliminap {
 
 .modallink:hover {
     color: rgb(190, 140, 90);
+=======
+/*recensioniC*/
+
+.custom-boldd {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(137, 85, 32);
+}
+
+.pRecensioni {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    color: rgb(137, 85, 32);
+}
+
+.star-rating {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.custom-primary {
+    background-color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    border: #fff;
+}
+
+.custom-centerT {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.custom-border {
+    color: rgb(137, 85, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.custom-btnRec {
+    background-color: rgb(137, 85, 32);
+    border: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.custom-btnRec:hover,
+.custom-btnRec:active {
+    background-color: rgb(137, 85, 32);
+}
+
+.mb-31 {
+    color: rgb(137, 85, 32);
+    border: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+>>>>>>> b81fb364f050deb5b364c33d26cd83eb100029c5
 }
 
 @media screen and (min-width: 768px) {
