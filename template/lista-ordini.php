@@ -8,18 +8,18 @@
 
 <div class="container ordercont mt-3">
 <?php if(count($templateParams["ordini"]) == 0): ?>
-    <div class="card ms-3 me-3" style="border-color: rgb(245, 222, 179);">
-        <div class="card-body text-center">
+    <div class="card ms-3 me-3">
+        <div class="card-body text-center card-ordini">
             <p>Oh no! Nessun ordine per ora!</p>
             <a href="../php/prodotti.php" type="button" class="btn btn-sm fw-bold btn-avviso">Scopri tutti i nostri Peluches</a>
         </div>
     </div>
 <?php else: ?>
     <?php foreach($templateParams["ordini"] as $ordine): ?>
-        <div class="card ms-3 me-3 mb-3" style="border-color: rgb(245, 222, 179);">
+        <div class="card ms-3 me-3 mb-3 card-ordini">
             <div class="card-body">
-                <h2 class="mb-0" style="font-size: 20px;">Ordine #<?php echo $ordine["Id_ordine"] ?>  -  <?php echo $ordine["Stato"] ?></h2>
-                <p style="font-size:15px;"><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
+                <h2 class="mb-0 ordineid">Ordine #<?php echo $ordine["Id_ordine"] ?>  -  <?php echo $ordine["Stato"] ?></h2>
+                <p><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                 <?php if (isAdminLoggedIn()): ?>
                     <p><strong>Utente:</strong> <?php echo $ordine["E_mail"] ?></p>
                     <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Vedi Ordine</a>
@@ -40,8 +40,8 @@
                         </form>
                     </div>
                 <?php else: ?>
-                    <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Traccia il tuo ordine</a>
-                    <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Dettagli Ordine</a>
+                    <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold ordinib">Traccia il tuo ordine</a><br>
+                    <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold mt-2 ordinib">Dettagli Ordine</a>
                 <?php endif; ?>
             </div>
         </div>
