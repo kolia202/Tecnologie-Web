@@ -1,12 +1,16 @@
 <h1>Dettaglio Ordine #<?php echo $ordine["Id_ordine"] ?></h1>
 
+<div class="row mt-4">
 <?php foreach($templateParams["prodottiordinati"] as $prodotto): ?>
-    <section class="d-flex align-items-center border-bottom">
-        <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" style="width: 50%" alt=""/>
-        <div class="d-flex flex-column">
-            <p><?php echo $prodotto["Nome"]; ?></p>
-            <p class="text-muted"><strong>Quantità: </strong><?php echo $prodotto["Quantita"] ?></p>
-        </div>
+    <div class="col-12 col-md-4 mb-5">
+    <section class="custom-col">
+        <a class="prodotto-carrello-a" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+            <img class="imgCar" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt=""/>
+            <h2 class="nomeProdottoC"><?php echo $prodotto["Nome"]; ?></h2>
+        </a>
+        <p class="text-center text-muted"><strong>Quantità: </strong><?php echo $prodotto["Quantita"] ?></p>
     </section>
+    </div>
 <?php endforeach; ?>
-<h2>Totale: <?php echo getFormattedPrice($ordine["Prezzo_finale"]); ?></h2>
+</div>
+<h2 class="text-center mb-5 totalee">Totale: <?php echo getFormattedPrice($ordine["Prezzo_finale"]); ?></h2>
