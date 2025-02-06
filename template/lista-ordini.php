@@ -1,16 +1,17 @@
 <?php if (isAdminLoggedIn()): ?>
-    <h1>Gestione ordini</h1>
+    <h1 class="account">Gestione ordini</h1>
     <p>Qui trovi tutti gli ordini effettuati dagli utenti.</p>
 <?php else: ?>
-    <h1>I tuoi ordini morbidosi!</h1>
+    <h1 class="account">I tuoi ordini morbidosi!</h1>
     <p>Qui trovi tutti i peluche che hai acquistato finora!</p>
 <?php endif; ?>
 
+<div class="container ordercont mt-3">
 <?php if(count($templateParams["ordini"]) == 0): ?>
     <div class="card ms-3 me-3" style="border-color: rgb(245, 222, 179);">
         <div class="card-body text-center">
-            <p>Oh no! Nessun ordine per ora! Scopri la nostra collezione e troverai i peluches perfetti per te!</p>
-            <a href="../php/prodotti.php" type="button" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Scopri tutti i nostri Peluches</a>
+            <p>Oh no! Nessun ordine per ora!</p>
+            <a href="../php/prodotti.php" type="button" class="btn btn-sm fw-bold btn-avviso">Scopri tutti i nostri Peluches</a>
         </div>
     </div>
 <?php else: ?>
@@ -46,3 +47,4 @@
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
+</div>
