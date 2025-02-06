@@ -1,11 +1,10 @@
-<h1>Spedizione</h1>
-
-<form method="POST" action="spedizione.php">
+<h1 class="total-price">Spedizione <i class="bi bi-truck"></i></h1>
+<form method="POST" action="spedizione.php" class="custom-form">
     <?php if (isset($_SESSION["shippingerror"])): ?>
-        <p style="color: red;"><?php echo $_SESSION["shippingerror"]; ?></p>
+        <p class="error"><?php echo $_SESSION["shippingerror"]; ?></p>
     <?php endif; ?>
     <?php if($spedizioneGratuita): ?>
-        <p style="color: green; font-weight: bold;">
+        <p class="spedizione-alert">
             Congratulazioni! Hai diritto alla spedizione Premium gratuita!
         </p>
     <?php endif; ?>
@@ -17,7 +16,7 @@
                     <?php echo $spedizione["Nome"]; ?>
                 </label>
             </div> 
-            <p><?php echo $spedizione["Descrizione"] ?></p>
+            <p class="spedizione-p"><?php echo $spedizione["Descrizione"] ?></p>
             <p class="shipping-price<?php echo $spedizione["Id_spedizione"]; ?>">Prezzo: <?php echo getFormattedPrice($spedizione["Costo"]) ?></p>
         </section>   
     <?php endforeach; ?>
@@ -29,6 +28,9 @@
         <h2 class="totale">Totale <?php echo getFormattedPrice($totale); ?></h2>
     </section>
     <div class="text-center">
-        <button type="submit" name="invia" class="btn btn-sm fw-bold" style="background-color: rgb(137, 85, 32); color: white; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 12px; font-style: italic;">Vai al pagamento</button>
+        <button class="button-invia" type="submit" name="invia" class="btn btn-sm fw-bold">Vai al pagamento</button>
     </div>
 </form>
+
+
+ 
