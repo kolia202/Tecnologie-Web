@@ -1454,6 +1454,23 @@ main .asstitle {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+main .ordineconferma {
+    color: black;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main .confermab {
+    background-color: rgb(137, 85, 32);
+    color: white;
+}
+
+main .confermab:hover {
+    background-color: rgb(137, 85, 32);
+    color: white;
+    transform: scale(0.95);
+}
+
 
 @media screen and (min-width: 768px) {
 
