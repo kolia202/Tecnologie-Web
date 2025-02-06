@@ -24,7 +24,7 @@
                     <p><strong>Utente:</strong> <?php echo $ordine["E_mail"] ?></p>
                     <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Vedi Ordine</a>
                     <div class="container mt-5">
-                        <h1>Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
+                        <h1 class="ordineid">Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
                         <p>Stato attuale: <strong><?php echo $ordine["Stato"]; ?></strong></p>
                         <form method="POST">
                             <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
@@ -36,7 +36,7 @@
                                     <option value="Consegnato">Consegnato</option>
                                 </select>
                             </div>
-                            <button type="submit" name="cambiaStato" class="btn btn-primary">Aggiorna Stato</button>
+                            <button type="submit" name="cambiaStato" class="btn fw-bold ordinib">Aggiorna Stato</button>
                         </form>
                     </div>
                 <?php else: ?>
