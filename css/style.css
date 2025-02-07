@@ -1808,13 +1808,28 @@ main .totalee {
     color: white;
 }
 
-.custom-modal-tetx {
-     width: 100%
+
+.text-muted {
+margin-left: 175px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+font-size: 15px; 
+font-style: italic;
+}
+
+.text-area-row {
+    width: 100%
 }
 
 
 
+
+
 @media screen and (min-width: 768px) {
+
+    .text-muted {
+        margin-left: 200px;
+        }
+        
 
     main .ordercont {
         width: 70%;
