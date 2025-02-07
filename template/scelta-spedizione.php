@@ -1,7 +1,7 @@
 <h1 class="total-price">Spedizione <i class="bi bi-truck"></i></h1>
 <form method="POST" action="spedizione.php" class="custom-form">
     <?php if (isset($_SESSION["shippingerror"])): ?>
-        <p class="error"><?php echo $_SESSION["shippingerror"]; ?></p>
+        <p class="error text-center"><?php echo $_SESSION["shippingerror"]; ?></p>
     <?php endif; ?>
     <?php if($spedizioneGratuita): ?>
         <p class="spedizione-alert">
@@ -27,8 +27,8 @@
         </h4>
         <h2 class="totale">Totale <?php echo getFormattedPrice($totale); ?></h2>
     </section>
-    <div class="text-center">
-        <button class="button-invia" type="submit" name="invia" class="btn btn-sm fw-bold">Vai al pagamento</button>
+    <div class="text-center mt-4 mb-4">
+        <button class="button-invia btn btn-sm fw-bold" type="submit" name="invia">Vai al pagamento</button>
     </div>
 </form>
 

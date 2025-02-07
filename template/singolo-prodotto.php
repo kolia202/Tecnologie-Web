@@ -64,16 +64,16 @@
                     <!-- gestione prodotto -->
                     <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
                         <form action="gestisci-prodotto.php" method="POST">
-                            <button type='submit' class='btn btn-primary gestiscib' name='attivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Attiva Prodotto</button>
+                            <button type='submit' class='btn gestiscib' name='attivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Attiva Prodotto</button>
                         </form>
                     <?php elseif(isAdminLoggedIn()): ?>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <button type="button" class="btn btn-primary me-3 gestiscib" data-bs-toggle="modal" data-bs-target="#modificaprodotto">
+                            <button type="button" class="btn me-3 gestiscib" data-bs-toggle="modal" data-bs-target="#modificaprodotto">
                                 <i class="bi bi-pencil-square"></i>    
                                 Modifica Prodotto
                             </button>
                             <form action="gestisci-prodotto.php" method="POST">
-                                <button type='submit' class='btn btn-primary ms-3 gestiscib' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Disattiva Prodotto</button>
+                                <button type='submit' class='btn ms-3 gestiscib' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Disattiva Prodotto</button>
                             </form>
                         </div>
                         <form action="gestisci-prodotto.php" method="POST">
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-    <?php endif; ?>    
+    <?php endif; ?>  
 </div>
 
 <!-- modal aggiornamento scorte -->

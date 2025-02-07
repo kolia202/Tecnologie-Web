@@ -23,3 +23,6 @@
     <div class="text-center mt-4 cusotm-mt4">
         <a href="../php/recensioni.php" class="btn btn-sm fw-bold text-white custom-btnRec">Invia una recensione</a>
     </div>
+<div class="text-center">
+    <a href="../php/account.php" type="button" class="btn btn-outline custom-indietro mb-4">Indietro</a>
+</div>

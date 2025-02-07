@@ -8,7 +8,7 @@
             <img class="imgCar" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt=""/>
             <h2 class="nomeProdottoC"><?php echo $prodotto["Nome"]; ?></h2>
         </a>
-        <p class="text-center text-muted"><strong>Quantità: </strong><?php echo $prodotto["Quantita"] ?></p>
+        <p class="text-muted"><strong>Quantità: </strong><?php echo $prodotto["Quantita"] ?></p>
     </section>
     </div>
 <?php endforeach; ?>

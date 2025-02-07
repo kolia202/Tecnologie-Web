@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container reccontainer mt-5">
   <div class="card p-4">
     <h1 class="text-center text-uppercase fw-bold custom-boldd">Recensioni dei clienti Mondo Morbidoso</h1>
     <div class="row mt-3">

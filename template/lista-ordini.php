@@ -22,23 +22,22 @@
                 <p><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                 <?php if (isAdminLoggedIn()): ?>
                     <p><strong>Utente:</strong> <?php echo $ordine["E_mail"] ?></p>
-                    <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold custom-aa">Vedi Ordine</a>
-                    <div class="container mt-5">
-                        <h1 class="ordineid">Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
-                        <p>Stato attuale: <strong><?php echo $ordine["Stato"]; ?></strong></p>
+                        <p><strong>Stato attuale: </strong><?php echo $ordine["Stato"]; ?></p>
                         <form method="POST">
                             <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
                             <div class="mb-3">
-                                <label for="stato" class="form-label">Cambia Stato</label>
-                                <select class="form-select" name="stato" id="stato">
+                                <label for="stato" class="form-label fw-bold">Cambia Stato</label>
+                                <select class="form-select inputlogin" name="stato" id="stato">
                                     <option value="In lavorazione">In lavorazione</option>
                                     <option value="Spedito">Spedito</option>
                                     <option value="Consegnato">Consegnato</option>
                                 </select>
                             </div>
-                            <button type="submit" name="cambiaStato" class="btn fw-bold ordinib">Aggiorna Stato</button>
+                            <div class="d-flex align-items-center">
+                                <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold ordinib me-3">Vedi Ordine</a>
+                                <button type="submit" name="cambiaStato" class="btn fw-bold ordinib">Aggiorna Stato</button>
+                            </div>
                         </form>
-                    </div>
                 <?php else: ?>
                     <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold ordinib">Traccia il tuo ordine</a><br>
                     <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold mt-2 ordinib">Dettagli Ordine</a>
@@ -47,4 +46,7 @@
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
+</div>
+<div class="text-center">
+    <a href="../php/account.php" type="button" class="btn btn-outline custom-indietro mb-4">Indietro</a>
 </div>

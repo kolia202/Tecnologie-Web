@@ -175,12 +175,12 @@
                             </button>
                         </div>
                     </div>
-                    <button type="submit" name="accedi" class="btn btn-primary w-100 fw-bold btn-accedi">Accedi</button>
+                    <button type="submit" name="accedi" class="btn w-100 fw-bold btn-accedi">Accedi</button>
                 </form>
                 <div class="text-center mt-3">
                     <a href="../php/controlloEmail.php" class="d-block">Password dimenticata?</a>
                     <p class="mt-3 newsignin">Non sei ancora registrato?</p>
-                    <a href="registrati.php" class="btn btn-outline-secondary ps-5 pe-5 registrati">Registrati</a>
+                    <a href="registrati.php" class="btn btn-outline ps-5 pe-5 registrati">Registrati</a>
                     <p class="mt-4"><a href="../php/index.php">Annulla</a></p>
                 </div>
             </div>
