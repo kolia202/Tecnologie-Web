@@ -30,6 +30,7 @@
     }
     $templateParams["prodotto"] = $dbhost->getProductById($idprodotto);
     $numeroprodotti = 0;
+    $prodottopreferito = false;
 
     if (isUserLoggedIn()) {
         $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
