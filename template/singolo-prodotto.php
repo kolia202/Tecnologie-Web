@@ -158,7 +158,7 @@
                     <br><label class="mt-3 modal-text" for="puntiprodotto">Punti:</label>
                     <input type="number" id="puntiprodotto" name="puntiprodotto" min="0" value="<?php echo $prodotto["Prezzo_punti"]; ?>" required/>
                     <br><label class="mt-3 modal-text" for="descrizioneprodotto">Descrizione:</label>
-                    <textarea rows="10" style="width: 100%" id="descrizioneprodotto" name="descrizioneprodotto" required/><?php echo $prodotto["Descrizione"]; ?></textarea>
+                    <textarea rows="10" class="text-area-row" id="descrizioneprodotto" name="descrizioneprodotto" required><?php echo $prodotto["Descrizione"]; ?></textarea>
                     <input type="hidden" name="idprodotto" value="<?php echo $prodotto["Id_prodotto"]; ?>">
                 </div>
                 <div class="modal-footer">
