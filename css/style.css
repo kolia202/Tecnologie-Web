@@ -1795,6 +1795,17 @@ main .totalee {
     margin: 0 auto;
 }
 
+.custom-aa {
+    background-color: rgb(204, 153, 102); 
+    color: white;
+}
+
+.custom-aa:hover,
+.custom-aa:active  {
+    background-color: rgb(204, 153, 102); 
+    color: white;
+}
+
 
 
 

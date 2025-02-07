@@ -22,7 +22,7 @@
                 <p><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                 <?php if (isAdminLoggedIn()): ?>
                     <p><strong>Utente:</strong> <?php echo $ordine["E_mail"] ?></p>
-                    <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold" style="background-color: rgb(204, 153, 102); color: white;">Vedi Ordine</a>
+                    <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" type="button" class="btn fw-bold custom-aa">Vedi Ordine</a>
                     <div class="container mt-5">
                         <h1 class="ordineid">Gestisci Ordine #<?php echo $ordine["Id_ordine"]; ?></h1>
                         <p>Stato attuale: <strong><?php echo $ordine["Stato"]; ?></strong></p>
