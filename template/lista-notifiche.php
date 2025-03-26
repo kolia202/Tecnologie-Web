@@ -12,11 +12,11 @@
         <div class="card ms-4 me-4 mb-3">
             <div class="card-body">
                 <?php if($notifica["Stato"] == 0): ?>
-                    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle nuova-notifica">
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle nuova-notifica">
                         <span class="visually-hidden">New alerts</span>
                     </span>
                 <?php else: ?>
-                    <span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle nuova-notifica2">
+                    <span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle notifica-letta">
                         <span class="visually-hidden">New alerts</span>
                     </span>
                 <?php endif; ?>
