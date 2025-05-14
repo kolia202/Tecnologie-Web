@@ -1,6 +1,5 @@
 <?php
 require_once 'bootstrap.php';
-session_start();
 
 if(isset($_POST["eliminanotifica"])) {
     $dbhost->deleteMessage($_POST["eliminanotifica"]);

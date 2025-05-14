@@ -1,6 +1,5 @@
 <?php
 require_once 'bootstrap.php';
-session_start();
 
 if(!isUserLoggedIn()) {
     header("Location: account.php");

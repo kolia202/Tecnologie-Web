@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-session_start();
 
 $templateParams["titolo"] = "Mondo Morbidoso - Recensioni";
 $templateParams["nome"] = "recensioniC.php";

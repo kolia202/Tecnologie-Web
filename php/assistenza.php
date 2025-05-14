@@ -1,8 +1,6 @@
 <?php
 require_once("bootstrap.php");
 
-session_start();
-
 $templateParams["titolo"] = "Mondo Morbidoso - Assistenza Clienti";
 $templateParams["nome"] = "assistenzaC.php";
 $templateParams["categorie"] = $dbhost->getCategories();

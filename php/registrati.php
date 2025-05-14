@@ -1,6 +1,6 @@
 <?php 
 require_once("bootstrap.php");
-session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST["nome"]);
     $cognome = trim($_POST["cognome"]);

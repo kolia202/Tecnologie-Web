@@ -1,6 +1,5 @@
 <?php
     require_once 'bootstrap.php';
-    session_start();
 
     if (isset($_GET["azione"]) && $_GET["azione"] == "aggiungi" && isset($_GET["id_prodotto"])) {
         if (!isUserLoggedIn()) {

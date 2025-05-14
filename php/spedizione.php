@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-session_start();
 
 if(isset($_SESSION["paymenterror"])) {
     unset($_SESSION["paymenterror"]);

@@ -1,6 +1,5 @@
 <?php
 require_once 'bootstrap.php';
-session_start();
 
 if(isset($_POST["nuove-scorte"]) && isset($_POST['idprodotto'])) {
     $id = $_POST['idprodotto'];

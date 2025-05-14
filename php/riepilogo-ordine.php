@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-session_start();
 
 $templateParams["titolo"] = "Mondo Morbidoso - Riepilogo Ordine";
 $templateParams["nome"] = "riepilogo-ordineC.php";

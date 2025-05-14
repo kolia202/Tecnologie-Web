@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newPassword = trim($_POST['password']);
     $confirmPassword = trim($_POST['confirm_password']);

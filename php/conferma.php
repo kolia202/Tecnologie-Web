@@ -1,6 +1,5 @@
 <?php
 require_once 'bootstrap.php';
-session_start();
 
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Conferma Ordine";

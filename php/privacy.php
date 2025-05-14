@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+
 $templateParams["titolo"] = "Mondo Morbidoso - Privacy";
 $templateParams["nome"] = "privacyC.php";
 $templateParams["categorie"] = $dbhost->getCategories();

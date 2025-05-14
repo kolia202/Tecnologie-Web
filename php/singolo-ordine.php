@@ -1,6 +1,5 @@
 <?php
 require_once("bootstrap.php");
-session_start();
 
 $templateParams["titolo"] = "Mondo Morbidoso - Dettaglio Ordine";
 $templateParams["nome"] = "dettaglio-ordine.php";
