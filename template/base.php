@@ -6,7 +6,7 @@
     <title><?php echo $templateParams["titolo"]; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/style.css?v=110" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css?v=117" />
 </head>
 <body>
     <!-- HEADER -->
@@ -19,8 +19,8 @@
         <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0 pt-4 d-flex align-items-center">
-                <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="">
-                <h2>Menu</h2>
+                <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
+                <h2 class="mt-2">Menu</h2>
                 <!-- BOTTONE X -->
                 <button type="button" class="btn ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg"></i>
@@ -32,9 +32,9 @@
                     <!-- BARRA DI RICERCA -->
                     <form class="d-flex mb-4" method="GET" action="prodotti.php">
                         <div class="d-flex align-items-center search-bar">
-                            <input id="search" name="search" class="form-control search ms-1" type="text" placeholder="Cerca" autocomplete="off">
+                            <input id="search" name="search" class="form-control search ms-1 mt-1" type="text" placeholder="Cerca" autocomplete="off">
                             <!-- BOTTONE CERCA -->
-                            <button type="submit" for="search" class="btn pt-0 pb-0 ps-2 pe-2 ms-2 btn-search">
+                            <button type="submit" for="search" class="btn pt-0 pb-0 ps-2 pe-2 ms-2 mt-1">
                                 <i class="bi bi-search-heart"></i>
                             </button>
                         </div>
@@ -68,7 +68,7 @@
                             <li>
                                 <form method="POST" action="account.php">
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" name="logout" class="btn rounded-pill fw-bold logout">Logout</button>
+                                        <button type="submit" name="logout" class="btn rounded-pill fw-bold logout mt-4">Logout</button>
                                     </div>
                                 </form>
                             </li>
@@ -117,7 +117,8 @@
                 <button type="button" class="btn ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg"></i>
                 </button>
-                <h2 class="ms-4 mb-2">Carrello</h2>
+                <img class="iconaborsa" src="../utilities/logo/borsa.png" alt="iconaborsa">
+                <h2 class="mb-2 mt-2">Carrello</h2>
             </div>
             <!-- BODY MENU -->
             <div class="offcanvas-body pt-4 ps-1 pe-1" id="cart-menu">
@@ -133,7 +134,7 @@
         ?>
     </main>
 
-    <!-- FOOTER (CHE FOOTA!!!) -->
+    <!-- FOOTER -->
     <footer>
         <a href="../php/assistenza.php">Assistenza Clienti</a><br>
         <a href="../php/informazioni.php">Informazioni su Mondo Morbidoso</a><br>
