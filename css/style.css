@@ -149,6 +149,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
 .offcanvas-body ul li button {
     display: inline-block;
     height: 100%;
+    width: 80%;
     padding: 4%;
     color: rgb(137, 85, 32);
     text-align: center;
@@ -235,6 +236,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
 }
+
 
 /* MAIN */
 
@@ -1847,19 +1849,27 @@ main .rimuoviprefe {
 
 @media screen and (min-width: 768px) {        
 
-    .reccontainer {
+    .reccontainer { /*recensioniC*/
         margin-bottom: 5%;
     }
 
-    main .ordercont {
+    main .ordercont { /*lista-notifiche, lista-ordini*/
         width: 70%;
     }
 
-    main .cont-account {
+    main .cont-account { /*accountC, assistenzaC*/
         width: 70%;
+    }
+
+    .button1 {
+        font-size: 18px;
     }
     
     /* HEADER */
+
+    header {
+        height: 140px;
+    }
 
     div.offcanvas.offcanvas-start.offcanvas-custom {
         width: 30%;
@@ -1879,7 +1889,6 @@ main .rimuoviprefe {
 
     header .user {
         margin-right: 2%;
-        margin-bottom: 1%;
     }
 
     .bi-person {
@@ -1888,7 +1897,7 @@ main .rimuoviprefe {
 
     .user-badge {
         font-size: 15px;
-        padding: 4px 7px;
+        padding: 5% 10%;
     }
 
     header .cart {
@@ -1902,18 +1911,16 @@ main .rimuoviprefe {
 
     .cart-badge {
         font-size: 15px;
-        padding: 4px 7px;
+        padding: 5% 10%;
     }
 
     .iconaorsetto {
-        height: 80%;
-        width: auto;
+        height: 90%;
         margin-left: 10%;
     }
 
     header h2 { 
         font-size: 40px;
-        margin-left: 3%;
     }
 
     .bi-x-lg {
@@ -1933,27 +1940,15 @@ main .rimuoviprefe {
         width: 100%;
         margin-left: 3%;
     }
-    
-    .btn-search {
-        font-size: 35px;
-    }
-
-    .offcanvas-body ul li button {
-        width: 80%;
-    }
 
     .offcanvas-body p {
         font-size: 16px;
+        margin-bottom: 10%;
     }
-    
-    .offcanvas-body .accesso {
-        font-size: 18px;
-        margin-top: 5%;
-    }
-    
-    .offcanvas-body .vuoto {
-        font-size: 18px; 
-        margin-top: 5%;
+
+    .iconaborsa {
+        height: 100%;
+        margin-left: 3%;
     }
     
     .offcanvas-body .cartmenu-info a p {
@@ -1962,10 +1957,6 @@ main .rimuoviprefe {
     
     .offcanvas-body h3 {
         font-size: 24px;
-    }
-    
-    .offcanvas-body .vaicarrello {
-        font-size: 18px;
     }
 
     /* MAIN */
