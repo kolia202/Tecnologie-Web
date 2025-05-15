@@ -43,13 +43,13 @@ function updateCart(button, update, isCart) {
             cartOffcanvas.show();
             if (!document.querySelector('#cart-menu p.mt-2')) {
                 const newp = document.createElement('p');
-                newp.classList.add('mt-2', 'ps-3', 'pe-3', 'text');
+                newp.classList.add('mt-2', 'ps-3', 'pe-3', 'text-italic');
                 newp.innerText = 'Per visualizzare il carrello, accedi al tuo account.';
                 document.querySelector("#cart-menu").appendChild(newp);
                 const newd = document.createElement('div');
                 newd.classList.add('text-center', 'mt-4');
                 const newa = document.createElement('a');
-                newa.classList.add("btn", 'fw-bold', 'mt-2', 'ps-4', 'pe-4', 'button1');
+                newa.classList.add("btn", 'mt-2', 'ps-4', 'pe-4', 'button1');
                 newa.href = "../php/account.php";
                 newa.innerText = 'Accedi';
                 newd.appendChild(newa);
@@ -116,9 +116,9 @@ function updateMenu(cart) {
     if(cart.length == 0) {
         const emptyCart = document.createElement('article');
         emptyCart.innerHTML = `
-            <p class="mt-2 ps-3 pe-3 text">Il tuo carrello è vuoto</p>
+            <p class="mt-2 ps-3 pe-3 text-italic">Il tuo carrello è vuoto</p>
             <div class="text-center mt-4">
-            <a href="../php/prodotti.php" class="btn fw-bold mt-2 ps-3 pe-3 button1">I nostri Peluches</a>
+            <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button1">I nostri Peluches</a>
             </div>
         `;
         cartMenu.appendChild(emptyCart);
@@ -145,7 +145,7 @@ function updateMenu(cart) {
             link.appendChild(par);
             div.appendChild(link);
             const p = document.createElement('p');
-            p.classList.add('text-muted', 'textitalic');
+            p.classList.add('text-muted', 'text-italic');
             p.innerText = i.Quantita + ' x ' + parseFloat(i.Prezzo).toFixed(2).replace(".", ",") + '€';
             div.appendChild(p);
             productSection.appendChild(cartmenuItem);
@@ -160,7 +160,7 @@ function updateMenu(cart) {
         button.classList.add("text-center", 'mt-4');
 
         const a = document.createElement('a');
-        a.classList.add('btn', 'fw-bold', 'ps-3', 'pe-3', 'mt-5', 'button1');
+        a.classList.add('btn', 'ps-3', 'pe-3', 'mt-5', 'button1');
         a.href = "../php/carrello.php";
         a.innerText = 'Visualizza Carrello';
         

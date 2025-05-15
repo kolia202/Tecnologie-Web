@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo $templateParams["titolo"]; ?></title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/style.css?v=117" />
@@ -20,14 +22,14 @@
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0 pt-4 d-flex align-items-center">
                 <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
-                <h2 class="mt-2">Menu</h2>
+                <h2 class="mt-2">MENÙ</h2>
                 <!-- BOTTONE X -->
                 <button type="button" class="btn ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
             <!-- BODY MENU -->
-            <div class="offcanvas-body pt-3">
+            <div class="offcanvas-body pt-2">
                 <div>
                     <!-- BARRA DI RICERCA -->
                     <form class="d-flex mb-4" method="GET" action="prodotti.php">
@@ -40,7 +42,7 @@
                         </div>
                     </form>
                     <!-- LINK NEL MENU -->
-                    <ul class="list-unstyled pt-3 mb-5">
+                    <ul class="list-unstyled pt-1 mb-4">
                         <li><a href="../php/index.php">Home<br></a></li>
                         <li><a href="../php/account.php">Account<br></a></li>
                         <?php if(!isAdminLoggedIn()): ?>
@@ -68,7 +70,7 @@
                             <li>
                                 <form method="POST" action="account.php">
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" name="logout" class="btn rounded-pill fw-bold logout mt-4">Logout</button>
+                                        <button type="submit" name="logout" class="btn rounded-pill button1 logout mt-4">Logout</button>
                                     </div>
                                 </form>
                             </li>

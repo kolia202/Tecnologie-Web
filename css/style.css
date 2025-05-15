@@ -13,9 +13,8 @@ body {
 .button1 {
     background-color: rgb(137, 85, 32); 
     color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
+    font-family: 'Chewy', sans-serif; 
+    font-size: 18px;
     text-align: center;
 }
 
@@ -37,14 +36,14 @@ body {
 }
 
 .text {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
     text-align: center;
 }
 
-.textitalic {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+.text-italic {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
     text-align: center;
     font-style: italic;
 }
@@ -75,9 +74,9 @@ header {
 
 header h2 { 
     color: rgb(137, 85, 32); 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Chewy', sans-serif;
     font-style: italic;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .bi-x-lg {
@@ -94,9 +93,9 @@ header h2 {
 .search::placeholder {
     color: rgb(137, 85, 32);
     opacity: 0.8;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-style: italic;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .search:focus {
@@ -104,8 +103,9 @@ header h2 {
     border-color: rgb(137, 85, 32);
     box-shadow: 0 0 5px rgb(245, 222, 179);
     color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .bi-search-heart {
@@ -138,8 +138,8 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     color: rgb(137, 85, 32);
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .offcanvas-body ul li a:hover {
@@ -153,8 +153,8 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     padding: 4%;
     color: rgb(137, 85, 32);
     text-align: center;
-    font-size: 18px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .offcanvas-body ul li button:hover {
@@ -163,8 +163,11 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
 }
 
 .offcanvas-body ul li button.logout {
-    background-color: rgb(137, 85, 32);
-    color: white;
+    background-color: rgb(137, 85, 32); 
+    color: white; 
+    font-family: 'Chewy', sans-serif; 
+    font-size: 18px;
+    text-align: center;
     width: 60%;
     padding: 2%;
 }
@@ -221,7 +224,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
 }
 
 .offcanvas-body .cartmenu-info a p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 17px;
     color: rgb(204, 153, 102);
     text-align: center;
@@ -233,8 +236,8 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
 
 .offcanvas-body h3 {
     color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
 }
 
 
@@ -1862,6 +1865,14 @@ main .rimuoviprefe {
     }
 
     .button1 {
+        font-size: 22px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .text-italic {
         font-size: 18px;
     }
     
@@ -1920,7 +1931,7 @@ main .rimuoviprefe {
     }
 
     header h2 { 
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .bi-x-lg {
@@ -1931,19 +1942,32 @@ main .rimuoviprefe {
         height: 50px;
         margin-right: 1%;
     }
+
+    .search::placeholder {
+        font-size: 20px;
+    }
     
     .search:focus {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .search-bar {
         width: 100%;
         margin-left: 3%;
+        margin-top: 4%;
     }
 
-    .offcanvas-body p {
-        font-size: 16px;
-        margin-bottom: 10%;
+    .offcanvas-body ul li a {
+        font-size: 22px;
+    }
+
+    .offcanvas-body ul li button {
+        font-size: 22px;
+    }
+
+    .offcanvas-body ul li button.logout {
+        font-size: 22px;
+        margin-bottom: 3%;
     }
 
     .iconaborsa {
@@ -1952,12 +1976,13 @@ main .rimuoviprefe {
     }
     
     .offcanvas-body .cartmenu-info a p {
-        font-size: 20px;
+        font-size: 22px;
     }
     
     .offcanvas-body h3 {
-        font-size: 24px;
+        font-size: 26px;
     }
+    
 
     /* MAIN */
 
