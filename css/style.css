@@ -7,10 +7,9 @@ html, body {
 
 body {
     background-color: rgb(245, 222, 179, 0.3);
-    /*background-color: white;*/
 }
 
-.button1 {
+.button {
     background-color: rgb(137, 85, 32); 
     color: white; 
     font-family: 'Chewy', sans-serif; 
@@ -18,21 +17,44 @@ body {
     text-align: center;
 }
 
-.button1:active {
+.button:active {
+    background-color: rgb(137, 85, 32) !important;
+    color: white !important;
+}
+
+.button:hover {
     transform: scale(0.95);
     background-color: rgb(137, 85, 32);
     color: white;
 }
 
-.button1:hover {
-    transform: scale(0.95);
+.button:focus {
     background-color: rgb(137, 85, 32);
     color: white;
 }
 
-.button1:focus {
-    background-color: rgb(137, 85, 32);
-    color: white;
+.button-outline {
+    border: 2px solid rgb(137, 85, 32);
+    color: rgb(137, 85, 32);
+    font-family: 'Chewy', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.button-outline:active {
+    border: 2px solid rgb(137, 85, 32) !important;
+    color: rgb(137, 85, 32) !important;
+}
+
+.button-outline:hover {
+    text-decoration: underline;
+    border: 2px solid rgb(137, 85, 32);
+    color: rgb(137, 85, 32);
+}
+
+.button-outline:focus {
+    border: 2px solid rgb(137, 85, 32);
+    color: rgb(137, 85, 32);
 }
 
 .text {
@@ -47,6 +69,14 @@ body {
     text-align: center;
     font-style: italic;
 }
+
+.title {
+    font-family: 'Chewy', sans-serif;
+    text-align: center;
+    color: rgb(137, 85, 32);
+    font-size: 35px;
+}
+
 
 /* HEADER */
 
@@ -247,40 +277,207 @@ main {
     margin-bottom: 5%;
 }
 
+main p {
+    color: rgb(137, 85, 32)
+}
+
+
 /* HOME */
 
-.carousel-item img {
-    width: 250px;  
-    height: 200px; 
-    object-fit: cover;
-    margin: 0 auto; 
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgb(245, 222, 179);
-    border-radius: 50%; 
-    padding: 10px; 
-}
-
-main img {
-    width: 85%; 
-    height: auto; 
-    display:block; 
-    margin: 15px auto 0 auto; 
+.img-vetrina {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 250px;
     border: 4px solid rgb(245, 222, 179);
 }
 
-main > h1 {
-    text-align: center; 
-    color: rgb(137, 85, 32); 
-    margin-top: 10px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 25px;
-    margin-bottom: 5px;
+.catcontainer {
+  background: linear-gradient(135deg, rgb(245, 222, 179, 0.3), #fbcdb4);
+  border-bottom: 2px solid rgb(245, 222, 179);
+  border-top: 2px solid rgb(245, 222, 179);
 }
 
-main > p {
+.category {
+    background-color: rgb(204, 153, 102, 0.6);
+    height: 60px;
+    width: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: rgb(137, 85, 32);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    border: 2px solid rgb(245, 222, 179);
+    font-weight: bold;
+}
+
+.category:hover {
+  transform: scale(1.08);
+}
+
+.catcontainer a {
+    text-decoration: none;
+}
+
+.bi-stars {
+    font-size: 30px;
+    color: rgb(255, 165, 0);
+}
+
+.custom-box {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border: 5px solid rgb(245, 222, 179);
+}
+
+.carousel-img {
+    object-fit: contain;
+    height: 160px;
+}
+
+.carousel-item a {
+    text-decoration: none;
+}
+
+.carousel-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    color: rgb(137, 85, 32);
+}
+
+.bi-chevron-compact-left, .bi-chevron-compact-right {
+    color: rgb(137, 85, 32);
+    font-size: 40px;
+}
+
+.why-title {
+  font-size: 30px;
+  color: rgb(240, 139, 36);
+}
+
+.why-item {
+    background-color: rgb(245, 222, 179, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.why-item p {
+    font-size: 15px;
+    color: black;
+}
+
+.why-icon {
+    font-size: 18px;
+    color: rgb(190, 140, 90);
+}
+
+.why-more {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  color: rgb(240, 139, 36);
+  text-decoration: underline;
+}
+
+.why-more:hover {
+  color: rgb(194, 112, 27);
+}
+
+.newsletter-box {
+    background-color: #fff;
+    border: 4px solid rgb(245, 222, 179);
+    border-radius: 10px; 
+    text-align: center;
+}
+
+.newsletter-box h3 {
+    font-size: 28px;
+}
+
+.bi-envelope-heart {
+    font-size: 24px;
+    color: rgb(137, 85, 32)
+}
+
+.text-input {
+    border-color: rgb(245, 222, 179);
+    text-align: start;
+}
+
+.text-input::placeholder {
+    color: rgb(137, 85, 32);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.text-input:focus {
+    border-color: rgb(137, 85, 32);
+    box-shadow: 0 0 5px rgb(245, 222, 179);
+    color: rgb(137, 85, 32);
+    font-weight: bold;
+}
+
+.star-rating {
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.star-rating .bi-star-fill, .star-rating .bi-star-half, .star-rating .bi-star {
+    font-size: 22px;
+}
+
+.carousel-reviews .bi-star-fill, .carousel-reviews .bi-star-half, .carousel-reviews .bi-star {
+    font-size: 15px;
+}
+
+.stars-reviews {
+    text-align: start;
+}
+
+.recensione-box {
+    background-color: rgb(245, 222, 179, 0.5);
+    width: 85%;
+    border-radius: 10px;
+    border: rgb(137, 85, 32) 1px solid;
+}
+
+.carousel-reviews .carousel-control-prev {
+    left: -10px; 
+}
+
+.carousel-reviews .carousel-control-next {
+    right: -10px;
+}
+
+.cookie {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%;
+    background: white; 
+    border-radius: 10px; 
+    border: 2px solid rgb(137, 85, 32); 
+    text-align: center;
+}
+
+.cookie h5 {
+    font-size: 18px;
+}
+
+.cookie p {
+    color: black;
+}
+
+
+
+
+
+
+/*main > p {
     text-align: center; 
     color: rgb(137, 85, 32);
     margin-left: 2%;
@@ -290,7 +487,7 @@ main > p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
     margin-bottom: 8px;
-}
+}*/
 
 /* LOGIN & CO */
 
@@ -449,7 +646,7 @@ main .btn-points:hover {
     background-color: rgb(255, 255, 153); 
 }
 
-.bi-star-fill {
+.bi-star-fill, .bi-star-half, .bi-star {
     color: rgb(255, 165, 0);
     font-size: 20px;
 }
@@ -529,341 +726,14 @@ footer {
     margin-top: auto;
     background-color: rgb(137, 85, 32);
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: 2%;
 }
 
-footer a {
-    color: white;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: italic;
+footer > a {
     font-size: 14px;
-}
-
-
-
-/*index.php*/
-
-.img-vetrina {
-    background-size: cover; 
-    background-position: center;
-    width: 300px;
-    height: 200px; 
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 4px solid rgb(245, 222, 179);
-}
-
-.favorite-store-title {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.welcome-message {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.text-centerA {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-.custom-buttonA {
-    background-color: rgb(137, 85, 32);
-    border-radius: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 18px;
     color: white;
-    width: 250px;
-    height: 40px;
-}
-
-.custom-buttonA:hover,
-.custom-buttonA:active {
-    background-color: rgb(137, 85, 32);
-    color: white;
-    transform: none;
-}
-
-.rating {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-.rating-star {
-    color: rgb(240, 191, 16);
-    font-size: 25px; 
-}
-
-.rating-score {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    color: rgb(137, 85, 32);
-    font-size: 20px; 
-}
-
-.rating-reviews {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    color: rgb(137, 85, 32);
-    font-size: 15px
-}
-
-.custom-biB {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px; 
-    color: rgb(137, 85, 32);
-}
-
-.Consegna {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: center; 
-}
-
-.ordinip {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    text-align: center
-}
-
-.custom-biBB {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px; 
-    color: rgb(137, 85, 32);
-}
-
-.pagamentoS {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: center; 
-}
-
-.tipoCarte {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    text-align: center
-}
-
-.custom-box {
-    width: 85%;
-    margin: 20px auto;
-    border: 4px solid rgb(245, 222, 179);
-    border-radius: 10px;
-}
-
-.carousel-inner {
-    width: 100%;
-    height: 285px;
-}
-
-.slide {
-    width: 100%;
-    height: 100%;
-   
-}
-
-.immCours {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border: 0px solid rgb(254, 254, 254);
-}
-
-.dettaglio {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    text-decoration: none;
-    color: rgb(137, 85, 32);
-}
-
-.collezioni {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    padding-top: 20px;
-}
-
-.bg-whitee {
-    margin-top: 30px;
-    width: 100%;
-    background-color: #fff;
-    border: 4px solid rgb(245, 222, 179);
-    border-radius: 10px; 
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
-    padding: 10px;
-}
-
-.fw-boldSS {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-centerP h3 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
-    font-size: 18px; 
-    font-weight: bold;
-    color: rgb(137, 85, 32);
-    margin-bottom: 8px;
-}
-
-.text-centerP h3 i {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 18px; 
-    margin-right: 3px;
-    color: rgb(137, 85, 32);
-}
-
-.text-centerP p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 14px; 
-    color: rgb(137, 85, 32);
-    margin-bottom: 12px;
-}
-
-.text-centerP .form-control {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    width: 100%;
-    padding: 8px; 
-    font-size: 14px;
-    text-align: center;
-    border: 1.5px solid rgb(137, 85, 32);
-    border-radius: 4px;
-    outline: none;
-}
-
-.text-centerP .btn-primary {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: rgb(137, 85, 32);
-    color: white;
-    border: none;
-    border-radius: 10px;
-}
-
-.fotoTonda {
-    margin-top: 30px;
-    width: 200px; 
-    height: 175px;
-    border-radius: 50%; 
-    object-fit: cover;
-}
-
-.bg-whiteee {
-    margin: 20px auto;
-    width: 85%;
-    height: 275px;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 4px solid rgb(245, 222, 179);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.bg-whiteee h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(137, 85, 32);
-    margin-bottom: 10px;
-}
-
-.bg-whiteee p{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(137, 85, 32);
-    margin-bottom: 10px;
-}
-
-.align-items-centerr {
-    text-align: center;
-    padding: 20px;
-}
-
-.slidee {
-height: 100px;
-}
-
-.custom-inner {
-    height: 100px;
-}
-
-.cookie {
-    display: none; 
-    position: fixed; 
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 90%; 
-    max-width: 500px; 
-    background: #fff; 
-    color: #333; 
-    padding: 20px; 
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); 
-    border-radius: 10px; 
-    border: 2px solid #FFD700; 
-    text-align: center; z-index: 1000
-}
-
-.cookie h5 {
-    font-weight: bold;
-}
-
-.cookie p {
-    margin-bottom: 10px;
-}
-
-.divCookie {
-    display: flex; 
-    justify-content: space-evenly; 
-    margin-top: 15px
 }
 
 /*priacyC.php*/
@@ -906,11 +776,6 @@ height: 100px;
     font-style: italic;
     font-size: 28px;
     color: rgb(137, 85, 32);
-}
-
-.bi-stars {
-    font-size: 25px;
-    color: rgb(240, 191, 16);
 }
 
 main .aggiungiprodottob {
@@ -1053,12 +918,6 @@ main .eliminap {
     font-style: italic;
     font-size: 15px;
     color: rgb(137, 85, 32);
-}
-
-.star-rating {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
 }
 
 .custom-primary {
@@ -1864,7 +1723,7 @@ main .rimuoviprefe {
         width: 70%;
     }
 
-    .button1 {
+    .button {
         font-size: 22px;
     }
 
@@ -2003,21 +1862,6 @@ main .rimuoviprefe {
         height: 500px; 
     }
 
-    .favorite-store-title {
-        font-size: 40px;
-    }
-
-    .welcome-message {
-        font-size: 26px;
-    }
-    
-    .custom-buttonA {
-        margin-top: 15px;
-        font-size: 20px;
-        width: 20%;
-        height: 70px;
-    }
-
     .rating-star {
         font-size: 40px; 
     }
@@ -2029,71 +1873,19 @@ main .rimuoviprefe {
     .rating-reviews {
         font-size: 20px
     }
+    
 
-    .custom-biB {
-        font-size: 50px; 
-    }
-    
-    .Consegna {
-        font-size: 35px;
-    }
-    
-    .ordinip {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .custom-biBB {
-        margin-top: 30px;
-        font-size: 50px; 
-    }
-    
-    .pagamentoS {
-        font-size: 35px;
-    }
-    
-    .tipoCarte {
-        font-size: 20px;
-        padding-bottom: 30px;
-    }
 
     .custom-box {
         width: 60%;
         margin: 20px auto;
     }
     
-    .carousel-inner {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .slide {
-        width: 100%;
-        height: 100%
-    }
-    
-    .immCours {
-        width: 100%;
-        height: 100%;
-    }
-    
     .dettaglio {
         font-size: 20px;
     }
 
-    .collezioni {
-        font-size: 35px;
-        margin-top: 20px;
-    }
-
-    .my-56 {
-        width: 60%;
-    }
-
-    .fotoTonda {
-        width: 500px; 
-        height: 475px;
-    }
+    
 
     .bg-whiteee {
         width: 60%;

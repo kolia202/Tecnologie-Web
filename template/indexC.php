@@ -1,159 +1,174 @@
 <img class="img-vetrina mt-4" src="../utilities/img/Peluches-Home.png" alt="vetrina" />
 
-<h1 class="favorite-store-title mt-4">Il tuo negozio di peluche preferito!</h1>
-
-<p class="welcome-message">
-    Benvenuto nel mondo dei peluches! Scopri la nostra collezione di amici morbidosi, 
-    perfetti per coccole e regali. Trova il peluche ideale per te e portalo a casa con un click!
+<h1 class="title mt-2 ms-3 me-3 mb-1">Benvenuti nel mondo dei Peluches!</h1>
+<p class="text ms-3 me-3">
+    Scopri la nostra collezione di amici morbidosi, perfetti da coccolare, collezionare o regalare a chi ami.
+    Trova il peluche ideale per te e portalo a casa con un click!
 </p>
-
-<div class="text-centerA">
-    <a href="../php/prodotti.php">
-        <button type="button" class="btn btn-sm fw-bold custom-buttonA">
-            Scopri tutti i peluche
-        </button>
-    </a>
+<div class="text-center mt-4">
+    <a href="../php/prodotti.php" class="btn ps-5 pe-5 button">I nostri Peluches</a>
 </div>
 
-<p class="rating">
-    <i class="bi bi-star-fill rating-star"></i>
-    <strong class="rating-score">
-        <?php echo number_format($templateParams["mediaVoti"], 1); ?>
-    </strong>
-    <span class="rating-reviews">
-        (<?php echo number_format($templateParams["numeroRecensioni"]);?> Recensioni)
-    </span>
-</p>
-
-<i class="bi bi-gift-fill custom-biB"></i>
-
-<h1 class="Consegna">Consegna gratuita</h1>
-
-<p class="ordinip">per ordini superiori a 50€</p>
-    
-<i class="bi bi-lock-fill custom-biBB"></i>
-
-<h1 class="pagamentoS">Pagamento 100% sicuro</h1>
-
-<p class="tipoCarte"> Paypal / Mastercard / Visa</p>
-
-    <div class="box p-4 rounded shadow bg-white custom-box">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
-                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <a class="dettaglio" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
-                            <img class="immCours" src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" class="d-block w-100 rounded" alt="<?php echo $prodotto['Nome']; ?>">
-                            <p class="text-center mt-3 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
-                        </a>
-                        <p class="text-center mt-1 text-danger fw-bold"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
+<div class="catcontainer mt-5 pt-4 pe-5 ps-5 pb-4">
+    <h2 class="title mb-4">Esplora le Collezioni!</h2>
+    <div class="row justify-content-center">
+        <?php foreach($templateParams["categorie"] as $categoria): ?>
+            <div class="col-6 col-md-3 text-center mb-3">
+                <a href="../php/prodotti.php?categoria=<?php echo $categoria["Nome_categoria"]; ?>">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto category">
+                        <?php echo $categoria["Nome_categoria"]; ?>
                     </div>
-                    <?php endforeach; ?>
+                </a>
+            </div>
+        <?php endforeach; ?>            
+    </div>
+</div>
+
+<h2 class="title mt-4 pt-2"><i class="bi bi-stars"></i> I Best seller! <i class="bi bi-stars"></i></h2>
+<div class="box pt-3 ps-2 pe-2 pb-1 mt-4 rounded shadow bg-white custom-box">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
+                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                        <img class="carousel-img d-block w-100" src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" alt="<?php echo $prodotto['Nome']; ?>">
+                        <p class="carousel-title text-center mt-3 mb-2 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
+                    </a>
+                    <p class="text-center text-dark text"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<section class="mt-5 pt-3">
+  <div class="container text-center ps-0 pe-0">
+    <h2 class="title why-title mb-1">Perché scegliere Mondo Morbidoso?</h2>
+    <p class="text ms-3 me-3">
+      Ogni peluche è scelto con amore.<br/>Materiali di qualità, lavorazione sicura e tanta cura nei dettagli!
+    </p>
+    <div class="row mb-3 ms-2 me-2 g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+            <div class="why-item p-3">
+                <i class="bi bi-lock me-1 why-icon"></i>
+                <p class=" text text-center mb-0">Pagamento facile e sicuro</p>
             </div>
         </div>
-    
+        <div class="col-6 col-md-3">
+            <div class="why-item p-3">
+                <i class="bi bi-truck me-2 why-icon"></i>
+                <p class="text text-center mb-0">Spedizione gratis oltre 50€</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="why-item p-3">
+                <i class="bi bi-gem me-1 why-icon"></i>
+                <p class="text text-center mb-0">Programma fedeltà unico</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="why-item p-3">
+                <i class="bi bi-gift me-2 why-icon"></i>
+                <p class="text text-center mb-0">Confezioni regalo adorabili</p>
+            </div>
+        </div>
+    </div>
+    <a href="../php/informazioni.php" class="why-more">Scopri di più su di noi</a>
+  </div>
+</section>
 
-<div class="text-centerA">
-    <a href="../php/prodotti.php">
-        <button type="button" class="btn btn-sm fw-bold custom-buttonA">Vedi i prodotti</button>
-    </a>
-</div>
 
-<h1 class="collezioni">Le nostre collezioni</h1>
-
-<p class="welcome-message">
-Il negozio Mondo Morbido, specializzato nella vedita di peluche, offre una vasta
-selezione di prodotti per tutta la famiglia. Grazie all'enorme varietà di articoli
-per bambini e adulti, è diventato un vero e prorpio punto di riferimento per gli
-appassionati del genere.
-</p>
-
-<div class="container my-56" id="newsletter">
-    <div class="box p-4 rounded shadow bg-whitee">
-        <div class="text-centerP">
-            <h3 class="fw-boldSS"><i class="bi bi-envelope-heart"></i> Newsletter</h3>
-            <p>Iscriviti alla nostra newsletter per ricevere i nostri consigli e suggerimenti per la scelta del peluche</p>
-            <div id="liveAlertPlaceholder">
-                <?php if (!empty($message)): ?>
-                    <div class="alert <?php echo isset($success) && $success ? 'alert-success' : 'alert-danger'; ?>" role="alert">
-                        <?php echo $message; ?>
+<div class="container mt-5" id="newsletter">
+    <div class="box p-4 shadow newsletter-box">
+        <div class=" text-center text-centerP">
+            <h3 class="title"><i class="bi bi-envelope-heart me-1"></i> Newsletter</h3>
+            <p class="text mb-4">Iscriviti alla nostra newsletter e ricevi tutte le novità e offerte esclusive dedicate a te!</p>
+            <div id="liveAlert">
+                <?php if (isset($_SESSION["errornewsletter"])): ?>
+                    <div class="alert alert-danger text-center alerts" role="alert">
+                        <i class="bi bi-exclamation-triangle align-center"></i>
+                        <?php echo $_SESSION["errornewsletter"]; ?>
+                        <?php unset($_SESSION['errornewsletter']); ?>
                     </div>
+                <?php elseif(isset($_SESSION['successnewsletter'])): ?>
+                    <div class="alert alert-success text-center alerts" role="alert">
+                        <i class="bi bi-check-circle align-center"></i>
+                        <?php echo $_SESSION["successnewsletter"];
+                        unset($_SESSION['successnewsletter']); ?>
+                    </div>  
                 <?php endif; ?>
             </div>
             <form method="POST" action="#newsletter">
-                <div class="mb-3">
-                    <input type="email" class="form-control text-center" name="email" placeholder="vostro@email.com" required>
+                <div class="mb-4">
+                    <input type="email" class="form-control text text-input" name="email" placeholder="Email" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Iscriviti</button>
+                <button type="submit" class="btn button ps-5 pe-5">Iscriviti</button>
             </form>
-
         </div>
     </div>
 </div>
 
-<img class="fotoTonda" src="../utilities/img/peluches-home.png" alt="vetrina">
 
-<h1 class="favorite-store-title">Perchè acquistare peluche da Mondo Morbidoso?</h1>
-
-<p class="welcome-message">
-    Il negozio online Mondo Morbidoso 
-    appresenta una solzuzione conveniente per i genitori in
-    cerca di peluche per i loro bambini.
-</p>
-
-    <div class="box rounded shadow bg-whiteee">
-        <h1 class="mt-2">Cosa dicono di noi?</h1>
-        <p class="recensionihome">Le testimonianze di chi ha scelto di
-        affidarsi a noi per l'acquisto dei peluche!</p>
-        <div id="carouselExample" class="carousel slidee mt-5">
-            <div class="carousel-inner custom-inner">
-                <?php if (!empty($templateParams["recensioni"])): ?>
+<section class="pt-5 mb-4">
+    <div class="container text-center">
+        <h2 class="title">Cosa dicono di noi?</h2>
+        <p class="text ms-3 me-3 mb-1">Le testimonianze di chi ha scelto di affidarsi a noi per l'acquisto dei peluche!</p>
+        <div>
+            <p class="star-rating">
+                <?php echo getStarRating($mediaVoti); ?> 
+                <?php echo number_format($mediaVoti, 1); ?>/5 su <?php echo $numRecensioni; ?> recensioni
+            </p>
+        </div>
+        <?php if (!empty($templateParams["recensioni"])): ?>
+            <div id="carouselRecensioni" class="carousel slide mt-4 carousel-reviews" data-bs-ride="carousel">
+                <div class="carousel-inner">
                     <?php foreach ($templateParams["recensioni"] as $index => $recensione): ?>
                         <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                            <div class="d-flex justify-content-center align-items-centerr">
-                                <p class="commentoo"><?php echo htmlspecialchars($recensione['Commento']); ?></p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="recensione-box p-3">
+                                    <div class="stars-reviews ms-1"><?php echo getStarRating($recensione['Voto']); ?></div>
+                                    <p class="text mt-2 ms-1 me-1"><?php echo htmlspecialchars($recensione['Commento']); ?></p>
+                                    <p class=" text-italic text-end mb-0 me-1"><?php echo $recensione['Nome'] . ' ' . $recensione['Cognome']; ?></p>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
-                <?php else: ?>
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <h2>Nessuna recensione disponibile</h2>
-                        </div>
-                    </div>
-                <?php endif; ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecensioni" data-bs-slide="prev">
+                    <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselRecensioni" data-bs-slide="next">
+                    <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div> 
+        <?php else: ?>
+            <div class="mt-4 d-flex justify-content-center align-items-center">
+                <div class="recensione-box p-3">
+                    <p class="text">Non sono ancora presenti recensioni.</p>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
+    <div class="text-center mt-3">
+        <a href="../php/recensioni.php" class="btn button ps-5 pe-5">Vedi tutte</a>
+    </div>
+</section>
 
-<div class="text-centerA">
-    <a href="../php/recensioni.php">
-        <button type="button" class="btn btn-sm fw-bold custom-buttonA mb-5">Recensioni</button>
-    </a>
-</div>
-
-<div class="cookie" id="cookie-banner">
-    <h5>Rispettiamo la tua privacy!</h5>
-    <p>Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi accettare o rifiutare l'uso dei cookie.</p>
-    <div class="divCookie">
-        <button id="rejectCookies" class="btn btn-danger">Rifiuta</button>
-        <button id="acceptCookies" class="btn btn-success">Accetta</button>
+<div class="cookie shadow p-3" id="cookie-banner">
+    <h5 class="text fw-bold">Rispettiamo la tua privacy!</h5>
+    <p class="text">Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi accettare o rifiutare l'uso dei cookie.</p>
+    <div class="d-flex justify-content-center">
+        <button id="rejectCookies" class="btn btn-danger me-3 text">Rifiuta</button>
+        <button id="acceptCookies" class="btn btn-success ms-3 text">Accetta</button>
     </div>
 </div>

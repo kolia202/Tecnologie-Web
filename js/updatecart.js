@@ -49,7 +49,7 @@ function updateCart(button, update, isCart) {
                 const newd = document.createElement('div');
                 newd.classList.add('text-center', 'mt-4');
                 const newa = document.createElement('a');
-                newa.classList.add("btn", 'mt-2', 'ps-4', 'pe-4', 'button1');
+                newa.classList.add("btn", 'mt-2', 'ps-4', 'pe-4', 'button');
                 newa.href = "../php/account.php";
                 newa.innerText = 'Accedi';
                 newd.appendChild(newa);
@@ -118,7 +118,7 @@ function updateMenu(cart) {
         emptyCart.innerHTML = `
             <p class="mt-2 ps-3 pe-3 text-italic">Il tuo carrello è vuoto</p>
             <div class="text-center mt-4">
-            <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button1">I nostri Peluches</a>
+            <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button">I nostri Peluches</a>
             </div>
         `;
         cartMenu.appendChild(emptyCart);
@@ -160,7 +160,7 @@ function updateMenu(cart) {
         button.classList.add("text-center", 'mt-4');
 
         const a = document.createElement('a');
-        a.classList.add('btn', 'ps-3', 'pe-3', 'mt-5', 'button1');
+        a.classList.add('btn', 'ps-3', 'pe-3', 'mt-5', 'button');
         a.href = "../php/carrello.php";
         a.innerText = 'Visualizza Carrello';
         

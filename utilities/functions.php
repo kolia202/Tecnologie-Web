@@ -20,7 +20,7 @@ function getStarRating($rating) {
     if ($halfStar) {
         $stars .= '<i class="bi bi-star-half text-warning"></i> ';
     }
-    $stars .= str_repeat('<i class="bi bi-star text-secondary"></i> ', $emptyStars);
+    $stars .= str_repeat('<i class="bi bi-star text-warning"></i> ', $emptyStars);
     return $stars;
 }
 

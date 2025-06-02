@@ -1,14 +1,14 @@
 <?php if(!isUserLoggedIn()) : ?>
     <p class="mt-2 ps-3 pe-3 text-italic">Per visualizzare il carrello, accedi al tuo account.</p>
     <div class="text-center mt-4">
-        <a href="../php/account.php" class="btn mt-2 ps-4 pe-4 button1">Accedi</a>
+        <a href="../php/account.php" class="btn mt-2 ps-4 pe-4 button">Accedi</a>
     </div>
 <?php else: ?>
     <?php if(count($templateParams["carrello"]) == 0): ?>
         <article>
             <p class="mt-2 ps-3 pe-3 text-italic">Il tuo carrello è vuoto.</p>
             <div class="text-center mt-4">
-                <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button1">I nostri Peluches</a>
+                <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button">I nostri Peluches</a>
             </div>
         </article>
     <?php
@@ -28,7 +28,7 @@
             <?php endforeach; ?>
             <div class="text-center mt-4">
                 <h3>Totale Carrello: <?php echo getFormattedPrice($totale); ?></h3>        
-                <a href="../php/carrello.php" class="btn ps-3 pe-3 mt-5 button1">Visualizza Carrello</a>
+                <a href="../php/carrello.php" class="btn ps-3 pe-3 mt-5 button">Visualizza Carrello</a>
             </div>
     <?php endif; ?>
 <?php endif; ?>

@@ -70,7 +70,7 @@
                             <li>
                                 <form method="POST" action="account.php">
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" name="logout" class="btn rounded-pill button1 logout mt-4">Logout</button>
+                                        <button type="submit" name="logout" class="btn rounded-pill button logout mt-4">Logout</button>
                                     </div>
                                 </form>
                             </li>
@@ -137,7 +137,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="pt-2 pb-3">
         <a href="../php/assistenza.php">Assistenza Clienti</a><br>
         <a href="../php/informazioni.php">Informazioni su Mondo Morbidoso</a><br>
         <a href="../php/privacy.php">Informativa Privacy</a>

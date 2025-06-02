@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var alertBox = document.getElementById("liveAlertPlaceholder");
+    var alertBox = document.getElementById("liveAlert");
     if (alertBox) {
         setTimeout(function() {
             alertBox.innerHTML = "";
-        }, 3000); // Nasconde il messaggio dopo 3 secondi
+        }, 5000);
     }
 });

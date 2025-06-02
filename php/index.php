@@ -3,11 +3,11 @@ require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Mondo Morbidoso - Home";
 $templateParams["nome"] = "indexC.php";
-$templateParams["mediaVoti"] = $dbhost->getMediaVoti();
-$templateParams["numeroRecensioni"] = $dbhost->getNumeroRecensioni();
+$mediaVoti = $dbhost->getMediaVoti();
+$numRecensioni = $dbhost->getNumeroRecensioni();
 $templateParams["categorie"] = $dbhost->getCategories();
-$templateParams["prodotti"] = $dbhost->getNomiFotoPrezziProdottiCasuali();
-$templateParams["recensioni"] = $dbhost->getTestoRecensioniCasuali();
+$templateParams["prodotti"] = $dbhost->getBestSellers();
+$templateParams["recensioni"] = $dbhost->getAllRecensioni();
 $numeroprodotti = 0;
 
 if(isAdminLoggedIn()) {
@@ -20,38 +20,27 @@ if(isUserLoggedIn()) {
     $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 }
 
-$message = "";
-$success = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"]);
 
     if (empty($email)) {
-        $message = "Inserisci un'email valida.";
-        $success = false;
+        $_SESSION["errornewsletter"] = "Ops! L'E-mail inserita non è valida.";
     } else {
         if ($dbhost->emailExists($email)) {
-            $notificaEsiste = $dbhost->notificationExists($email, "Newsletter", "Grazie per esserti iscritto alla nostra newsletter!");
-
-            if ($notificaEsiste) {
-                $message = "Sei già iscritto alla newsletter!";
-                $success = false;
+            $errore = $dbhost->notificationExists($email, "Newsletter", "Grazie per esserti iscritto alla nostra newsletter!");
+            if ($errore) {
+                $_SESSION["errornewsletter"] = "Ops! Sei già iscritto alla newsletter!";
             } else {
-                $success = $dbhost->addNewMessage("Newsletter", "Grazie per esserti iscritto alla nostra newsletter!", $email);
-                $message = $success ? "Iscrizione avvenuta con successo!" : "Errore nell'invio della notifica.";
+                $dbhost->addNewMessage("Newsletter", "Grazie per esserti iscritto alla nostra newsletter!", $email);
+                $_SESSION["successnewsletter"] = "Iscrizione avvenuta con successo!";
             }
         } else {
-            $message = "L'email non è stata trovata!";
-            $success = false;
+            $_SESSION["errornewsletter"] = "Ops! L'email inserita non è valida!";
         }
     }
-
-    header("Location: ".$_SERVER['PHP_SELF']."?message=".urlencode($message)."&success=".($success ? "1" : "0")."#newsletter");
+    header("Location: ".$_SERVER['PHP_SELF']."#newsletter");
     exit;
 }
 
-if (isset($_GET["message"])) {
-    $message = urldecode($_GET["message"]);
-    $success = isset($_GET["success"]) && $_GET["success"] == "1";
-}
 require("../template/base.php");
 ?>
