@@ -30,7 +30,7 @@ class DatabaseHelper {
     }
 
     public function getBestSellers() {
-        $n = 5;
+        $n = 4;
         $stmt = $this->db->prepare("SELECT P.*, SUM(PO.Quantita) AS TotaleVenduto 
         FROM PRODOTTO P 
         JOIN prodotto_ordinato PO ON P.Id_prodotto = PO.Id_prodotto 

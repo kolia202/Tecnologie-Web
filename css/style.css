@@ -359,8 +359,6 @@ main p {
 .why-item {
     background-color: rgb(245, 222, 179, 0.5);
     border-radius: 20px;
-    display: flex;
-    align-items: center;
 }
 
 .why-item p {
@@ -439,8 +437,12 @@ main p {
 .recensione-box {
     background-color: rgb(245, 222, 179, 0.5);
     width: 85%;
+    height: 178px;
     border-radius: 10px;
     border: rgb(137, 85, 32) 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .carousel-reviews .carousel-control-prev {
@@ -472,22 +474,6 @@ main p {
     color: black;
 }
 
-
-
-
-
-
-/*main > p {
-    text-align: center; 
-    color: rgb(137, 85, 32);
-    margin-left: 2%;
-    margin-right: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    margin-bottom: 8px;
-}*/
 
 /* LOGIN & CO */
 
@@ -720,21 +706,6 @@ main .userbutton:hover {
     font-size: 18px;
 }
 
-/* FOOTER */
-
-footer {
-    margin-top: auto;
-    background-color: rgb(137, 85, 32);
-    text-align: center;
-}
-
-footer > a {
-    font-size: 14px;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-    font-style: italic;
-}
 
 /*priacyC.php*/
 
@@ -1709,30 +1680,38 @@ main .rimuoviprefe {
 }
 
 
-@media screen and (min-width: 768px) {        
+/* FOOTER */
 
-    .reccontainer { /*recensioniC*/
-        margin-bottom: 5%;
-    }
+footer {
+    background-color: rgb(137, 85, 32);
+    text-align: center;
+}
 
-    main .ordercont { /*lista-notifiche, lista-ordini*/
-        width: 70%;
-    }
+footer > a {
+    font-size: 14px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-style: italic;
+}
 
-    main .cont-account { /*accountC, assistenzaC*/
-        width: 70%;
-    }
+
+@media screen and (min-width: 768px) {
 
     .button {
         font-size: 22px;
     }
 
+    .title {
+        font-size: 50px;
+    }
+
     .text {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .text-italic {
-        font-size: 18px;
+        font-size: 20px;
     }
     
     /* HEADER */
@@ -1845,60 +1824,112 @@ main .rimuoviprefe {
 
     /* MAIN */
 
-    main {
-        margin-bottom: 0;
+    .reccontainer { /*recensioniC*/
+        margin-bottom: 5%;
     }
 
-    /* FOOTER */
-
-    footer {
-        padding-bottom: 1%;
+    main .ordercont { /*lista-notifiche, lista-ordini*/
+        width: 70%;
     }
+
+    main .cont-account { /*accountC, assistenzaC*/
+        width: 70%;
+    }
+
 
     /*index.php*/
 
     .img-vetrina {
-        width: auto;
+        width: 60%;
         height: 500px; 
     }
 
-    .rating-star {
-        font-size: 40px; 
+    .welcome-message {
+        padding-left: 5%;
+        padding-right: 5%;
     }
-    
-    .rating-score {
-        font-size: 30px; 
-    }
-    
-    .rating-reviews {
-        font-size: 20px
-    }
-    
 
-
-    .custom-box {
+    .category {
+        height: 90px;
         width: 60%;
-        margin: 20px auto;
-    }
-    
-    .dettaglio {
         font-size: 20px;
     }
 
-    
-
-    .bg-whiteee {
-        width: 60%;
+    .bi-stars {
+        font-size: 40px;
     }
 
-    .bg-whiteee h1 {
-        font-size: 35px;
+    .custom-box-md {
+        border: 5px solid rgb(245, 222, 179);
     }
 
-    .bg-whiteee p {
+    .why-title {
+        font-size: 45px;
+    }
+
+    .why-item {
+        padding: 7% !important;
+    }
+
+    .why-item p {
         font-size: 18px;
     }
 
+    .why-icon {
+        font-size: 22px;
+    }
+
+    .why-more {
+        font-size: 22px;
+    }
+
+    .newsletter-box {
+        width: 60%;
+        margin: auto;
+    }
+
+    .newsletter-box h3 {
+        font-size: 35px;
+    }
+
+    .bi-envelope-heart {
+        font-size: 30px;    
+    }
+
+    .star-rating {
+        font-size: 20px;
+    }
+
+    .star-rating .bi-star-fill, .star-rating .bi-star-half, .star-rating .bi-star {
+        font-size: 25px;
+    }
+
+    .carousel-reviews .bi-star-fill, .carousel-reviews .bi-star-half, .carousel-reviews .bi-star {
+        font-size: 20px;
+    }
+
+    .recensione-box {
+        width: 45%;
+        height: 200px;
+    }
+
+    .carousel-reviews .carousel-control-prev {
+        left: -60px; 
+    }
+
+    .carousel-reviews .carousel-control-next {
+        right: -60px;
+    }
+
+    .cookie {
+        width: 60%;
+    }
+
+    .cookie h5 {
+        font-size: 22px;
+    }
+    
+    
     /*privacyC.php*/
 
     .titoloP {
@@ -2071,5 +2102,10 @@ main .rimuoviprefe {
     }
 
 
-    
+    /* FOOTER */
+
+    footer > a {
+        font-size: 16px;
+    }
+       
 }
