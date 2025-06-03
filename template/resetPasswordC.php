@@ -4,7 +4,7 @@
             <h1 class="text-center account">Reset Password</h1>
             <p class="text-center howto">Inserisci una nuova Password per il tuo Account.</p>
             <?php if (isset($_SESSION["error"])): ?>
-                <div class="alert alert-danger text-center mt-3 alerts">
+                <div class="alert alert-danger text-center mt-3 text">
                     <i class="bi bi-exclamation-triangle align-center"></i>
                     <?php echo $_SESSION["error"];
                     unset($_SESSION['error']); ?>

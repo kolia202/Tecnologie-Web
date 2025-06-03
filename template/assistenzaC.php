@@ -3,7 +3,7 @@
     <div class="box p-4 mb-5 rounded shadow bg-white mx-auto">
         <h2 class="text-center asstitle">Hai bisogno di aiuto?</h2>
         <?php if(isset($_SESSION['successo'])): ?>
-            <div class="alert alert-success text-center mt-3 alerts" role="alert">
+            <div class="alert alert-success text-center mt-3 text" role="alert">
                 <i class="bi bi-check-circle align-center"></i>
                 <?php echo $_SESSION["successo"];
                 unset($_SESSION['successo']); ?>

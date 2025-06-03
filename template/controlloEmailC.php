@@ -4,7 +4,7 @@
             <h1 class="text-center account">Recupero Password</h1>
             <p class="text-center pt-2 howto">Hai dimenticato la tua password? Nessun problema!<br>Inserisci il tuo indirizzo E-mail qui sotto e verrai subito reindirizzato alla pagina di Reset.</p>
             <?php if (isset($_SESSION["error"])): ?>
-                <div class="alert alert-danger text-center mt-3 alerts" role="alert">
+                <div class="alert alert-danger text-center mt-3 text" role="alert">
                     <i class="bi bi-exclamation-triangle align-center"></i>
                     <?php echo $_SESSION["error"];
                     unset($_SESSION["error"]); ?>

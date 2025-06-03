@@ -137,7 +137,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="pt-2 pb-3">
+    <footer class="pt-2 pb-3 mt-4">
         <a href="../php/assistenza.php">Assistenza Clienti</a><br>
         <a href="../php/informazioni.php">Informazioni su Mondo Morbidoso</a><br>
         <a href="../php/privacy.php">Informativa Privacy</a>

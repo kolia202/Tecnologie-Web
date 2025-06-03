@@ -1,7 +1,7 @@
 <div class="container mt-4 ps-4 pe-4">
     <h1 class="text-center account">Iscrizione</h1>
     <?php if (isset($_SESSION["error"])): ?>
-            <div class="alert alert-danger text-center mt-3 alerts" role="alert">
+            <div class="alert alert-danger text-center mt-3 text" role="alert">
                 <i class="bi bi-exclamation-triangle align-center"></i>
                 <?php echo $_SESSION['error'];
                 unset($_SESSION["error"]); ?>

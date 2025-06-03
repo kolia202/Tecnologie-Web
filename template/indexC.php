@@ -111,13 +111,13 @@
             <p class="text mb-4">Iscriviti alla nostra newsletter e ricevi tutte le novità e offerte esclusive dedicate a te!</p>
             <div id="liveAlert">
                 <?php if (isset($_SESSION["errornewsletter"])): ?>
-                    <div class="alert alert-danger text-center alerts" role="alert">
+                    <div class="alert alert-danger text-center text" role="alert">
                         <i class="bi bi-exclamation-triangle align-center"></i>
                         <?php echo $_SESSION["errornewsletter"]; ?>
                         <?php unset($_SESSION['errornewsletter']); ?>
                     </div>
                 <?php elseif(isset($_SESSION['successnewsletter'])): ?>
-                    <div class="alert alert-success text-center alerts" role="alert">
+                    <div class="alert alert-success text-center text" role="alert">
                         <i class="bi bi-check-circle align-center"></i>
                         <?php echo $_SESSION["successnewsletter"];
                         unset($_SESSION['successnewsletter']); ?>
@@ -135,7 +135,7 @@
 </div>
 
 
-<section class="pt-5 mb-4">
+<section class="pt-5">
     <div class="container text-center">
         <h2 class="title">Cosa dicono di noi?</h2>
         <p class="text ms-3 me-3 mb-1">Le testimonianze di chi ha scelto di affidarsi a noi per l'acquisto dei peluche!</p>
