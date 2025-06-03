@@ -1863,6 +1863,10 @@ footer > a {
         border: 5px solid rgb(245, 222, 179);
     }
 
+    .custom-box-md:hover {
+        transform: scale(1.08);
+    }
+
     .why-title {
         font-size: 45px;
     }

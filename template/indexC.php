@@ -27,28 +27,28 @@
 <h2 class="title mt-4 pt-2"><i class="bi bi-stars"></i> I Best seller! <i class="bi bi-stars"></i></h2>
 <div class="d-block d-md-none">
     <div class="box pt-3 ps-2 pe-2 pb-1 mt-4 rounded shadow bg-white custom-box">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
-                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
-                        <img class="carousel-img d-block w-100" src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" alt="<?php echo $prodotto['Nome']; ?>">
-                        <p class="carousel-title text-center mt-3 mb-2 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
-                    </a>
-                    <p class="text-center text-dark text"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
-                </div>
-            <?php endforeach; ?>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
+                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                            <img class="carousel-img d-block w-100" src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" alt="<?php echo $prodotto['Nome']; ?>">
+                            <p class="carousel-title text-center mt-3 mb-2 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
+                        </a>
+                        <p class="text-center text-dark text"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-</div>
 </div>
 <div class="container d-none d-md-block">
     <div class="row row-cols-md-4 gx-4">
