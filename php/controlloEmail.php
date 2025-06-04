@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
             header("Location: resetPassword.php");
             exit();
         } else {
-            $_SESSION["error"] = "E-mail non trovata!";
+            $_SESSION["error"] = "Ops! L'E-mail inserita non corrisponde a nessun account.";
             header("Location: controlloEmail.php");
             exit();
         }
