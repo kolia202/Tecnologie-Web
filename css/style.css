@@ -479,7 +479,7 @@ main p {
 
 /* LOGIN */
 
-.bi-exclamation-triangle {
+.bi-exclamation-triangle, .bi-check-circle {
     font-size: 20px;
 }
 
@@ -535,14 +535,23 @@ main p {
 }
 
 
-
-
-
-
+/* REGISTRAZIONE */
 
 .bi-telephone {
     color: rgb(137, 85, 32);
     font-size: 17px;
+}
+
+.container-register .bi-envelope {
+    font-size: 18px;
+}
+
+.container-register .bi-key {
+    font-size: 19px;
+}
+
+.container-register .row > div {
+    margin-top: 2%;
 }
 
 
@@ -1898,6 +1907,26 @@ footer > a {
     }
 
     .container-login a:first-child {
+        font-size: 20px;
+    }
+    
+
+    /* REGISTRAZIONE */
+
+    .container-register {
+        width: 80%;
+        margin: auto;
+    }
+
+    .bi-telephone {
+        font-size: 20px;
+    }
+
+    .container-register .bi-envelope {
+        font-size: 21px;
+    }
+
+    .container-register .bi-key {
         font-size: 20px;
     }
     

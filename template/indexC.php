@@ -126,7 +126,7 @@
             </div>
             <form method="POST" action="#newsletter">
                 <div class="mb-4">
-                    <input type="email" class="form-control text text-input" name="email" placeholder="Email" required>
+                    <input type="email" class="form-control text text-input" name="email" placeholder="E-mail" required>
                 </div>
                 <button type="submit" class="btn button ps-5 pe-5">Iscriviti</button>
             </form>

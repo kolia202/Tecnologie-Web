@@ -145,7 +145,13 @@
                         <i class="bi bi-exclamation-triangle align-center"></i>
                         <?php echo $_SESSION["errorelogin"];
                         unset($_SESSION['errorelogin']); ?>
-                    </div>                 
+                    </div>
+                <?php elseif (isset($_SESSION["success"])): ?>
+                    <div class="alert alert-success mt-3 text" role="alert">
+                        <i class="bi bi-check-circle align-center"></i>
+                        <?php echo $_SESSION["success"];
+                        unset($_SESSION['success']); ?>
+                    </div>             
                 <?php endif; ?>
                 <form action="account.php" method="POST">
                     <div class="mb-3">
