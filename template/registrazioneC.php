@@ -7,21 +7,21 @@
             unset($_SESSION["error"]); ?>
         </div>    
     <?php endif; ?>
-    <form id="registerForm" action="registrati.php" method="POST">
+    <form id="registerForm" action="registrazione.php" method="POST">
         <div class="row">
             <div class="col-md-6">
                 <label for="nome" class="ps-1 text-italic">
                     Nome
                     <span class="text-danger">*</span>
                 </label>
-                <input type="text" class="form-control text text-input" id="nome" name="nome" required>
+                <input type="text" class="form-control text text-input" id="nome" name="nome" autocomplete="off" required>
             </div>
             <div class="col-md-6">
                 <label for="cognome" class="ps-1 text-italic">
                     Cognome
                     <span class="text-danger">*</span>
                 </label>
-                <input type="text" class="form-control text text-input" id="cognome" name="cognome" required>
+                <input type="text" class="form-control text text-input" id="cognome" name="cognome" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
@@ -31,7 +31,7 @@
                         <i class="bi bi-telephone me-1"></i>Telefono
                     </div>
                 </label>
-                <input type="text" class="form-control text text-input" id="telefono" name="telefono">
+                <input type="text" class="form-control text text-input" id="telefono" name="telefono" autocomplete="off">
             </div>
             <div class="col-md-6">
                 <label for="data_nascita" class="ps-1 text-italic">Data di nascita</label>
@@ -47,7 +47,7 @@
                         <span class="text-danger">*</span>
                     </div>
                 </label>
-                <input type="email" class="form-control text text-input" id="email" name="email" required>
+                <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required>
             </div>
         </div>
         <div class="row">

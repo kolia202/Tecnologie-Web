@@ -19,7 +19,7 @@
                             <span class="text-danger">*</span>
                         </div>
                     </label>
-                    <input type="email" class="form-control text text-input" id="email" name="email" required>
+                    <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn button ps-5 pe-5 mt-1">Avanti</button>

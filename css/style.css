@@ -558,6 +558,8 @@ main p {
 
 /* ACCOUNT */
 
+
+
 main .cardaccount {
     border: 1px solid rgb(137, 85, 32);
 }
@@ -1929,7 +1931,7 @@ footer > a {
     .container-register .bi-key {
         font-size: 20px;
     }
-    
+
     
     /*privacyC.php*/
 

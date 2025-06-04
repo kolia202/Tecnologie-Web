@@ -162,7 +162,7 @@
                                 <span class="text-danger">*</span>
                             </div>
                         </label>
-                        <input type="email" class="form-control text text-input" id="email" name="email" required/>
+                        <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required/>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label ps-1 text-italic">
@@ -186,7 +186,7 @@
                 <div class="text-center mt-4">
                     <a href="../php/controlloEmail.php" class="text fw-bold">Password dimenticata?</a>
                     <p class="mt-4 mb-2 text-italic">Non sei ancora registrato?</p>
-                    <a href="registrati.php" class="btn button-outline mt-1 ps-5 pe-5 mb-2">Registrati</a>
+                    <a href="registrazione.php" class="btn button-outline mt-1 ps-5 pe-5 mb-2">Registrati</a>
                     <a href="../php/index.php" class="text d-block mt-4 back">Indietro</a>
                 </div>
             </div>

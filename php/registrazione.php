@@ -11,12 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_confirm = $_POST["password_confirm"];
     if ($password !== $password_confirm) {
         $_SESSION["error"] = "Ops! Le password non corrispondono.";
-        header("Location: registrati.php");
+        header("Location: registrazione.php");
         exit;
     }
     if ($dbhost->checkEmail($email)) {
         $_SESSION["error"] = "Ops! L'E-mail inserita è già associata ad un altro account.";
-        header("Location: registrati.php");
+        header("Location: registrazione.php");
         exit;
     }
     if ($dbhost->registrazione($nome, $cognome, $email, $password, $dataNascita, $telefono)) {
@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Errore durante la registrazione.";
     }
 }
-$templateParams["titolo"] = "Mondo Morbidoso - Registrati";
-$templateParams["nome"] = "registratiC.php";
+$templateParams["titolo"] = "Mondo Morbidoso - Registrazione";
+$templateParams["nome"] = "registrazioneC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = 0;
 
