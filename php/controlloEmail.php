@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
         }
     }
 }
-$templateParams["titolo"] = "Mondo Morbidoso - Account";
+$templateParams["titolo"] = "Mondo Morbidoso - Login";
 $templateParams["nome"] = "controlloEmailC.php";
 $numeroprodotti = 0;
 

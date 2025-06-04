@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($dbhost->updatePassword($_SESSION['reset_email'], $newPassword)) {
             unset($_SESSION['reset_email']);
             $_SESSION['success'] = 'La tua Password è stata resettata con successo! Accedi e torna subito a esplorare il nostro sito!';
-            header("Location: account.php");
+            header("Location: login.php");
             exit();
         } else {
             $_SESSION["error"] = "Errore nell'aggiornamento della Password.";
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["error"] = "Ops! Le Password non corrispondono!";
     }
 }
-$templateParams["titolo"] = "Mondo Morbidoso - Account";
+$templateParams["titolo"] = "Mondo Morbidoso - Login";
 $templateParams["nome"] = "resetPasswordC.php";
 $numeroprodotti = 0;
 

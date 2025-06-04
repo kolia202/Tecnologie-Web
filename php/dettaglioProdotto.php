@@ -3,7 +3,7 @@
 
     if (isset($_GET["azione"]) && $_GET["azione"] == "aggiungi" && isset($_GET["id_prodotto"])) {
         if (!isUserLoggedIn()) {
-            header("Location: account.php?error=non_loggato");
+            header("Location: login.php?error=non_loggato");
             exit();
         }
     

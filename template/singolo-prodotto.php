@@ -33,7 +33,7 @@
                     <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
                         <button type="button" class="btn btn-lg text-center fw-bold add-to-cart sp-aggiungi pe-4 ps-4 mt-2" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
                         <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
                                 <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
                                 Aggiungi ai Preferiti
                             </a>
@@ -46,7 +46,7 @@
                             <button type="submit" class="btn fw-bold btn-avviso">Avviso Disponibilità</button>
                         </form>
                         <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
                                 <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
                                 Aggiungi ai Preferiti
                             </a>
@@ -55,7 +55,7 @@
                         <p class="avvisop">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?<br>Prima esegui l'accesso al tuo account.</p>
                         <button type="button" class="btn fw-bold avvisob" disabled>Avviso Disponibilità</button>
                         <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'account.php'; ?>">
+                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
                                 <i class="bi bi-heart me-2"></i>
                                 Aggiungi ai Preferiti
                             </a>

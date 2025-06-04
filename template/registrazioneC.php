@@ -84,6 +84,6 @@
         </div>
     </form>
     <div class="text-center mt-4">
-        <a href="../php/account.php" class="text d-block mt-4 back">Indietro</a>
+        <a href="../php/login.php" class="text d-block mt-4 back">Indietro</a>
     </div>
 </div>

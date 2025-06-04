@@ -38,7 +38,7 @@
         Scrivi una recensione
       </button>
     <?php elseif (!isUserLoggedIn()): ?>
-      <a href="../php/account.php" class="btn btn-primary custom-primary custom-btnRec">Scrivi una recensione</a>
+      <a href="../php/login.php" class="btn btn-primary custom-primary custom-btnRec">Scrivi una recensione</a>
     <?php endif; ?>
           <h5 class="fw-bold text-center custom-centerT">Valutazioni clienti</h5>
           <div class="container mt-4">

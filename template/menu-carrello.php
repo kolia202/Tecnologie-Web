@@ -1,7 +1,7 @@
 <?php if(!isUserLoggedIn()) : ?>
     <p class="mt-2 ps-3 pe-3 text-italic">Per visualizzare il carrello, accedi al tuo account.</p>
     <div class="text-center mt-4">
-        <a href="../php/account.php" class="btn mt-2 ps-4 pe-4 button">Accedi</a>
+        <a href="../php/login.php" class="btn mt-2 ps-4 pe-4 button">Accedi</a>
     </div>
 <?php else: ?>
     <?php if(count($templateParams["carrello"]) == 0): ?>

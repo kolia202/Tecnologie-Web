@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 
 if(!isUserLoggedIn()) {
-    header("Location: account.php");
+    header("Location: login.php");
     exit;
 }
 

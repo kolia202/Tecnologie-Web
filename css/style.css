@@ -179,7 +179,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     width: 75%;
 }
 
-.offcanvas-body ul li a {
+.offcanvas-body ul li > a {
     display: inline-block;
     width:100%;
     height: 100%;
@@ -191,7 +191,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     font-family: 'Quicksand', sans-serif;
 }
 
-.offcanvas-body ul li a:hover {
+.offcanvas-body ul li > a:hover {
     text-decoration: underline;
 }
 
@@ -206,12 +206,17 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     font-family: 'Quicksand', sans-serif;
 }
 
-.offcanvas-body ul li button:hover {
+.offcanvas-body ul li > div button:hover {
     color: rgb(137, 85, 32);
     border-color: rgb(137, 85, 32);
 }
 
-.offcanvas-body ul li button.logout {
+.offcanvas-body ul li button:active {
+    color: rgb(137, 85, 32) !important;
+    border-color: rgb(137, 85, 32) !important;
+}
+
+.offcanvas-body ul li .logout {
     background-color: rgb(137, 85, 32); 
     color: white; 
     font-family: 'Chewy', sans-serif; 
@@ -1755,7 +1760,7 @@ footer > a {
         margin-top: 4%;
     }
 
-    .offcanvas-body ul li a {
+    .offcanvas-body ul li > a {
         font-size: 22px;
     }
 
@@ -1763,7 +1768,7 @@ footer > a {
         font-size: 22px;
     }
 
-    .offcanvas-body ul li button.logout {
+    .offcanvas-body ul li .logout {
         font-size: 22px;
         margin-bottom: 3%;
     }

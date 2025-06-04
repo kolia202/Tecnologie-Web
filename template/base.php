@@ -46,7 +46,7 @@
                         <li><a href="../php/index.php">Home<br></a></li>
                         <li><a href="../php/account.php">Account<br></a></li>
                         <?php if(!isAdminLoggedIn()): ?>
-                            <li><a href="<?php echo isUserLoggedIn() ? '../php/preferiti.php' : 'account.php?error=devi_accedere'; ?>">I tuoi Preferiti</a></li>
+                            <li><a href="../php/preferiti.php">I tuoi Preferiti</a></li>
                         <?php endif; ?>
                         <li><a href="../php/prodotti.php">Tutti i nostri Peluches<br></a></li>
                         <!-- MENU A SCOMPARSA -->
@@ -68,11 +68,17 @@
                         <li><a href="../php/informazioni.php">Chi siamo<br></a></li>
                         <?php if(isUserLoggedIn()): ?>
                             <li>
-                                <form method="POST" action="account.php">
+                                <form method="POST" action="login.php">
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" name="logout" class="btn rounded-pill button logout mt-4">Logout</button>
                                     </div>
                                 </form>
+                            </li>
+                        <?php else: ?>
+                            <li>
+                                <div class="d-flex justify-content-center">
+                                    <a href="../php/login.php" class="btn rounded-pill button logout mt-4">Login</a>
+                                </div>
                             </li>
                         <?php endif; ?>
                     </ul> 

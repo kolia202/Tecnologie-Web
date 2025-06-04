@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $dbhost->addNewMessage('Nuova Iscrizione', 'Dai il benvenuto ad un nuovo membro nella nostra famiglia morbidosa! Un utente si è appena registrato ed è pronto a scoprire la nostra collezione di peluches.', $admin['E_mail']);
         }
         $_SESSION["success"] = "La tua iscrizione è avvenuta con successo! Accedi subito per iniziare a scoprire tutti i nostri peluches!";
-        header("Location: account.php");
+        header("Location: login.php");
         exit;
     } else {
         echo "Errore durante la registrazione.";

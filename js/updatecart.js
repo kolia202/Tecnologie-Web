@@ -50,7 +50,7 @@ function updateCart(button, update, isCart) {
                 newd.classList.add('text-center', 'mt-4');
                 const newa = document.createElement('a');
                 newa.classList.add("btn", 'mt-2', 'ps-4', 'pe-4', 'button');
-                newa.href = "../php/account.php";
+                newa.href = "../php/login.php";
                 newa.innerText = 'Accedi';
                 newd.appendChild(newa);
                 document.querySelector("#cart-menu").appendChild(newd);

@@ -1,41 +1,21 @@
 <?php
 require_once("bootstrap.php");
 
-if (isset($_POST["logout"])) {
-    unset($_SESSION["utente"]); 
-    unset($_SESSION['admin']);
-    header("Location: index.php"); 
+if (!isUserLoggedIn()) {
+    $_SESSION["redirect"] = $_SERVER['REQUEST_URI'];
+    header("Location: login.php");
     exit;
-}
-
-if (isset($_POST["accedi"])) {
-    $email = $_POST["email"];  
-    $password = $_POST["password"];
-    $login_result = $dbhost->checkLogin($email, $password);
-    if (count($login_result) == 0) {
-        $_SESSION["errorelogin"] = "Ops! L'E-mail o la Password non sono corrette.";
-        header('Location: account.php');
-        exit;
-    } else {
-        $_SESSION["utente"] = $login_result[0]["E_mail"];
-        $_SESSION["admin"] = intval($login_result[0]["Admin"]);
-        header("location: index.php");
-        exit;
-    }
 }
 
 $templateParams["titolo"] = "Mondo Morbidoso - Account";
 $templateParams["nome"] = "accountC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = 0;
-
-if(isUserLoggedIn()) {
-    $userDetails = $dbhost->getUserDetails($_SESSION["utente"]);
-    $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
-    $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
-    $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
-    $numeronotifiche = $dbhost->getUserNewMessages($_SESSION["utente"]);
-}
+$userDetails = $dbhost->getUserDetails($_SESSION["utente"]);
+$templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
+$totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
+$numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
+$numeronotifiche = $dbhost->getUserNewMessages($_SESSION["utente"]);
 
 if(isAdminLoggedIn()) {
     $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
