@@ -17,7 +17,7 @@
             <?php endif; ?>
             <form action="login.php" method="POST">
                 <div class="mb-3">
-                    <label for="email" class="form-label ps-1 text-italic">
+                    <label for="email" class="form-label ps-1 text-italic mb-0">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-envelope me-1"></i>
                             E-mail
@@ -27,7 +27,7 @@
                     <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required/>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label ps-1 text-italic">
+                    <label for="password" class="form-label ps-1 text-italic mb-0">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-key me-1"></i>
                             Password

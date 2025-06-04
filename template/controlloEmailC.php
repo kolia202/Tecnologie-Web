@@ -12,7 +12,7 @@
             <?php endif; ?>
             <form method="POST" action="controlloEmail.php">
                 <div class="mb-3">
-                    <label for="email" class="form-label ps-1 text-italic">
+                    <label for="email" class="form-label ps-1 text-italic mb-0">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-envelope me-1"></i>
                             E-mail
