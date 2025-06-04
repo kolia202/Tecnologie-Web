@@ -24,7 +24,7 @@
                 <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
                 <h2 class="mt-2">MENÙ</h2>
                 <!-- BOTTONE X -->
-                <button type="button" class="btn ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
