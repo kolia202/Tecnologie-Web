@@ -58,13 +58,22 @@
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body border-0 pt-0 pb-0 categoriesmenu">
                                     <!-- ELENCO CATEGORIE -->
-                                    <ul class="list-unstyled">
-                                        <?php foreach($templateParams["categorie"] as $categoria): ?>
-                                            <li><a href="../php/prodotti.php?categoria=<?php echo $categoria["Nome_categoria"]; ?>"><?php echo $categoria["Nome_categoria"]; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-                            </div>
+                                     <ul class="list-unstyled">
+                                        <?php if (isset($templateParams["categorie"]) && is_array($templateParams["categorie"])): ?>
+                                            <?php foreach($templateParams["categorie"] as $categoria): ?>
+                                                <li>
+                                                    <a href="../php/prodotti.php?categoria=<?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>">
+                            <?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li><em>Nessuna categoria disponibile</em></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>
+
                         </li>
                         <li><a href="../php/informazioni.php">Chi siamo<br></a></li>
                         <?php if(isUserLoggedIn()): ?>
