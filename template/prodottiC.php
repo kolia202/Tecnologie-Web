@@ -64,21 +64,21 @@
             <div class="modal-header pb-3">
                 <h1 class="modal-title title" id="staticBackdropLabel">Nuovo Prodotto</h1>
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="bi bi-x-lg"></i>
+                    <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
             </div>
             <div class="modal-body">
                <form action="gestisci-prodotto.php" method="POST" enctype="multipart/form-data">
                     <div>
-                        <label for="immagineprodotto"></label>
+                        <label for="immagineprodotto" class="visually-hidden">Carica immagine prodotto</label>
                         <input class="text" type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*" required/>
                     </div>
                     <div>
-                        <label for="nomeprodotto"></label>
+                        <label for="nomeprodotto" class="visually-hidden">Nome prodotto</label>
                         <input class="form-control text text-input" type="text" id="nomeprodotto" name="nomeprodotto" placeholder="Nome" required/>
                     </div>
                     <div>
-                        <label for="categoriaprodotto"></label>
+                        <label for="categoriaprodotto" class="visually-hidden">Categoria prodotto</label>
                         <select class="form-select text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
                             <option class="text-start text-italic" value="" disabled selected>Categoria</option>
                             <?php foreach($templateParams["categorie"] as $categoria): ?>
@@ -87,7 +87,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="tagliaprodotto"></label>
+                        <label for="tagliaprodotto" class="visually-hidden">Taglia prodotto</label>
                         <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
                             <option class="text-start text" value="" disabled selected>Taglia</option>
                             <option class="text-start text" value="S">S - Small</option>
@@ -96,19 +96,19 @@
                         </select>
                     </div>
                     <div>
-                        <label for="prezzoprodotto"></label>
+                        <label for="prezzoprodotto" class="visually-hidden">Prezzo prodotto</label>
                         <input class="form-control text text-input" type="number" step="0.01" min="0" id="prezzoprodotto" name="prezzoprodotto" placeholder="Prezzo" required/>
                     </div>
                     <div>
-                        <label for="puntiprodotto"></label>
+                        <label for="puntiprodotto" class="visually-hidden">Punti prodotto</label>
                         <input class="form-control text text-input" type="number" id="puntiprodotto" name="puntiprodotto" min="0" placeholder="Punti" required/>
                     </div>
                     <div>
-                        <label for="scorteprodotto"></label>
+                        <label for="scorteprodotto" class="visually-hidden">Scorte prodotto</label>
                         <input class="form-control text text-input" type="number" id="scorteprodotto" name="scorteprodotto" min="1" placeholder="Scorte" required/>
                     </div>
                     <div class="mb-3">
-                        <label for="descrizioneprodotto"></label>
+                        <label for="descrizioneprodotto" class="visually-hidden">Descrizione prodotto</label>
                         <textarea class="form-control text text-input" rows="5" id="descrizioneprodotto" name="descrizioneprodotto" placeholder="Scrivi qui la descrizione..." required></textarea>
                     </div>
                     <div class="modal-footer mt-4">
