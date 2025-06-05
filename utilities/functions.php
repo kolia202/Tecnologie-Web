@@ -16,11 +16,11 @@ function getStarRating($rating) {
     $fullStars = floor($rating); 
     $halfStar = ($rating - $fullStars >= 0.5) ? 1 : 0; 
     $emptyStars = 5 - ($fullStars + $halfStar); 
-    $stars = str_repeat('<i class="bi bi-star-fill text-warning"></i> ', $fullStars);
+    $stars = str_repeat('<span class="bi bi-star-fill text-warning" aria-hidden="true"></span> ', $fullStars);
     if ($halfStar) {
-        $stars .= '<i class="bi bi-star-half text-warning"></i> ';
+        $stars .= '<span class="bi bi-star-half text-warning" aria-hidden="true"></span> ';
     }
-    $stars .= str_repeat('<i class="bi bi-star text-warning"></i> ', $emptyStars);
+    $stars .= str_repeat('<span class="bi bi-star text-warning" aria-hidden="true"></span> ', $emptyStars);
     return $stars;
 }
 

@@ -3,7 +3,7 @@
         <h1 class="title">Account Admin</h1>
         <section class="card p-4 mb-4 mt-4 card-border shadow">
             <div class="d-flex align-items-center justify-content-center">
-                <i class="bi bi-person-circle me-2"></i>
+                <span class="bi bi-person-circle me-2" aria-hidden="true"></span>
                 <h2 class="fw-bold text mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
             </div>
             <div class="d-flex flex-column align-items-center mt-3">
@@ -23,8 +23,8 @@
             <h3 class="text fw-bold">Attività Admin</h3>
             <div class="row mb-3 mt-3">
                 <div class="col-6">
-                    <a href="../php/notifiche.php" type="button" class="btn button-light w-100 position-relative d-flex align-items-center justify-content-center">
-                        <i class="bi bi-bell ms-1 me-1"></i>
+                    <a href="../php/notifiche.php" class="btn button-light w-100 position-relative d-flex align-items-center justify-content-center">
+                        <span class="bi bi-bell ms-1 me-1" aria-hidden="true"></span>
                         Gestione Notifiche
                         <?php if($numeronotifiche != 0): ?>
                             <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle nuova-notifica">
@@ -34,28 +34,28 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <a href="../php/ordini.php" type="button" class="btn button-light w-100 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-box-seam ms-1 me-1"></i>
+                    <a href="../php/ordini.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
+                        <span class="bi bi-box-seam ms-1 me-1" aria-hidden="true"></span>
                         Gestione Ordini
                     </a>
                 </div>
             </div>
             <div class="text-center mb-3">
-                <a href="../php/recensioni.php" type="button" class="btn button-light w-100 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-pen ms-1 me-1"></i>
+                <a href="../php/recensioni.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
+                    <span class="bi bi-pen ms-1 me-1" aria-hidden="true"></span>
                     Gestione Recensioni
                 </a>                   
             </div>
             <div class="row mb-2">
                 <div class="col-6">
-                    <a href="../php/prodotti.php" type="button" class="btn button-light w-100 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-boxes ms-1 me-1"></i>
+                    <a href="../php/prodotti.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
+                        <span class="bi bi-boxes ms-1 me-1" aria-hidden="true"></span>
                         Gestione Prodotti
                     </a>
                 </div>
                 <div class="col-6">
-                    <a href="../php/gestisciAccount.php" type="button" class="btn button-light w-100 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-people ms-1 me-1"></i>
+                    <a href="../php/gestisciAccount.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
+                        <span class="bi bi-people ms-1 me-1" aria-hidden="true"></span>
                         Gestione Utenti
                     </a>
                 </div>
@@ -80,7 +80,7 @@
         <?php endif; ?>
         <section class="card p-4 mb-4 mt-4 card-border shadow">
             <div class="d-flex align-items-center justify-content-center">
-                <i class="bi bi-person-circle me-2"></i>
+                <span class="bi bi-person-circle me-2" aria-hidden="true"></span>
                 <h2 class="fw-bold text mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
             </div>
             <div class="d-flex flex-column align-items-center mt-3">
@@ -89,7 +89,7 @@
                 <p class="text"><strong>Telefono: </strong><?php echo $userDetails["Numero_telefono"]  != null ? $userDetails['Numero_telefono'] : 'Non disponibile' ?></p>
                 <p class="text"><strong>Data di Nascita: </strong><?php echo $userDetails['Data_di_nascita'] != '0000-00-00' ? getFormattedDate($userDetails["Data_di_nascita"]) : 'Non disponibile' ?></p>
                 <button type="button" class="btn button-outline mb-2 mt-2 pe-4 ps-4 btn-points" data-bs-toggle="collapse" data-bs-target="#collapsePoints" aria-expanded="false" aria-controls="collapsePoints">
-                    <i class="bi bi-star-fill me-1"></i> <?php echo $userDetails["Punti"]; ?> Punti Fedeltà
+                    <span class="bi bi-star-fill me-1" aria-hidden="true"></span> <?php echo $userDetails["Punti"]; ?> Punti Fedeltà
                 </button>
                 <div class="collapse" id="collapsePoints">
                     <div class="card card-body mb-3 mt-2 border-0 collapse-points">
@@ -109,8 +109,8 @@
             <h3 class="fw-bold text">Attività</h3>
             <div class="row mb-3 mt-3">
                 <div class="col-6">
-                    <a href="../php/notifiche.php" type="button" class="btn button-light w-100 position-relative">
-                        <i class="bi bi-bell"></i>
+                    <a href="../php/notifiche.php" class="btn button-light w-100 position-relative">
+                        <span class="bi bi-bell" aria-hidden="true"></span>
                         Notifiche
                         <?php if($numeronotifiche != 0): ?>
                             <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger rounded-circle nuova-notifica">
@@ -120,28 +120,28 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <a href="../php/recensioniMie.php" type="button" class="btn button-light w-100">
-                        <i class="bi bi-pen"></i>
+                    <a href="../php/recensioniMie.php" class="btn button-light w-100">
+                        <span class="bi bi-pen" aria-hidden="true"></span>
                         Recensioni
                     </a>
                 </div>
             </div>
             <div class='mb-3'>
-                <a href="../php/preferiti.php" type="button" class="btn button-light w-100">
-                    <i class="bi bi-bookmark-heart"></i>
+                <a href="../php/preferiti.php" class="btn button-light w-100">
+                    <span class="bi bi-bookmark-heart" aria-hidden="true"></span>
                     I tuoi Preferiti
                 </a>
             </div>
             <div class="row mb-2">
                 <div class="col-5">
-                    <a href="../php/ordini.php" type="button" class="btn button-light w-100">
-                        <i class="bi bi-box-seam"></i>
+                    <a href="../php/ordini.php" class="btn button-light w-100">
+                        <span class="bi bi-box-seam" aria-hidden="true"></span>
                         Ordini
                     </a>            
                 </div>
                 <div class="col-7">
                     <button type="button" class="btn button-light w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                        <i class="bi bi-gear"></i>
+                        <span class="bi bi-gear" aria-hidden="true"></span>
                         Impostazioni
                     </button> 
                 </div>
@@ -156,7 +156,7 @@
             <div class="modal-header pb-3">
                 <h5 class="modal-title title" id="editProfileModalLabel">Modifica Profilo</h5>
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="bi bi-x-lg"></i>
+                    <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
             </div>
             <div class="modal-body pt-0">

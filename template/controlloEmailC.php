@@ -13,11 +13,11 @@
             <form method="POST" action="controlloEmail.php">
                 <div class="mb-3">
                     <label for="email" class="form-label ps-1 text-italic mb-0">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-envelope me-1"></i>
+                        <span class="d-flex align-items-center">
+                            <span class="bi bi-envelope me-1" role="img" aria-hidden="true"></span>
                             E-mail
                             <span class="text-danger">*</span>
-                        </div>
+                        </span>
                     </label>
                     <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required>
                 </div>

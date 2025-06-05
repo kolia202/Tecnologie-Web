@@ -15,17 +15,18 @@
     <header>
         <!-- BOTTONE MENU -->
         <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
-            <i class="bi bi-list"></i>
+            <span class="bi bi-list" aria-hidden="true"></span>
         </button>
         <!-- MENU LATERALE -->
         <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+            <h5 id="offcanvasLeftLabel" class="visually-hidden">Menu laterale sinistro</h5>
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0 pt-4 d-flex align-items-center">
                 <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
-                <h2 class="mt-2">MENÙ</h2>
+                <h4 class="mt-2 menu-title">MENÙ</h4>
                 <!-- BOTTONE X -->
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <i class="bi bi-x-lg"></i>
+                    <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
             </div>
             <!-- BODY MENU -->
@@ -34,10 +35,10 @@
                     <!-- BARRA DI RICERCA -->
                     <form class="d-flex mb-4" method="GET" action="prodotti.php">
                         <div class="d-flex align-items-center search-bar">
+                            <label for="search" class="visually-hidden">Cerca un prodotto</label>
                             <input id="search" name="search" class="form-control search ms-1 mt-1" type="text" placeholder="Cerca" autocomplete="off">
-                            <!-- BOTTONE CERCA -->
-                            <button type="submit" for="search" class="btn pt-0 pb-0 ps-2 pe-2 ms-2 mt-1">
-                                <i class="bi bi-search-heart"></i>
+                            <button type="submit" class="btn pt-0 pb-0 ps-2 pe-2 ms-2 mt-1">
+                                <span class="bi bi-search-heart" aria-hidden="true"></span>
                             </button>
                         </div>
                     </form>
@@ -57,13 +58,22 @@
                             <div class="collapse" id="collapseExample">
                                 <div class="card card-body border-0 pt-0 pb-0 categoriesmenu">
                                     <!-- ELENCO CATEGORIE -->
-                                    <ul class="list-unstyled">
-                                        <?php foreach($templateParams["categorie"] as $categoria): ?>
-                                            <li><a href="../php/prodotti.php?categoria=<?php echo $categoria["Nome_categoria"]; ?>"><?php echo $categoria["Nome_categoria"]; ?></a></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
-                            </div>
+                                     <ul class="list-unstyled">
+                                        <?php if (isset($templateParams["categorie"]) && is_array($templateParams["categorie"])): ?>
+                                            <?php foreach($templateParams["categorie"] as $categoria): ?>
+                                                <li>
+                                                    <a href="../php/prodotti.php?categoria=<?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>">
+                            <?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li><em>Nessuna categoria disponibile</em></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>
+
                         </li>
                         <li><a href="../php/informazioni.php">Chi siamo<br></a></li>
                         <?php if(isUserLoggedIn()): ?>
@@ -92,8 +102,8 @@
         <?php if(isAdminLoggedIn()): ?>
             <!-- BOTTONE UTENTE -->
             <a href="../php/account.php" class="btn position-relative user pe-3 ps-1">
-                <i class="bi bi-person"></i>
-                <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill user-badge" value="<?php echo $nuovenotificheadmin ?>">
+                <span class="bi bi-person" aria-hidden="true"></span>
+                <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill user-badge">
                     <?php echo $nuovenotificheadmin ?>
                 </span>
             </a>
@@ -102,14 +112,14 @@
             <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
             <?php if($currentPage === "carrello.php"): ?>
                 <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1">
-                    <i class="bi bi-bag"></i>
+                    <span class="bi bi-bag" aria-hidden="true"></span>
                     <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill cart-badge">
                         <?php echo $numeroprodotti ?>
                     </span>
                 </a>
             <?php else: ?>
                 <button class="btn position-relative cart pe-3 ps-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <i class="bi bi-bag"></i>
+                    <span class="bi bi-bag" aria-hidden="true"></span>
                     <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill cart-badge">
                         <?php echo $numeroprodotti ?>
                     </span>
@@ -119,14 +129,15 @@
 
         <!-- MENU LATERALE -->
         <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <h5 id="offcanvasRightLabel" class="visually-hidden">Carrello</h5>
             <!-- HEADER MENU -->
             <div class="offcanvas-header d-flex align-items-center pb-0 pt-4">
                 <!-- BOTTONE X -->
                 <button type="button" class="btn button-empty ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <i class="bi bi-x-lg"></i>
+                    <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
                 <img class="iconaborsa" src="../utilities/logo/borsa.png" alt="iconaborsa">
-                <h2 class="mb-2 mt-2">Carrello</h2>
+                <h4 class="mb-2 mt-2">Carrello</h4>
             </div>
             <!-- BODY MENU -->
             <div class="offcanvas-body pt-4 ps-1 pe-1" id="cart-menu">

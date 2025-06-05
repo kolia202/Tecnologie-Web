@@ -25,9 +25,12 @@
                 <label for="email" class="form-label mb-0 ps-1 text-italic">E-mail<span class="text-danger">*</span></label>
                 <input type="email" class="form-control text text-input" name="email" id="email" required />
             </div>
-            <div class="mb-3 mt-4">
-                <textarea class="form-control text text-input" name="message" id="message" rows="4" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
-            </div>
+                <div class="mb-3 mt-4">
+                    <label for="message" class="form-label mb-0 ps-1 text-italic">
+                        Messaggio<span class="text-danger">*</span>
+                    </label>
+                    <textarea class="form-control text text-input" name="message" id="message" rows="4" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                </div>
             <div class="text-center mt-3">
                 <button type="submit" class="btn button ps-5 pe-5 mt-1">Invia</button>
             </div>

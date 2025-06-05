@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<h2 class="title mt-4 pt-2"><i class="bi bi-stars"></i> I Best seller! <i class="bi bi-stars"></i></h2>
+<h2 class="title mt-4 pt-2"><span class="bi bi-stars" aria-hidden="true"></span> I Best seller! <span class="bi bi-stars" aria-hidden="true"></span></h2>
 <div class="d-block d-md-none">
     <div class="box pt-3 ps-2 pe-2 pb-1 mt-4 rounded shadow bg-white custom-box">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -40,11 +40,11 @@
                 <?php endforeach; ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+                <span aria-hidden="true"><span class="bi bi-chevron-compact-left" aria-hidden="true"></span></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+                <span aria-hidden="true"><span class="bi bi-chevron-compact-right" aria-hidden="true"></span></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -76,25 +76,25 @@
     <div class="row mb-3 ms-2 me-2 g-3 justify-content-center">
         <div class="col-6 col-md-3">
             <div class="why-item d-flex justify-content-center align-items-center p-3">
-                <i class="bi bi-lock me-1 why-icon"></i>
+                <span class="bi bi-lock me-1 why-icon" aria-hidden="true"></span>
                 <p class=" text text-center mb-0">Pagamento facile e sicuro</p>
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="why-item d-flex justify-content-center align-items-center p-3">
-                <i class="bi bi-truck me-2 why-icon"></i>
+                <span class="bi bi-truck me-2 why-icon" aria-hidden="true"></span>
                 <p class="text text-center mb-0">Spedizione gratis oltre 50€</p>
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="why-item d-flex justify-content-center align-items-center p-3">
-                <i class="bi bi-gem me-1 why-icon"></i>
+                <span class="bi bi-gem me-1 why-icon" aria-hidden="true"></span>
                 <p class="text text-center mb-0">Programma fedeltà unico</p>
             </div>
         </div>
         <div class="col-6 col-md-3">
             <div class="why-item d-flex justify-content-center align-items-center p-3">
-                <i class="bi bi-gift me-2 why-icon"></i>
+                <span class="bi bi-gift me-2 why-icon" aria-hidden="true"></span>
                 <p class="text text-center mb-0">Confezioni regalo adorabili</p>
             </div>
         </div>
@@ -107,18 +107,18 @@
 <div class="container mt-5" id="newsletter">
     <div class="box p-4 shadow newsletter-box">
         <div class=" text-center text-centerP">
-            <h3 class="title"><i class="bi bi-envelope-heart me-1"></i> Newsletter</h3>
+            <h3 class="title"><span class="bi bi-envelope-heart me-1" aria-hidden="true"></span> Newsletter</h3>
             <p class="text mb-4">Iscriviti alla nostra newsletter e ricevi tutte le novità e offerte esclusive dedicate a te!</p>
             <div id="liveAlert">
                 <?php if (isset($_SESSION["errornewsletter"])): ?>
                     <div class="alert alert-danger text-center text" role="alert">
-                        <i class="bi bi-exclamation-triangle align-center"></i>
+                        <span class="bi bi-exclamation-triangle align-center" aria-hidden="true"></span>
                         <?php echo $_SESSION["errornewsletter"]; ?>
                         <?php unset($_SESSION['errornewsletter']); ?>
                     </div>
                 <?php elseif(isset($_SESSION['successnewsletter'])): ?>
                     <div class="alert alert-success text-center text" role="alert">
-                        <i class="bi bi-check-circle align-center"></i>
+                        <span class="bi bi-check-circle align-center" aria-hidden="true"></span>
                         <?php echo $_SESSION["successnewsletter"];
                         unset($_SESSION['successnewsletter']); ?>
                     </div>  
@@ -126,7 +126,8 @@
             </div>
             <form method="POST" action="#newsletter">
                 <div class="mb-4">
-                    <input type="email" class="form-control text text-input" name="email" placeholder="E-mail" required>
+                    <label for="newsletter-email" class="visually-hidden">Inserisci il tuo indirizzo email</label>
+                    <input id="newsletter-email" type="email" class="form-control text text-input" name="email" placeholder="E-mail" required>
                 </div>
                 <button type="submit" class="btn button ps-5 pe-5">Iscriviti</button>
             </form>
@@ -137,7 +138,7 @@
 
 <section class="pt-5">
     <div class="container text-center">
-        <h2 class="title">Cosa dicono di noi?</h2>
+        <h4 class="title">Cosa dicono di noi?</h4>
         <p class="text ms-3 me-3 mb-1">Le testimonianze di chi ha scelto di affidarsi a noi per l'acquisto dei peluche!</p>
         <div>
             <p class="star-rating">
@@ -161,11 +162,11 @@
                     <?php endforeach; ?>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecensioni" data-bs-slide="prev">
-                    <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+                    <span class="bi bi-chevron-compact-left" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselRecensioni" data-bs-slide="next">
-                    <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+                    <span class="bi bi-chevron-compact-right" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -189,11 +190,11 @@
                     <?php endfor; ?>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecensioniDesktop" data-bs-slide="prev">
-                    <span aria-hidden="true"><i class="bi bi-chevron-compact-left"></i></span>
+                    <span class="bi bi-chevron-compact-left" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselRecensioniDesktop" data-bs-slide="next">
-                    <span aria-hidden="true"><i class="bi bi-chevron-compact-right"></i></span>
+                    <span class="bi bi-chevron-compact-right" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>

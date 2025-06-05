@@ -1,6 +1,6 @@
 <div class="container mt-4 ps-4 pe-4 cont-info">
     <div class="d-flex align-items-center justify-content-center mb-3">
-        <i class="bi bi-info-circle-fill me-2"></i>
+        <span class="bi bi-info-circle-fill me-2" aria-hidden="true"></span>
         <h1 class="title mb-0">Informazioni</h1>
     </div>
     <h2 class="text-italic fw-bold mb-1">Chi siamo?</h2>
@@ -50,8 +50,8 @@
         Se preferisci, ti aspettiamo nel nostro punto vendita fisico per toccare con mano tutta la morbidezza di <strong>Mondo Morbidoso</strong>!
     </p>
     <p class="text mt-1">
-        Indirizzo: Via Cesare Pavese, 50, Cesena, FC
-        </br>Orari di apertura: dal lunedi al venerdì,<br/> 7:00 - 14:00 e 15:00 - 19:00
+      Indirizzo: Via Cesare Pavese, 50, Cesena, FC<br>
+      Orari di apertura: dal lunedì al venerdì,<br>7:00 - 14:00 e 15:00 - 19:00
     </p>
     <div class="text-center mb-3">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5725.71192292397!2d12.232637476029952!3d44.14821447108299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ca4dc575f4751%3A0x1ab32da6537902b2!2sVia%20Cesare%20Pavese%2C%2050%2C%2047521%20Cesena%20FC!5e0!3m2!1sit!2sit!4v1749104396388!5m2!1sit!2sit" 
@@ -62,16 +62,16 @@
     <p class="text mt-0 mb-0">Telefono: 0547338888</p>
     <div class="d-flex align-items-center justify-content-center">
         <p class="text mb-0">E-mail:</p>
-        <i class="bi bi-envelope me-1 ms-2"></i>
+        <span class="bi bi-envelope me-1 ms-2" aria-hidden="true"></span>
         <a href="mailto:supporto@mondomorbidoso.com" class="text">supporto@mondomorbidoso.com</a>
     </div>
     <div class="d-flex align-items-center justify-content-center">
         <p class="text mb-0">Social:
-        <i class="bi bi-instagram ms-1"></i>
+        <span class="bi bi-instagram ms-1" aria-hidden="true"></span>
         <a href="https://instagram.com" class="text" target="_blank">Instagram</a> |
-        <i class="bi bi-facebook ms-1"></i>
+        <span class="bi bi-facebook ms-1" aria-hidden="true"></span>
         <a href="https://facebook.com" class="text" target="_blank">Facebook</a> |
-        <i class="bi bi-tiktok ms-1"></i>
+        <span class="bi bi-tiktok ms-1" aria-hidden="true"></span>
         <a href="https://tiktok.com" class="text" target="_blank">TikTok</a>
     </div>
 </div>
