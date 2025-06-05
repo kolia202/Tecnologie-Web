@@ -17,27 +17,27 @@
             <?php endif; ?>
             <form action="login.php" method="POST">
                 <div class="mb-3">
-                    <label for="email" class="form-label ps-1 text-italic mb-0">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-envelope me-1"></i>
+                    <div class="d-flex align-items-center">
+                        <label for="email" class="form-label ps-1 text-italic mb-0 me-2">
+                            <span class="bi bi-envelope me-1" aria-hidden="true"></span>
                             E-mail
                             <span class="text-danger">*</span>
-                        </div>
-                    </label>
+                        </label>
+                    </div>
                     <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required/>
                 </div>
                 <div class="mb-3">
+                    <div class="d-flex align-items-center">
                     <label for="password" class="form-label ps-1 text-italic mb-0">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-key me-1"></i>
+                            <span class="bi bi-key me-1" aria-hidden="true"></span>
                             Password
                             <span class="text-danger">*</span>
-                        </div>
-                    </label>
+                        </label>
+                    </div>
                     <div class="input-group">
                         <input type="password" class="form-control text text-input" id="password" name="password" required>
                         <button class="btn show-password" type="button">
-                            <i class="bi bi-eye-slash"></i>
+                            <span class="bi bi-eye-slash" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>

@@ -27,9 +27,9 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="telefono" class="ps-1 text-italic">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-telephone me-1"></i>Telefono
-                    </div>
+                    <span class="d-flex align-items-center">
+                        <span class="bi bi-telephone me-1" aria-hidden="true"></span>Telefono
+                    </span>
                 </label>
                 <input type="text" class="form-control text text-input" id="telefono" name="telefono" autocomplete="off">
             </div>
@@ -41,28 +41,28 @@
         <div class="row">
             <div class="col">
                 <label for="email" class="ps-1 text-italic">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-envelope me-1"></i>    
-                        E-mail
-                        <span class="text-danger">*</span>
-                    </div>
-                </label>
+                    <span class="d-flex align-items-center">
+        <span class="bi bi-envelope me-1" aria-hidden="true"></span>  
+        E-mail
+        <span class="text-danger">*</span>
+    </span>
+</label>
                 <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <label for="password" class="ps-1 text-italic">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-key me-1"></i>    
-                        Password
-                        <span class="text-danger">*</span>
-                    </div>
-                </label>
+    <span class="d-flex align-items-center">
+        <span class="bi bi-key me-1" aria-hidden="true"></span>
+        Password
+        <span class="text-danger">*</span>
+    </span>
+</label>
                 <div class="input-group">
                     <input type="password" class="form-control text text-input" id="password" name="password" required>
                     <button class="btn show-password" type="button">
-                        <i class="bi bi-eye-slash"></i>
+                        <span class="bi bi-eye-slash" aria-hidden="true"></span>
                     </button>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <div class="input-group">
                     <input type="password" class="form-control text text-input" id="password_confirm" name="password_confirm" required>
                     <button class="btn show-password" type="button">
-                        <i class="bi bi-eye-slash"></i>
+                        <span class="bi bi-eye-slash" aria-hidden="true"></span>
                     </button>
                 </div>
             </div>
