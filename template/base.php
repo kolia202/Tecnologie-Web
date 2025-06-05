@@ -122,7 +122,7 @@
             <!-- HEADER MENU -->
             <div class="offcanvas-header d-flex align-items-center pb-0 pt-4">
                 <!-- BOTTONE X -->
-                <button type="button" class="btn ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                <button type="button" class="btn button-empty ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="bi bi-x-lg"></i>
                 </button>
                 <img class="iconaborsa" src="../utilities/logo/borsa.png" alt="iconaborsa">

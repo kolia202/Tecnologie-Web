@@ -19,18 +19,20 @@
                 <div class="text-center">
                     <a class="text-decoration-none" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
                         <img class="imgProdotto shadow img-fluid" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt="Foto prodotto"/>
-                        <h2 class="text mt-3 fw-bold"><?php echo $prodotto["Nome"]; ?></h2>
+                        <h2 class="text mt-3 fw-bold mb-1"><?php echo $prodotto["Nome"]; ?></h2>
                     </a>
                 </div>
+
                 <div class="text-center">
                     <?php if(isAdminLoggedIn() && $prodotto['attivo'] == 0): ?>
-                        <span class="btn button-black fw-bold mb-2 pt-0 pb-0 ps-1 pe-1">Prodotto Disattivato</span>
+                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-1 pe-1">Disattivato</span>
                     <?php elseif($prodotto["Scorta"] <= 0): ?>
-                        <span class="btn btn-sm blackb mb-2">Esaurito</span>
+                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-1 pe-1">Esaurito</span>
                     <?php endif; ?>
                 </div>
+                
                 <?php if(!isAdminLoggedIn()): ?>
-                    <p class="text-center pProdotto"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
+                    <p class="text text-muted mb-2"><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
                 <?php endif; ?>
 
                 <?php if(isAdminLoggedIn()): ?>
@@ -40,12 +42,12 @@
                         </a>
                         <form action="gestisci-prodotto.php" method="POST">
                             <input type="hidden" name="previous" value="<?php echo $_SERVER['REQUEST_URI'] ?>">
-                            <button type='submit' class='btn btn-danger text' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Elimina Prodotto</button>
+                            <button type='submit' class='btn btn-danger btn-delete text' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Elimina Prodotto</button>
                         </form>
                     </div>
                 <?php else: ?>
                     <div class="text-center">        
-                        <button type="button" class="btn btn-sm fw-bold add-to-cart" id="<?php echo $prodotto["Id_prodotto"]; ?>">
+                        <button type="button" class="btn button add-to-cart" id="<?php echo $prodotto["Id_prodotto"]; ?>">
                             Aggiungi al carrello
                         </button>
                     </div>
