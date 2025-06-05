@@ -14,7 +14,7 @@ if (isset($_POST["accedi"])) {
     $login_result = $dbhost->checkLogin($email, $password);
     if (count($login_result) == 0) {
         $_SESSION["errorelogin"] = "Ops! L'E-mail o la Password non sono corrette.";
-        header('Location: account.php');
+        header('Location: login.php');
         exit;
     } else {
         $_SESSION["utente"] = $login_result[0]["E_mail"];

@@ -69,15 +69,15 @@
             </div>
             <div class="modal-body">
                <form action="gestisci-prodotto.php" method="POST" enctype="multipart/form-data">
-                    <div>
+                    <div class="mb-3">
                         <label for="immagineprodotto" class="visually-hidden">Carica immagine prodotto</label>
                         <input class="text" type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*" required/>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="nomeprodotto" class="visually-hidden">Nome prodotto</label>
                         <input class="form-control text text-input" type="text" id="nomeprodotto" name="nomeprodotto" placeholder="Nome" required/>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="categoriaprodotto" class="visually-hidden">Categoria prodotto</label>
                         <select class="form-select text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
                             <option class="text-start text-italic" value="" disabled selected>Categoria</option>
@@ -86,7 +86,7 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="tagliaprodotto" class="visually-hidden">Taglia prodotto</label>
                         <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
                             <option class="text-start text" value="" disabled selected>Taglia</option>
@@ -95,15 +95,15 @@
                             <option class="text-start text" value="L">L - Large</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="prezzoprodotto" class="visually-hidden">Prezzo prodotto</label>
                         <input class="form-control text text-input" type="number" step="0.01" min="0" id="prezzoprodotto" name="prezzoprodotto" placeholder="Prezzo" required/>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="puntiprodotto" class="visually-hidden">Punti prodotto</label>
                         <input class="form-control text text-input" type="number" id="puntiprodotto" name="puntiprodotto" min="0" placeholder="Punti" required/>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="scorteprodotto" class="visually-hidden">Scorte prodotto</label>
                         <input class="form-control text text-input" type="number" id="scorteprodotto" name="scorteprodotto" min="1" placeholder="Scorte" required/>
                     </div>
