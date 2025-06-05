@@ -3,7 +3,7 @@ require_once 'bootstrap.php';
 
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Conferma Ordine";
-$templateParams["nome"] = "conferma-ordine.php";
+$templateParams["nome"] = "confermaC.php";
 $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
 $numeroprodotti = 0;
 
