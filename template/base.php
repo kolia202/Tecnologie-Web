@@ -23,7 +23,7 @@
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0 pt-4 d-flex align-items-center">
                 <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
-                <h4 class="mt-2 menu-title">MENÙ</h4>
+                <h4 class="mt-2">MENÙ</h4>
                 <!-- BOTTONE X -->
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
                     <span class="bi bi-x-lg" aria-hidden="true"></span>
@@ -63,17 +63,16 @@
                                             <?php foreach($templateParams["categorie"] as $categoria): ?>
                                                 <li>
                                                     <a href="../php/prodotti.php?categoria=<?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>">
-                            <?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <li><em>Nessuna categoria disponibile</em></li>
-            <?php endif; ?>
-        </ul>
-    </div>
-</div>
-
+                                                        <?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <li><em>Nessuna categoria disponibile</em></li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <li><a href="../php/informazioni.php">Chi siamo<br></a></li>
                         <?php if(isUserLoggedIn()): ?>

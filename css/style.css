@@ -185,12 +185,11 @@ header {
     margin-left: 6%;
 }
 
-header h2,
-header h4.menu-title {
+header h4 {
     color: rgb(137, 85, 32);
     font-family: 'Chewy', sans-serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .bi-x-lg {
@@ -1637,7 +1636,7 @@ footer > a {
         margin-left: 10%;
     }
 
-    header h2 { 
+    header h4 { 
         font-size: 50px;
     }
 

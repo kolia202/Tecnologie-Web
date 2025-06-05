@@ -17,23 +17,19 @@
             <?php endif; ?>
             <form action="login.php" method="POST">
                 <div class="mb-3">
-                    <div class="d-flex align-items-center">
-                        <label for="email" class="form-label ps-1 text-italic mb-0 me-2">
-                            <span class="bi bi-envelope me-1" aria-hidden="true"></span>
-                            E-mail
-                            <span class="text-danger">*</span>
-                        </label>
-                    </div>
+                    <label for="email" class="form-label ps-1 text-italic mb-0 d-inline-flex align-items-center">
+                        <span class="bi bi-envelope me-1" aria-hidden="true"></span>
+                        E-mail
+                        <span class="text-danger">*</span>
+                    </label>
                     <input type="email" class="form-control text text-input" id="email" name="email" autocomplete="off" required/>
                 </div>
                 <div class="mb-3">
-                    <div class="d-flex align-items-center">
-                    <label for="password" class="form-label ps-1 text-italic mb-0">
-                            <span class="bi bi-key me-1" aria-hidden="true"></span>
-                            Password
-                            <span class="text-danger">*</span>
-                        </label>
-                    </div>
+                    <label for="password" class="form-label ps-1 text-italic mb-0 d-inline-flex align-items-center">
+                        <span class="bi bi-key me-1" aria-hidden="true"></span>
+                        Password
+                        <span class="text-danger">*</span>
+                    </label>
                     <div class="input-group">
                         <input type="password" class="form-control text text-input" id="password" name="password" required>
                         <button class="btn show-password" type="button">
