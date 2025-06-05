@@ -19,7 +19,7 @@
                     <div class="input-group">
                         <input type="password" class="form-control text text-input" id="password" name="password" required>
                         <button class="btn show-password" type="button">
-                            <i class="bi bi-eye-slash"></i>
+                            <span class="bi bi-eye-slash" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="input-group">
                         <input type="password" class="form-control text text-input" id="confirm_password" name="confirm_password" required>
                         <button class="btn show-password" type="button">
-                            <i class="bi bi-eye-slash"></i>
+                            <span class="bi bi-eye-slash" aria-hidden="true"></span>
                         </button>
                     </div>
                 </div>
