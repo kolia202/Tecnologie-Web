@@ -1,6 +1,6 @@
 <div class="container mt-4 ps-4 pe-4 cont-info">
     <div class="d-flex align-items-center justify-content-center mb-3">
-        <i class="bi bi-shield-check ms-4"></i>
+        <span class="bi bi-shield-check ms-4" aria-hidden="true"></span>
         <h1 class="title me-4 mb-0">Informativa sulla Privacy</h1>
     </div>
     <p class="text text-start">
