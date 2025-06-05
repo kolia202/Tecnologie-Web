@@ -37,7 +37,7 @@
 
                 <?php if(isAdminLoggedIn()): ?>
                     <div class="d-flex justify-content-between ms-3 me-3 mt-3">        
-                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" type="button" class="btn button">
+                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" class="btn button">
                             Gestisci Prodotto
                         </a>
                         <form action="gestisci-prodotto.php" method="POST">
