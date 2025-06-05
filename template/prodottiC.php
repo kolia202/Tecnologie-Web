@@ -27,7 +27,7 @@
                     <?php if(isAdminLoggedIn() && $prodotto['attivo'] == 0): ?>
                         <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-1 pe-1">Disattivato</span>
                     <?php elseif($prodotto["Scorta"] <= 0): ?>
-                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-1 pe-1">Esaurito</span>
+                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-2 pe-2">Esaurito</span>
                     <?php endif; ?>
                 </div>
                 
@@ -45,7 +45,7 @@
                             <button type='submit' class='btn btn-danger btn-delete text' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">Elimina Prodotto</button>
                         </form>
                     </div>
-                <?php else: ?>
+                <?php elseif($prodotto["Scorta"] > 0): ?>
                     <div class="text-center">        
                         <button type="button" class="btn button add-to-cart" id="<?php echo $prodotto["Id_prodotto"]; ?>">
                             Aggiungi al carrello

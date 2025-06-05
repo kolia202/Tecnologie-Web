@@ -57,7 +57,7 @@ function updateCart(button, update, isCart) {
             }
         } else if(data.status == "success") {
             if (isCart) {
-                document.querySelector(".stock-warning").style.display = "none";
+                button.closest("section").querySelector(".stock-warning").style.display = "none";
                 updateQuantity(button, update);
             }
             if (!isCart) {
@@ -68,7 +68,7 @@ function updateCart(button, update, isCart) {
 
             updateCartBadge(data.cart);
         } else if(data.status === "not_available") {
-            document.querySelector(".stock-warning").style.display = "block";
+            button.closest("section").querySelector(".stock-warning").style.display = "block";
         }
     })
     .catch(error => {
@@ -91,9 +91,9 @@ function updateQuantity(button, update) {
     let newProductPrice = price / quantity * newQuantity;
     productPrice.innerText = "Prezzo: " + newProductPrice.toFixed(2).replace(".", ",") + "€";
 
-    let points = parseInt(productPoints.innerText.replace("Punti:", "").trim());
+    let points = parseInt(productPoints.innerText.replace("punti", "").trim());
     let newProductPoints = points / quantity * newQuantity;
-    productPoints.innerText = "Punti: " + newProductPoints;
+    productPoints.innerText = newProductPoints + " punti";
 
     if (update != 0) {
         updateTotal(price / quantity * update);

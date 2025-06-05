@@ -1,18 +1,25 @@
 <?php
 require_once 'bootstrap.php';
 
-if(!isUserLoggedIn()) {
+if (!isUserLoggedIn()) {
+    $_SESSION["redirect"] = $_SERVER['REQUEST_URI'];
     header("Location: login.php");
     exit;
 }
 
-if(isset($_SESSION["shippingerror"])) {
+if (isset($_GET["id"])) {
+    $dbhost->removeProductFromCart($_SESSION["utente"], $_GET["id"]);
+    header("Location: carrello.php");
+    exit;
+}
+
+if (isset($_SESSION["shippingerror"])) {
     unset($_SESSION["shippingerror"]);
 }
 
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["titolo"] = "Mondo Morbidoso - Carrello";
-$templateParams["nome"] = "prodotti-carrello.php";
+$templateParams["nome"] = "carrelloC.php";
 $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
 $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
 $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);

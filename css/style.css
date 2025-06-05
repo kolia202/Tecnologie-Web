@@ -757,28 +757,47 @@ iframe {
 }
 
 
+/* CARRELLO */
 
-
-
-
-main .gestiscip {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
+.bi-bag-heart-fill {
+    font-size: 29px;
+    color: rgb(137, 85, 32);
 }
 
-main .gestiscip:hover {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-    transform: scale(0.95);
+.bi-dash-circle, .bi-plus-circle {
+    color: rgb(137, 85, 32);
+    font-size: 17px;
 }
 
-main .eliminap { 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px;
-    font-style: italic;
+.stock-warning {
+    display: none;
+    background-color: rgb(245, 222, 179, 0.5);
 }
+
+.stock-warning p {
+    font-size: 16px;
+    color: black;
+}
+
+.bi-trash3-fill {
+    color: rgb(137, 85, 32);
+    font-size: 18px;
+}
+
+.img-carrello {
+    height: 220px;
+    width: auto;
+    border-radius: 20px;
+    border: wheat 4px solid;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1020,112 +1039,6 @@ main .eliminab {
     margin-bottom: 20px;
 }
 
-/*prodotti-carrello*/
-
-.imgCar {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    width: 300px;
-    height: auto;   
-}
-
-.prodotto-carrello-a {
-    text-decoration: none;
-}
-
-.nomeProdottoC {
-    color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.custom-col {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 16px;
-}
-
-.quanità-prodotti {
-    margin-left: 125px;
-    color: black;
-}
-
-.custom-iProdotti {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 15px;
-}
-
-.product-price {
-    color: black;
-}
-
-.product-points {
-    color: black;
-}
-
-
-.stock-warning {
-    display: none; 
-    color: red; 
-    font-size: 14px;
-}
-
-.total-price {
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    text-align: center;
-    font-size: 22px;
-}
-
-.p-avviso {
-    color: red;
-}
-
-.custom-spedizioneButton {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 14px; 
-    font-style: italic;
-    width: 50%;
-    text-align: center;
-}
-
-.custom-spedizioneButton2 {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 12px; 
-    font-style: italic;
-    width: 50%;
-    text-align: center;
-}
-
-.custom-spedizioneButton2:hover,
-.custom-spedizioneButton2:active {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-}
-
-.custom-spedizioneButton:hover,
-.custom-spedizioneButton:active {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-}
-
 /*spedizione-scelta*/
 
 .spedizione-alert {
@@ -1345,15 +1258,7 @@ main .totalee {
     color: white; 
 }
 
-.favorite-store-titlee {
-    color: rgb(137, 85, 32); 
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size:25px; 
-    font-style: italic;
-    margin-left: 10px;
-}
+
 .notifiche-p{
     color: rgb(137, 85, 32); 
     font-weight: bold;
@@ -1528,23 +1433,6 @@ main .rimuoviprefe {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 80%;
     margin-left: 10%;
-}
-
-.bi-trash3-fill {
-    color: white;
-    font-size: 18px;
-}
-
-.rimuovicarrello {
-    border-color: rgb(204, 153, 102);
-    color: rgb(204, 153, 102);
-    font-weight: bold;
-}
-
-.rimuovicarrello:hover {
-    border-color: rgb(190, 140, 90);
-    color: rgb(190, 140, 90);
-    font-weight: bold;
 }
 
 
@@ -1923,15 +1811,35 @@ footer > a {
     .imgProdotto:hover {
         transform: scale(1.08);
     }
-    
-    
-    
 
 
+    /* CARRELLO */
 
-    main .add-to-cart {
-        font-size: 15px;
+    .bi-bag-heart-fill {
+        font-size: 38px;
     }
+
+    .bi-dash-circle, .bi-plus-circle {
+        font-size: 19px;
+    }
+
+    .stock-warning p {
+        font-size: 18px;
+    }
+    
+    .bi-trash3-fill {
+        font-size: 22px;
+    }
+
+    .img-carrello {
+        height: 220px;
+    }
+    
+    
+
+
+
+   
 
     /* SINGOLO PRODOTTO */
 
@@ -1941,22 +1849,7 @@ footer > a {
         text-align: center; /* Centra il contenuto */
     }
 
-    /*prodotti-carrello*/
-
-    .custom-spedizioneButton {
-        margin-bottom: 30px;
-        margin-top: 15px;
-    }
-
-    .custom-spedizioneButton2 {
-        margin-bottom: 30px;
-        margin-top: 15px;
-        width: 200px;
-    }
-    
-    .quanità-prodotti {
-        margin-left: 175px;
-    }
+   
     
     /*spedizione-scelta*/
 
