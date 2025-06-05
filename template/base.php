@@ -23,7 +23,7 @@
             <!-- HEADER MENU -->
             <div class="offcanvas-header pb-0 pt-4 d-flex align-items-center">
                 <img class="iconaorsetto" src="../utilities/logo/orsetto.png" alt="iconaorsetto">
-                <h4 class="mt-2">MENÙ</h4>
+                <h4 class="mt-2 menu-title">MENÙ</h4>
                 <!-- BOTTONE X -->
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
                     <span class="bi bi-x-lg" aria-hidden="true"></span>
