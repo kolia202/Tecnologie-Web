@@ -28,19 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["update_profile"])) {
     $newemail = $_POST["email"];
     $datadinascita = $_POST["data_nascita"];
     $numerotelefono = $_POST["numero_telefono"];
-    if ($email !== $newemail) {
-        unset($_SESSION["utente"]);
-    }
     if ($dbhost->modificaProfilo($email, $nome, $cognome, $newemail, $datadinascita, $numerotelefono)) {
         if ($email !== $newemail) {
+            unset($_SESSION["utente"]);
             $_SESSION["utente"] = $newemail;
         }
 
-        header("Location: account.php?success=1");
-        exit();
+        $_SESSION['success'] = "Il tuo profilo è stato aggiornato con successo!";
     } else {
-        echo "<div class='alert alert-danger text-center'>Errore durante l'aggiornamento del profilo.</div>";
+        $_SESSION['error'] = "Ops! Errore durante l'aggiornamento del profilo.";
     }
+    header("Location: account.php");
+    exit();
 }
 
 require("../template/base.php");

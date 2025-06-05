@@ -17,7 +17,15 @@ if(isUserLoggedIn()) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $_SESSION['successo'] = 'Messaggio inviato con successo!';
+    $nome = trim($_POST["nome"]);
+    $cognome = trim($_POST["cognome"]);
+    $email = trim($_POST["email"]);
+    $message = trim($_POST["message"]);
+    $templateParams['admins'] = $dbhost->getAdmins();
+    foreach($templateParams['admins'] as $admin) {
+        $dbhost->addNewMessage('Nuova Richiesta di Assistenza', $nome . ' ' . $cognome . ' (' . $email . ') ha inviato una richiesta di assistenza: ' . $message, $admin['E_mail']);
+    }
+    $_SESSION['success'] = 'La tua richiesta di assistenza è stata inviata con successo. Ti risponderemo al più presto!';
     header("Location: assistenza.php");
     exit;
 }

@@ -1,7 +1,7 @@
 <?php if (isAdminLoggedIn()): ?>
     <div class="container mt-4 ps-4 pe-4 cont-account">
         <h1 class="title">Account Admin</h1>
-        <section class="card p-4 mb-4 mt-4 card-account shadow">
+        <section class="card p-4 mb-4 mt-4 card-border shadow">
             <div class="d-flex align-items-center justify-content-center">
                 <i class="bi bi-person-circle me-2"></i>
                 <h2 class="fw-bold text mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </section>
-        <section class="card p-4 shadow card-account">
+        <section class="card p-4 shadow card-border">
             <h3 class="text fw-bold">Attività Admin</h3>
             <div class="row mb-3 mt-3">
                 <div class="col-6">
@@ -65,7 +65,20 @@
 <?php elseif (isUserLoggedIn()): ?>
     <div class="container mt-4 ps-4 pe-4 cont-account">
         <h1 class="title">Il mio Account</h1>
-        <section class="card p-4 mb-4 mt-4 card-account shadow">
+        <?php if (isset($_SESSION["error"])): ?>
+            <div class="alert alert-danger mt-3 text" role="alert">
+                <i class="bi bi-exclamation-triangle align-center"></i>
+                <?php echo $_SESSION["error"];
+                unset($_SESSION['error']); ?>
+            </div>
+        <?php elseif (isset($_SESSION["success"])): ?>
+            <div class="alert alert-success mt-3 text" role="alert">
+                <i class="bi bi-check-circle align-center"></i>
+                <?php echo $_SESSION["success"];
+                unset($_SESSION['success']); ?>
+            </div>             
+        <?php endif; ?>
+        <section class="card p-4 mb-4 mt-4 card-border shadow">
             <div class="d-flex align-items-center justify-content-center">
                 <i class="bi bi-person-circle me-2"></i>
                 <h2 class="fw-bold text mb-0">Ciao, <?php echo $userDetails["Nome"] ?>!</h2>
@@ -92,7 +105,7 @@
                 </div>
             </div>
         </section>
-        <section class="card p-4 shadow card-account">
+        <section class="card p-4 shadow card-border">
             <h3 class="fw-bold text">Attività</h3>
             <div class="row mb-3 mt-3">
                 <div class="col-6">
@@ -162,11 +175,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="col-form-label ps-1 pb-0 text-italic">Telefono:</label>
-                        <input type="text" class="form-control text text-input" id="telefono" name="numero_telefono" value="<?php echo htmlspecialchars($userDetails['Numero_telefono']); ?>" required>
+                        <input type="text" class="form-control text text-input" id="telefono" name="numero_telefono" value="<?php echo htmlspecialchars($userDetails['Numero_telefono']); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="data_nascita" class="col-form-label ps-1 pb-0 text-italic">Data di Nascita:</label>
-                        <input type="date" class="form-control text text-input" id="data_nascita" name="data_nascita" value="<?php echo htmlspecialchars($userDetails['Data_di_nascita']); ?>" required>
+                        <input type="date" class="form-control text text-input" id="data_nascita" name="data_nascita" value="<?php echo htmlspecialchars($userDetails['Data_di_nascita']); ?>">
                     </div>
                     <div class="modal-footer mt-4">
                         <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>

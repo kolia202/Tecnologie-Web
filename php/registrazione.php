@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Errore durante la registrazione.";
     }
 }
+
 $templateParams["titolo"] = "Mondo Morbidoso - Registrazione";
 $templateParams["nome"] = "registrazioneC.php";
 $templateParams["categorie"] = $dbhost->getCategories();

@@ -1,33 +1,35 @@
-<h1 class="text-center account">Assistenza Clienti</h1>
-<div class="container mt-4 cont-account">
-    <div class="box p-4 mb-5 rounded shadow bg-white mx-auto">
-        <h2 class="text-center asstitle">Hai bisogno di aiuto?</h2>
-        <?php if(isset($_SESSION['successo'])): ?>
-            <div class="alert alert-success text-center mt-3 text" role="alert">
-                <i class="bi bi-check-circle align-center"></i>
-                <?php echo $_SESSION["successo"];
-                unset($_SESSION['successo']); ?>
-            </div>                  
-        <?php endif; ?>
-        <h4 class="fw-bold mt-1 asstitle">Contattaci</h4>
-        <form action="assistenza.php" method="POST">
-            <div class="mb-3">
-                <label class="form-label ps-1 infologin">Nome e Cognome <span class="text-danger">*</span></label>
-                <div class="d-flex gap-2">
-                    <input type="text" class="form-control inputlogin" placeholder="Nome" required>
-                    <input type="text" class="form-control inputlogin" placeholder="Cognome" required>
+<div class="container mt-4 ps-4 pe-4 cont-assistenza">
+    <h1 class="title">Assistenza Clienti</h1>
+    <?php if(isset($_SESSION['success'])): ?>
+        <div class="alert alert-success mt-3 text" role="alert">
+            <i class="bi bi-check-circle align-center"></i>
+            <?php echo $_SESSION['success'];
+            unset($_SESSION['success']); ?>
+        </div>                  
+    <?php endif; ?>
+    <div class="card p-4 shadow mt-4 card-border">
+        <h2 class="text fw-bold mb-2">Hai bisogno di aiuto?</h2>
+        <h3 class="text">Contattaci</h3>
+        <form action="assistenza.php" method="POST" class="mt-3">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nome" class="form-label mb-0 ps-1 text-italic">Nome<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control text text-input" name="nome" id="nome" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cognome" class="form-label mb-0 ps-1 text-italic">Cognome<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control text text-input" name="cognome" id="cognome" required />
                 </div>
             </div>
             <div class="mb-3">
-                <label class="form-label ps-1 infologin">E-mail <span class="text-danger">*</span></label>
-                <input type="email" class="form-control inputlogin" placeholder="Inserisci la tua E-mail" required>
+                <label for="email" class="form-label mb-0 ps-1 text-italic">E-mail<span class="text-danger">*</span></label>
+                <input type="email" class="form-control text text-input" name="email" id="email" required />
             </div>
-            <div class="mb-3">
-                <label class="form-label ps-1 infologin">Messaggio <span class="text-danger">*</span></label>
-                <textarea class="form-control inputlogin" rows="3" placeholder="Scrivi il tuo messaggio..." required></textarea>
+            <div class="mb-3 mt-4">
+                <textarea class="form-control text text-input" name="message" id="message" rows="4" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn bmenu fw-bold ps-5 pe-5">Invia</button>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn button ps-5 pe-5 mt-1">Invia</button>
             </div>
         </form>
     </div>

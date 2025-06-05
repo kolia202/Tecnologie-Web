@@ -128,6 +128,10 @@ body {
     font-weight: bold;
 }
 
+.card-border {
+    border: 2px solid rgb(245, 222, 179);
+}
+
 
 /* HEADER */
 
@@ -227,7 +231,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     text-decoration: underline;
 }
 
-.offcanvas-body ul li button {
+.offcanvas-body ul li > div button {
     display: inline-block;
     height: 100%;
     width: 80%;
@@ -243,7 +247,7 @@ div.offcanvas.offcanvas-end.offcanvas-custom {
     border-color: rgb(137, 85, 32);
 }
 
-.offcanvas-body ul li button:active {
+.offcanvas-body ul li > div button:active {
     color: rgb(137, 85, 32) !important;
     border-color: rgb(137, 85, 32) !important;
 }
@@ -594,16 +598,12 @@ main p {
 
 /* ACCOUNT */
 
-.card-account {
-    border: 2px solid rgb(245, 222, 179);
-}
-
 .bi-person-circle {
     font-size: 35px;
     color: rgb(204, 153, 102);
 }
 
-.card-account h2, .card-account h3 {
+.cont-account h2, .cont-account h3 {
     font-size: 25px;
 }
 
@@ -660,10 +660,42 @@ main p {
 }
 
 
+/* ASSISTENZA */
+
+.cont-assistenza h2, .cont-assistenza h3 {
+    font-size: 22px;
+}
 
 
+/* INFORMAZIONI */
 
+.bi-info-circle-fill {
+    color: rgb(137, 85, 32);
+    font-size: 25px;
+}
 
+.cont-info h2 {
+    color: rgb(137, 85, 32);
+    font-size: 20px;
+}
+
+.cont-info li {
+    color: rgb(137, 85, 32);
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid rgb(245, 222, 179);
+}
+
+.cont-info a {
+    color: rgb(137, 85, 32);
+}
+
+.cont-info a:hover {
+    color: rgb(100, 60, 20);
+}
 
 
 
@@ -1211,11 +1243,7 @@ main .eliminab {
     color: white; 
 }
 
-/* ASSISTENZA */
 
-main .asstitle {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 
 main .ordineconferma {
     color: black;
@@ -1489,46 +1517,7 @@ main .totalee {
     border-color: rgb(137, 85, 32);
 }
 
-/* info */
 
-.h2-info {
-    color: rgb(137, 85, 32); 
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 18px; 
-    font-style: italic;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-.p-info{
-    color: rgb(137, 85, 32); 
-    text-align: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-.p-info a{
-    text-decoration: none;
-    color: rgb(137, 85, 32); 
-}
-
-.mappa {
-    width: 100%; 
-    max-width: 400px; 
-    margin: 0 auto; 
-    text-align: center;
-}
-
-.mappa iframe {
-    border: 2px solid rgb(137, 85, 32); 
-    display: block; 
-    margin: 0 auto;
-}
 
 .custom-aa {
     background-color: rgb(204, 153, 102); 
@@ -1890,7 +1879,7 @@ footer > a {
         width: 60%;
     }
 
-    .card-account h2, .card-account h3 {
+    .cont-account h2, .cont-account h3 {
         font-size: 30px;
     }
 
@@ -1916,6 +1905,37 @@ footer > a {
     .modal-content .bi-x-lg {
         font-size: 30px;
     }
+
+
+    /* ASSISTENZA */
+
+    .cont-assistenza {
+        width: 50%;
+    }
+
+    .cont-assistenza h2, .cont-assistenza h3 {
+        font-size: 27px;
+    }
+
+
+    /* INFORMAZIONI */
+
+    .bi-info-circle-fill {
+        font-size: 35px;
+    }
+
+    .cont-info h2 {
+        font-size: 25px;
+    }
+
+    iframe {
+        width: 50%;
+        height: 300px;
+    }
+
+
+
+
 
 
 
@@ -2065,30 +2085,7 @@ footer > a {
     }
 
     
-    /* info */
-
-    .h2-info {
-        font-size: 23px; 
-    }
-
-    .p-info{
-        font-size: 18px; 
-    }
     
-    .mappa {
-        width: 100%; 
-        max-width: 800px; /* Limite massimo per schermi grandi */
-        margin: 0 auto; 
-        text-align: center;
-    }
-    
-    .mappa iframe {
-        border: 2px solid rgb(137, 85, 32); 
-        display: block; 
-        margin: 0 auto;
-        width: 100%; /* Occupa tutto lo spazio del div */
-        height: 400px; /* Altezza aumentata */
-    }
 
 
     /* FOOTER */
