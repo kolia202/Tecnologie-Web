@@ -66,23 +66,23 @@
             </div>
             <form action="gestisci-prodotto.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <label for="immagineprodotto"></label>
-                    <input type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*" required/>
-                    <br><label for="nomeprodotto"></label>
-                    <input class="mt-3 modal-text" type="text" id="nomeprodotto" name="nomeprodotto" placeholder="Nome" required/>
-                    <br><label for="categoriaprodotto"></label>
+                    <label for="immagineprodotto">Immagine del prodotto:</label>
+                    <input type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*" required />
+                    <br><label for="nomeprodotto">Nome del prodotto:</label>
+                    <input class="mt-3 modal-text" type="text" id="nomeprodotto" name="nomeprodotto" placeholder="Nome" required />
+                    <br><label for="categoriaprodotto">Categoria:</label>
                     <select class="mt-3" id="categoriaprodotto" name="categoriaprodotto" required>
                         <option class="modal-text" value="" disabled selected>Categoria</option>
                         <?php foreach($templateParams["categorie"] as $categoria): ?>
                             <option class="modal-text" value="<?php echo $categoria["Nome_categoria"]; ?>"><?php echo $categoria["Nome_categoria"] ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <br><label for="tagliaprodotto"></label>
+                    <br><label for="tagliaprodotto">Taglia:</label>
                     <select class="mt-3" id="tagliaprodotto" name="tagliaprodotto" required>
-                        <option class="modal-text" value="" disabled selected>Taglia</option>
-                        <option class="modal-text" value="S">S - Small</option>
-                        <option class="modal-text" value="M">M - Medium</option>
-                        <option class="modal-text" value="L">L - Large</option>
+                        <option value="" disabled selected>Taglia</option>
+                        <option value="S">S - Small</option>
+                        <option value="M">M - Medium</option>
+                        <option value="L">L - Large</option>
                     </select>
                     <br><label for="prezzoprodotto"></label>
                     <input class="modal-text mt-3" type="number" step="0.01" min="0" id="prezzoprodotto" name="prezzoprodotto" placeholder="Prezzo" required/>
