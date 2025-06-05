@@ -698,43 +698,23 @@ iframe {
 }
 
 
+/* PRIVACY */
 
-
-
-
-
-/*privacyC.php*/
-
-.titoloP {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    text-align: left;
+.bi-shield-check {
     color: rgb(137, 85, 32);
-    font-weight: bold;
-    padding-left: 25px;
+    font-size: 35px;
 }
 
-.welcome-messagee {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    margin-bottom: 5px;
-    text-align: left;
-    color: rgb(137, 85, 32);
-    padding-left: 18px;
-}
 
-.ulP {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 12px;
-    color: rgb(137, 85, 32);
-    text-align: left;
-    padding-left: 25px;
-}
+
+
+
+
+
+
+
+
+
 
 /*lista-prodotti*/
 
@@ -1933,39 +1913,20 @@ footer > a {
         height: 300px;
     }
 
-
-
-
-
-
-
-
     
-    /*privacyC.php*/
+    /* PRIVACY */
 
-    .titoloP {
-        font-size: 30px;
-        margin-top: 80px;
-        margin-bottom: 5px;
-        padding-left: 35px;
+    .bi-shield-check {
+        font-size: 38px;
+        margin-right: 1%;
     }
     
-    .welcome-messagee {
-        font-size: 25px;
-        margin-bottom: 5px;
-        padding-left: 4px;
-    }
+
     
-    .ulP {
-        font-size: 20px;
-        text-align: left;
-        padding-left: 50px;
-    }
-
-    main .favorite-store-titlee {
-        font-size: 45px;
-    }
-
+    
+    
+    
+    
     main .add-to-cart {
         font-size: 15px;
     }
