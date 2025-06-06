@@ -1,12 +1,12 @@
-<div class="container mt-4 ps-4 pe-4 cont-account">
+<div class="container mt-4 ps-4 pe-4 cont-accounts">
     <div class="d-flex align-items-center justify-content-center">
         <span class="bi bi-person-fill me-2" aria-hidden="true"></span>
         <h1 class="title mb-0">Gestione Utenti</h1>
     </div>
-    <div class="container pe-0 ps-0 mt-3">
+    <div class="container pt-1 mt-4">
         <div class="row">
             <?php foreach ($utenti as $utente): ?>
-                <div class="col-12 col-md-6 mb-2 p-3"> 
+                <div class="col-12 col-md-6 mb-4 pb-2"> 
                     <div class="card shadow card-border">
                         <div class="card-body">
                             <h2 class="card-title fw-bold text mb-3">

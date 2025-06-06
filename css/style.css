@@ -897,6 +897,10 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
+.cont-accounts h2 {
+    font-size: 25px;
+}
+
 
 /* NOTIFICHE */
 
@@ -1742,6 +1746,19 @@ footer > a {
 
     .bi-person-fill {
         font-size: 45px;
+    }
+
+    .cont-accounts h2 {
+        font-size: 30px;
+    }
+
+    .cont-accounts {
+        width: 80%;
+    }
+
+    .cont-accounts .card {
+        margin-right: 2%;
+        margin-left: 2%;
     }
 
     
