@@ -10,7 +10,7 @@ $templateParams['admins'] = $dbhost->getAdmins();
 
 foreach($dbhost->getCartProducts($utente) as $prodotto) {
     $dbhost->addOrderedProduct($idordine, $prodotto["Id_prodotto"], $prodotto["Quantita"]);
-    $dbhost->updateStock($prodotto["Id_prodotto"], -($prodotto["Quantita"]));
+    $dbhost->updateStock($prodotto["Id_prodotto"], $prodotto['Scorta'] - ($prodotto["Quantita"]));
     $p = $dbhost->getProductById($prodotto['Id_prodotto'])[0];
     foreach($templateParams['admins'] as $admin) {
         if(intval($p['Scorta']) <= 0) {

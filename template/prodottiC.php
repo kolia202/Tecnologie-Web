@@ -25,7 +25,7 @@
 
                 <div class="text-center">
                     <?php if(isAdminLoggedIn() && $prodotto['attivo'] == 0): ?>
-                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-1 pe-1">Disattivato</span>
+                        <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-2 pe-2">Disattivato</span>
                     <?php elseif($prodotto["Scorta"] <= 0): ?>
                         <span class="btn button-black fw-bold mb-2 mt-1 pt-0 pb-0 ps-2 pe-2">Esaurito</span>
                     <?php endif; ?>

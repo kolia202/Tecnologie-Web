@@ -162,23 +162,23 @@
             <div class="modal-body pt-0">
                 <form method="POST" action="account.php">
                     <div class="mb-3">
-                        <label for="nome" class="col-form-label ps-1 pb-0 text-italic">Nome:</label>
+                        <label for="nome" class="col-form-label ps-1 pb-0 text-italic">Nome</label>
                         <input type="text" class="form-control text text-input" id="nome" name="nome" value="<?php echo htmlspecialchars($userDetails['Nome']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="cognome" class="col-form-label ps-1 pb-0 text-italic">Cognome:</label>
+                        <label for="cognome" class="col-form-label ps-1 pb-0 text-italic">Cognome</label>
                         <input type="text" class="form-control text text-input" id="cognome" name="cognome" value="<?php echo htmlspecialchars($userDetails['Cognome']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="col-form-label ps-1 pb-0 text-italic">E-mail:</label>
+                        <label for="email" class="col-form-label ps-1 pb-0 text-italic">E-mail</label>
                         <input type="text" class="form-control text text-input" id="email" name="email" value="<?php echo htmlspecialchars($userDetails['E_mail']); ?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="telefono" class="col-form-label ps-1 pb-0 text-italic">Telefono:</label>
+                        <label for="telefono" class="col-form-label ps-1 pb-0 text-italic">Telefono</label>
                         <input type="text" class="form-control text text-input" id="telefono" name="numero_telefono" value="<?php echo htmlspecialchars($userDetails['Numero_telefono']); ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="data_nascita" class="col-form-label ps-1 pb-0 text-italic">Data di Nascita:</label>
+                        <label for="data_nascita" class="col-form-label ps-1 pb-0 text-italic">Data di Nascita</label>
                         <input type="date" class="form-control text text-input" id="data_nascita" name="data_nascita" value="<?php echo htmlspecialchars($userDetails['Data_di_nascita']); ?>">
                     </div>
                     <div class="modal-footer mt-4">

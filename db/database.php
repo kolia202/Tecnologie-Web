@@ -279,7 +279,7 @@ class DatabaseHelper {
     }
 
     public function updateStock($idprodotto, $quantita) {
-        $query = "UPDATE prodotto SET Scorta = Scorta + ? WHERE Id_prodotto = ?";
+        $query = "UPDATE prodotto SET Scorta = ? WHERE Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ii', $quantita, $idprodotto);
         return $stmt->execute();

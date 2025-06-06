@@ -1,9 +1,9 @@
 <?php
 require_once 'bootstrap.php';
 
-if(isset($_POST["nuove-scorte"]) && isset($_POST['idprodotto'])) {
+if(isset($_POST["num-scorte"]) && isset($_POST['idprodotto'])) {
     $id = $_POST['idprodotto'];
-    $dbhost->updateStock($id, $_POST['nuove-scorte']);
+    $dbhost->updateStock($id, $_POST['num-scorte']);
     $templateParams["avvisi"] = $dbhost->getProductAvailabilityNotice($id);
     $nome = $dbhost->getProductById($id)[0]["Nome"];
     foreach($templateParams['avvisi'] as $avviso) {
