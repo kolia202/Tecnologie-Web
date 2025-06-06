@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $templateParams["titolo"] = "Mondo Morbidoso - Reset";
 $templateParams["nome"] = "resetPasswordC.php";
 $numeroprodotti = 0;
+$templateParams["categorie"] = $dbhost->getCategories();
 
 require("../template/base.php");
 ?>
