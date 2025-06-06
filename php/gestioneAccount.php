@@ -2,15 +2,13 @@
 require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Mondo Morbidoso - Preferiti";
-$templateParams["nome"] = "gestisciAccountC.php";
+$templateParams["nome"] = "gestioneAccountC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $templateParams["preferiti"] = $dbhost->getPreferiti($_SESSION["utente"]);
 $utenti = $dbhost->getAllUtentiNonAdmin();
 
-if (isUserLoggedIn()) {
-    $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);
-    $totale = $dbhost->getTotalCartPrice($_SESSION["utente"]);
-    $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
+if (isAdminLoggedIn()) {
+    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
 }
 
 if (isset($_GET['email'])) {
@@ -22,15 +20,10 @@ if (isset($_GET['email'])) {
         $dbhost->deleteAvvisoDisponibilitaByEmail($email) &&
         $dbhost->deleteOrdersByEmail($email)) {
         if ($dbhost->deleteUtente($email)) {
-            header("Location: gestisciAccount.php?deleted=1");
+            header("Location: gestioneAccount.php?deleted=1");
             exit();
         }
     }
-}
-
-
-if (isAdminLoggedIn()) {
-    $nuovenotificheadmin = $dbhost->getUserNewMessages($_SESSION['utente']);
 }
 
 require("../template/base.php");

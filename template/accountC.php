@@ -54,7 +54,7 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <a href="../php/gestisciAccount.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
+                    <a href="../php/gestioneAccount.php" class="btn button-light w-100 d-flex align-items-center justify-content-center">
                         <span class="bi bi-people ms-1 me-1" aria-hidden="true"></span>
                         Gestione Utenti
                     </a>

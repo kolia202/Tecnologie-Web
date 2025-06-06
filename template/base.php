@@ -127,22 +127,24 @@
         <?php endif; ?>
 
         <!-- MENU LATERALE -->
-        <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <h5 id="offcanvasRightLabel" class="visually-hidden">Carrello</h5>
-            <!-- HEADER MENU -->
-            <div class="offcanvas-header d-flex align-items-center pb-0 pt-4">
-                <!-- BOTTONE X -->
-                <button type="button" class="btn button-empty ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <span class="bi bi-x-lg" aria-hidden="true"></span>
-                </button>
-                <img class="iconaborsa" src="../utilities/logo/borsa.png" alt="iconaborsa">
-                <h4 class="mb-2 mt-2">Carrello</h4>
+        <?php if (!isAdminLoggedIn()): ?>
+            <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <h5 id="offcanvasRightLabel" class="visually-hidden">Carrello</h5>
+                <!-- HEADER MENU -->
+                <div class="offcanvas-header d-flex align-items-center pb-0 pt-4">
+                    <!-- BOTTONE X -->
+                    <button type="button" class="btn button-empty ps-2" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <span class="bi bi-x-lg" aria-hidden="true"></span>
+                    </button>
+                    <img class="iconaborsa" src="../utilities/logo/borsa.png" alt="iconaborsa">
+                    <h4 class="mb-2 mt-2">Carrello</h4>
+                </div>
+                <!-- BODY MENU -->
+                <div class="offcanvas-body pt-4 ps-1 pe-1" id="cart-menu">
+                    <?php include 'menu-carrello.php'; ?>
+                </div>
             </div>
-            <!-- BODY MENU -->
-            <div class="offcanvas-body pt-4 ps-1 pe-1" id="cart-menu">
-                <?php include 'menu-carrello.php'; ?>
-            </div>
-        </div>
+        <?php endif; ?>
     </header>
 
     <!-- MAIN -->
