@@ -437,6 +437,13 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
+    public function deleteAllMessages($email) {
+        $query = "DELETE FROM notifica WHERE E_mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("s", $email);
+        return $stmt->execute();
+    }
+
     public function changeMessageStatus($idnotifica) {
         $query = "UPDATE notifica SET Stato = 1 WHERE Id_notifica = ?";
         $stmt = $this->db->prepare($query);
