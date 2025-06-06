@@ -47,7 +47,7 @@
                     </div>
                 <?php elseif($prodotto["Scorta"] > 0): ?>
                     <div class="text-center">        
-                        <button type="button" class="btn button add-to-cart" id="<?php echo $prodotto["Id_prodotto"]; ?>">
+                        <button type="button" class="btn button add-to-cart" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">
                             Aggiungi al carrello
                         </button>
                     </div>
