@@ -650,5 +650,14 @@ class DatabaseHelper {
         $stmt->bind_param("s", $email);
         return $stmt->execute();
     }
+
+    public function alreadyNoticed($email, $idProdotto) {
+        $query = "SELECT * FROM avvisi_disponibilita WHERE E_mail = ? AND Id_prodotto = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("si", $email, $idProdotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->num_rows > 0;
+    }
 }
 ?>

@@ -1,64 +1,64 @@
 <div class="container mt-4 ps-4 pe-4">
     <?php if(count($templateParams["prodotto"]) == 0): ?>
         <article class="p-4">
-            <p>Prodotto non presente</p>
+            <p class="text">Prodotto non presente</p>
         </article>
-    <?php
-        else:
-            $prodotto = $templateParams["prodotto"][0];
-    ?>
+    <?php else: $prodotto = $templateParams["prodotto"][0]; ?>
         <div class="row align-items-center">
-            <div class="col-12 col-md-6 text-center">
-                <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid rounded"/>
+            <div class="col-12 col-md-6 text-center mt-1">
+                <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid img-singola shadow" />
             </div>
-            <div class="col-12 col-md-6 text-center">
-                <!-- Intestazione prodotto -->
-                <h1 class="text-center mt-2 sp-titolo"><?php echo $prodotto["Nome"]; ?></h1>
+            <div class="col-12 col-md-6 text-center cont-prodotto">
+                <h1 class="title mt-2"><?php echo $prodotto["Nome"]; ?></h1>
                 <?php if(isAdminLoggedIn() && !$prodotto['attivo']): ?>
                     <span class="btn btn-sm fw-bold blackb">Prodotto Disattivato</span> 
                 <?php elseif($prodotto["Scorta"] <= 0): ?>
-                    <span class="btn btn-sm fw-bold blackb">Esaurito</span>
+                    <span class="btn button-black fw-bold pt-0 pb-0 ps-2 pe-2">Esaurito</span>
                 <?php endif; ?>             
                 <section class="mt-3">
-                    <!-- dettagli prodotto -->
-                    <p class="sp-details"><strong>Categoria : </strong><?php echo $prodotto["Nome_categoria"]; ?></p> 
-                    <p class="sp-details"><strong>Taglia: </strong><?php echo $prodotto["Grandezza"]; ?></p>
+                    <p class="text mb-1"><strong>Categoria : </strong><?php echo $prodotto["Nome_categoria"]; ?></p> 
+                    <p class="text mb-1"><strong>Taglia: </strong><?php echo $prodotto["Grandezza"]; ?></p>
                     <?php if(isAdminLoggedIn()): ?>
-                        <p class="sp-details mb-1"><strong>Scorte disponibili: </strong><?php echo $prodotto["Scorta"]; ?></p>
+                        <p class="text mb-1"><strong>Scorte disponibili: </strong><?php echo $prodotto["Scorta"]; ?></p>
                         <button type="button" class="btn btn-outline mb-3 aumentab" data-bs-toggle="modal" data-bs-target="#stock" <?php echo $prodotto['attivo'] ? '' : 'disabled' ?>>Aumenta</button>
                     <?php endif; ?>
-                    <p class="sp-details"><strong>Prezzo: </strong><?php echo getFormattedPrice($prodotto["Prezzo"]); ?></p>
-                    <p class="sp-details"><strong>Punti: </strong><?php echo $prodotto["Prezzo_punti"]; ?></p>
+                    <p class="text mb-4"><strong>Prezzo: </strong><?php echo getFormattedPrice($prodotto["Prezzo"]); ?> - <?php echo $prodotto["Prezzo_punti"]; ?> punti</p>
                     <!-- carrello e preferiti -->
                     <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
-                        <button type="button" class="btn btn-lg text-center fw-bold add-to-cart sp-aggiungi pe-4 ps-4 mt-2" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
-                        <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
-                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
-                                Aggiungi ai Preferiti
+                        <div class="d-flex justify-content-center align-items-center gap-4">
+                            <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
+                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>' ?>
                             </a>
+                            <button type="button" class="btn button add-to-cart pe-4 ps-4" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
                         </div>
                     <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
-                        <p class="avvisop">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
-                        <form class="avviso-disponibilita" method="POST">
-                            <input type="hidden" class="id-utente" value="<?php echo $_SESSION["utente"]; ?>">
-                            <input type="hidden" class="id-prodotto" value="<?php echo $prodotto["Id_prodotto"]; ?>">
-                            <button type="submit" class="btn fw-bold btn-avviso">Avviso Disponibilità</button>
-                        </form>
-                        <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
-                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>
-                                Aggiungi ai Preferiti
+                        <div class="stock-warning d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3">
+                            <p class="text-italic mb-0">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center gap-4">
+                            <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
+                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>' ?>
                             </a>
+                            <?php if ($avvisodisponibilità): ?>
+                                <button class="btn button ps-4 pe-4" disabled>Richiesta inviata</button>
+                            <?php else: ?>
+                                <div class="avviso-disponibilita" data-utente="<?php echo $_SESSION["utente"] ?>" data-prodotto="<?php echo $prodotto["Id_prodotto"] ?>">
+                                    <button type="submit" class="btn button ps-4 pe-4 btn-avviso">Avviso Disponibilità</button>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php elseif (!isAdminLoggedIn()): ?>
-                        <p class="avvisop">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?<br>Prima esegui l'accesso al tuo account.</p>
-                        <button type="button" class="btn fw-bold avvisob" disabled>Avviso Disponibilità</button>
-                        <div class="mt-4">
-                            <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
+                        <div class="stock-warning d-block mt-4 rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3">
+                            <p class="text-italic mb-0">
+                                Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?
+                                <br>Esegui l'accesso al tuo account per chiedere di ricevere un avviso.
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center gap-4">
+                            <a href="<?php echo 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
                                 <i class="bi bi-heart me-2"></i>
-                                Aggiungi ai Preferiti
                             </a>
+                            <button type="button" class="btn button pe-4 ps-4" disabled>Avviso Disponibilità</button>
                         </div>
                     <?php endif; ?>
                     <!-- gestione prodotto -->
@@ -87,14 +87,17 @@
             </div>
         </div>
         <!-- descrizione -->
-        <div class="accordion mb-3 mt-3" id="descrizione">
+        <div class="accordion mt-4" id="descrizione">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Descrizione</button>
+                    <button class="accordion-button text fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Descrizione
+                        <span class="bi bi-chevron-down ms-auto"></span>
+                    </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#descrizione">
-                    <div class="accordion-body">
-                        <?php echo $prodotto['Descrizione']; ?>
+                    <div class="accordion-body pt-2">
+                        <p class="text mb-0"><?php echo $prodotto['Descrizione']; ?></p>
                     </div>
                 </div>
             </div>

@@ -4,11 +4,10 @@ function handleAvailability() {
 
     const avvisoDisponibilita = document.querySelector(".avviso-disponibilita");
     if(avvisoDisponibilita) {
-        avvisoDisponibilita.addEventListener("submit", function(event) {
-            event.preventDefault();
-    
-            const email = document.querySelector(".id-utente").value;
-            const idprodotto = document.querySelector(".id-prodotto").value;
+        const button = avvisoDisponibilita.querySelector(".btn-avviso")
+        button.addEventListener("click", () => {    
+            const email = avvisoDisponibilita.dataset.utente;
+            const idprodotto = avvisoDisponibilita.dataset.prodotto;
     
             fetch('../php/invia-richiesta.php', {
                 method: 'POST',
@@ -21,8 +20,6 @@ function handleAvailability() {
             .then(response => response.json())
             .then(data => {
                 if(data.status == "success") {
-                    const button = document.querySelector(".btn-avviso");
-                    button.classList.add('btn-avviso', 'fw-bold');
                     button.innerText = 'Richiesta inviata';
                     button.disabled = true;
                 }
