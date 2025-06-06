@@ -16,8 +16,8 @@
             foreach($templateParams["carrello"] as $prodotto): ?>
                 <section class="d-flex align-items-center mb-1">
                     <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" class="cartmenu-item">
-                        <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt=""/>
-                    </a>
+                    <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt="Peluche <?php echo htmlspecialchars($prodotto['Nome']); ?>" />
+                </a>
                     <div class="d-flex flex-column pt-3 pe-3 cartmenu-info">
                         <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
                             <p class="mb-1 fw-bold"><?php echo $prodotto["Nome"]; ?></p>
