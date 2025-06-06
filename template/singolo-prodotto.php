@@ -31,7 +31,12 @@
                     <p class="sp-details"><strong>Punti: </strong><?php echo $prodotto["Prezzo_punti"]; ?></p>
                     <!-- carrello e preferiti -->
                     <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
-                        <button type="button" class="btn btn-lg text-center fw-bold add-to-cart sp-aggiungi pe-4 ps-4 mt-2" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
+                         <button 
+                         type="button" 
+                         class="btn btn-lg text-center fw-bold add-to-cart sp-aggiungi pe-4 ps-4 mt-2"
+                         data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">
+                         Aggiungi al Carrello
+                        </button>
                         <div class="mt-4">
                             <a class="sp-prefe text-center" href="<?php echo isUserLoggedIn() ? 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"] : 'login.php'; ?>">
                                 <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill me-2"></i>' : '<i class="bi bi-heart me-2"></i>' ?>

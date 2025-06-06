@@ -26,7 +26,7 @@ function handleCart() {
 
 function updateCart(button, update, isCart) {
     
-    const idprodotto = button.getAttribute("id");
+    let idprodotto = button.dataset.productid;
 
     fetch("../php/aggiorna-carrello.php", {
         method: "POST",
