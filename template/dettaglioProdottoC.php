@@ -29,7 +29,7 @@
                             <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
                                 <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>' ?>
                             </a>
-                            <button type="button" class="btn button add-to-cart pe-4 ps-4" id="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
+                            <button type="button" class="btn button add-to-cart pe-4 ps-4" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
                         </div>
                     <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
                         <div class="stock-warning d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3">
