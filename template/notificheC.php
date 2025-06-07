@@ -1,6 +1,6 @@
 <div class="container mt-4 ps-4 pe-4 cont-notifiche">
     <div class="d-flex align-items-center justify-content-center gap-2">
-        <i class="bi bi-chat-heart"></i>
+        <span class="bi bi-chat-heart" aria-hidden="true"></span>
         <h1 class="title mb-0">Notifiche</h1>
     </div>
     <p class="text mt-2">Tieni d'occhio questa pagina per rimanere aggiornato su tutte le novità!</p>
@@ -44,6 +44,6 @@
         <?php endforeach; ?>
     <?php endif; ?>
     <div class="text-center mt-4">
-        <a href="../php/account.php" type="button" class="text back">Indietro</a>
+        <a href="../php/account.php" class="text back">Indietro</a>
     </div>
 </div>
