@@ -100,7 +100,7 @@
         </a>
         <?php if(isAdminLoggedIn()): ?>
             <!-- BOTTONE UTENTE -->
-            <a href="../php/account.php" class="btn position-relative user pe-3 ps-1">
+            <a href="../php/account.php" class="btn position-relative user pe-3 ps-1 button-empty">
                 <span class="bi bi-person" aria-hidden="true"></span>
                 <span class="position-absolute top-50 start-60 translate-middle badge rounded-pill user-badge">
                     <?php echo $nuovenotificheadmin ?>

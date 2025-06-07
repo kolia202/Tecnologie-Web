@@ -89,10 +89,10 @@
                     <div class="mb-3">
                         <label for="tagliaprodotto" class="visually-hidden">Taglia prodotto</label>
                         <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
-                            <option class="text-start text" value="" disabled selected>Taglia</option>
-                            <option class="text-start text" value="S">S - Small</option>
-                            <option class="text-start text" value="M">M - Medium</option>
-                            <option class="text-start text" value="L">L - Large</option>
+                            <option class="text-start text-italic" value="" disabled selected>Taglia</option>
+                            <option class="text-start text-italic" value="S">S - Small</option>
+                            <option class="text-start text-italic" value="M">M - Medium</option>
+                            <option class="text-start text-italic" value="L">L - Large</option>
                         </select>
                     </div>
                     <div class="mb-3">

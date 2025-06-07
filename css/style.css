@@ -931,6 +931,12 @@ iframe {
 }
 
 
+/* ORDINI */
+
+.cont-orders h2 {
+    font-size: 23px;
+}
+
 
 
 
@@ -1233,29 +1239,6 @@ main .totalee {
 
 
 
-.card-ordini {
-    border-color: rgb(245, 222, 179);
-}
-
-.ordineid {
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.ordinib {
-    background-color: rgb(204, 153, 102); 
-    color: white;
-    font-size: 15px;
-}
-
-.ordinib:hover {
-    background-color: rgb(204, 153, 102); 
-    color: white;
-}
-
-
-
-
 .custom-aa {
     background-color: rgb(204, 153, 102); 
     color: white;
@@ -1264,10 +1247,6 @@ main .totalee {
 .custom-aa:hover, .custom-aa:active  {
     background-color: rgb(204, 153, 102); 
     color: white;
-}
-
-.text-area-row {
-    width: 100%
 }
 
 
@@ -1779,6 +1758,24 @@ footer > a {
     .cont-notifiche {
         width: 70%;
     }
+
+
+    /* ORDINI */
+
+    .cont-orders h2 {
+        font-size: 27px;
+    }
+
+    .cont-orders {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cont-orders .card {
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
 
 
 
