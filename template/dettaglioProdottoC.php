@@ -26,9 +26,12 @@
                     <!-- carrello e preferiti -->
                     <?php if ($prodotto["Scorta"] > 0  && !isAdminLoggedIn()): ?>
                         <div class="d-flex justify-content-center align-items-center gap-4">
-                            <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
-                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>' ?>
-                            </a>
+                            <a 
+                            href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>"
+                            aria-label="<?php echo $prodottopreferito ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'; ?>">
+                            <?php echo $prodottopreferito ? '<span class="bi bi-heart-fill" aria-hidden="true"></span>' : '<span class="bi bi-heart" aria-hidden="true"></span>' ?>
+                            <span class="visually-hidden">preferiti</span>
+                        </a>
                             <button type="button" class="btn button add-to-cart pe-4 ps-4" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
                         </div>
                     <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
@@ -36,9 +39,11 @@
                             <p class="text-italic mb-0">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
                         </div>
                         <div class="d-flex justify-content-center align-items-center gap-4">
-                            <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"]  : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>">
-                                <?php echo $prodottopreferito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>' ?>
-                            </a>
+                            <a href="<?php echo $prodottopreferito ? 'dettaglioProdotto.php?azione=rimuovi&id_prodotto=' . $prodotto["Id_prodotto"] : 'dettaglioProdotto.php?azione=aggiungi&id_prodotto=' . $prodotto["Id_prodotto"]; ?>"
+                            aria-label="<?php echo $prodottopreferito ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti'; ?>">
+                            <?php echo $prodottopreferito ? '<span class="bi bi-heart-fill" aria-hidden="true"></span>' : '<span class="bi bi-heart" aria-hidden="true"></span>' ?>
+                            <span class="visually-hidden">preferiti</span>
+                        </a>
                             <?php if ($avvisodisponibilità): ?>
                                 <button class="btn button ps-4 pe-4" disabled>Richiesta inviata</button>
                             <?php else: ?>
@@ -68,20 +73,20 @@
                         </form>
                     <?php elseif(isAdminLoggedIn()): ?>
                         <button type="button" class="btn button ps-4 pe-4" data-bs-toggle="modal" data-bs-target="#modificaprodotto">
-                            <i class="bi bi-pencil-square me-1"></i>    
+                            <span class="bi bi-pencil-square me-1" aria-hidden="true"></span>  
                             Modifica Prodotto
                         </button>
                         <div class="d-flex align-items-center justify-content-center gap-4">
                             <form action="gestisci-prodotto.php" method="POST">
                                 <button type='submit' class='btn btn-secondary btn-delete text ps-4 pe-4 mt-3 opacity-75' name='disattivaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">
-                                    <i class="bi bi-x-circle-fill"></i>
+                                    <span class="bi bi-x-circle-fill" aria-hidden="true"></span>
                                     Disattiva
                                 </button>
                             </form>
                             <form action="gestisci-prodotto.php" method="POST">
                                 <button type='submit' class='btn btn-danger btn-delete text mt-3 ps-4 pe-4' name='eliminaprodotto' value="<?php echo $prodotto['Id_prodotto']; ?>">
-                                    <i class="bi bi-trash3-fill"></i>
-                                    Elimina  
+                                    <span class="bi bi-trash3-fill" aria-hidden="true"></span>
+                                    Elimina
                                 </button>
                             </form>
                         </div>
@@ -109,18 +114,18 @@
 </div>
 
 <!-- modal aggiornamento scorte -->
-<div class="modal fade" id="stock" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="stock" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelScorte" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header pb-2">
-                <h1 class="title" id="staticBackdropLabel">Modifica Scorte</h1>
+                <h1 class="title" id="staticBackdropLabelScorte">Modifica Scorte</h1>
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="modal" aria-label="Close">
                     <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
             </div>
             <form action="gestisci-prodotto.php" method="POST">
                 <div class="modal-body">
-                    <label for="nuove-scorte" class="ps-1 text-italic">Scorte</label>
+                    <label for="num-scorte" class="visually-hidden">Scorte</label>
                     <input class="form-control text text-input" type="number" id="num-scorte" name="num-scorte" min="0" required/>
                     <input type="hidden" name="idprodotto" value="<?php echo $prodotto['Id_prodotto']; ?>"/>
                 </div>
@@ -134,11 +139,11 @@
 </div>
 
 <!-- modal modifica prodotto -->
-<div class="modal fade" id="modificaprodotto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modificaprodotto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelProdotto" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="title" id="staticBackdropLabel">Modifica Prodotto</h1>
+                <h1 class="title" id="staticBackdropLabelProdotto">Modifica Prodotto</h1>
                 <button type="button" class="btn button-empty ms-auto" data-bs-dismiss="modal" aria-label="Close">
                     <span class="bi bi-x-lg" aria-hidden="true"></span>
                 </button>
@@ -147,7 +152,7 @@
                 <form action="gestisci-prodotto.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <p class="text-italic text-start mb-1 ms-1">Immagine: <?php echo $prodotto['Immagine'] ?></p>
-                        <label for="immagineprodotto"></label>
+                        <label for="immagineprodotto" class="visually-hidden">Carica immagine prodotto</label>
                         <input class="text" type="file" id="immagineprodotto" name="immagineprodotto" accept="image/*"/>
                         <input type="hidden" name="immagineattuale" value="<?php echo $prodotto['Immagine']; ?>"/>
                     </div>
@@ -158,18 +163,20 @@
                     <div class="mb-3">
                         <label class="text-italic ps-1 pb-0" for="categoriaprodotto">Categoria</label>
                         <select class="form-select text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
-                            <?php foreach($templateParams["categorie"] as $categoria): ?>
-                                <option class="text text-start" value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>><?php echo $categoria["Nome_categoria"] ?></option>
+                            <option value="" disabled <?php if(empty($prodotto["Nome_categoria"])) echo "selected"; ?>>Seleziona una categoria</option>
+                            <?php foreach($templateParams["categorie"] as $categoria): ?>                                <option class="text text-start" value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>>
+                                <?php echo $categoria["Nome_categoria"] ?>
+                            </option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label class="text-italic ps-1 mb-0" for="tagliaprodotto">Taglia</label>
-                        <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
-                            <option class="text-start text" value="S" <?php echo 'S' == $prodotto["Grandezza"] ? 'selected' : '' ?>>S - Small</option>
-                            <option class="text-start text" value="M" <?php echo 'M' == $prodotto["Grandezza"] ? 'selected' : '' ?>>M - Medium</option>
-                            <option class="text-start text" value="L" <?php echo 'L' == $prodotto["Grandezza"] ? 'selected' : '' ?>>L - Large</option>
-                        </select>
+                        <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required><option value="" disabled <?php if(empty($prodotto["Grandezza"])) echo "selected"; ?>>Seleziona una taglia</option>
+                        <option class="text-start text" value="S" <?php echo 'S' == $prodotto["Grandezza"] ? 'selected' : '' ?>>S - Small</option>
+                        <option class="text-start text" value="M" <?php echo 'M' == $prodotto["Grandezza"] ? 'selected' : '' ?>>M - Medium</option>
+                        <option class="text-start text" value="L" <?php echo 'L' == $prodotto["Grandezza"] ? 'selected' : '' ?>>L - Large</option>
+                    </select>
                     </div>
                     <div class="mb-3">
                         <label class="text-italic ps-1 mb-0" for="prezzoprodotto">Prezzo</label>
