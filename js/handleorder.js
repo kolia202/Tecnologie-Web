@@ -5,10 +5,10 @@ function handleOrder() {
     document.querySelectorAll(".shipping-radio").forEach(b => {
         b.addEventListener("change", function() {
             const idspedizione = this.getAttribute("id");
-            const subtotal = parseFloat(document.querySelector(".subtotale").innerHTML.replace("Subtotale:", "").replace(",", ".").replace("€", "").trim());
+            const subtotal = parseFloat(document.querySelector(".subtotale").innerText.replace("Subtotale:", "").replace(",", ".").replace("€", "").trim());
             let shippingPrice = parseFloat(document.querySelector(".shipping-price" + idspedizione).innerText.replace("Prezzo:", "").replace(",", ".").replace("€", "").trim());
             
-            document.querySelector(".shipping-cost").innerText = "Spedizione: " + shippingPrice.toFixed(2).replace(".", ",") + "€";
+            document.querySelector(".shipping-cost").innerHTML = "<strong>Spedizione:</strong> " + shippingPrice.toFixed(2).replace(".", ",") + "€";
 
             let total = subtotal + shippingPrice;
 

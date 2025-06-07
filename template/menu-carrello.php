@@ -27,7 +27,7 @@
                 </section>
             <?php endforeach; ?>
             <div class="text-center mt-4">
-                <h3>Totale Carrello: <?php echo getFormattedPrice($totale); ?></h3>        
+                <h3><strong>Totale Carrello:</strong> <?php echo getFormattedPrice($totale); ?></h3>        
                 <a href="../php/carrello.php" class="btn ps-3 pe-3 mt-5 button">Visualizza Carrello</a>
             </div>
     <?php endif; ?>

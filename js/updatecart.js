@@ -104,7 +104,7 @@ function updateTotal(newPrice) {
     const totalPrice = document.querySelector(".total-price");
     let total = parseFloat(totalPrice.innerText.replace("Totale Carrello:", "").replace(",", ".").replace("€", "").trim());
     let newTotal = total + newPrice;
-    totalPrice.innerText = "Totale Carrello: " + newTotal.toFixed(2).replace(".", ",") + "€";
+    totalPrice.innerHTML = "<strong>Totale Carrello:</strong> " + newTotal.toFixed(2).replace(".", ",") + "€";
 }
 
 function updateMenu(cart) {
@@ -154,7 +154,7 @@ function updateMenu(cart) {
         });
 
         const totalPrice = document.createElement("h3");
-        totalPrice.innerHTML = `Totale Carrello: ${parseFloat(total).toFixed(2).replace(".", ",")}€`;
+        totalPrice.innerHTML = "<strong>Totale Carrello:</strong> " + parseFloat(total).toFixed(2).replace(".", ",") + "€";
 
         const button = document.createElement('div');
         button.classList.add("text-center", 'mt-4');
