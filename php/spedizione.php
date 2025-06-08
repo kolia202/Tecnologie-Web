@@ -1,10 +1,6 @@
 <?php
 require_once("bootstrap.php");
 
-if(isset($_SESSION["paymenterror"])) {
-    unset($_SESSION["paymenterror"]);
-}
-
 $templateParams["titolo"] = "Mondo Morbidoso - Spedizione";
 $templateParams["nome"] = "spedizioneC.php";
 $templateParams["categorie"] = $dbhost->getCategories();

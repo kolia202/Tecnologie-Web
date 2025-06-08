@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 
 $utente = $_SESSION["utente"];
 
-$idordine = $dbhost->addNewOrder($utente, $_SESSION["totaleordine"], $_SESSION["spedizione"], $_SESSION["pagamento"]);
+$idordine = $dbhost->addNewOrder($utente, $_SESSION["totaleordine"], $_SESSION["spedizione"]);
 $punti = (floor($_SESSION["totaleordine"] / 10)) - $_SESSION["puntiusati"];
 $templateParams['admins'] = $dbhost->getAdmins();
 
@@ -31,7 +31,6 @@ $dbhost->addNewMessage('Nuovo Ordine', 'Il tuo ordine è stato confermato e i tu
 unset($_SESSION["totalecarrello"]);
 unset($_SESSION["totaleordine"]);
 unset($_SESSION["spedizione"]);
-unset($_SESSION["pagamento"]);
 unset($_SESSION['puntiusati']);
 
 header("Location: conferma.php?p=$p");

@@ -27,13 +27,6 @@ INSERT INTO CATEGORIA (Nome_categoria) VALUES
 ('Fattoria'),
 ('Bosco');
 
--- Popolamento della tabella METODO_DI_PAGAMENTO
-INSERT INTO METODO_DI_PAGAMENTO (Descrizione, visibile) VALUES
-('Carta di credito', 1),
-('PayPal', 1),
-('Bonifico bancario', 1),
-('Gratis', 0);
-
 -- Popolamento della tabella METODO_DI_SPEDIZIONE
 INSERT INTO METODO_DI_SPEDIZIONE (Nome, Descrizione, Costo, Giorni) VALUES
 ('Standard', 'Spedizione standard con consegna entro 5-7 giorni lavorativi.', 5.99, 6),
@@ -136,12 +129,12 @@ INSERT INTO preferito (Id_prodotto, E_mail) VALUES
 (5, 'paolo.martini@peluche.com');
 
 -- Popolamento della tabella ORDINE
-INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, Id_pagamento, E_mail) VALUES
-('2025-01-25', 54.98, 'Spedito', 1, 2, 'martina.lombardi@peluche.com'),
-('2025-01-26', 32.98, 'In lavorazione', 2, 1, 'luigi.santoro@peluche.com'),
-('2025-01-24', 51.98, 'Consegnato', 1, 3, 'carlo.bianchi@peluche.com'),
-('2024-10-27', 48.98, 'Consegnato', 3, 2, 'carlo.bianchi@peluche.com'),
-('2025-01-25', 51.98, 'Spedito', 2, 1, 'federico.ricci@peluche.com');
+INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, E_mail) VALUES
+('2025-01-25', 54.98, 'Spedito', 1, 'martina.lombardi@peluche.com'),
+('2025-01-26', 32.98, 'In lavorazione', 2, 'luigi.santoro@peluche.com'),
+('2025-01-24', 51.98, 'Consegnato', 1, 'carlo.bianchi@peluche.com'),
+('2024-10-27', 48.98, 'Consegnato', 3, 'carlo.bianchi@peluche.com'),
+('2025-01-25', 51.98, 'Spedito', 2, 'federico.ricci@peluche.com');
 
 
 -- Popolamento della tabella prodotto_ordinato

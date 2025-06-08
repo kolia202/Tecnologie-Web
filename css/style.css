@@ -156,6 +156,16 @@ body {
     font-weight: bold;
 }
 
+.text-input:hover {
+    border-color: rgb(137, 85, 32);
+    box-shadow: 0 0 5px rgb(245, 222, 179);
+    color: rgb(137, 85, 32);
+}
+
+.text-input:active {
+    color: rgb(137, 85, 32) !important;
+}
+
 .form-check-input {
     border-color: rgb(137, 85, 32);
 }
@@ -981,25 +991,52 @@ iframe {
 }
 
 
+/* PAGAMENTO */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-main .totalee {
+.bi-wallet2 {
     color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
 }
+
+.cont-payment .stock-warning label {
+    font-size: 17px;
+}
+
+.cont-payment h2 {
+    font-size: 27px;
+    color: rgb(137, 85, 32);
+}
+
+.cont-payment h3 {
+    font-size: 24px;
+    color: rgb(137, 85, 32);
+}
+
+.punti-utente {
+    font-size: 20px;
+}
+
+.cont-payment h4 {
+    font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1100,131 +1137,7 @@ main .totalee {
 
 
 
-/*pagina pagamento*/
 
-.border-bottom {
-    margin-top: 20px;
-    color: rgb(0, 0, 0); 
-    text-align: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px;
-    font-style: italic;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.spedizione-punti {
-    color: black; 
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-.spiegazione-punti {
-    color: rgb(137, 85, 32); 
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-}
-
-.totale-punti {
-    color: rgb(137, 85, 32); 
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-}
-
-.paga-punti {
-    border-color: rgb(137, 85, 32); 
-    color: rgb(137, 85, 32); 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-    margin-left: 30%;
-}
-
-.paga-punti:hover,
-.paga-punti:active {
-    border-color: rgb(137, 85, 32); 
-    color: rgb(137, 85, 32); 
-}
-
-.punti-utente {
-    display: none;
-}
-
-.errore-punti {
-    display: none;
-    color: red;
-    text-align: left;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 15px; 
-    font-style: italic;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.totale-carrello{
-    margin-top: 10px;
-    color: rgb(137, 85, 32); 
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 18px; 
-    font-style: italic;
-}
-
-.costo-spedizione {
-    color: rgb(137, 85, 32); 
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 20px; 
-    font-style: italic;
-}
-
-.totale-finale {
-    color: rgb(137, 85, 32); 
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 25px; 
-    font-style: italic;
-
-}
-
-.custom-fw {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    font-size: 20px; 
-    font-style: italic;
-}
-
-.custom-fw:hover,
-.custom-fw:active {
-    background-color: rgb(137, 85, 32); 
-    color: white; 
-}
-
-
-
-
-.custom-aa {
-    background-color: rgb(204, 153, 102); 
-    color: white;
-}
-
-.custom-aa:hover, .custom-aa:active  {
-    background-color: rgb(204, 153, 102); 
-    color: white;
-}
 
 
 .preferitip {
@@ -1777,68 +1690,36 @@ footer > a {
     }
 
 
+    /* PAGAMENTO */
 
-
-    /*pagina pagamento*/
-
-    .border-bottom {
-        font-size: 20px;
+    .bi-wallet2 {
+        font-size: 40px;
     }
 
-    .spedizione-punti {
-        font-size: 20px; 
+    .cont-payment {
+        width: 50%;
     }
 
-    .spiegazione-punti {
-        font-size: 20px; 
+    .cont-payment .stock-warning label {
+        font-size: 21px;
     }
 
-    .totale-punti {
-        font-size: 20px; 
+    .cont-payment h2 {
+        font-size: 32px;
     }
 
-    .paga-punti {
-        margin-left: 45%;
-    }
-
-    .paga-punti:hover, .paga-punti:active {
-        border-color: rgb(137, 85, 32); 
-        color: rgb(137, 85, 32); 
+    .cont-payment h4 {
+        font-size: 22px;
     }
 
     .punti-utente {
-        display: none;
+        font-size: 24px;
     }
 
-    .errore-punti {
-        font-size: 20px; 
+    .cont-payment h3 {
+        font-size: 28px;
     }
-
-    .totale-carrello{
-        font-size: 30px; 
-    }
-
-    .costo-spedizione {
-        font-size: 30px; 
-    }
-
-    .totale-finale {
-        font-size: 38px; 
-    }
-
-    .custom-fw {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .custom-fw:hover, .custom-fw:active {
-        background-color: rgb(137, 85, 32); 
-        color: white; 
-    }
-
     
-    
-
 
     /* FOOTER */
 

@@ -47,12 +47,6 @@ create table CATEGORIA (
      Nome_categoria VARCHAR(50) not null,
      primary key (Nome_categoria));
 
-create table METODO_DI_PAGAMENTO (
-     Id_pagamento INT not null auto_increment,
-     Descrizione VARCHAR(255) not null,
-     visibile BOOLEAN not null,
-     primary key (Id_pagamento));
-
 create table METODO_DI_SPEDIZIONE (
      Id_spedizione INT not null auto_increment,
      Nome VARCHAR(50) not null,
@@ -67,12 +61,10 @@ create table ORDINE (
      Prezzo_finale DECIMAL(10,2) not null,
      Stato ENUM('In lavorazione', 'Spedito', 'Consegnato') not null,
      Id_spedizione INT not null,
-     Id_pagamento INT not null,
      E_mail VARCHAR(100) not null,
      primary key (Id_ordine),
      foreign key (Id_spedizione) references METODO_DI_SPEDIZIONE (Id_spedizione),
-     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE,
-     foreign key (Id_pagamento) references METODO_DI_PAGAMENTO (Id_pagamento));
+     foreign key (E_mail) references UTENTE (E_mail) ON UPDATE CASCADE);
     
 create table PRODOTTO (
      Id_prodotto INT not null auto_increment,
@@ -154,9 +146,6 @@ create index FKcontrollo_IND
 create unique index ID_CATEGORIA_IND
      on CATEGORIA (Nome_categoria);
 
-create unique index ID_METODO_DI_PAGAMENTO_IND
-     on METODO_DI_PAGAMENTO (Id_pagamento);
-
 create unique index ID_METODO_DI_SPEDIZIONE_IND
      on METODO_DI_SPEDIZIONE (Id_spedizione);
 
@@ -165,9 +154,6 @@ create unique index ID_ORDINE_IND
 
 create index FKspedizione_IND
      on ORDINE (Id_spedizione);
-
-create index FKpagamento_IND
-     on ORDINE (Id_pagamento);
 
 create index FKeffettuazione_IND
      on ORDINE (E_mail);
