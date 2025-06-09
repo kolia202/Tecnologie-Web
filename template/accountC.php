@@ -120,7 +120,7 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <a href="../php/recensioniMie.php" class="btn button-light w-100">
+                    <a href="../php/recensioniUtente.php" class="btn button-light w-100">
                         <span class="bi bi-pen" aria-hidden="true"></span>
                         Recensioni
                     </a>

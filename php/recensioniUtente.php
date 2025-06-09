@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Mondo Morbidoso - Recensioni";
-$templateParams["nome"] = "recensioniMieC.php";
+$templateParams["nome"] = "recensioniUtenteC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = 0;
 
@@ -18,7 +18,7 @@ if (isUserLoggedIn()) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id_recensione"])) {
     $dbhost->deleteRecensione($_POST["id_recensione"]);
-    header("Location: recensioniMie.php");
+    header("Location: recensioniUtente.php");
     exit();
 }
 
@@ -27,7 +27,7 @@ if (isset($_POST['modificarecensione'])) {
     $commento = $_POST['commento'];
     $id = $_POST['idrecensione'];
     $dbhost->modifyReview($id, $voto, $commento);
-    header('Location: recensioniMie.php');
+    header('Location: recensioniUtente.php');
 }
 
 require("../template/base.php");

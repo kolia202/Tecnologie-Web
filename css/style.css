@@ -1069,43 +1069,6 @@ iframe {
 }
 
 
-
-
-
-
-
-/*recensioniMieC*/
-
-.custom-row {
-    color: rgb(137, 85, 32);
-    border: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.custon-sm {
-    background-color: rgb(137, 85, 32);
-    border-color: white;
-}
-
-.custon-sm:hover,
-.custon-sm:active {
-    background-color: rgb(137, 85, 32);
-}
-
-.cusotm-mt4 {
-    margin-bottom: 20px;
-}
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 
 footer {

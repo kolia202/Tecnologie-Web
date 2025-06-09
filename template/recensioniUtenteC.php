@@ -16,7 +16,7 @@
                         <button type="button" class="btn button-outline ps-3 pe-3 pt-1 pb-1" data-bs-toggle="modal" data-bs-target="#modificarecensione">  
                             Modifica
                         </button>
-                        <form method="POST" action="recensioniMie.php">
+                        <form method="POST" action="recensioniUtente.php">
                             <input type="hidden" name="id_recensione" value="<?php echo htmlspecialchars($recensione['Id_recensione']); ?>">
                             <button type="submit" class="btn button ps-4 pe-4 pt-1 pb-1 mt-3">Elimina</button>
                         </form>
@@ -33,7 +33,7 @@
                             </button>
                         </div>
                         <div class="modal-body pt-0">
-                            <form action="recensioniMie.php" method="POST">
+                            <form action="recensioniUtente.php" method="POST">
                                 <div class="mb-3">
                                     <label class="text-italic ps-1 mb-0" for="voto">Voto</label>
                                     <select class="form-select text text-input" id="voto" name="voto" required>
