@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Mondo Morbidoso - Riepilogo Ordine";
-$templateParams["nome"] = "riepilogo-ordineC.php";
+$templateParams["nome"] = "riepilogoOrdineC.php";
 $templateParams["categorie"] = $dbhost->getCategories();
 $numeroprodotti = $dbhost->getNumberCartProducts($_SESSION["utente"]);
 $templateParams["carrello"] = $dbhost->getCartProducts($_SESSION["utente"]);

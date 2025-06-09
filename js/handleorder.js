@@ -60,13 +60,15 @@ function handleOrder() {
                 document.querySelector(".punti-utente").innerText = 'Punti: ' + puntiUtente;
                 let totaleCarrello = parseFloat(document.querySelector(".totale-carrello").innerText.replace('Subtotale:', '').replace('€', '').replace(',', '.').trim());
                 let nuovoTotale = totaleCarrello - prezzoPeluche;
+                document.querySelector('.nuovo-tot').value = nuovoTotale;
                 document.querySelector(".totale-carrello").innerHTML = "<strong>Subtotale:</strong> " + nuovoTotale.toFixed(2).replace('.', ',') + "€";
                 let totaleFinale = nuovoTotale + costoSpedizione;
                 document.querySelector(".totale-finale").innerText = "Totale: " + totaleFinale.toFixed(2).replace('.', ',') + '€';
                 document.querySelector(".usa-punti").value = 1;
+                document.querySelector('.prezzo-punti').value = parseInt(document.querySelector('.prezzo-punti').value) + totalePunti;
 
                 selectProdotto.remove(selectProdotto.selectedIndex);
-                selectProdotto.selectedIndex = 0; // torna all'opzione "Seleziona un peluche"
+                selectProdotto.selectedIndex = 0;
             } else {
                 document.querySelector('.errore-selezione').style.display = "none";
                 document.querySelector(".errore-punti").style.display = 'block';                        

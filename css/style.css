@@ -1069,6 +1069,23 @@ iframe {
 }
 
 
+/* RIEPILOGO ORDINE */
+
+.cont-order img {
+    height: 100px;
+    width: auto;
+}
+
+.cont-order h3 {
+    font-size: 18px;
+}
+
+.cont-order h2 {
+    font-size: 25px;
+    color: rgb(137, 85, 32);
+}
+
+
 /* FOOTER */
 
 footer {
@@ -1671,6 +1688,27 @@ footer > a {
     .cont-tracking .card-tracking p {
         font-size: 22px;
     }
+
+
+    /* RIEPILOGO ORDINE */
+
+    .cont-order {
+        width: 80%;
+    }
+
+    .cont-order img {
+        height: 120px;
+    }
+
+    .cont-order h3 {
+        font-size: 22px;
+    }
+
+    .cont-order h2 {
+        font-size: 30px;
+    }
+
+
     
 
     /* FOOTER */

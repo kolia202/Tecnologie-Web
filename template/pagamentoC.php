@@ -94,6 +94,8 @@
             <h4 class="text-italic totale-carrello"><strong>Subtotale:</strong> <?php echo getFormattedPrice($totale) ?></h4>
             <h4 class="text-italic costo-spedizione"><strong>Spedizione:</strong> <?php echo getFormattedPrice($costospedizione) == '0,00€' ? 'Gratuita' : getFormattedPrice($costospedizione); ?></h4>
             <h2 class="text fw-bold totale-finale">Totale: <?php echo getFormattedPrice($totale + $costospedizione); ?></h2>   
+            <input type="hidden" name="nuovotot" class="nuovo-tot" value="0">
+            <input type="hidden" name="prezzopunti" class="prezzo-punti" value="0">
         </section>
         <div class="rounded stock-warning errore-pagamento pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
             <p class="text-italic mb-0">Per favore, inserisci i dati della carta per completare il pagamento.</p>                

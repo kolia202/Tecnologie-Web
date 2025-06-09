@@ -256,7 +256,7 @@ class DatabaseHelper {
     }
     
     public function addNewOrder($email, $totale, $idspedizione) {
-        $query = "INSERT INTO ordine (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, E_mail) VALUES (CURDATE(), ?, 'In lavorazione', ?, ?, ?)";
+        $query = "INSERT INTO ordine (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, E_mail) VALUES (CURDATE(), ?, 'In lavorazione', ?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('dis', $totale, $idspedizione, $email);
         $stmt->execute();
@@ -288,9 +288,9 @@ class DatabaseHelper {
     }
 
     public function updateUserPoints($email, $punti) {
-        $query = "UPDATE utente SET Punti = Punti + ? WHERE E_mail = ? AND Punti >= ?";
+        $query = "UPDATE utente SET Punti = Punti + ? WHERE E_mail = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('isi', $punti, $email, $punti);
+        $stmt->bind_param('is', $punti, $email);
         return $stmt->execute();
     }
 
