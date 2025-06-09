@@ -331,7 +331,7 @@ class DatabaseHelper {
     }
 
     public function getAllRecensioni() {
-        $query = "SELECT u.Nome, u.Cognome, r.Voto, r.Commento, r.Data
+        $query = "SELECT u.Nome, u.Cognome, r.Voto, r.Commento, r.Data, r.Id_recensione
                   FROM RECENSIONE r
                   JOIN UTENTE u ON r.E_mail = u.E_mail";
         $stmt = $this->db->prepare($query);

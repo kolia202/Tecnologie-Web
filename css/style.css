@@ -1029,93 +1029,33 @@ iframe {
 }
 
 
+/* RECENSIONI */
 
+.bi-clipboard-heart {
+    font-size: 29px;
+    color: rgb(137, 85, 32);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*recensioniC*/
-
-.custom-boldd {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
+.cont-reviews h2 {
     font-size: 20px;
-    text-align: center;
-    color: rgb(137, 85, 32);
 }
 
-.pRecensioni {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    color: rgb(137, 85, 32);
+.stars-rating .bi-star-fill, .stars-rating .bi-star-half, .stars-rating .bi-star {
+    font-size: 27px;
 }
 
-.custom-primary {
-    background-color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
-    border: #fff;
+.cont-reviews h3 {
+    font-size: 18px;
 }
 
-.custom-centerT {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    font-size: 15px;
+.card-review {
+    border-radius: 30px;
 }
 
-.custom-border {
-    color: rgb(137, 85, 32);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-}
 
-.custom-btnRec {
-    background-color: rgb(137, 85, 32);
-    border: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-}
 
-.custom-btnRec:hover,
-.custom-btnRec:active {
-    background-color: rgb(137, 85, 32);
-}
 
-.mb-31 {
-    color: rgb(137, 85, 32);
-    border: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    margin-bottom: 20px;
-}
+
 
 
 
@@ -1298,11 +1238,6 @@ footer > a {
     
 
     /* MAIN */
-
-    .reccontainer { /*recensioniC*/
-        margin-bottom: 5%;
-    }
-
 
     /*index.php*/
 
@@ -1707,6 +1642,34 @@ footer > a {
 
     .favourite:hover {
         transform: scale(1.08);
+    }
+
+
+    /* RECENSIONI */
+
+    .bi-clipboard-heart {
+        font-size: 38px;
+    }
+
+    .cont-reviews {
+        width: 80%;
+    }
+
+    .card-media {
+        width: 40%;
+    }
+
+
+    .cont-reviews h2 {
+        font-size: 24px;
+    }
+
+    .stars-rating .bi-star-fill, .stars-rating .bi-star-half, .stars-rating .bi-star {
+        font-size: 32px;
+    }
+
+    .cont-reviews h3 {
+        font-size: 22px;
     }
     
 

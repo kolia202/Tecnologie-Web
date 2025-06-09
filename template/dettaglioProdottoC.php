@@ -164,7 +164,8 @@
                         <label class="text-italic ps-1 pb-0" for="categoriaprodotto">Categoria</label>
                         <select class="form-select text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
                             <option value="" disabled <?php if(empty($prodotto["Nome_categoria"])) echo "selected"; ?>>Seleziona una categoria</option>
-                            <?php foreach($templateParams["categorie"] as $categoria): ?>                                <option class="text text-start" value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>>
+                            <?php foreach($templateParams["categorie"] as $categoria): ?>                                
+                                <option class="text text-start" value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>>
                                 <?php echo $categoria["Nome_categoria"] ?>
                             </option>
                             <?php endforeach; ?>
@@ -172,7 +173,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="text-italic ps-1 mb-0" for="tagliaprodotto">Taglia</label>
-                        <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required><option value="" disabled <?php if(empty($prodotto["Grandezza"])) echo "selected"; ?>>Seleziona una taglia</option>
+                        <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
+                        <option value="" disabled <?php if(empty($prodotto["Grandezza"])) echo "selected"; ?>>Seleziona una taglia</option>
                         <option class="text-start text" value="S" <?php echo 'S' == $prodotto["Grandezza"] ? 'selected' : '' ?>>S - Small</option>
                         <option class="text-start text" value="M" <?php echo 'M' == $prodotto["Grandezza"] ? 'selected' : '' ?>>M - Medium</option>
                         <option class="text-start text" value="L" <?php echo 'L' == $prodotto["Grandezza"] ? 'selected' : '' ?>>L - Large</option>
