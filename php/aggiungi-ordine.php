@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 
 $utente = $_SESSION["utente"];
 
-$idordine = $dbhost->addNewOrder($utente, $_SESSION["totaleordine"], $_SESSION["spedizione"]);
+$idordine = $dbhost->addNewOrder($utente, $_SESSION["totaleordine"], $_SESSION['puntiusati'], $_SESSION["spedizione"]);
 $punti = (floor($_SESSION["totaleordine"] / 10)) - $_SESSION["puntiusati"];
 $templateParams['admins'] = $dbhost->getAdmins();
 

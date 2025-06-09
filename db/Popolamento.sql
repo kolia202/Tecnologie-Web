@@ -129,12 +129,12 @@ INSERT INTO preferito (Id_prodotto, E_mail) VALUES
 (5, 'paolo.martini@peluche.com');
 
 -- Popolamento della tabella ORDINE
-INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, E_mail) VALUES
-('2025-01-25', 54.98, 'Spedito', 1, 'martina.lombardi@peluche.com'),
-('2025-01-26', 32.98, 'In lavorazione', 2, 'luigi.santoro@peluche.com'),
-('2025-01-24', 51.98, 'Consegnato', 1, 'carlo.bianchi@peluche.com'),
-('2024-10-27', 48.98, 'Consegnato', 3, 'carlo.bianchi@peluche.com'),
-('2025-01-25', 51.98, 'Spedito', 2, 'federico.ricci@peluche.com');
+INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Punti_usati, Stato, Id_spedizione, E_mail) VALUES
+('2025-01-25', 54.98, 100, 'Spedito', 1, 'martina.lombardi@peluche.com'),
+('2025-01-26', 32.98, 0, 'In lavorazione', 2, 'luigi.santoro@peluche.com'),
+('2025-01-24', 51.98, 300, 'Consegnato', 1, 'carlo.bianchi@peluche.com'),
+('2024-10-27', 48.98, 0, 'Consegnato', 3, 'carlo.bianchi@peluche.com'),
+('2025-01-25', 51.98, 200, 'Spedito', 2, 'federico.ricci@peluche.com');
 
 
 -- Popolamento della tabella prodotto_ordinato

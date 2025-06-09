@@ -255,10 +255,10 @@ class DatabaseHelper {
         return $row["Costo"];
     }
     
-    public function addNewOrder($email, $totale, $idspedizione) {
-        $query = "INSERT INTO ordine (Data_effettuazione, Prezzo_finale, Stato, Id_spedizione, E_mail) VALUES (CURDATE(), ?, 'In lavorazione', ?, ?)";
+    public function addNewOrder($email, $totale, $totalepunti, $idspedizione) {
+        $query = "INSERT INTO ordine (Data_effettuazione, Prezzo_finale, Punti_usati, Stato, Id_spedizione, E_mail) VALUES (CURDATE(), ?, ?, 'In lavorazione', ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('dis', $totale, $idspedizione, $email);
+        $stmt->bind_param('diis', $totale, $totalepunti, $idspedizione, $email);
         $stmt->execute();
         return $this->db->insert_id;
     }

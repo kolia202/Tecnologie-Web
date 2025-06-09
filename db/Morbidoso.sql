@@ -59,6 +59,7 @@ create table ORDINE (
      Id_ordine INT not null auto_increment,
      Data_effettuazione DATE not null,
      Prezzo_finale DECIMAL(10,2) not null,
+     Punti_usati INT not null,
      Stato ENUM('In lavorazione', 'Spedito', 'Consegnato') not null,
      Id_spedizione INT not null,
      E_mail VARCHAR(100) not null,
