@@ -1674,7 +1674,6 @@ footer > a {
         width: 40%;
     }
 
-
     .cont-reviews h2 {
         font-size: 24px;
     }
@@ -1685,6 +1684,10 @@ footer > a {
 
     .cont-reviews h3 {
         font-size: 22px;
+    }
+
+    .cont-userreviews {
+        width: 60%;
     }
 
 

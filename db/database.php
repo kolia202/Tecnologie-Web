@@ -480,6 +480,13 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
+    public function modifyReview($idrecensione, $voto, $commento) {
+        $query = "UPDATE recensione SET Voto = ?, Commento = ? WHERE Id_recensione = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isi', $voto, $commento, $idrecensione);
+        return $stmt->execute();
+    }
+
     public function changeProductVisibility($attivo, $idprodotto) {
         $query = "UPDATE prodotto SET attivo = ? WHERE Id_prodotto = ?";
         $stmt = $this->db->prepare($query);
