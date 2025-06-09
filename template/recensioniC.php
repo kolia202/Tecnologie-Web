@@ -1,6 +1,6 @@
 <div class="container mt-4 ps-4 pe-4 cont-reviews">
     <div class="d-flex align-items-center justify-content-center gap-2">
-        <i class="bi bi-clipboard-heart"></i>
+        <span class="bi bi-clipboard-heart" aria-hidden="true"></span>
         <h1 class="title mb-0">Recensioni</h1>
     </div>
     <div class="text-center ms-4 me-4 mb-5">
@@ -12,17 +12,17 @@
             </div>
             <p class="text-center mt-3">
                 <span class="text text-success">
-                    <i class="bi bi-emoji-smile-fill"></i> 
+                    <span class="bi bi-emoji-smile-fill text-success" aria-hidden="true"></span>
                     <?php echo $recensioniDistribuzione["positive"]["percent"]; ?>%  
                     <?php echo number_format($recensioniDistribuzione["positive"]["count"], 0, ',', '.'); ?> recensioni
                 </span><br>
                 <span class="text text-warning">
-                    <i class="bi bi-emoji-neutral-fill"></i> 
+                    <span class="bi bi-emoji-neutral-fill text-warning" aria-hidden="true"></span>
                     <?php echo $recensioniDistribuzione["neutral"]["percent"]; ?>%  
                     <?php echo number_format($recensioniDistribuzione["neutral"]["count"], 0, ',', '.'); ?> recensioni
                 </span><br>
                 <span class="text text-danger">
-                    <i class="bi bi-emoji-frown-fill"></i> 
+                    <span class="bi bi-emoji-frown-fill text-danger" aria-hidden="true"></span>
                     <?php echo $recensioniDistribuzione["negative"]["percent"]; ?>%  
                     <?php echo number_format($recensioniDistribuzione["negative"]["count"], 0, ',', '.'); ?> recensioni
                 </span>
@@ -72,7 +72,7 @@
             <form id="reviewForm" action="recensioni.php" method="POST">
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="ps-1 pb-0 text-italic">Voto:</label>
+                        <label for="voto" class="ps-1 pb-0 text-italic">Voto:</label>
                         <select class="form-control text text-input" id="voto" name="voto" required>
                             <option value="" disabled selected>Seleziona un voto</option>
                             <option value="1">1 - Pessimo</option>

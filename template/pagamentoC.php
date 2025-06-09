@@ -1,25 +1,24 @@
 <div class="container mt-4 ps-4 pe-4 cont-payment">
     <div class="d-flex align-items-center justify-content-center gap-2">
-        <i class="bi bi-wallet2"></i>
-        <h1 class="title mb-0">Pagamento</h1>
+        <span class="bi bi-wallet2" aria-hidden="true"></span>
+        <h1 class="title mb-0">Pagamento</h1> 
     </div>
     <form action="pagamento.php" method="POST">
-        <div class="card stock-warning d-block card-border shadow-sm p-2 ms-3 me-3 mt-4">
-            <div class="form-check d-flex align-items-center ms-2 mb-1">
-                <input class="form-check-input carta-radio radio-input mb-1 me-1" type="radio" name="payment" id="carta" checked />
-                <label class="text fw-bold" for="carta">
-                    Carta di Credito
-                </label>
+                <fieldset class="border-0 p-0 m-0">
+            <legend class="visually-hidden">Metodo di pagamento</legend>
+            <div class="card stock-warning d-block card-border shadow-sm p-2 ms-3 me-3 mt-4">
+                <div class="form-check d-flex align-items-center ms-2 mb-1">
+                    <input class="form-check-input carta-radio radio-input mb-1 me-1" type="radio" name="payment" id="carta" checked />
+                    <label class="text fw-bold" for="carta">Carta di Credito</label>
+                </div>
+                <div class="form-check d-flex align-items-center ms-2 mb-0">
+                    <input class="form-check-input punti-radio radio-input mb-1 me-1" type="radio" name="payment" id="punti"/>
+                    <label class="text fw-bold" for="punti">Punti Fedeltà</label>
+                </div>
             </div>
-            <div class="form-check d-flex align-items-center ms-2 mb-0">
-                <input class="form-check-input punti-radio radio-input mb-1 me-1" type="radio" name="payment" id="punti"/>
-                <label class="text fw-bold" for="punti">
-                    Punti Fedeltà
-                </label>
-            </div>
-        </div>
+        </fieldset>
         <div class="card card-border shadow mt-4 p-4 ms-1 me-1 sezioneCarta">
-            <h3 class="text fw-bold mb-3">Dati della Carta</h3>
+            <h2 class="text fw-bold mb-3">Dati della Carta</h2>
             <div class="row mb-3">
                 <div class="col-6 pe-1">
                     <label for="nome" class="ps-1 text-italic">
@@ -67,6 +66,10 @@
             <p class="text">Usa i tuoi punti fedeltà per acquistare i peluche che ami!</p>
             <p class="punti-utente text fw-bold mb-2">Punti: <?php echo $userDetails["Punti"] ?></p>
             <div class="text-center ms-2 me-2">
+                <label for="selezionaprodotto" class="ps-1 text-italic fw-bold">
+                    Seleziona un peluche
+                    <span class="text-danger">*</span>
+                </label>
                 <select class="form-select text text-input" id="selezionaprodotto" name="selezionaprodotto">
                 <option class="text-start text-italic" value="" disabled selected>Seleziona un peluche</option>
                 <?php foreach ($templateParams['carrello'] as $prodotto): ?>
@@ -105,6 +108,6 @@
         </div>
     </form>
     <div class="text-center mt-4">
-        <a href="../php/spedizione.php" type="button" class="text back">Indietro</a>
+        <a href="../php/spedizione.php" class="text back">Indietro</a>
     </div>
 </div>

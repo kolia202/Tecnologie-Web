@@ -1,6 +1,6 @@
 <div class="container mt-4 ps-4 pe-4 cont-prodotti">
     <div class="d-flex align-items-center justify-content-center gap-2">
-        <i class="bi bi-balloon-heart"></i>
+        <span class="bi bi-balloon-heart" aria-hidden="true"></span>
         <h1 class="title mb-0">Preferiti</h1>
     </div>
     <?php if (empty($templateParams["preferiti"])): ?>

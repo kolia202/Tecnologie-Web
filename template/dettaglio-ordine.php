@@ -5,7 +5,7 @@
             <div class="col-12 col-md-6 mb-3">
                 <div class="card shadow card-border d-flex">
                     <div class="card-body d-flex align-items-center ps-0 pt-1 pb-1">
-                        <img class="img-fluid" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt=""/>
+                        <img class="img-fluid" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt=""/>
                         <div>
                             <h3 class="text text-start fw-bold"><?php echo $prodotto["Nome"]; ?></h3>
                             <p class="text text-start mb-0"><strong>Quantità: </strong><?php echo $prodotto["Quantita"]; ?></p>

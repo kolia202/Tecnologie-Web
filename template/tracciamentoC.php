@@ -19,6 +19,6 @@
         </div>
     </div>
     <div class="text-center mt-4">
-        <a href="../php/ordini.php" type="button" class="text back">Indietro</a>
+        <a href="../php/ordini.php" class="text back">Indietro</a>
     </div>
 </div>
