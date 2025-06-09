@@ -964,7 +964,7 @@ iframe {
 
 /* SPEDIZIONE */
 
-.bi-truck {
+.cont-shipping .bi-truck {
     font-size: 30px;
     color: rgb(137, 85, 32);
 }
@@ -1581,7 +1581,7 @@ footer > a {
         width: 40%;
     }
 
-    .bi-truck {
+    .cont-shipping .bi-truck {
         font-size: 45px;
     }
 
@@ -1708,8 +1708,6 @@ footer > a {
         font-size: 30px;
     }
 
-
-    
 
     /* FOOTER */
 
