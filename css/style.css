@@ -1053,6 +1053,21 @@ iframe {
 }
 
 
+/* TRACCIAMENTO */
+
+.cont-tracking h2 {
+    font-size: 22px;
+}
+
+.cont-tracking h3 {
+    font-size: 18px;
+}
+
+.cont-tracking .card-tracking p {
+    color: rgb(137, 85, 32);
+    font-size: 18px;
+}
+
 
 
 
@@ -1669,6 +1684,25 @@ footer > a {
     }
 
     .cont-reviews h3 {
+        font-size: 22px;
+    }
+
+
+    /* TRACCIAMENTO */
+
+    .cont-tracking {
+        width: 50%;
+    }
+
+    .cont-tracking h2 {
+        font-size: 26px;
+    }
+
+    .cont-tracking h3 {
+        font-size: 22px;
+    }
+
+    .cont-tracking .card-tracking p {
         font-size: 22px;
     }
     
