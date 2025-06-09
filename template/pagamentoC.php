@@ -66,7 +66,7 @@
             <p class="text">Usa i tuoi punti fedeltà per acquistare i peluche che ami!</p>
             <p class="punti-utente text fw-bold mb-2">Punti: <?php echo $userDetails["Punti"] ?></p>
             <div class="text-center ms-2 me-2">
-                <label for="selezionaprodotto" class="ps-1 text-italic fw-bold">
+                <label for="selezionaprodotto" class="visually-hidden">
                     Seleziona un peluche
                     <span class="text-danger">*</span>
                 </label>

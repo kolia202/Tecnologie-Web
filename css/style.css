@@ -101,20 +101,26 @@ body {
     text-align: center;
 }
 
-.button-light:active {
-    background-color:  rgb(204, 153, 102) !important;
-    color: white !important;
+.button-small, .button-small:disabled {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: rgb(190, 140, 90);
+    border: 2px solid rgb(190, 140, 90);
 }
 
-.button-light:hover {
-    background-color: rgb(190, 140, 90);
-    color: white;
-    font-weight: bold;
+.button-small:active {
+    border: 2px solid rgb(190, 140, 90) !important;
+    color: rgb(190, 140, 90) !important;
 }
 
-.button-light:focus {
-    background-color: rgb(204, 153, 102);
-    color: white;
+.button-small:hover {
+    border: 2px solid rgb(137, 85, 32);
+    color: rgb(137, 85, 32);
+}
+
+.button-small:focus {
+    border: 2px solid rgb(190, 140, 90);
+    color: rgb(190, 140, 90);
 }
 
 .text {
@@ -245,7 +251,7 @@ header h4 {
     font-size: 16px;
 }
 
-.bi-search-heart {
+.bi-search-heart, .bi-shield-check {
     color: rgb(137, 85, 32);
     font-size: 35px;
 }
@@ -561,10 +567,6 @@ main p {
     text-align: center;
 }
 
-.cookie h5 {
-    font-size: 18px;
-}
-
 .cookie p {
     color: black;
 }
@@ -606,20 +608,12 @@ main p {
     border-color: rgb(245, 222, 179) !important;
 }
 
-.bi-eye-slash, .bi-eye {
-    color: rgb(137, 85, 32);
-}
-
 .container-login a:first-child {
     color: rgb(190, 140, 90);
     font-size: 17px;
 }
 
-.container-login a:first-child:hover {
-    color: rgb(137, 85, 32);
-}
-
-.back {
+.container-login a:first-child:hover, .back, .bi-eye-slash, .bi-eye {
     color: rgb(137, 85, 32);
 }
 
@@ -635,11 +629,7 @@ main p {
     font-size: 17px;
 }
 
-.container-register .bi-envelope {
-    font-size: 18px;
-}
-
-.container-register .bi-key {
+.container-register .bi-key, .cont-prodotti p {
     font-size: 19px;
 }
 
@@ -655,7 +645,7 @@ main p {
     color: rgb(204, 153, 102);
 }
 
-.cont-account h2, .cont-account h3 {
+.cont-account h2, .cont-account h3, .modal-content .bi-x-lg, .cont-accounts h2 {
     font-size: 25px;
 }
 
@@ -691,7 +681,9 @@ main p {
     font-size: 21px;
 }
 
-.bi-bell, .bi-pen, .bi-bookmark-heart, .bi-box-seam, .bi-gear, .bi-boxes, .bi-people {
+.bi-bell, .bi-pen, .bi-bookmark-heart, .bi-box-seam, 
+.bi-gear, .bi-boxes, .bi-people, .btn-delete,
+.container-register .bi-envelope, .cookie h5 {
     font-size: 18px;
 }
 
@@ -705,10 +697,6 @@ main p {
 
 .modal-content {
     background-color: rgb(255, 245, 225);
-}
-
-.modal-content .bi-x-lg {
-    font-size: 25px;
 }
 
 
@@ -731,7 +719,7 @@ main p {
     font-size: 20px;
 }
 
-.cont-info li {
+.cont-info li, .cont-info a {
     color: rgb(137, 85, 32);
 }
 
@@ -741,20 +729,8 @@ iframe {
     border: 2px solid rgb(245, 222, 179);
 }
 
-.cont-info a {
-    color: rgb(137, 85, 32);
-}
-
 .cont-info a:hover {
     color: rgb(100, 60, 20);
-}
-
-
-/* PRIVACY */
-
-.bi-shield-check {
-    color: rgb(137, 85, 32);
-    font-size: 35px;
 }
 
 
@@ -770,14 +746,6 @@ iframe {
     width: auto;
     border-radius: 10px;
     border: wheat 4px solid;
-}
-
-.btn-delete {
-    font-size: 18px;
-}
-
-.cont-prodotti p {
-    font-size: 19px;
 }
 
 
@@ -848,10 +816,6 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
-.accordion-button::after {
-  display: none;
-}
-
 .bi-chevron-down {
     color: rgb(137, 85, 32);
     font-size: 20px;
@@ -878,28 +842,6 @@ iframe {
     background-color: rgb(245, 222, 179, 0.5);
 }
 
-.button-small, .button-small:disabled {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    color: rgb(190, 140, 90);
-    border: 2px solid rgb(190, 140, 90);
-}
-
-.button-small:active {
-    border: 2px solid rgb(190, 140, 90) !important;
-    color: rgb(190, 140, 90) !important;
-}
-
-.button-small:hover {
-    border: 2px solid rgb(137, 85, 32);
-    color: rgb(137, 85, 32);
-}
-
-.button-small:focus {
-    border: 2px solid rgb(190, 140, 90);
-    color: rgb(190, 140, 90);
-}
-
 .bi-pencil-square {
     font-size: 18px;
 }
@@ -921,17 +863,8 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
-.cont-accounts h2 {
-    font-size: 25px;
-}
-
 
 /* NOTIFICHE */
-
-.bi-chat-heart {
-    color: rgb(137, 85, 32);
-    font-size: 30px;
-}
 
 .cont-notifiche h2 {
     font-size: 20px;
@@ -950,7 +883,7 @@ iframe {
     font-size: 14px;
 }
 
-.messaggio-notifica, .chiudi-notifica, .elimina-notifica {
+.messaggio-notifica, .chiudi-notifica, .elimina-notifica, .accordion-button::after {
     display: none;
 }
 
@@ -964,12 +897,12 @@ iframe {
 
 /* SPEDIZIONE */
 
-.cont-shipping .bi-truck {
+.cont-shipping .bi-truck, .bi-chat-heart, .bi-wallet2 {
     font-size: 30px;
     color: rgb(137, 85, 32);
 }
 
-.cont-shipping h4 {
+.cont-shipping h4, .cont-payment h4 {
     font-size: 19px;
 }
 
@@ -986,19 +919,10 @@ iframe {
     border-bottom: wheat 2px solid;
 }
 
-.cont-shipping label {
-    font-size: 17px;
-}
-
 
 /* PAGAMENTO */
 
-.bi-wallet2 {
-    color: rgb(137, 85, 32);
-    font-size: 30px;
-}
-
-.cont-payment .stock-warning label {
+.cont-payment .stock-warning label, .cont-shipping label {
     font-size: 17px;
 }
 
@@ -1007,17 +931,13 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
-.cont-payment h3 {
+.cont-payment .sezioneCarta h2, .cont-payment .sezionePunti h2 {
     font-size: 24px;
     color: rgb(137, 85, 32);
 }
 
-.punti-utente {
+.punti-utente, .cont-reviews h2 {
     font-size: 20px;
-}
-
-.cont-payment h4 {
-    font-size: 19px;
 }
 
 
@@ -1036,16 +956,8 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
-.cont-reviews h2 {
-    font-size: 20px;
-}
-
 .stars-rating .bi-star-fill, .stars-rating .bi-star-half, .stars-rating .bi-star {
     font-size: 27px;
-}
-
-.cont-reviews h3 {
-    font-size: 18px;
 }
 
 .card-review {
@@ -1059,7 +971,7 @@ iframe {
     font-size: 22px;
 }
 
-.cont-tracking h3 {
+.cont-tracking h3, .cont-reviews h3, .cont-order h3 {
     font-size: 18px;
 }
 
@@ -1074,10 +986,6 @@ iframe {
 .cont-order img {
     height: 100px;
     width: auto;
-}
-
-.cont-order h3 {
-    font-size: 18px;
 }
 
 .cont-order h2 {
@@ -1130,10 +1038,7 @@ footer > a {
         height: 140px;
     }
 
-    div.offcanvas.offcanvas-start.offcanvas-custom {
-        width: 30%;
-    }
-
+    div.offcanvas.offcanvas-start.offcanvas-custom,
     div.offcanvas.offcanvas-end.offcanvas-custom {
         width: 30%;
     }
@@ -1150,11 +1055,11 @@ footer > a {
         margin-right: 2%;
     }
 
-    .bi-person {
+    .bi-person, .bi-bag, header h4 {
         font-size: 50px;
     }
 
-    .user-badge {
+    .user-badge, .cart-badge {
         font-size: 15px;
         padding: 5% 10%;
     }
@@ -1164,25 +1069,12 @@ footer > a {
         margin-bottom: 1%;
     }
 
-    .bi-bag {
-        font-size: 50px;
-    }
-
-    .cart-badge {
-        font-size: 15px;
-        padding: 5% 10%;
-    }
-
     .iconaorsetto {
         height: 90%;
         margin-left: 10%;
     }
 
-    header h4 { 
-        font-size: 50px;
-    }
-
-    .bi-x-lg {
+    .bi-x-lg, .bi-stars {
         font-size: 40px;
     }
 
@@ -1191,11 +1083,7 @@ footer > a {
         margin-right: 1%;
     }
 
-    .search::placeholder {
-        font-size: 20px;
-    }
-    
-    .search:focus {
+    .search::placeholder, .search:focus {
         font-size: 20px;
     }
 
@@ -1205,11 +1093,8 @@ footer > a {
         margin-top: 4%;
     }
 
-    .offcanvas-body ul li > a {
-        font-size: 22px;
-    }
-
-    .offcanvas-body ul li > div button {
+    .offcanvas-body ul li > a, .offcanvas-body ul li > div button,
+    .offcanvas-body .cartmenu-info a p {
         font-size: 22px;
     }
 
@@ -1221,10 +1106,6 @@ footer > a {
     .iconaborsa {
         height: 100%;
         margin-left: 3%;
-    }
-    
-    .offcanvas-body .cartmenu-info a p {
-        font-size: 22px;
     }
     
     .offcanvas-body h3 {
@@ -1252,10 +1133,6 @@ footer > a {
         font-size: 25px;
     }
 
-    .bi-stars {
-        font-size: 40px;
-    }
-
     .custom-box-md {
         border: 5px solid rgb(245, 222, 179);
     }
@@ -1276,11 +1153,7 @@ footer > a {
         font-size: 18px;
     }
 
-    .why-icon {
-        font-size: 22px;
-    }
-
-    .why-more {
+    .why-icon, .why-more, .cookie h5 {
         font-size: 22px;
     }
 
@@ -1297,15 +1170,12 @@ footer > a {
         font-size: 30px;    
     }
 
-    .star-rating {
-        font-size: 20px;
-    }
-
     .star-rating .bi-star-fill, .star-rating .bi-star-half, .star-rating .bi-star {
         font-size: 25px;
     }
 
-    .carousel-reviews .bi-star-fill, .carousel-reviews .bi-star-half, .carousel-reviews .bi-star {
+    .carousel-reviews .bi-star-fill, .carousel-reviews .bi-star-half, 
+    .carousel-reviews .bi-star, .star-rating {
         font-size: 20px;
     }
 
@@ -1322,22 +1192,14 @@ footer > a {
         right: -60px;
     }
 
-    .cookie {
+    .cookie, .cont-account {
         width: 60%;
-    }
-
-    .cookie h5 {
-        font-size: 22px;
     }
 
 
     /* LOGIN */
 
-    .bi-exclamation-triangle {
-        font-size: 25px;
-    }
-
-    .bi-envelope {
+    .bi-exclamation-triangle, .bi-envelope {
         font-size: 25px;
     }
 
@@ -1345,7 +1207,7 @@ footer > a {
         font-size: 27px;
     }
 
-    .container-login a:first-child {
+    .container-login a:first-child, .bi-telephone, .container-register .bi-key {
         font-size: 20px;
     }
     
@@ -1357,26 +1219,14 @@ footer > a {
         margin: auto;
     }
 
-    .bi-telephone {
-        font-size: 20px;
-    }
-
     .container-register .bi-envelope {
         font-size: 21px;
-    }
-
-    .container-register .bi-key {
-        font-size: 20px;
     }
 
 
     /* ACCOUNT */
 
-    .cont-account {
-        width: 60%;
-    }
-
-    .cont-account h2, .cont-account h3 {
+    .cont-account h2, .cont-account h3, .modal-content .bi-x-lg {
         font-size: 30px;
     }
 
@@ -1384,23 +1234,14 @@ footer > a {
         font-size: 42px;
     }
 
-    .bi-star-fill, .bi-star-half, .bi-star {
-        font-size: 25px;
-    }
-    
-    .collapse-points > h3 {
+    .bi-star-fill, .bi-star-half, .bi-star, .collapse-points > h3,
+    .cont-info h2 {
         font-size: 25px;
     }
 
-    .bi-bell, .bi-pen, .bi-bookmark-heart, .bi-box-seam, .bi-gear, .bi-boxes, .bi-people {
+    .bi-bell, .bi-pen, .bi-bookmark-heart, .bi-box-seam, 
+    .bi-gear, .bi-boxes, .bi-people, .btn-delete, .bi-trash3-fill {
         font-size: 22px;
-    }
-
-
-    /* MODAL */
-
-    .modal-content .bi-x-lg {
-        font-size: 30px;
     }
 
 
@@ -1419,10 +1260,6 @@ footer > a {
 
     .bi-info-circle-fill {
         font-size: 35px;
-    }
-
-    .cont-info h2 {
-        font-size: 25px;
     }
 
     iframe {
@@ -1444,10 +1281,6 @@ footer > a {
     .cont-prodotti h2 {
         font-size: 24px;
     }
-    
-    .btn-delete {
-        font-size: 22px;
-    }
 
     .cont-prodotti p {
         font-size: 21px;
@@ -1460,7 +1293,7 @@ footer > a {
 
     /* CARRELLO */
 
-    .bi-bag-heart-fill {
+    .bi-bag-heart-fill, .bi-heart, .bi-heart-fill {
         font-size: 38px;
     }
 
@@ -1471,10 +1304,6 @@ footer > a {
     .stock-warning p {
         font-size: 18px;
     }
-    
-    .bi-trash3-fill {
-        font-size: 22px;
-    }
 
     .img-carrello {
         height: 220px;
@@ -1483,17 +1312,13 @@ footer > a {
     
     /* SINGOLO PRODOTTO */
 
-    .bi-heart, .bi-heart-fill {
-        font-size: 38px;
-    }
-
     .accordion {
         width: 70%;
         margin-right: auto;
         margin-left: auto;
     }
 
-    .accordion-button {
+    .accordion-button, .bi-pencil-square {
         font-size: 22px;
     }
 
@@ -1508,10 +1333,6 @@ footer > a {
 
     .cont-prodotto {
         padding-right: 5%;
-    }
-
-    .bi-pencil-square {
-        font-size: 22px;
     }
 
     .bi-x-circle-fill {
@@ -1529,7 +1350,7 @@ footer > a {
         font-size: 30px;
     }
 
-    .cont-accounts {
+    .cont-accounts, .cont-reviews, .cont-order {
         width: 80%;
     }
 
@@ -1541,11 +1362,11 @@ footer > a {
     
     /* NOTIFICHE */
 
-    .bi-chat-heart {
+    .bi-chat-heart, .bi-wallet2 {
         font-size: 40px;
     }
    
-    .cont-notifiche h2 {
+    .cont-notifiche h2, .punti-utente, .cont-reviews h2 {
         font-size: 24px;
     }
 
@@ -1577,7 +1398,7 @@ footer > a {
 
     /* SPEDIZIONE */
 
-    .cont-shipping {
+    .cont-shipping, .card-media {
         width: 40%;
     }
 
@@ -1585,43 +1406,23 @@ footer > a {
         font-size: 45px;
     }
 
-    .cont-shipping h4 {
+    .cont-shipping h4, .cont-payment h4, .cont-reviews h3 {
         font-size: 22px;
     }
 
-    .cont-shipping h2 {
+    .cont-shipping h2, .cont-payment h2 {
         font-size: 32px;
     }
 
-    .cont-shipping label {
+    .cont-shipping label, .cont-payment .stock-warning label {
         font-size: 21px;
     }
 
 
     /* PAGAMENTO */
 
-    .bi-wallet2 {
-        font-size: 40px;
-    }
-
-    .cont-payment {
+    .cont-payment, .cont-tracking {
         width: 50%;
-    }
-
-    .cont-payment .stock-warning label {
-        font-size: 21px;
-    }
-
-    .cont-payment h2 {
-        font-size: 32px;
-    }
-
-    .cont-payment h4 {
-        font-size: 22px;
-    }
-
-    .punti-utente {
-        font-size: 24px;
     }
 
     .cont-payment h3 {
@@ -1646,24 +1447,8 @@ footer > a {
         font-size: 38px;
     }
 
-    .cont-reviews {
-        width: 80%;
-    }
-
-    .card-media {
-        width: 40%;
-    }
-
-    .cont-reviews h2 {
-        font-size: 24px;
-    }
-
     .stars-rating .bi-star-fill, .stars-rating .bi-star-half, .stars-rating .bi-star {
         font-size: 32px;
-    }
-
-    .cont-reviews h3 {
-        font-size: 22px;
     }
 
     .cont-userreviews {
@@ -1673,35 +1458,19 @@ footer > a {
 
     /* TRACCIAMENTO */
 
-    .cont-tracking {
-        width: 50%;
-    }
-
     .cont-tracking h2 {
         font-size: 26px;
     }
 
-    .cont-tracking h3 {
-        font-size: 22px;
-    }
-
-    .cont-tracking .card-tracking p {
+    .cont-tracking h3, .cont-tracking .card-tracking p, .cont-order h3 {
         font-size: 22px;
     }
 
 
     /* RIEPILOGO ORDINE */
 
-    .cont-order {
-        width: 80%;
-    }
-
     .cont-order img {
         height: 120px;
-    }
-
-    .cont-order h3 {
-        font-size: 22px;
     }
 
     .cont-order h2 {
