@@ -18,4 +18,7 @@
             <p class="text-start text mb-0"><strong>Data di Consegna: </strong><?php echo $dataprevista ?></p>
         </div>
     </div>
+    <div class="text-center mt-4">
+        <a href="../php/ordini.php" type="button" class="text back">Indietro</a>
+    </div>
 </div>
