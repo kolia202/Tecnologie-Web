@@ -23,4 +23,7 @@
             <button type="submit" class="btn button">Conferma Ordine</button>
         </div>
     </form>
+    <div class="text-center mt-4">
+        <a href="../php/pagamento.php" class="text back">Indietro</a>
+    </div>
 </div>

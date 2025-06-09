@@ -391,7 +391,7 @@ class DatabaseHelper {
     }
 
     public function getOrderedProducts($idordine) {
-        $query = "SELECT po.Id_prodotto, po.Quantita, p.Nome, p.Immagine FROM prodotto_ordinato po, prodotto p WHERE Id_ordine = ? AND po.Id_prodotto = p.Id_prodotto";
+        $query = "SELECT po.Id_prodotto, po.Quantita, p.Nome, p.Immagine, p.Prezzo, p.Prezzo_punti FROM prodotto_ordinato po, prodotto p WHERE Id_ordine = ? AND po.Id_prodotto = p.Id_prodotto";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idordine);
         $stmt->execute();
