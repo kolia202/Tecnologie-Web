@@ -74,4 +74,7 @@
         <span class="bi bi-tiktok ms-1" aria-hidden="true"></span>
         <a href="https://tiktok.com" class="text" target="_blank">TikTok</a>
     </div>
+    <div class="text-center mt-5">
+        <a href="../php/index.php" class="text back">Indietro</a>
+    </div>
 </div>

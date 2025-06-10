@@ -31,7 +31,7 @@
                         <span class="bi bi-telephone me-1" aria-hidden="true"></span>Telefono
                     </span>
                 </label>
-                <input type="text" class="form-control text text-input" id="telefono" name="telefono" autocomplete="off">
+                <input type="number" class="form-control text text-input" id="telefono" name="telefono" autocomplete="off">
             </div>
             <div class="col-md-6">
                 <label for="data_nascita" class="ps-1 text-italic">Data di nascita</label>

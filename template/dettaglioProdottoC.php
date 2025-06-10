@@ -35,7 +35,7 @@
                             <button type="button" class="btn button add-to-cart pe-4 ps-4" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">Aggiungi al Carrello</button>
                         </div>
                     <?php elseif (isUserLoggedIn() && !isAdminLoggedIn()): ?>
-                        <div class="stock-warning d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3">
+                        <div class="stock-warning d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3 card-border">
                             <p class="text-italic mb-0">Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?</p>
                         </div>
                         <div class="d-flex justify-content-center align-items-center gap-4">
@@ -53,10 +53,10 @@
                             <?php endif; ?>
                         </div>
                     <?php elseif (!isAdminLoggedIn()): ?>
-                        <div class="stock-warning d-block mt-4 rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3">
+                        <div class="stock-warning d-block mt-4 rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mb-3 card-border">
                             <p class="text-italic mb-0">
                                 Vuoi essere tra i primi a sapere quando questo fantastico peluche sarà di nuovo disponibile?
-                                <br>Esegui l'accesso al tuo account per chiedere di ricevere un avviso.
+                                Esegui l'accesso al tuo account per chiedere di ricevere un avviso.
                             </p>
                         </div>
                         <div class="d-flex justify-content-center align-items-center gap-4">
@@ -111,6 +111,9 @@
             </div>
         </div>
     <?php endif; ?>  
+    <div class="text-center mt-5">
+        <a href="../php/prodotti.php#<?php echo htmlspecialchars($prodotto['Id_prodotto']); ?>" class="text back">Indietro</a>
+    </div>
 </div>
 
 <!-- modal aggiornamento scorte -->
@@ -128,10 +131,10 @@
                     <label for="num-scorte" class="visually-hidden">Scorte</label>
                     <input class="form-control text text-input" type="number" id="num-scorte" name="num-scorte" min="0" required/>
                     <input type="hidden" name="idprodotto" value="<?php echo $prodotto['Id_prodotto']; ?>"/>
-                </div>
-                <div class="modal-footer mt-2">
-                    <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn button ms-auto ps-5 pe-5">Salva</button>
+                    <div class="modal-footer mt-2">
+                        <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>
+                        <button type="submit" class="btn button ms-auto ps-5 pe-5">Salva</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -162,8 +165,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="text-italic ps-1 pb-0" for="categoriaprodotto">Categoria</label>
-                        <select class="form-select text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
-                            <option value="" disabled <?php if(empty($prodotto["Nome_categoria"])) echo "selected"; ?>>Seleziona una categoria</option>
+                        <select class="form-control text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
+                            <option class="text-italic text-start" value="" disabled <?php if(empty($prodotto["Nome_categoria"])) echo "selected"; ?>>Seleziona una categoria</option>
                             <?php foreach($templateParams["categorie"] as $categoria): ?>                                
                                 <option class="text text-start" value="<?php echo $categoria["Nome_categoria"]; ?>" <?php echo $categoria['Nome_categoria'] == $prodotto["Nome_categoria"] ? 'selected' : '' ?>>
                                 <?php echo $categoria["Nome_categoria"] ?>
@@ -173,8 +176,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="text-italic ps-1 mb-0" for="tagliaprodotto">Taglia</label>
-                        <select class="form-select text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
-                        <option value="" disabled <?php if(empty($prodotto["Grandezza"])) echo "selected"; ?>>Seleziona una taglia</option>
+                        <select class="form-control text text-input" id="tagliaprodotto" name="tagliaprodotto" required>
+                        <option class="text-italic text-start" value="" disabled <?php if(empty($prodotto["Grandezza"])) echo "selected"; ?>>Seleziona una taglia</option>
                         <option class="text-start text" value="S" <?php echo 'S' == $prodotto["Grandezza"] ? 'selected' : '' ?>>S - Small</option>
                         <option class="text-start text" value="M" <?php echo 'M' == $prodotto["Grandezza"] ? 'selected' : '' ?>>M - Medium</option>
                         <option class="text-start text" value="L" <?php echo 'L' == $prodotto["Grandezza"] ? 'selected' : '' ?>>L - Large</option>

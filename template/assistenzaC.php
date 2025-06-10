@@ -36,4 +36,7 @@
             </div>
         </form>
     </div>
+    <div class="text-center mt-5">
+        <a href="../php/index.php" class="text back">Indietro</a>
+    </div>
 </div>

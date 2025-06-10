@@ -36,8 +36,8 @@
                             <form action="recensioniUtente.php" method="POST">
                                 <div class="mb-3">
                                     <label class="text-italic ps-1 mb-0" for="voto">Voto</label>
-                                    <select class="form-select text text-input" id="voto" name="voto" required>
-                                        <option value="" disabled <?php if(empty($recensione["Voto"])) echo "selected"; ?>>Seleziona un Voto</option>
+                                    <select class="form-control text text-input" id="voto" name="voto" required>
+                                        <option class="text-italic text-start" value="" disabled <?php if(empty($recensione["Voto"])) echo "selected"; ?>>Seleziona un Voto</option>
                                         <option class="text-start text" value="1" <?php echo 1 == $recensione["Voto"] ? 'selected' : '' ?>>1 - Pessimo</option>
                                         <option class="text-start text" value="2" <?php echo 2 == $recensione["Voto"] ? 'selected' : '' ?>>2 - Scarso</option>
                                         <option class="text-start text" value="3" <?php echo 3 == $recensione["Voto"] ? 'selected' : '' ?>>3 - Medio</option>
@@ -61,13 +61,13 @@
             </div>
         <?php endforeach; ?>
     <?php else: ?>
-        <div class="card shadow card-border ms-1 me-1 mb-4">
+        <div class="card card-empty shadow-sm card-border ms-1 me-1 mb-4">
             <div class="card-body">
                 <p class="text-italic">Non hai ancora lasciato recensioni!</p>
             </div>
         </div>
     <?php endif; ?>
-    <div class="text-center mt-1">
+    <div class="text-center mt-5">
         <a href="../php/account.php" class="text back">Indietro</a>
     </div>
 </div>

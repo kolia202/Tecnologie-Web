@@ -5,7 +5,7 @@
     </div>
     <form method="POST" action="spedizione.php">
         <?php if($spedizioneGratuita): ?>
-            <div class="stock-warning d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mt-4">
+            <div class="stock-warning card-border d-block rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mt-4">
                 <p class="text-italic mb-0">Congratulazioni! Hai diritto alla spedizione Premium gratuita.</p>
             </div>
             <section class="mt-5 pt-4">

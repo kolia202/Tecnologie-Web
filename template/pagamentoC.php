@@ -41,7 +41,7 @@
                         Numero Carta
                         <span class="text-danger">*</span>
                     </label>
-                    <input type="text" class="form-control text text-input" id="numeroCarta" name="numeroCarta" required />
+                    <input type="text" class="form-control text text-input" id="numeroCarta" name="numeroCarta" pattern="\d{16}" maxlength="16" required />
                 </div>
             </div>
             <div class="row mb-2">
@@ -50,14 +50,14 @@
                         Scadenza
                         <span class="text-danger">*</span>
                     </label>
-                    <input type="text" class="form-control text text-input" id="scadenza" name="scadenza" placeholder="MM/AA" required>
+                    <input type="month" class="form-control text text-input" id="scadenza" name="scadenza" placeholder="MM/AA" required>
                 </div>
                 <div class="col-6 ps-1">
                     <label for="cvv" class="ps-1 text-italic">
                         CVV
                         <span class="text-danger">*</span>
                     </label>
-                    <input type="text" class="form-control text text-input" id="cvv" name="cvv" required>
+                    <input type="text" class="form-control text text-input" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" required>
                 </div>
             </div>
         </div>
@@ -70,11 +70,11 @@
                     Seleziona un peluche
                     <span class="text-danger">*</span>
                 </label>
-                <select class="form-select text text-input" id="selezionaprodotto" name="selezionaprodotto">
+                <select class="form-control text text-input" id="selezionaprodotto" name="selezionaprodotto">
                 <option class="text-start text-italic" value="" disabled selected>Seleziona un peluche</option>
                 <?php foreach ($templateParams['carrello'] as $prodotto): ?>
                     <?php for($i = 0; $i < $prodotto['Quantita']; $i++): ?>
-                        <option class="text-start text-italic" value="<?php echo $prodotto['Nome'] ?>" 
+                        <option class="text-start text" value="<?php echo $prodotto['Nome'] ?>" 
                         data-punti="<?php echo $prodotto['Prezzo_punti']; ?>"
                         data-prezzo="<?php echo $prodotto['Prezzo']; ?>">
                         <?php echo $prodotto['Nome'] . ' - ' . $prodotto['Prezzo_punti'] . ' punti'?></option>                           
@@ -82,10 +82,10 @@
                 <?php endforeach; ?>
             </select>
             </div>
-            <div class="rounded stock-warning errore-selezione pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
+            <div class="rounded card-border stock-warning errore-selezione pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
                 <p class="text-italic mb-0">Per favore, seleziona un peluche!</p>                
             </div>
-            <div class="rounded stock-warning errore-punti pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
+            <div class="rounded card-border stock-warning errore-punti pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
                 <p class="text-italic mb-0">Ops! Non hai abbastanza punti per questo peluche.</p>                
             </div>
             <div class="text-center mt-4">
@@ -100,7 +100,7 @@
             <input type="hidden" name="nuovotot" class="nuovo-tot" value="0">
             <input type="hidden" name="prezzopunti" class="prezzo-punti" value="0">
         </section>
-        <div class="rounded stock-warning errore-pagamento pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
+        <div class="rounded card-border stock-warning errore-pagamento pe-3 ps-3 pb-2 pt-2 ms-3 me-3 mt-3">
             <p class="text-italic mb-0">Per favore, inserisci i dati della carta per completare il pagamento.</p>                
         </div>
         <div class="text-center mt-4">

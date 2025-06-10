@@ -8,9 +8,9 @@
     <?php endif; ?>
     <div class="container mt-4 pt-1">
         <?php if(count($templateParams["ordini"]) == 0): ?>
-            <div class="card shadow card-border ms-2 me-2 p-2">
+            <div class="card card-empty shadow card-border ms-2 me-2 p-2">
                 <div class="card-body">
-                    <p class="text-italic">Oh no! Nessun ordine per ora!</p>
+                    <p class="text-italic">Oh no! Nessun ordine presente per ora!</p>
                 </div>
             </div>
         <?php else: ?>
@@ -49,10 +49,10 @@
                                                     <form method="POST" action="ordini.php">
                                                         <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
                                                         <label for="stato-<?php echo $ordine["Id_ordine"]; ?>" class="ps-1 d-block text-start text-italic">Stato</label>
-                                                        <select class="form-select text text-input" name="stato" id="stato-<?php echo $ordine["Id_ordine"]; ?>">
-                                                            <option class="text-start text-italic" value="In lavorazione">In lavorazione</option>
-                                                            <option class="text-start text-italic" value="Spedito">Spedito</option>
-                                                            <option class="text-start text-italic" value="Consegnato">Consegnato</option>
+                                                        <select class="form-control text text-input" name="stato" id="stato-<?php echo $ordine["Id_ordine"]; ?>">
+                                                            <option class="text-start text" value="In lavorazione">In lavorazione</option>
+                                                            <option class="text-start text" value="Spedito">Spedito</option>
+                                                            <option class="text-start text" value="Consegnato">Consegnato</option>
                                                         </select>
                                                         <div class="modal-footer mt-4">
                                                             <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>

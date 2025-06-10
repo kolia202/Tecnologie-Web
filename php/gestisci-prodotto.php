@@ -32,9 +32,10 @@ if(isset($_POST["disattivaprodotto"])) {
 
 if(isset($_POST["eliminaprodotto"])) {
     $id = $_POST['eliminaprodotto'];
+    $peluche = $dbhost->getProductById($id)[0];
     $dbhost->deleteProduct($id);
-    $redirect = isset($_POST['previous']) ? $_POST['previous'] : 'prodotti.php';
-    header("Location: $redirect");
+    $_SESSION['eliminapeluche'] = 'Peluche ' . $peluche['Nome'] . ' eliminato con successo!';
+    header("Location: prodotti.php");
     exit;
 }
 

@@ -76,7 +76,7 @@ class DatabaseHelper {
     }
 
     public function getProducts() {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto WHERE attivo = 1 ORDER BY RAND()";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria FROM prodotto WHERE attivo = 1";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -84,7 +84,7 @@ class DatabaseHelper {
     }
 
     public function getAdminProducts() {
-        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria, attivo FROM prodotto ORDER BY RAND()";
+        $query = "SELECT Id_prodotto, Nome, Immagine, Scorta, Prezzo, Nome_categoria, attivo FROM prodotto";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -166,7 +166,7 @@ class DatabaseHelper {
     }
 
     public function getProductsByCategory($categoryName) {
-        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? AND attivo = 1 ORDER BY RAND()";
+        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? AND attivo = 1";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param("s", $categoryName);
         $stmt->execute();
@@ -175,7 +175,7 @@ class DatabaseHelper {
     }
 
     public function getAdminProductsByCategory($categoryName) {
-        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ? ORDER BY RAND()";
+        $query = "SELECT * FROM prodotto WHERE Nome_categoria = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param("s", $categoryName);
         $stmt->execute();
@@ -323,7 +323,7 @@ class DatabaseHelper {
     public function getAllRecensioni() {
         $query = "SELECT u.Nome, u.Cognome, r.Voto, r.Commento, r.Data, r.Id_recensione
                   FROM RECENSIONE r
-                  JOIN UTENTE u ON r.E_mail = u.E_mail";
+                  JOIN UTENTE u ON r.E_mail = u.E_mail ORDER BY r.Id_recensione DESC";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -339,9 +339,18 @@ class DatabaseHelper {
     }
     
     public function getRecensioniByEmail($email) {
-        $query = "SELECT * FROM recensione WHERE E_mail = ?";
+        $query = "SELECT * FROM recensione WHERE E_mail = ? ORDER BY Id_recensione DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getRecensioneById($id) {
+        $query = "SELECT * FROM recensione WHERE Id_recensione = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $id);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
@@ -356,7 +365,7 @@ class DatabaseHelper {
     }
 
     public function getAllUserOrders($email) {
-        $query = "SELECT Id_ordine, Data_effettuazione, Prezzo_finale, Stato, Id_spedizione FROM ordine WHERE E_mail = ?";
+        $query = "SELECT Id_ordine, Data_effettuazione, Prezzo_finale, Stato, Id_spedizione FROM ordine WHERE E_mail = ? ORDER BY Id_ordine DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -397,7 +406,7 @@ class DatabaseHelper {
     }
 
     public function getUserMessages($email) {
-        $query = "SELECT * FROM notifica WHERE E_mail = ? ORDER BY Giorno DESC";
+        $query = "SELECT * FROM notifica WHERE E_mail = ? ORDER BY Id_notifica DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -547,7 +556,7 @@ class DatabaseHelper {
     }
 
     public function getAllOrders() {
-        $query = "SELECT * FROM ordine ORDER BY Data_effettuazione DESC";
+        $query = "SELECT * FROM ordine ORDER BY Id_ordine DESC";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();

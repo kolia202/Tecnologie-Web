@@ -92,7 +92,7 @@
                     <span class="bi bi-star-fill me-1" aria-hidden="true"></span> <?php echo $userDetails["Punti"]; ?> Punti Fedeltà
                 </button>
                 <div class="collapse" id="collapsePoints">
-                    <div class="card card-body mb-3 mt-2 border-0 collapse-points">
+                    <div class="card card-empty p-3 mb-3 mt-2 card-border collapse-points">
                         <h3 class="mb-1 text fw-bold">Punti Fedeltà</h3>
                         <p class="text mt-2 mb-1"><strong>Come funziona?</strong><br>Ogni 10€ di spesa, guadagni 1 punto. Accumula punti per ottenere un peluche gratuito a tua scelta dalla nostra collezione!</p>
                     </div>

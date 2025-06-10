@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isAdminLoggedIn()) {
     $userEmail = $orderDetails["E_mail"];
     $dbhost->updateOrderStatus($orderId, $newStatus);
     $tiponotifica = "Aggiornamento Ordine";
-    $testo = "Il tuo ordine #$orderId è stato aggiornato allo stato: $newStatus.";
+    $testo = "Il tuo ordine #$orderId è stato aggiornato allo stato: $newStatus. Puoi vedere i dettagli direttamente dal tuo profilo!";
     $dbhost->addNewMessage($tiponotifica, $testo, $userEmail);
     header("Location: ordini.php");
     exit();

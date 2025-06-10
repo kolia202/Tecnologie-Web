@@ -5,7 +5,7 @@
     </div>
     <p class="text mt-2">Tieni d'occhio questa pagina per rimanere aggiornato su tutte le novità!</p>
     <?php if(count($templateParams["notifiche"]) == 0): ?>
-        <div class="card shadow card-border ms-2 me-2 p-2">
+        <div class="card shadow-sm card-border card-empty ms-2 me-2 p-2">
             <div class="card-body">
                 <p class="text-italic">Nessuna nuova notifica!</p>
             </div>

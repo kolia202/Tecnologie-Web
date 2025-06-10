@@ -1,7 +1,7 @@
 <div class="container-login mt-4 ps-4 pe-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1 class="title mb-3">Login</h1>
+            <h1 class="title mb-4">Login</h1>
             <?php if (isset($_SESSION["errorelogin"])): ?>
                 <div class="alert alert-danger mt-3 text" role="alert">
                     <i class="bi bi-exclamation-triangle align-center"></i>

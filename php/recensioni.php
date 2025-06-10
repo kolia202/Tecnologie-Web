@@ -9,6 +9,7 @@ $mediaVoti = $dbhost->getMediaVoti();
 $voti = $dbhost->getAllVotiRecensioni();
 $recensioniDistribuzione = getRecensioniDistribuzione($voti);
 $templateParams["recensioni"] = $dbhost->getAllRecensioni();
+$templateParams['admins'] = $dbhost->getAdmins();
 $numeroprodotti = 0;
 
 if (isUserLoggedIn()) {
@@ -28,7 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["voto"]) && isset($_PO
     $voto = intval($_POST["voto"]);
     $commento = trim($_POST["commento"]);
     if ($dbhost->addRecensione($email, $voto, $commento)) {
-        $dbhost->addNewMessage('Nuova Recensione', 'Grazie per la tua recensione! La tua opinione è importante per noi.', $email);
+        $dbhost->addNewMessage('Nuova Recensione', 'Grazie per aver lasciato una recensione! La tua opinione è importante per noi per continuare a migliorare sempre.', $email);
+        foreach($templateParams['admins'] as $admin) {
+            $dbhost->addNewMessage('Nuova Recensione', "L'utente " . $userDetails['Nome'] . ' ' . $userDetails['Cognome'] . " ha scritto una nuova recensione! Controlla l'apposita sezione per i dettagli.", $admin['E_mail']);
+        }
         header("Location: recensioni.php");
         exit();
     } else {
@@ -37,10 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["voto"]) && isset($_PO
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id-recensione"])) {
+    $recensione = $dbhost->getRecensioneById($_POST['id-recensione'])[0];
     if ($dbhost->deleteRecensione($_POST['id-recensione'])) {
         $tiponotifica = "Eliminazione Recensione";
         $testo = "La tua recensione è stata rimossa dall'amministrazione. Se hai domande, contattaci attraverso il servizio assistenza.";
-        $dbhost->addNewMessage($tiponotifica, $testo, $_SESSION['utente']);
+        $dbhost->addNewMessage($tiponotifica, $testo, $recensione['E_mail']);
         header("Location: recensioni.php");
         exit();
     } else {

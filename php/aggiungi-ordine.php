@@ -12,6 +12,7 @@ foreach($dbhost->getCartProducts($utente) as $prodotto) {
     $dbhost->addOrderedProduct($idordine, $prodotto["Id_prodotto"], $prodotto["Quantita"]);
     $p = $dbhost->getProductById($prodotto['Id_prodotto'])[0];
     $dbhost->updateStock($prodotto["Id_prodotto"], $p['Scorta'] - ($prodotto["Quantita"]));
+    $p = $dbhost->getProductById($prodotto['Id_prodotto'])[0];
     foreach($templateParams['admins'] as $admin) {
         if(intval($p['Scorta']) <= 0) {
             $nome = $p["Nome"];
@@ -21,8 +22,9 @@ foreach($dbhost->getCartProducts($utente) as $prodotto) {
     $dbhost->removeProductFromCart($utente ,$prodotto["Id_prodotto"]);
 }
 
+$userdetails = $dbhost->getUserDetails($utente);
 foreach($templateParams['admins'] as $admin) {
-    $dbhost->addNewMessage('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", $admin['E_mail']);    
+    $dbhost->addNewMessage('Nuovo Ordine', "Un nuovo ordine è stato effettuato! L'utente " . $userdetails['Nome'] . ' ' . $userdetails['Cognome'] . " ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", $admin['E_mail']);    
 }
 
 $dbhost->updateUserPoints($utente, $punti);

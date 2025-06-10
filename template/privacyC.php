@@ -48,4 +48,7 @@
     </ul>
     <h2 class="text-italic text-start fw-bold mb-1 mt-3">Modifiche all'informativa</h2>
     <p class="text text-start mt-0">Ci riserviamo il diritto di modificare questa informativa. Le modifiche saranno pubblicate su questa pagina.</p>
+    <div class="text-center mt-5">
+        <a href="../php/index.php" class="text back">Indietro</a>
+    </div>
 </div>

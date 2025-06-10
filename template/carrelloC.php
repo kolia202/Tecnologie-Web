@@ -35,7 +35,7 @@
                                 </button>
                             </div>
                         <?php endif; ?>
-                        <div class="stock-warning rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mt-2 mb-2">
+                        <div class="stock-warning card-border rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3 mt-2 mb-2">
                             <p class="text-italic mb-0">Ops! Non puoi superare la disponibilità di questo prodotto.</p>
                         </div>
                         <div class="d-flex align-items-center justify-content-center">
@@ -53,7 +53,7 @@
         </div>
         <h2 class="total-price text pt-2"><strong>Totale Carrello:</strong> <?php echo getFormattedPrice($totale); ?></h2>
         <?php if ($prodottiesauriti): ?>
-            <div class="stock-warning d-block mt-4 rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3">
+            <div class="stock-warning card-border card-empty d-block mt-4 rounded pt-2 pb-2 ps-3 pe-3 ms-3 me-3">
                 <p class="text-italic mb-0">Ops! Alcuni prodotti nel tuo carrello sono esauriti. Rimuovili per poter completare il tuo ordine!</p>
             </div>
         <?php else: ?> 

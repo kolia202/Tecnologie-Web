@@ -14,7 +14,7 @@
     <!-- HEADER -->
     <header>
         <!-- BOTTONE MENU -->
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
+        <button class="btn button-empty" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
             <span class="bi bi-list" aria-hidden="true"></span>
         </button>
         <!-- MENU LATERALE -->
@@ -110,14 +110,14 @@
             <!-- BOTTONE CARRELLO -->
             <?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
             <?php if($currentPage === "carrello.php"): ?>
-                <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1">
+                <a href="../php/carrello.php" class="btn position-relative cart pe-3 ps-1 button-empty">
                     <span class="bi bi-bag" aria-hidden="true"></span>
                     <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill cart-badge">
                         <?php echo $numeroprodotti ?>
                     </span>
                 </a>
             <?php else: ?>
-                <button class="btn position-relative cart pe-3 ps-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <button class="btn position-relative cart pe-3 ps-1 button-empty" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <span class="bi bi-bag" aria-hidden="true"></span>
                     <span class="position-absolute top-50 start-75 translate-middle badge rounded-pill cart-badge">
                         <?php echo $numeroprodotti ?>

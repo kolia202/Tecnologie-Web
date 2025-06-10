@@ -20,7 +20,8 @@ if (isset($_GET['email'])) {
         $dbhost->deleteAvvisoDisponibilitaByEmail($email) &&
         $dbhost->deleteOrdersByEmail($email)) {
         if ($dbhost->deleteUtente($email)) {
-            header("Location: gestioneAccount.php?deleted=1");
+            $_SESSION['eliminautente'] = 'Account eliminato con successo!';
+            header("Location: gestioneAccount.php?");
             exit();
         }
     }

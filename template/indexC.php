@@ -1,5 +1,4 @@
 <img class="img-vetrina mt-4" src="../utilities/img/Peluches-Home.png" alt="vetrina" />
-
 <h1 class="title mt-2 ms-3 me-3 mb-1">Benvenuti nel mondo dei Peluches!</h1>
 <p class="text welcome-message ms-3 me-3">
     Scopri la nostra collezione di amici morbidosi, perfetti da coccolare, collezionare o regalare a chi ami.
@@ -8,7 +7,6 @@
 <div class="text-center mt-4">
     <a href="../php/prodotti.php" class="btn ps-5 pe-5 button">I nostri Peluches</a>
 </div>
-
 <div class="catcontainer mt-5 pt-4 pe-5 ps-5 pb-4">
     <h2 class="title mb-4">Esplora le Collezioni!</h2>
     <div class="row justify-content-center">
@@ -23,7 +21,6 @@
         <?php endforeach; ?>            
     </div>
 </div>
-
 <h2 class="title mt-4 pt-2"><span class="bi bi-stars" aria-hidden="true"></span> I Best seller! <span class="bi bi-stars" aria-hidden="true"></span></h2>
 <div class="d-block d-md-none">
     <div class="box pt-3 ps-2 pe-2 pb-1 mt-4 rounded shadow bg-white custom-box">
@@ -65,8 +62,6 @@
         <?php endforeach; ?>
     </div>
 </div>
-
-
 <section class="mt-5 pt-3">
   <div class="container text-center ps-0 pe-0">
     <h2 class="title why-title mb-1">Perché scegliere Mondo Morbidoso?</h2>
@@ -102,8 +97,6 @@
     <a href="../php/informazioni.php" class="why-more">Scopri di più su di noi</a>
   </div>
 </section>
-
-
 <div class="container mt-5" id="newsletter">
     <div class="box p-4 shadow newsletter-box">
         <div class=" text-center text-centerP">
@@ -134,12 +127,10 @@
         </div>
     </div>
 </div>
-
-
 <section class="pt-5">
     <div class="container text-center">
         <h4 class="title">Cosa dicono di noi?</h4>
-        <p class="text ms-3 me-3 mb-1">Le testimonianze di chi ha scelto di affidarsi a noi per l'acquisto dei peluche!</p>
+        <p class="text ms-3 me-3 mb-1">Le testimonianze di chi ha scelto di affidarsi a noi per l'acquisto dei propri peluche!</p>
         <div>
             <p class="star-rating">
                 <?php echo getStarRating($mediaVoti); ?> 
@@ -206,11 +197,10 @@
             </div>
         <?php endif; ?>
     </div>
-    <div class="text-center mt-3">
+    <div class="text-center mt-4">
         <a href="../php/recensioni.php" class="btn button ps-5 pe-5">Vedi tutte</a>
     </div>
 </section>
-
 <div class="cookie shadow p-3" id="cookie-banner">
     <h5 class="text fw-bold">Rispettiamo la tua privacy!</h5>
     <p class="text">Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi accettare o rifiutare l'uso dei cookie.</p>

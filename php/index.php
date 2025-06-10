@@ -1,6 +1,10 @@
 <?php
 require_once("bootstrap.php");
 
+if (isset($_SESSION['redirect'])) {
+    unset($_SESSION['redirect']);
+}
+
 $templateParams["titolo"] = "Mondo Morbidoso - Home";
 $templateParams["nome"] = "indexC.php";
 $mediaVoti = $dbhost->getMediaVoti();
@@ -24,18 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"]);
 
     if (empty($email)) {
-        $_SESSION["errornewsletter"] = "Ops! L'E-mail inserita non è valida.";
+        $_SESSION["errornewsletter"] = "Ops! Inserisci la tua email per iscriverti.";
     } else {
         if ($dbhost->emailExists($email)) {
-            $errore = $dbhost->notificationExists($email, "Newsletter", "Grazie per esserti iscritto alla nostra newsletter!");
+            $errore = $dbhost->notificationExists($email, "Newsletter", "Grazie per esserti iscritto alla nostra newsletter! Da ora in poi non ti perderai più nessuna novità.");
             if ($errore) {
-                $_SESSION["errornewsletter"] = "Ops! Sei già iscritto alla newsletter!";
+                $_SESSION["errornewsletter"] = "Ops! Sei già iscritto alla nostra newsletter!";
             } else {
-                $dbhost->addNewMessage("Newsletter", "Grazie per esserti iscritto alla nostra newsletter!", $email);
+                $dbhost->addNewMessage("Newsletter", "Grazie per esserti iscritto alla nostra newsletter! Da ora in poi non ti perderai più nessuna novità.", $email);
                 $_SESSION["successnewsletter"] = "Iscrizione avvenuta con successo!";
             }
         } else {
-            $_SESSION["errornewsletter"] = "Ops! L'email inserita non è valida!";
+            $_SESSION["errornewsletter"] = "Ops! L'email inserita non è associata a nessun account.";
         }
     }
     header("Location: ".$_SERVER['PHP_SELF']."#newsletter");

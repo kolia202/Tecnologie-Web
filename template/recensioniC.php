@@ -34,33 +34,41 @@
             <button type="button" class="btn button mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Scrivi una Recensione</button>
         </div>
     <?php endif; ?>
-    <div class="row align-items-stretch"> 
-        <?php foreach ($templateParams["recensioni"] as $recensione): ?>
-            <div class="col-12 col-md-6 mb-4 ps-3 pe-3 d-flex"> 
-                <div class="card shadow card-border p-1 w-100 card-review">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h3 class="text fw-bold mb-0 text-start"><?php echo htmlspecialchars($recensione["Nome"] . " " . $recensione["Cognome"]); ?></h3>
-                        <p class="mt-1 mb-0 text-italic text-start"><?php echo getFormattedDate($recensione["Data"]) ?></p>
-                        <p class="star-rating mb-0"><?php echo getStarRating($recensione["Voto"]); ?></p>
-                        <p class="text text-start mt-2 mb-1"><?php echo htmlspecialchars($recensione["Commento"]); ?></p>
-                        <?php if (isAdminLoggedIn()): ?>
-                            <form method="POST" action="recensioni.php" class="mt-3 mb-2">
-                                <input type="hidden" name="id-recensione" value="<?php echo htmlspecialchars($recensione['Id_recensione']); ?>">
-                                <button type="submit" class="btn btn-danger btn-delete text w-100">Elimina Recensione</button>
-                            </form>
-                        <?php endif; ?>
+    <?php if(empty($templateParams["recensioni"])): ?>
+        <div class="card shadow-sm card-border card-empty mx-auto">
+            <div class="card-body">
+                <p class="text-italic mb-0">Non sono ancora presenti recensioni!</p>
+            </div>
+        </div>
+    <?php else: ?>
+        <div class="row align-items-stretch"> 
+            <?php foreach ($templateParams["recensioni"] as $recensione): ?>
+                <div class="col-12 col-md-6 mb-4 ps-3 pe-3 d-flex"> 
+                    <div class="card shadow card-border p-1 w-100 card-review">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h3 class="text fw-bold mb-0 text-start"><?php echo htmlspecialchars($recensione["Nome"] . " " . $recensione["Cognome"]); ?></h3>
+                            <p class="mt-1 mb-0 text-italic text-start"><?php echo getFormattedDate($recensione["Data"]) ?></p>
+                            <p class="star-rating mb-0"><?php echo getStarRating($recensione["Voto"]); ?></p>
+                            <p class="text text-start mt-2 mb-1"><?php echo htmlspecialchars($recensione["Commento"]); ?></p>
+                            <?php if (isAdminLoggedIn()): ?>
+                                <form method="POST" action="recensioni.php" class="mt-3 mb-2">
+                                    <input type="hidden" name="id-recensione" value="<?php echo htmlspecialchars($recensione['Id_recensione']); ?>">
+                                    <button type="submit" class="btn btn-danger btn-delete text w-100">Elimina Recensione</button>
+                                </form>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="text-center mt-4">
-        <a href="../php/index.php" class="text back">Indietro</a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <div class="text-center mt-5">
+        <a href="<?php echo isAdminLoggedIn() ? '../php/account.php' : '../php/index.php'; ?>" class="text back">Indietro</a>
     </div>
 </div>
     
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header pb-2">
@@ -69,29 +77,29 @@
                     <span class="bi bi-x-lg" aria-hidden="true"></span>                          
                 </button>
             </div>
-            <form id="reviewForm" action="recensioni.php" method="POST">
-                <div class="modal-body">
+            <div class="modal-body">
+                <form id="reviewForm" action="recensioni.php" method="POST">
                     <div class="mb-3">
                         <label for="voto" class="ps-1 pb-0 text-italic">Voto:</label>
                         <select class="form-control text text-input" id="voto" name="voto" required>
-                            <option value="" disabled selected>Seleziona un voto</option>
-                            <option value="1">1 - Pessimo</option>
-                            <option value="2">2 - Scarso</option>
-                            <option value="3">3 - Medio</option>
-                            <option value="4">4 - Buono</option>
-                            <option value="5">5 - Ottimo</option>
+                            <option class="text-italic text-start" value="" disabled selected>Seleziona un voto</option>
+                            <option class="text text-start" value="1">1 - Pessimo</option>
+                            <option class="text text-start" value="2">2 - Scarso</option>
+                            <option class="text text-start" value="3">3 - Medio</option>
+                            <option class="text text-start" value="4">4 - Buono</option>
+                            <option class="text text-start" value="5">5 - Ottimo</option>
                         </select>
                     </div>
                     <div class="mb-0">
                         <label for="commento" class="ps-1 pb-0 text-italic">Commento:</label>
                         <textarea class="form-control text text-input" id="commento" name="commento" required></textarea>
                     </div>
-                </div>
-                <div class="modal-footer mt-2">
-                    <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn button ms-auto ps-5 pe-5">Salva</button>
-                </div>
-            </form>
+                    <div class="modal-footer mt-3">
+                        <button type="button" class="btn button-outline me-auto ps-4 pe-4" data-bs-dismiss="modal">Annulla</button>
+                        <button type="submit" class="btn button ms-auto ps-5 pe-5">Salva</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
