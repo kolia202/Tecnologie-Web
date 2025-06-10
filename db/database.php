@@ -277,16 +277,6 @@ class DatabaseHelper {
         return $stmt->execute();
     }
 
-    public function getTotalCartPoints($email) {
-        $query = "SELECT SUM(Prezzo_punti * Quantita) AS totalepunti FROM carrello c JOIN prodotto p ON c.Id_prodotto = p.Id_prodotto WHERE c.E_mail = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s', $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        return $row["totalepunti"];
-    }
-
     public function updateUserPoints($email, $punti) {
         $query = "UPDATE utente SET Punti = Punti + ? WHERE E_mail = ?";
         $stmt = $this->db->prepare($query);
@@ -355,13 +345,6 @@ class DatabaseHelper {
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function removeRecensione($email, $idrecensione) {
-        $query = "DELETE FROM recensione WHERE E_mail = ? AND Id_recensione = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si', $email, $idrecensione);
-        return $stmt->execute();
     }
 
     public function getAllVotiRecensioni() {
@@ -548,22 +531,10 @@ class DatabaseHelper {
     }
 
     public function deleteRecensione($idrecensione) {
-            $query = "DELETE FROM RECENSIONE WHERE Id_recensione = ?";
-            $stmt = $this->db->prepare($query);
-            $stmt->bind_param("i", $idrecensione);
-            return $stmt->execute();
-        } 
-
-    public function getIdRecensioneByNomeCognome($nome, $cognome) {
-        $query = "SELECT r.Id_recensione 
-                  FROM recensione r
-                  JOIN utente u ON r.E_mail = u.E_mail
-                  WHERE u.Nome = ? AND u.Cognome = ?";
+        $query = "DELETE FROM RECENSIONE WHERE Id_recensione = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss', $nome, $cognome);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
+        $stmt->bind_param("i", $idrecensione);
+        return $stmt->execute();
     }
 
     public function getShippingById($idspedizione) {
@@ -588,16 +559,6 @@ class DatabaseHelper {
         $stmt = $this->db->prepare($query);
         $stmt->bind_param("si", $status, $orderId);
         return $stmt->execute();
-    }
-
-    public function getEmail($nome, $cognome) {
-        $query = "SELECT E_mail FROM utente WHERE Nome = ? AND Cognome = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss', $nome, $cognome);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        return $row ? $row['E_mail'] : null;
     }
 
     public function getAllUtentiNonAdmin() {

@@ -1,23 +1,33 @@
 -- Popolamento della tabella UTENTE
 INSERT INTO UTENTE (E_mail, Nome, Cognome, Numero_telefono, Data_di_nascita, Password, Punti, Admin) VALUES
-('giuseppe.rossi@peluche.com', 'Giuseppe', 'Rossi', '3312345678', '1992-03-10', 'passwordGiuseppe', 50, false),
-('laura.verdi@peluche.com', 'Laura', 'Verdi', '3398765432', '1994-11-22', 'secureLaura123', 120, false),
-('luigi.santoro@peluche.com', 'Luigi', 'Santoro', '3281234567', '1987-07-14', 'LuigiPass987', 80, false),
-('martina.lombardi@peluche.com', 'Martina', 'Lombardi', '3459876543', '2000-02-01', 'MartinaPass2025', 150, false),
-('carlo.bianchi@peluche.com', 'Carlo', 'Bianchi', '3476543210', '1995-09-30', 'Carlo1234', 200, true),
-('elena.ferrari@peluche.com', 'Elena', 'Ferrari', '3201234567', '1988-12-12', 'ElenaSecure', 250, true),
-('paolo.martini@peluche.com', 'Paolo', 'Martini', '3332345678', '1991-04-05', 'PaoloPass789', 30, false),
-('giulia.russo@peluche.com', 'Giulia', 'Russo', '3287654321', '1993-06-18', 'GiuliaSecure2025', 60, false),
-('federico.ricci@peluche.com', 'Federico', 'Ricci', '3312340987', '1990-05-20', 'FedericoPass987', 45, false),
-('maria.giordano@peluche.com', 'Maria', 'Giordano', '3381237890', '1986-08-08', 'Maria12345', 90, true);
+('giuseppe.rossi@peluche.com', 'Giuseppe', 'Rossi', '3312345678', '1992-03-10', 'peluche', 50, false),
+('laura.verdi@peluche.com', 'Laura', 'Verdi', '3398765432', '1994-11-22', 'peluche', 120, false),
+('luigi.santoro@peluche.com', 'Luigi', 'Santoro', '3281234567', '1987-07-14', 'peluche', 80, false),
+('martina.lombardi@peluche.com', 'Martina', 'Lombardi', '3459876543', '2000-02-01', 'peluche', 150, false),
+('carlo.bianchi@peluche.com', 'Carlo', 'Bianchi', '3476543210', '1995-09-30', 'peluche', 200, true),
+('elena.ferrari@peluche.com', 'Elena', 'Ferrari', '3201234567', '1988-12-12', 'peluche', 250, true),
+('paolo.martini@peluche.com', 'Paolo', 'Martini', '3332345678', '1991-04-05', 'peluche', 30, false),
+('giulia.russo@peluche.com', 'Giulia', 'Russo', '3287654321', '1993-06-18', 'peluche', 60, false),
+('federico.ricci@peluche.com', 'Federico', 'Ricci', '3312340987', '1990-05-20', 'peluche', 45, false),
+('maria.giordano@peluche.com', 'Maria', 'Giordano', '3381237890', '1986-08-08', 'peluche', 90, false);
 
 -- Popolamento della tabella NOTIFICA
 INSERT INTO NOTIFICA (Tipo_notifica, Testo, Stato, Giorno, E_mail) VALUES
-("Ordine Spedito", "Il tuo ordine è stato spedito.", 0, '2025-01-30', 'giuseppe.rossi@peluche.com'),
-('Nuovo Prodotto', 'Abbiamo aggiunto un nuovo peluche alla nostra collezione! Scoprilo ora.', 1, '2025-01-29', 'laura.verdi@peluche.com'),
-('Ordine Consegnato', 'Il tuo ordine è stato consegnato. Grazie per aver scelto il nostro negozio!', 0, '2025-01-25', 'carlo.bianchi@peluche.com'),
-('Nuova Recensione', 'La tua recensione è stata pubblicata!', 1, '2025-01-24', 'elena.ferrari@peluche.com'),
-('Aggiornamento Account', "La tua password è stata cambiata con successo. Se non sei stato tu, contatta l'assistenza clienti.", 0, '2025-01-23', 'paolo.martini@peluche.com');
+("Nuovo Ordine", 'Il tuo ordine è stato confermato e i tuoi peluche stanno per mettersi in viaggio! Puoi seguire il loro percorso dal tuo profilo. Grazie per averci scelto!', 0, '2025-05-25', 'martina.lombardi@peluche.com'),
+('Esaurimento Scorte', "Attenzione! Il peluche Orsetto Teddy è esaurito. Aggiorna le scorte per non lasciare i nostri clienti a mani vuote!", 0, '2025-05-22', 'elena.ferrari@peluche.com'),
+('Esaurimento Scorte', "Attenzione! Il peluche Orsetto Teddy è esaurito. Aggiorna le scorte per non lasciare i nostri clienti a mani vuote!", 0, '2025-05-22', 'carlo.bianchi@peluche.com'),
+('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", 0, '2025-05-25', 'carlo.bianchi@peluche.com'),
+('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", 0, '2025-05-25', 'elena.ferrari@peluche.com'),
+('Peluche Disponibile', 'Buone notizie! Il peluche Orsetto Teddy che stavi aspettando è finalmente tornato disponibile! Corri a prenderlo prima che finisca di nuovo!', 0, '2025-05-22', 'giuseppe.rossi@peluche.com'),
+('Aggiornamento Ordine', 'Il tuo ordine #2 è stato aggiornato allo stato: Spedito.', 0, '2025-06-11', 'giuseppe.rossi@peluche.com'),
+('Nuova Recensione', 'Grazie per la tua recensione! La tua opinione è importante per noi.', 0, '2025-06-02', 'laura.verdi@peluche.com'),
+('Eliminazione Recensione', "La tua recensione è stata rimossa dall'amministrazione. Se hai domande, contattaci attraverso il servizio assistenza.", 0, '2025-06-10', 'giulia.russo@peluche.com'),
+('Conferma Iscrizione', 'Benvenuto nella nostra famiglia di peluches! Siamo felici di averti con noi. Scopri la nostra collezione e trova i peluche perfetti per te!', 0, '2025-05-15', 'giulia.russo@peluche.com'),
+('Nuova Iscrizione', 'Dai il benvenuto ad un nuovo membro nella nostra famiglia morbidosa! Un utente si è appena registrato ed è pronto a scoprire la nostra collezione di peluches.', 0, '2025-05-15', 'carlo.bianchi@peluche.com'),
+('Nuova Iscrizione', 'Dai il benvenuto ad un nuovo membro nella nostra famiglia morbidosa! Un utente si è appena registrato ed è pronto a scoprire la nostra collezione di peluches.', 0, '2025-05-15', 'elena.ferrari@peluche.com'),
+("Nuovo Ordine", 'Il tuo ordine è stato confermato e i tuoi peluche stanno per mettersi in viaggio! Puoi seguire il loro percorso dal tuo profilo. Grazie per averci scelto!', 0, '2025-06-08', 'maria.giordano@peluche.com'),
+('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", 0, '2025-06-08', 'carlo.bianchi@peluche.com'),
+('Nuovo Ordine', "Un nuovo ordine è stato effettuato! Un cliente ha appena fatto il suo acquisto, puoi vedere tutti i dettagli direttamente dal tuo profilo.", 0, '2025-06-08', 'elena.ferrari@peluche.com');
 
 -- Popolamento della tabella CATEGORIA
 INSERT INTO CATEGORIA (Nome_categoria) VALUES
@@ -59,7 +69,6 @@ INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Pr
 ('Husky Snow', "Snow è un husky elegante e vivace, con un pelo bianco candido e occhi brillanti. Amante della neve e delle avventure all'aria aperta, è un cane energico e leale. Con il suo carattere forte ma affettuoso, Snow è il compagno perfetto per chi cerca un amico pieno di vita e di coraggio.", 'HuskySnow.png', 'S', 12, 19.99, 200, 'Cani'),
 ('Gattino Brad', "Brad è un gattino dolce e curioso, con un pelo morbido e un mix di macchie marroni e dorate che lo rendono unico. Sempre pronto a esplorare e giocare, ha occhi vivaci pieni di avventura. Con il suo carattere affettuoso e il suo musetto irresistibile, Brad è il compagno perfetto per momenti di coccole e divertimento.", 'GattinoBrad.png', 'S', 18, 34.99, 350, 'Gatti'),
 ('Gattina Coco', "Coco è una gattina dolcissima con un pelo morbido e setoso, color crema e un fiocco giallo che le dà un tocco di eleganza. Curiosa e affettuosa, ama giocare e farsi coccolare. Con i suoi occhi brillanti e il musetto tenero, Coco è la compagna perfetta per chi cerca un amico adorabile e pieno di dolcezza.", 'GattinaCoco.png', 'S', 3, 34.99, 350, 'Gatti'),
-('Gattina Giada', "Giada è una gattina elegante e affettuosa, con un pelo lucido e setoso di un bellissimo grigio perla. Curiosa e vivace, ama esplorare ogni angolo e coccolarsi con chi le vuole bene. Con il suo sguardo dolce e il carattere socievole, Giada è la compagna perfetta per ogni momento di tenerezza e allegria.", 'GattinaGiada.png', 'M', 15, 59.99, 600, 'Gatti'),
 ('Gattino Felix', "Felix è un gattino dal pelo morbido e lucente, con un carattere vivace e curioso. Il suo musetto simpatico e i suoi occhi brillanti sono sempre pronti a esprimere affetto e allegria. Ama giocare e coccolarsi, e con il suo spirito gioioso e il cuore dolce, Felix è il compagno perfetto per ogni momento di tenerezza.", 'GattinoFelix.png', 'S', 14, 22.99, 230, 'Gatti'),
 ('Gattino Rocky', "Rocky è un gattino dal carattere grintoso e un pelo maculato che ricorda le sfumature di un vero felino selvatico. Con i suoi occhi vivaci e il musetto curioso, è sempre pronto a esplorare e a fare nuove scoperte. Giocoso e affettuoso, Rocky unisce la tenerezza ad un'incredibile energia, facendo di lui il compagno perfetto per chi ama l'avventura e il divertimento.", 'GattinoRocky.png', 'S', 21, 34.99, 350, 'Gatti'),
 ('Gattino Oscar', "Oscar è un gattino elegante e affettuoso, con un pelo morbido bianco e nero e occhi pieni di dolcezza. Sempre pronto a fare le fusa e a farsi coccolare, ama trascorrere il suo tempo in compagnia. Con il suo carattere tranquillo e il musetto tenero, Oscar è il compagno perfetto per chi cerca un amico amorevole e sereno.", 'GattinoOscar.png', 'S', 3, 17.99, 180, 'Gatti'),
@@ -99,7 +108,6 @@ INSERT INTO PRODOTTO (Nome, Descrizione, Immagine, Grandezza, Scorta, Prezzo, Pr
 ('Puzzola Honey', "Honey è una puzzola dolce e affettuosa, con un manto bianco e nero e un carattere tenere e delicato. Con il suo aspetto adorabile e la sua natura tranquilla, Honey è la compagna perfetta per chi cerca un animale che porti nella vita gioia e dolcezza.", 'PuzzolaHoney.png', 'S', 15, 29.99, 300, 'Bosco'),
 ('Riccio Marcello', "Marcello è un riccio curioso e affettuoso, con un musetto simpatico che lo rende irresistibile. Nonostante il suo aspetto spinoso, è molto dolce. Con la sua personalità tranquilla e un pizzico di timidezza, Marcello è il compagno perfetto per chi apprezza la dolcezza nei piccoli dettagli.", 'RiccioMarcello.png', 'M', 24, 59.99, 600, 'Bosco'),
 ('Cerbiatta Luna', "Luna è una cerbiatta elegante e delicata, con un manto morbido dai toni caldi. Con occhi grandi e profondi, è leale e incarna la bellezza tranquilla della foresta. La sua dolcezza e la sua timidezza rendono Luna un simbolo di calma e serenità.", 'CerbiattaLuna.png', 'M', 10, 59.99, 600, 'Bosco'),
-('Scoiattolo Ginger', "Ginger è uno scoiattolo vivace e agile con il manto nocciola. Sempre in movimento, ama cercare ghiande e divertirsi nei boschi. Con il suo spirito curioso e giocoso, Ginger è sempre pronto a intraprendere nuove avventure, portando allegria e vivacità ovunque vada.", 'ScoiattoloGinger.png', 'M', 7, 59.99, 600, 'Bosco'),
 ('Volpe Vicky', "Vicky è una volpe elegante e astuta, con un manto rosso brillante. Con occhi vivaci e curiosi, è sempre pronta a esplorare la natura e a mettersi nei guai. La sua personalità intrigante e indipendente rende Vicky un simbolo di intelligenza e libertà.", 'VolpeVicky.png', 'M', 4, 59.99, 600, 'Bosco'),
 ('Leprotto Lino', "Lino è un leprotto dal manto morbido e grigio, con orecchie lunghe e occhi vivaci che riflettono la sua natura curiosa. Agile e rapido nei suoi salti, esplora il mondo con una grazia inconfondibile. Lino è il simbolo della libertà spensierata e della curiosità infinita.", 'LeprottoLino.png', 'M', 15, 59.99, 600, 'Bosco'),
 ('Gufetto Jack', "Jack è un gufetto misterioso e affascinante, con piume morbide e dai toni caldi. I suoi occhi grandi e penetranti sono sempre attenti, mentre si sposta silenziosamente tra gli alberi di notte. Con una presenza calma e serena, Jack è il custode della saggezza e della tranquillità del bosco.", 'GufettoJack.png', 'S', 3, 34.99, 350, 'Bosco'),
@@ -114,15 +122,15 @@ INSERT INTO carrello (E_mail, Id_prodotto, Quantita) VALUES
 ('giuseppe.rossi@peluche.com', 6, 1),
 ('federico.ricci@peluche.com', 3, 1),
 ('federico.ricci@peluche.com', 8, 1),
-('elena.ferrari@peluche.com', 5, 1),
+('giulia.russo@peluche.com', 5, 1),
 ('laura.verdi@peluche.com', 4, 1),
 ('laura.verdi@peluche.com', 13, 1),
 ('laura.verdi@peluche.com', 17, 1);
 
 -- Popolamento della tabella preferito
 INSERT INTO preferito (Id_prodotto, E_mail) VALUES
-(1, 'carlo.bianchi@peluche.com'),
-(6, 'carlo.bianchi@peluche.com'),
+(1, 'giulia.russo@peluche.com'),
+(6, 'federico.ricci@peluche.com'),
 (11, 'luigi.santoro@peluche.com'),
 (21, 'martina.lombardi@peluche.com'),
 (26, 'martina.lombardi@peluche.com'),
@@ -130,31 +138,40 @@ INSERT INTO preferito (Id_prodotto, E_mail) VALUES
 
 -- Popolamento della tabella ORDINE
 INSERT INTO ORDINE (Data_effettuazione, Prezzo_finale, Punti_usati, Stato, Id_spedizione, E_mail) VALUES
-('2025-01-25', 54.98, 100, 'Spedito', 1, 'martina.lombardi@peluche.com'),
-('2025-01-26', 32.98, 0, 'In lavorazione', 2, 'luigi.santoro@peluche.com'),
-('2025-01-24', 51.98, 300, 'Consegnato', 1, 'carlo.bianchi@peluche.com'),
-('2024-10-27', 48.98, 0, 'Consegnato', 3, 'carlo.bianchi@peluche.com'),
-('2025-01-25', 51.98, 200, 'Spedito', 2, 'federico.ricci@peluche.com');
-
+('2025-05-25', 40.98, 0, 'Consegnato', 1, 'martina.lombardi@peluche.com'),
+('2025-05-26', 45.97, 100, 'Consegnato', 1, 'luigi.santoro@peluche.com'),
+('2025-06-05', 49.98, 0, 'Spedito', 3, 'laura.verdi@peluche.com'),
+('2025-06-12', 34.99, 350, 'In lavorazione', 3, 'martina.lombardi@peluche.com'),
+('2025-06-09', 23.98, 0, 'Spedito', 1, 'federico.ricci@peluche.com'),
+('2025-05-10', 47.97, 0, 'Consegnato', 2, 'giulia.russo@peluche.com'),
+('2025-05-17', 59.99, 0, 'Consegnato', 3, 'laura.verdi@peluche.com'),
+('2025-06-01', 34.99, 200, 'Consegnato', 3, 'paolo.martini@peluche.com'),
+('2025-06-08', 35.98, 0, 'Spedito', 1, 'maria.giordano@peluche.com'),
+('2025-05-12', 59.98, 0, 'Consegnato', 3, 'federico.ricci@peluche.com');
 
 -- Popolamento della tabella prodotto_ordinato
 INSERT INTO prodotto_ordinato (Id_ordine, Id_prodotto, Quantita) VALUES
 (1, 1, 1),
-(1, 6, 1),
-(2, 21, 1),
-(2, 26, 1),
-(3, 3, 1),
-(3, 8, 1),
-(4, 14, 1),
-(4, 19, 1),
-(5, 5, 1),
-(5, 9, 1);
+(2, 9, 1),
+(2, 20, 2),
+(3, 14, 1),
+(4, 29, 2),
+(5, 7, 1),
+(6, 39, 1),
+(6, 51, 1),
+(7, 11, 1),
+(8, 27, 1),
+(8, 12, 1),
+(9, 35, 1),
+(10, 8, 2);
 
 -- Popolamento della tabella RECENSIONE
 INSERT INTO RECENSIONE (Data, Voto, Commento, E_mail) VALUES
-('2025-01-28', 5, 'Il sito è facile da usare e il processo di acquisto è stato veloce e senza intoppi.', 'carlo.bianchi@peluche.com'),
-('2025-01-29', 4, 'Il sito è bello, ma ci vorrebbe una sezione più dettagliata per le recensioni dei prodotti.', 'martina.lombardi@peluche.com'),
-('2025-01-25', 5, 'Adoro il design del sito, molto intuitivo!', 'elena.ferrari@peluche.com'),
-('2025-01-26', 3, 'Penso che il sito potrebbe essere più veloce a caricare le pagine dei prodotti.', 'luigi.santoro@peluche.com'),
-('2025-01-27', 5, 'Un sito davvero ben fatto, molto professionale e semplice da navigare.', 'federico.ricci@peluche.com'),
-('2025-01-28', 2, "Il sito è un po' confuso in alcune sezioni, come il checkout.", 'laura.verdi@peluche.com');
+('2025-05-28', 5, 'Il sito è facile da usare e il processo di acquisto è stato veloce e senza intoppi.', 'giulia.russo@peluche.com'),
+('2025-04-29', 3, 'Il sito è bello, ma ci vorrebbe una sezione più dettagliata per le recensioni dei prodotti.', 'martina.lombardi@peluche.com'),
+('2025-05-25', 4, "Esperienza d'acquisto piacevole e ordine arrivato in tempo. Forse aggiungerei più opzioni di pagamento.", 'federico.ricci@peluche.com'),
+('2025-06-06', 5, "Servizio clienti gentile e disponibile. Ho avuto un problema e l'hanno risolto in un attimo. Top!", 'luigi.santoro@peluche.com'),
+('2025-05-15', 5, 'Adoro come tutto è organizzato! Facile trovare quello che cerco e la wishlist è comodissima.', 'maria.giordano@peluche.com'),
+('2025-06-08', 2, "Ho avuto difficoltà a recuperare la password e non ho trovato assistenza immediata. Un po' frustrante.", 'giulia.russo@peluche.com'),
+('2025-05-10', 4, 'Perfetto per fare regali! Sito semplice, ben strutturato e sicuro. Tornerò sicuramente per altri acquisti!', 'paolo.martini@peluche.com'),
+('2025-06-02', 3, "L'idea è carina, ma ho trovato alcune sezioni del sito un po' confusionarie.", 'laura.verdi@peluche.com');

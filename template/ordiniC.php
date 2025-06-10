@@ -66,14 +66,14 @@
                                 </div>
                                     <p class="text mb-2"><strong>Data: </strong><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                                     <div class="text-center mt-3 mb-1">
-                                        <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
+                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
                                     </div>
                                 <?php else: ?>
                                     <p class="text mb-2"><strong>Data: </strong><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                                     <p class="text mb-0"><strong>Stato: </strong><?php echo $ordine["Stato"]; ?></p>
                                     <div class="text-center mt-3">
                                         <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button-outline w-75 mb-2">Traccia Ordine</a><br>
-                                        <a href="../php/singolo-ordine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
+                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
                                     </div>
                                 <?php endif; ?>
                             </div>

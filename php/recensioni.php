@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["voto"]) && isset($_PO
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id-recensione"])) {
     if ($dbhost->deleteRecensione($_POST['id-recensione'])) {
         $tiponotifica = "Eliminazione Recensione";
-        $testo = "La tua recensione è stata rimossa dall'amministrazione. Se hai domande, contattaci.";
+        $testo = "La tua recensione è stata rimossa dall'amministrazione. Se hai domande, contattaci attraverso il servizio assistenza.";
         $dbhost->addNewMessage($tiponotifica, $testo, $_SESSION['utente']);
         header("Location: recensioni.php");
         exit();

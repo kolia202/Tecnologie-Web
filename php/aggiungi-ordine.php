@@ -15,7 +15,7 @@ foreach($dbhost->getCartProducts($utente) as $prodotto) {
     foreach($templateParams['admins'] as $admin) {
         if(intval($p['Scorta']) <= 0) {
             $nome = $p["Nome"];
-            $dbhost->addNewMessage('Scorte Esaurite', "Attenzione! Il prodotto " . $nome . " è esaurito. È tempo di aggiornare le scorte per non lasciare i nostri clienti a mani vuote!", $admin['E_mail']);
+            $dbhost->addNewMessage('Esaurimento Scorte', "Attenzione! Il peluche " . $nome . " è esaurito. Aggiorna le scorte per non lasciare i nostri clienti a mani vuote!", $admin['E_mail']);
         }
     }
     $dbhost->removeProductFromCart($utente ,$prodotto["Id_prodotto"]);
