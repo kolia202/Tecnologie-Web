@@ -5,7 +5,7 @@
             <p class="text">Inserisci una nuova Password per il tuo Account.</p>
             <?php if (isset($_SESSION["error"])): ?>
                 <div class="alert alert-danger mt-3 text">
-                    <i class="bi bi-exclamation-triangle align-center"></i>
+                    <span class="bi bi-exclamation-triangle align-center"></span>
                     <?php echo $_SESSION["error"];
                     unset($_SESSION['error']); ?>
                 </div>

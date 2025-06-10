@@ -5,21 +5,21 @@
     </div>
 <?php else: ?>
     <?php if(count($templateParams["carrello"]) == 0): ?>
-        <article>
+        <section class="border-0">
             <p class="mt-2 ps-3 pe-3 text-italic">Il tuo carrello è vuoto.</p>
             <div class="text-center mt-4">
                 <a href="../php/prodotti.php" class="btn mt-2 ps-3 pe-3 button">I nostri Peluches</a>
             </div>
-        </article>
+        </section>
     <?php
         else:
             foreach($templateParams["carrello"] as $prodotto): ?>
                 <section class="d-flex align-items-center mb-1">
-                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" class="cartmenu-item">
-                    <img src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" class="img-fluid" alt="Peluche <?php echo htmlspecialchars($prodotto['Nome']); ?>" />
+                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>" class="cartmenu-item">
+                    <img class="img-fluid" alt="Peluche <?php echo htmlspecialchars($prodotto['Nome']); ?>" src="<?php echo IMG_DIR.$prodotto['Immagine']; ?>" />
                 </a>
                     <div class="d-flex flex-column pt-3 pe-3 cartmenu-info">
-                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>">
                             <p class="mb-1 fw-bold"><?php echo $prodotto["Nome"]; ?></p>
                         </a>
                         <p class="text-muted text-italic"><?php echo $prodotto["Quantita"] . " x " . getFormattedPrice($prodotto["Prezzo"]); ?></p>

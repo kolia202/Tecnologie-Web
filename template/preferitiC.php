@@ -14,15 +14,15 @@
             <?php foreach ($templateParams["preferiti"] as $prodotto): ?>
                 <div class="col-12 col-md-4 mb-4 mt-2"> 
                     <div class="text-center">
-                        <a class="text-decoration-none" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
-                            <img src="<?php echo IMG_DIR . $prodotto["Immagine"]; ?>" alt="<?php echo $prodotto["Nome"]; ?>" class="img-fluid shadow img-carrello favourite">
+                        <a class="text-decoration-none" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>">
+                            <img alt="<?php echo $prodotto['Nome']; ?>" src="<?php echo IMG_DIR . $prodotto["Immagine"]; ?>" class="img-fluid shadow img-carrello favourite">
                             <h2 class="text mt-3 fw-bold mb-2"><?php echo htmlspecialchars($prodotto["Nome"]); ?></h2>
                         </a>
                         <div class="d-flex align-items-center justify-content-center gap-3">
-                            <button type="button" class="btn button add-to-cart ps-3 pe-3" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">
+                            <button type="button" class="btn button add-to-cart ps-3 pe-3" data-productid="<?php echo $prodotto['Id_prodotto']; ?>">
                                 Aggiungi al carrello
                             </button>
-                            <a href="preferiti.php?azione=rimuovi&id_prodotto=<?php echo $prodotto["Id_prodotto"]; ?>" class="btn button-outline ps-3 pe-3">
+                            <a href="preferiti.php?azione=rimuovi&id_prodotto=<?php echo $prodotto['Id_prodotto']; ?>" class="btn button-outline ps-3 pe-3">
                                 Rimuovi
                             </a>
                         </div>

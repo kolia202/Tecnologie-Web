@@ -5,7 +5,7 @@
             <p class="text">Hai dimenticato la tua password? Nessun problema! Inserisci il tuo indirizzo E-mail e verrai subito reindirizzato alla pagina di Reset.</p>
             <?php if (isset($_SESSION["error"])): ?>
                 <div class="alert alert-danger mt-3 text" role="alert">
-                    <i class="bi bi-exclamation-triangle align-center"></i>
+                    <span class="bi bi-exclamation-triangle align-center"></span>
                     <?php echo $_SESSION["error"];
                     unset($_SESSION["error"]); ?>
                 </div>

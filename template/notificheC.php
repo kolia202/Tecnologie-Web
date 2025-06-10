@@ -35,7 +35,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <button type="button" class="btn button-outline pt-0 pb-0 ps-3 pe-3 chiudi-notifica">Chiudi</button>
                             <form action="notifiche.php" method="POST">
-                                <button type="submit" class="btn button pt-0 pb-0 ps-3 pe-3 me-2 elimina-notifica" name="eliminanotifica" value="<?php echo $notifica["Id_notifica"] ?>">Elimina</button>
+                                <button type="submit" class="btn button pt-0 pb-0 ps-3 pe-3 me-2 elimina-notifica" name="eliminanotifica" value="<?php echo $notifica['Id_notifica'] ?>">Elimina</button>
                             </form>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
     </div>
     <?php if (isset($_SESSION["eliminautente"])): ?>
         <div class="alert alert-success mt-3 text" role="alert">
-            <i class="bi bi-check-circle align-center"></i>
+            <span class="bi bi-check-circle align-center"></span>
             <?php echo $_SESSION["eliminautente"];
             unset($_SESSION['eliminautente']); ?>
         </div>             

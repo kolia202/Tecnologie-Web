@@ -8,7 +8,7 @@
     <?php endif; ?>
     <?php if (isset($_SESSION["eliminapeluche"])): ?>
         <div class="alert alert-success mt-3 text" role="alert">
-            <i class="bi bi-check-circle align-center"></i>
+            <span class="bi bi-check-circle align-center"></span>
             <?php echo $_SESSION["eliminapeluche"];
             unset($_SESSION['eliminapeluche']); ?>
         </div>             
@@ -31,8 +31,8 @@
             <?php foreach($templateParams["prodotti"] as $prodotto): ?>
                 <div class="col-12 col-md-4 mb-5" id='<?php echo $prodotto['Id_prodotto']; ?>'>
                     <div class="text-center">
-                        <a class="text-decoration-none" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
-                            <img class="imgProdotto shadow img-fluid" src="<?php echo IMG_DIR.$prodotto["Immagine"]; ?>" alt="Foto prodotto"/>
+                        <a class="text-decoration-none" href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>">
+                            <img class="imgProdotto shadow img-fluid" src="<?php echo IMG_DIR.$prodotto['Immagine']; ?>" alt="Foto prodotto"/>
                             <h2 class="text mt-3 fw-bold mb-1"><?php echo $prodotto["Nome"]; ?></h2>
                         </a>
                     </div>
@@ -48,7 +48,7 @@
                     <?php endif; ?>
                     <?php if(isAdminLoggedIn()): ?>
                         <div class="d-flex justify-content-between ms-3 me-3 mt-3">        
-                            <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" class="btn button">
+                            <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>" class="btn button">
                                 Gestisci Prodotto
                             </a>
                             <form action="gestisci-prodotto.php" method="POST">
@@ -57,7 +57,7 @@
                         </div>
                     <?php elseif($prodotto["Scorta"] > 0): ?>
                         <div class="text-center">        
-                            <button type="button" class="btn button add-to-cart" data-productid="<?php echo $prodotto["Id_prodotto"]; ?>">
+                            <button type="button" class="btn button add-to-cart" data-productid="<?php echo $prodotto['Id_prodotto']; ?>">
                                 Aggiungi al carrello
                             </button>
                         </div>
@@ -96,7 +96,7 @@
                         <select class="form-control text text-input" id="categoriaprodotto" name="categoriaprodotto" required>
                             <option class="text-start text-italic" value="" disabled selected>Categoria</option>
                             <?php foreach($templateParams["categorie"] as $categoria): ?>
-                                <option class="text-start text" value="<?php echo $categoria["Nome_categoria"]; ?>"><?php echo $categoria["Nome_categoria"] ?></option>
+                                <option class="text-start text" value="<?php echo $categoria['Nome_categoria']; ?>"><?php echo $categoria['Nome_categoria'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -62,7 +62,7 @@
                                         <?php if (isset($templateParams["categorie"]) && is_array($templateParams["categorie"])): ?>
                                             <?php foreach($templateParams["categorie"] as $categoria): ?>
                                                 <li>
-                                                    <a href="../php/prodotti.php?categoria=<?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>">
+                                                    <a href="../php/prodotti.php?categoria=<?php echo htmlspecialchars($categoria['Nome_categoria']); ?>">
                                                         <?php echo htmlspecialchars($categoria["Nome_categoria"]); ?>
                                                     </a>
                                                 </li>

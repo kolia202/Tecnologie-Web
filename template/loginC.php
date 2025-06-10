@@ -4,13 +4,13 @@
             <h1 class="title mb-4">Login</h1>
             <?php if (isset($_SESSION["errorelogin"])): ?>
                 <div class="alert alert-danger mt-3 text" role="alert">
-                    <i class="bi bi-exclamation-triangle align-center"></i>
+                    <span class="bi bi-exclamation-triangle align-center"></span>
                     <?php echo $_SESSION["errorelogin"];
                     unset($_SESSION['errorelogin']); ?>
                 </div>
             <?php elseif (isset($_SESSION["success"])): ?>
                 <div class="alert alert-success mt-3 text" role="alert">
-                    <i class="bi bi-check-circle align-center"></i>
+                    <span class="bi bi-check-circle align-center"></span>
                     <?php echo $_SESSION["success"];
                     unset($_SESSION['success']); ?>
                 </div>             

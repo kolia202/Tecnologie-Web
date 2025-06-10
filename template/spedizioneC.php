@@ -26,14 +26,14 @@
                                 <input class="form-check-input shipping-radio radio-input mb-1 me-1"
                                     type="radio"
                                     name="shipping"
-                                    id="<?php echo $spedizione["Id_spedizione"] ?>"
+                                    id="<?php echo $spedizione['Id_spedizione'] ?>"
                                     value="<?php echo $spedizioneGratuita ? 3 : $spedizione["Id_spedizione"] ?>"
                                     required />
-                                <label class="text fw-bold" for="<?php echo $spedizione["Id_spedizione"] ?>">
+                                <label class="text fw-bold" for="<?php echo $spedizione['Id_spedizione'] ?>">
                                     <?php echo $spedizione["Nome"]; ?>
                                 </label>
                             </div>
-                            <p class="shipping-price<?php echo $spedizione["Id_spedizione"]; ?> mb-0 ms-auto text-italic me-2">
+                            <p class="shipping-price<?php echo $spedizione['Id_spedizione']; ?> mb-0 ms-auto text-italic me-2">
                                 <strong>Prezzo:</strong> <?php echo getFormattedPrice($spedizione["Costo"]) ?>
                             </p>
                         </div>

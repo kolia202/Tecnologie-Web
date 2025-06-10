@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <?php foreach($templateParams["categorie"] as $categoria): ?>
             <div class="col-6 col-md-4 text-center mb-3">
-                <a href="../php/prodotti.php?categoria=<?php echo $categoria["Nome_categoria"]; ?>">
+                <a href="../php/prodotti.php?categoria=<?php echo $categoria['Nome_categoria']; ?>">
                     <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto category">
                         <?php echo $categoria["Nome_categoria"]; ?>
                     </div>
@@ -28,7 +28,7 @@
             <div class="carousel-inner">
                 <?php foreach ($templateParams["prodotti"] as $index => $prodotto): ?>
                     <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>">
+                        <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>">
                             <img class="carousel-img d-block w-100" src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" alt="<?php echo $prodotto['Nome']; ?>">
                             <p class="carousel-title text-center mt-3 mb-2 fw-bold"><?php echo $prodotto['Nome']; ?></p>                        
                         </a>
@@ -52,7 +52,7 @@
         <?php foreach ($templateParams["prodotti"] as $prodotto): ?>
             <div class="col">
                 <div class="card rounded shadow bg-white text-center custom-box-md pt-3 ps-2 pe-2 pb-1 mt-4">
-                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto["Id_prodotto"]; ?>" class="text-decoration-none">
+                    <a href="../php/dettaglioProdotto.php?id=<?php echo $prodotto['Id_prodotto']; ?>" class="text-decoration-none">
                         <img src="<?php echo IMG_DIR . $prodotto['Immagine']; ?>" class="carousel-img d-block w-100" alt="<?php echo $prodotto['Nome']; ?>">
                         <p class="carousel-title text-center mt-3 mb-2 fw-bold"><?php echo $prodotto['Nome']; ?></p>
                     </a>

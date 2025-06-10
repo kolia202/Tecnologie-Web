@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="card card-border shadow mt-4 p-4 ms-1 me-1 d-none sezionePunti">
-            <h2 class="text fw-bold mb-2">Punti Fedeltà</h2>
+            <h3 class="text fw-bold mb-2">Punti Fedeltà</h3>
             <p class="text">Usa i tuoi punti fedeltà per acquistare i peluche che ami!</p>
             <p class="punti-utente text fw-bold mb-2">Punti: <?php echo $userDetails["Punti"] ?></p>
             <div class="text-center ms-2 me-2">

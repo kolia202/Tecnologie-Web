@@ -47,9 +47,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form method="POST" action="ordini.php">
-                                                        <input type="hidden" name="id_ordine" value="<?php echo $ordine["Id_ordine"]; ?>">
-                                                        <label for="stato-<?php echo $ordine["Id_ordine"]; ?>" class="ps-1 d-block text-start text-italic">Stato</label>
-                                                        <select class="form-control text text-input" name="stato" id="stato-<?php echo $ordine["Id_ordine"]; ?>">
+                                                        <input type="hidden" name="id_ordine" value="<?php echo $ordine['Id_ordine']; ?>">
+                                                        <label for="stato-<?php echo $ordine['Id_ordine']; ?>" class="ps-1 d-block text-start text-italic">Stato</label>
+                                                        <select class="form-control text text-input" name="stato" id="stato-<?php echo $ordine['Id_ordine']; ?>">
                                                             <option class="text-start text" value="In lavorazione">In lavorazione</option>
                                                             <option class="text-start text" value="Spedito">Spedito</option>
                                                             <option class="text-start text" value="Consegnato">Consegnato</option>
@@ -66,14 +66,14 @@
                                 </div>
                                     <p class="text mb-2"><strong>Data: </strong><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                                     <div class="text-center mt-3 mb-1">
-                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
+                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine['Id_ordine'] ?>" class="btn button w-75">Riepilogo Ordine</a>
                                     </div>
                                 <?php else: ?>
                                     <p class="text mb-2"><strong>Data: </strong><?php echo getFormattedDate($ordine["Data_effettuazione"]) ?></p>
                                     <p class="text mb-0"><strong>Stato: </strong><?php echo $ordine["Stato"]; ?></p>
                                     <div class="text-center mt-3">
-                                        <a href="../php/tracciamento.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button-outline w-75 mb-2">Traccia Ordine</a><br>
-                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine["Id_ordine"] ?>" class="btn button w-75">Riepilogo Ordine</a>
+                                        <a href="../php/tracciamento.php?id=<?php echo $ordine['Id_ordine'] ?>" class="btn button-outline w-75 mb-2">Traccia Ordine</a><br>
+                                        <a href="../php/dettaglioOrdine.php?id=<?php echo $ordine['Id_ordine'] ?>" class="btn button w-75">Riepilogo Ordine</a>
                                     </div>
                                 <?php endif; ?>
                             </div>

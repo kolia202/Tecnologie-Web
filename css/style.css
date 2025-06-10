@@ -901,7 +901,7 @@ iframe {
     color: rgb(137, 85, 32);
 }
 
-.cont-payment .sezioneCarta h2, .cont-payment .sezionePunti h2 {
+.cont-payment .sezioneCarta h2, .cont-payment .sezionePunti h3 {
     font-size: 24px;
     color: rgb(137, 85, 32);
 }
@@ -935,7 +935,7 @@ iframe {
     font-size: 22px;
 }
 
-.cont-tracking h3, .cont-reviews h3, .cont-order h3 {
+.cont-tracking h3, .cont-reviews h3, .cont-order h2 {
     font-size: 18px;
 }
 
@@ -950,7 +950,7 @@ iframe {
     width: auto;
 }
 
-.cont-order h2 {
+.cont-order h3 {
     font-size: 25px;
     color: rgb(137, 85, 32);
 }
@@ -1357,7 +1357,7 @@ footer > a {
         width: 50%;
     }
 
-    .cont-payment h3 {
+    .cont-payment .sezioneCarta h2, .cont-payment .sezionePunti h3, .cont-payment h3 { 
         font-size: 28px;
     }
 
@@ -1388,7 +1388,7 @@ footer > a {
         font-size: 26px;
     }
 
-    .cont-tracking h3, .cont-tracking .card-tracking p, .cont-order h3 {
+    .cont-tracking h3, .cont-tracking .card-tracking p, .cont-order h2 {
         font-size: 22px;
     }
 
@@ -1397,7 +1397,7 @@ footer > a {
         height: 120px;
     }
 
-    .cont-order h2 {
+    .cont-order h3 {
         font-size: 30px;
     }
 

@@ -2,7 +2,7 @@
     <h1 class="title mb-3">Iscrizione</h1>
     <?php if (isset($_SESSION["error"])): ?>
         <div class="alert alert-danger mt-3 text" role="alert">
-            <i class="bi bi-exclamation-triangle align-center"></i>
+            <span class="bi bi-exclamation-triangle align-center"></span>
             <?php echo $_SESSION['error'];
             unset($_SESSION["error"]); ?>
         </div>    
